@@ -6,9 +6,11 @@ var strategy = {
     if (work_place === undefined) { // creep is not assigned, apparently
       work_place = worker_assignment.assign(creep);
     }
+    var at_work_place = work_place.x == creep.pos.x &&
+      work_place.y == creep.pos.y;
 
-    console.log(work_place, creep.pos, !work_place.isEqualTo(creep.pos));
-    if (!work_place.isEqualTo(creep.pos)) {
+    console.log(at_work_place);
+    if (!at_work_place) {
       creep.moveTo(work_place);
     }
 
