@@ -9,15 +9,12 @@ var strategy = {
     var at_work_place = work_place.x == creep.pos.x &&
       work_place.y == creep.pos.y;
 
-    console.log(at_work_place);
     if (!at_work_place) {
       creep.moveTo(work_place.x, work_place.y);
     }
 
-    var sources = creep.room.find(FIND_SOURCES)
-    for (var source in sources) {
-      if (creep.harvest(source) == 0) return;
-    }
+    var source = creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE);
+    creep.harvest(source);
   },
   select_storage: function () {
     var storages = [room.spawns]
