@@ -13,7 +13,7 @@ module.exports = {
           y: source.pos.y + this.dy[i]
         }
 
-        terrain = room.Terrain.get(new_position.x, new_position.y)
+        terrain = room.getTerrain().get(new_position.x, new_position.y)
         if (terrain == 0) { // https://docs.screeps.com/api/#Room.Terrain.get
           this.harvesting_positions.append(new_position);
         }
