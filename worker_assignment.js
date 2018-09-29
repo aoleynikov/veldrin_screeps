@@ -1,5 +1,5 @@
 worker_assignment = {
-  hervesting_positions = [],
+  harvesting_positions: [],
   harvesters: [],
   dx: [0, 1, 1, -1, -1, -1, 0, 1],
   dy: [1, 1, 0, 1, 0, -1, -1, -1],
