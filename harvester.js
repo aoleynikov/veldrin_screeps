@@ -7,11 +7,10 @@ var strategy = {
       if (creep.harvest(sources[i]) == 0) return;
     }
 
-    var work_place = worker_assignment.get_work_place(creep)
+    var work_place = creep.memory['work_place']
     if (work_place === undefined) { // creep is not assigned, apparently
-      worker_assignment.assign(creep);
+      work_place = worker_assignment.assign(creep);
     }
-    work_place = worker_assignment.get_work_place(creep)
 
     if (!work_place.isEqualTo(work_place)) {
       creep.moveTo(work_place);
