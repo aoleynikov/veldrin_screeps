@@ -6,6 +6,7 @@ var HEALTHY = 1000;
 
 module.exports = {
   get_strategy: function (creep) {
+    console.log(creep.ticksToLive, NEARLY_DEAD);
     if (creep.ticksToLive <= NEARLY_DEAD) {
       creep.memory['old_role'] = creep.memory['role'];
       creep.memory['role'] = 'maintenance';
