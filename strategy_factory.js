@@ -14,6 +14,12 @@ module.exports = {
       creep.memory['role'] = creep.memory['old_role'];
     }
 
+    switch (creep.memory['role']) {
+      case 'harvester':
+        return harvester;
+      case 'maintenance':
+        return maintenance;
+    }
 
     return harvester;
   }
