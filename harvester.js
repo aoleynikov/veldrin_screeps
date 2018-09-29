@@ -2,11 +2,6 @@ var worker_assignment = require('worker_assignment')
 
 var strategy = {
   harvest: function (creep) {
-    var sources = creep.room.find(FIND_SOURCES)
-    for (var i = 0; i < sources.length; ++i) {
-      if (creep.harvest(sources[i]) == 0) return;
-    }
-
     var work_place = creep.memory['work_place']
     if (work_place === undefined) { // creep is not assigned, apparently
       work_place = worker_assignment.assign(creep);
@@ -14,6 +9,11 @@ var strategy = {
 
     if (work_place.x != creep.pos.x || work_place.y != creep.pos.y) {
       creep.moveTo(work_place);
+    }
+
+    var sources = creep.room.find(FIND_SOURCES)
+    for (var source in sources) {
+      if (creep.harvest(source) == 0) return;
     }
   },
   select_storage: function () {
