@@ -1,5 +1,5 @@
-var harvester = require('creep_roles/harvester')
-var maintenance = require('creep_roles/maintenance')
+var harvester = require('harvester')
+var maintenance = require('maintenance')
 
 var NEARLY_DEAD = 120;
 

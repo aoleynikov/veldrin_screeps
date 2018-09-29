@@ -1,4 +1,4 @@
-var worker_assignment = require('../worker_assignment')
+var worker_assignment = require('worker_assignment')
 
 var strategy = {
   harvest: function (creep) {
