@@ -2,7 +2,7 @@ var worker_assignment = require('worker_assignment')
 
 var strategy = {
   harvest: function (creep) {
-    var sources = room.find(FIND_SOURCES)
+    var sources = creep.room.find(FIND_SOURCES)
     for (var i = 0; i < sources.length; ++i) {
       if (creep.harvest(source[i]) == 0) return;
     }
