@@ -28,9 +28,7 @@ var strategy = {
   store: function (creep) {
     var storage = this.select_storage(creep.room);
     store = creep.transfer(storage, RESOURCE_ENERGY);
-    console.log(store, ERR_NOT_IN_RANGE);
     if (store == ERR_NOT_IN_RANGE) {
-      console.log('moving...');
       creep.moveTo(storage.pos.x, storage.pos.y);
     }
   }
