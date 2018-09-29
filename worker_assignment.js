@@ -12,10 +12,7 @@ var init = function (room) {
   for (var source_index = 0; source_index < energy_sources.length; ++source_index) {
     source = energy_sources[source_index]
     for (var i = 0; i < dx.length; ++i) {
-      new_position = {
-        x: source.pos.x + dx[i],
-        y: source.pos.y + dy[i]
-      }
+      new_position = RoomPosition(source.pos.x + dx[i], source.pos.y + dy[i], room.name);
 
       terrain = room.getTerrain().get(new_position.x, new_position.y)
       if (terrain == 0) { // https://docs.screeps.com/api/#Room.Terrain.get
@@ -39,7 +36,7 @@ module.exports = {
     }
 
     creep.memory['work_place'] = positions[work_place_index];
-    return creep.memory['work_place'];
+    return creep.memory[]
   },
   get_workers_deficit: function (room) {
     throw 'Not implemented';
