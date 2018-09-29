@@ -15,7 +15,7 @@ module.exports = {
 
         terrain = room.getTerrain().get(new_position.x, new_position.y)
         if (terrain == 0) { // https://docs.screeps.com/api/#Room.Terrain.get
-          this.harvesting_positions.append(new_position);
+          this.harvesting_positions.push(new_position);
         }
       }
     }
