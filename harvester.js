@@ -11,7 +11,7 @@ var strategy = {
 
     console.log(at_work_place);
     if (!at_work_place) {
-      creep.moveTo(work_place);
+      creep.moveTo(work_place.x, work_place.y);
     }
 
     var sources = creep.room.find(FIND_SOURCES)
@@ -30,7 +30,7 @@ var strategy = {
   store: function (creep) {
     var storage = this.select_storage();
     if (creep.transfer(storage, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-      creep.moveTo(storage);
+      creep.moveTo(storage.pos.x, storage.pos.y);
     }
   }
 }
