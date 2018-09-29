@@ -7,8 +7,6 @@ var strategy = {
       if (creep.harvest(sources[i]) == 0) return;
     }
 
-    worker_assignment.init(creep.room);
-
     var work_place = worker_assignment.get_work_place(creep)
 
     if (work_place === undefined) { // creep is not assigned, apparently
