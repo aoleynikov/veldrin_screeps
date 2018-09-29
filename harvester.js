@@ -17,10 +17,10 @@ var strategy = {
     creep.harvest(source);
   },
   select_storage: function (room) {
-    var storages = [room.spawns]
-    for (var i = 0; i < storages.length; ++i) {
-      if (storages[i].energy < storages[i].energyCapacity) {
-        return storages[i];
+    var storages = [Game.spawns['Main']]
+    for (var storage in storages) {
+      if (storage.energy < storage.energyCapacity) {
+        return storage;
       }
     }
   },
