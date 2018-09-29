@@ -7,7 +7,7 @@ module.exports.loop = function () {
     strategy.perform(creep);
 
     if (creep.memory['role'] == 'maintenance') {
-      Game.spawns['Main'].renew(creep);
+      Game.spawns['Main'].renewCreep(creep);
     }
   }
 }
