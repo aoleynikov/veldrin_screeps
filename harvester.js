@@ -16,7 +16,7 @@ var strategy = {
     var source = creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE);
     creep.harvest(source);
   },
-  select_storage: function () {
+  select_storage: function (room) {
     var storages = [room.spawns]
     for (var i = 0; i < storages.length; ++i) {
       if (storages[i].energy < storages[i].energyCapacity) {
@@ -25,7 +25,7 @@ var strategy = {
     }
   },
   store: function (creep) {
-    var storage = this.select_storage();
+    var storage = this.select_storage(creep.room);
     if (creep.transfer(storage, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
       creep.moveTo(storage.pos.x, storage.pos.y);
     }
