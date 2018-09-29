@@ -1,6 +1,7 @@
 module.exports = {
   perform: function (creep) {
     creep.memory['role'] = 'maintenance';
-    creep.moveTo(Game.spawns['Main']);
+    var spawn = Game.spawns['Main']
+    creep.moveTo(spawn.pos.x, spawn.pos.y);
   }
 }
