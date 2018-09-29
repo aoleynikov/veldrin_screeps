@@ -1,4 +1,4 @@
-worker_assignment = {
+module.exports = {
   harvesting_positions: [],
   harvesters: [],
   dx: [0, 1, 1, -1, -1, -1, 0, 1],
