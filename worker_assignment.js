@@ -36,7 +36,7 @@ module.exports = {
     }
 
     creep.memory['work_place'] = positions[work_place_index];
-    return creep.memory[]
+    return creep.memory['work_place'];
   },
   get_workers_deficit: function (room) {
     throw 'Not implemented';
