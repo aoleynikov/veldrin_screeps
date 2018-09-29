@@ -8,10 +8,10 @@ var strategy = {
     }
 
     var work_place = worker_assignment.get_work_place(creep)
-
     if (work_place === undefined) { // creep is not assigned, apparently
       worker_assignment.assign(creep);
     }
+    work_place = worker_assignment.get_work_place(creep)
 
     if (!work_place.isEqualTo(work_place)) {
       creep.moveTo(work_place);
