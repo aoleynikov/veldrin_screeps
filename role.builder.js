@@ -15,6 +15,6 @@ var strategy = {
 
 module.exports = {
     perform: function (creep) {
-        upgrade(creep);
+        strategy.upgrade(creep);
     }
 }
