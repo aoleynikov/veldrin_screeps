@@ -17,12 +17,14 @@ module.exports = {
     },
     get_energy_provider: function (room) {
         var providers = containers.get(room);
+        var selection = []
         for (var i = 0; i < providers.length; ++i) {
             if (providers[i].store[RESOURCE_ENERGY] > 0) {
-                return providers[i];
+                selection.push(providers[i]);
             }
         }
-        return undefined;
+        // Random selection; TODO: rewrite;
+        return selection[Math.floor(Math.random() * Math.floor(selection.length))];
     },
     get_repairable_structures: function (room) {
         var result = room.find(FIND_MY_STRUCTURES);
