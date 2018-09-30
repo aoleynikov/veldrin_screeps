@@ -9,6 +9,7 @@ module.exports = {
         for (var i = 0; i < this.providers; ++i) {
             var structs = providers[i].get(room);
             result = result.concat(structs);
+            console.log(result);
         }
         return result;
     }
