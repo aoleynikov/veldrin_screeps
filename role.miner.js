@@ -16,6 +16,8 @@ var strategy = {
         return range == 1;
     },
     needs_to_move: function (creep) {
+        console.log(this.standing_near_source(creep));
+        console.log(this.standing_on_container(creep));
         return this.standing_near_source(creep) && this.standing_on_container(creep);
     },
     find_mining_position: function (creep) {
@@ -38,7 +40,6 @@ var strategy = {
 
 module.exports = {
     perform: function (creep) {
-        console.log(strategy.needs_to_move(creep))
         if (strategy.needs_to_move(creep)) {
             creep.moveTo(strategy.find_mining_position(creep));
         } else {
