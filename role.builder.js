@@ -39,8 +39,15 @@ var strategy = {
 module.exports = {
     perform: function (creep) {
         if (creep.carry[RESOURCE_ENERGY] == 0) {
-            creep.memory['role'] = 'harvester';
-            return;
+            provider = room_wrapper.get_energy_provider(creep.room);
+            if (provider === undefined) {
+                creep.memory['role'] = 'harvester';
+                return;
+            }
+            get_energy = creep.withdraw(provider, RESOURCE_ENERGY);
+            if (get_energy == ERR_NOT_IN_RANGE) {
+                creep.moveTo(provider.pos.x, provider.pos.y);
+            }
         }
         if (strategy.repair(creep)) return;
         if (strategy.build(creep)) return;

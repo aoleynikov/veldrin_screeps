@@ -15,6 +15,15 @@ module.exports = {
         }
         return result;
     },
+    get_energy_provider: function (room) {
+        var providers = containers.get(room);
+        for (var i = 0; i < providers.length; ++i) {
+            if (providers[i].store[RESOURCE_ENERGY] > 0) {
+                return provider[i];
+            }
+        }
+        return undefined;
+    },
     get_repairable_structures: function (room) {
         var result = room.find(FIND_MY_STRUCTURES);
         var added = containers.get(room);

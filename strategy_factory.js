@@ -1,6 +1,7 @@
 var harvester = require('role.harvester')
 var maintenance = require('role.maintenance')
 var builder = require('role.builder')
+var miner = require('role.miner');
 
 var NEARLY_DEAD = 120;
 
@@ -20,7 +21,9 @@ module.exports = {
       case 'maintenance':
         return maintenance;
       case 'builder':
-        return builder
+        return builder;
+      case 'miner':
+        return miner;
     }
 
     return harvester;
