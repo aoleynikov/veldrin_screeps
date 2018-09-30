@@ -24,6 +24,9 @@ var strategy = {
         structureType: STRUCTURE_EXTENSION
       }
     });
+    for (var i = 0; i < extensions.length; ++i) {
+      storages.push(extensions[i]);
+    }
     for (var i = 0; i < storages.length; ++i) {
       if (storages[i].energy < storages[i].energyCapacity) {
         return storages[i];
