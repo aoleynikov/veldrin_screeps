@@ -44,7 +44,7 @@ var strategy = {
   store: function (creep) {
     var storage = this.select_storage(creep.room);
     if (storage === undefined) {
-      creep.memory['role'] = 'builder';
+      return;
     }
     store = creep.transfer(storage, RESOURCE_ENERGY);
     if (store == ERR_NOT_IN_RANGE) {

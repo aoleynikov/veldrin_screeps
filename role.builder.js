@@ -41,7 +41,6 @@ module.exports = {
         if (creep.carry[RESOURCE_ENERGY] == 0) {
             var provider = room_wrapper.get_energy_provider(creep.room);
             if (provider === undefined) {
-                creep.memory['role'] = 'harvester';
                 return;
             }
             get_energy = creep.withdraw(provider, RESOURCE_ENERGY);
