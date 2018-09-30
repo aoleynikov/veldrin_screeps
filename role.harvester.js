@@ -23,12 +23,16 @@ var strategy = {
     var new_storages = room_wrapper.get_energy_storages(room);
 
     storages.push(Game.spawns['Main']);
-    exts = room.find(FIND_MY_STRUCTURES, {
+    extensions = room.find(FIND_MY_STRUCTURES, {
       filter: {
         structureType: STRUCTURE_EXTENSION
       }
     });
-    sotrages = storages.concat(exts);
+
+    for (var i = 0; i < extensions.length; ++i) {
+      storages.push(extensions[i]);
+    }
+
     for (var i = 0; i < storages.length; ++i) {
       if (storages[i].energy < storages[i].energyCapacity) {
         return storages[i];
