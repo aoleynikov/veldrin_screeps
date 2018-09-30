@@ -2,7 +2,9 @@ var strategy = {
     build: function (creep) {
         var construction_sites = creep.room.find(FIND_MY_CONSTRUCTION_SITES);
         for (var site in construction_sites) {
+            console.log(site);
             var work = creep.build(site);
+            console.log(work);
             if (work == ERR_NOT_IN_RANGE) {
                 creep.moveTo(site.pos.x, site.pos.y);
             }
