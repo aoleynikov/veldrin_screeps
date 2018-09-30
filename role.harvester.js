@@ -20,7 +20,7 @@ var strategy = {
   },
   select_storage: function (room) {
     var storages = []
-    console.log(room_wrapper.get_enenrgy_storages(room))
+    console.log(room_wrapper.get_energy_storages(room))
 
     storages.push(Game.spawns['Main']);
     exts = room.find(FIND_MY_STRUCTURES, {
