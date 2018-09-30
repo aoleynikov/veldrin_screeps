@@ -9,6 +9,7 @@ var strategy = {
             }
             return true;
         }
+        return false;
     },
     repair: function (creep) {
         var structures = creep.room.find(FIND_MY_STRUCTURES);
@@ -22,6 +23,7 @@ var strategy = {
             }
             return true;
         }
+        return false;
     },
     upgrade: function (creep) {
         var controller = creep.room.controller;
