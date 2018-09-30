@@ -12,7 +12,7 @@ var strategy = {
     },
     standing_near_source: function (creep) {
         creep.memory['source'] = creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE);
-        var range = creep.pos.getRangeTo(source.pos);
+        var range = creep.pos.getRangeTo(creep.memory['source'].pos);
         return range == 1;
     },
     needs_to_move: function (creep) {
