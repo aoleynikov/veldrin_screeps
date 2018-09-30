@@ -1,4 +1,5 @@
 var worker_assignment = require('worker_assignment')
+var room_wrapper = require('room_wrapper')
 
 var strategy = {
   harvest: function (creep) {
@@ -11,6 +12,7 @@ var strategy = {
 
     if (!at_work_place) {
       creep.moveTo(work_place.x, work_place.y);
+      return;
     }
 
     var source = creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE);
@@ -18,15 +20,15 @@ var strategy = {
   },
   select_storage: function (room) {
     var storages = []
+    console.log(room_wrapper.get_enenrgy_storages(room))
+
     storages.push(Game.spawns['Main']);
-    extensions = room.find(FIND_MY_STRUCTURES, {
+    exts = room.find(FIND_MY_STRUCTURES, {
       filter: {
         structureType: STRUCTURE_EXTENSION
       }
     });
-    for (var i = 0; i < extensions.length; ++i) {
-      storages.push(extensions[i]);
-    }
+    sotrages = storages.concat(exts);
     for (var i = 0; i < storages.length; ++i) {
       if (storages[i].energy < storages[i].energyCapacity) {
         return storages[i];
