@@ -36,7 +36,7 @@ module.exports = {
             return;
         }
         if (strategy.build(creep)) return;
-        if (strategy.repait(creep)) return;
+        if (strategy.repair(creep)) return;
         strategy.upgrade(creep);
     }
 }
