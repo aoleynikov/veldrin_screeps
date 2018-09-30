@@ -39,7 +39,7 @@ var strategy = {
 module.exports = {
     perform: function (creep) {
         if (creep.carry[RESOURCE_ENERGY] == 0) {
-            provider = room_wrapper.get_energy_provider(creep.room);
+            var provider = room_wrapper.get_energy_provider(creep.room);
             if (provider === undefined) {
                 creep.memory['role'] = 'harvester';
                 return;

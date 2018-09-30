@@ -19,7 +19,7 @@ module.exports = {
         var providers = containers.get(room);
         for (var i = 0; i < providers.length; ++i) {
             if (providers[i].store[RESOURCE_ENERGY] > 0) {
-                return provider[i];
+                return providers[i];
             }
         }
         return undefined;
