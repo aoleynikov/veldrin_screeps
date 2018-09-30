@@ -4,7 +4,7 @@ var room_wrapper = require('room_wrapper')
 var strategy = {
   harvest: function (creep) {
     var provider = room_wrapper.get_energy_provider(creep.room);
-    if (provider !== underfined) {
+    if (provider !== undefined) {
       harvest_from_storage = creep.withdraw(provider, RESOURCE_ENERGY);
       if (harvest_from_storage == ERR_NOT_IN_RANGE) {
         creep.moveTo(provider);
