@@ -3,7 +3,7 @@ var maintenance = require('role.maintenance')
 var builder = require('role.builder')
 
 var NEARLY_DEAD = 120;
-var HEALTHY = 1000;
+var HEALTHY = 1300;
 
 module.exports = {
   get_strategy: function (creep) {
