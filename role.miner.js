@@ -38,6 +38,7 @@ var strategy = {
 
 module.exports = {
     perform: function (creep) {
+        console.log(strategy.needs_to_move(creep))
         if (strategy.needs_to_move(creep)) {
             creep.moveTo(strategy.find_mining_position(creep));
         } else {
