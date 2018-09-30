@@ -1,5 +1,6 @@
-var harvester = require('harvester')
-var maintenance = require('maintenance')
+var harvester = require('role.harvester')
+var maintenance = require('role.maintenance')
+var builder = require('role.builder')
 
 var NEARLY_DEAD = 120;
 var HEALTHY = 1000;
@@ -19,6 +20,8 @@ module.exports = {
         return harvester;
       case 'maintenance':
         return maintenance;
+      case 'builder':
+        return builder
     }
 
     return harvester;
