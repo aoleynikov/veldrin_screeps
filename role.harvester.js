@@ -26,6 +26,7 @@ var strategy = {
           return storages[i];
         }
       } else {
+        console.log(storages[i].store[RESOURCE_ENERGY]);
         if (storages[i].store[RESOURCE_ENERGY] < storages[i].storeCapacity[RESOURCE_ENERGY]) {
           return storages[i];
         }

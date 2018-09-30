@@ -9,9 +9,6 @@ module.exports = {
         for (var i = 0; i < this.providers.length; ++i) {
             var structs = this.providers[i].get(room);
             for (var j = 0; j < structs.length; ++j) {
-                if (i == 2) {
-                    console.log(structs[j]);
-                }
                 result.push(structs[j]);
             }
         }
