@@ -22,7 +22,7 @@ var strategy = {
     var storages = room_wrapper.get_energy_storages(room);
 
     for (var i = 0; i < storages.length; ++i) {
-      console.log(storages[i])
+      console.log(storages[i].id)
       if (storages[i].energy !== undefined) {
         if (storages[i].energy < storages[i].energyCapacity) {
           return storages[i];
@@ -38,9 +38,9 @@ var strategy = {
   store: function (creep) {
     var storage = this.select_storage(creep.room);
     console.log(storage);
-    if (storage === undefined) {
-      creep.memory['role'] = 'builder';
-    }
+    // if (storage === undefined) {
+    //   creep.memory['role'] = 'builder';
+    // }
     store = creep.transfer(storage, RESOURCE_ENERGY);
     if (store == ERR_NOT_IN_RANGE) {
       creep.moveTo(storage.pos.x, storage.pos.y);
