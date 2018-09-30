@@ -6,11 +6,11 @@ module.exports = {
                 build_targets.push(site);
             }
         }
-        for (var structure in Game.structures) {
-            if (structure.room.id == creep.room.id && strcuture.hits < structure.hitsMax) {
-                build_targets.push(site);
-            }
-        }
+        // for (var structure in Game.structures) {
+        //     if (structure.room.id == creep.room.id && strcuture.hits < structure.hitsMax) {
+        //         build_targets.push(site);
+        //     }
+        // }
         build_targets.push(creep.room.controller);
 
         for (var target in build_targets) {
