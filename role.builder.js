@@ -41,7 +41,9 @@ module.exports = {
             return;
         }
         if (strategy.build(creep)) return;
+        console.log('Nothing to build...')
         if (strategy.repair(creep)) return;
+        console.log('Nothing to repair...')
         strategy.upgrade(creep);
     }
 }
