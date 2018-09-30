@@ -3,13 +3,11 @@ var strategy = {
         creep.room.find()
     },
     repair: function (creep) {
-
+        
     },
     upgrade: function (creep) {
         controller = creep.room.controller;
-        console.log(controller);
         work = creep.upgradeController(controller)
-        console.log(work)
         if (work != 0) {
             creep.moveTo(controller.pos.x, controller.pos.y);
         }
@@ -18,6 +16,10 @@ var strategy = {
 
 module.exports = {
     perform: function (creep) {
+        if (creep.energy == 0) {
+            creep.memory['role'] = 'harvester';
+            return
+        }
         strategy.upgrade(creep);
     }
 }
