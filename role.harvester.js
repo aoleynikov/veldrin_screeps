@@ -17,8 +17,10 @@ var strategy = {
     creep.harvest(source);
   },
   select_storage: function (room) {
-    return Game.spawns['Main'];
     var storages = [Game.spawns['Main']]
+    for (var storage in creep.room.find(FIND_EXTENSION)) {
+      storages.push(storage);
+    }
     for (var storage in storages) {
       if (storage.energy < storage.energyCapacity) {
         return storage;
