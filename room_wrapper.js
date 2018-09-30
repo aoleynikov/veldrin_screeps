@@ -15,7 +15,7 @@ module.exports = {
         return result;
     },
     get_repairable_structures: function (room) {
-        var result = creep.room.find(FIND_MY_STRUCTURES);
+        var result = room.find(FIND_MY_STRUCTURES);
         var added = containers.get(room);
         for (var i = 0; i < added.length; ++i) {
             result.push(added[i]);
