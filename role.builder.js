@@ -13,8 +13,11 @@ module.exports = {
         // }
         build_targets.push(creep.room.controller);
 
+        console.log(build_targets);
+
         for (var target in build_targets) {
-            work = creep.upgradeController(target) || creep.build(target) || creep.repair(target);
+            work = creep.upgradeController(target) && creep.build(target) && creep.repair(target);
+            console.log(target, work);
             if (work == ERR_NOT_IN_RANGE) {
                 creep.moveTo(target.pos.x, target.pos.y);
             }
