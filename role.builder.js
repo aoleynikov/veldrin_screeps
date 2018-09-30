@@ -16,8 +16,7 @@ var strategy = {
 
 module.exports = {
     perform: function (creep) {
-        if (creep.energy == 0) {
-            console.log(creep.energy);
+        if (creep.carry[RESOURCE_ENERGY] == 0) {
             creep.memory['role'] = 'harvester';
             return;
         }
