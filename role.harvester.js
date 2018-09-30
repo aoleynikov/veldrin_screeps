@@ -22,14 +22,12 @@ var strategy = {
     var storages = room_wrapper.get_energy_storages(room);
 
     for (var i = 0; i < storages.length; ++i) {
-      console.log(storages[i].id)
+      console.log(storages[i].getOwnPropertyNames());
       if (storages[i].energy !== undefined) {
         if (storages[i].energy < storages[i].energyCapacity) {
           return storages[i];
         }
       } else {
-        console.log(storages[i].getOwnPropertyNames());
-        console.log(storages[i].store)
         if (storages[i].store < storages[i].storeCapacity) {
           return storages[i];
         }
