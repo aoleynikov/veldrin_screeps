@@ -24,13 +24,11 @@ var strategy = {
         structureType: STRUCTURE_EXTENSION
       }
     });
-    console.log(storages);
-    console.log(storages[0]);
-    // for (var storage in storages) {
-    //   if (storage.energy < storage.energyCapacity) {
-    //     return storage;
-    //   }
-    // }
+    for (var i = 0; i < storages.length; ++i) {
+      if (storages[i].energy < storages[i].energyCapacity) {
+        return storages[i];
+      }
+    }
   },
   store: function (creep) {
     var storage = this.select_storage(creep.room);
