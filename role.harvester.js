@@ -18,8 +18,13 @@ var strategy = {
   },
   select_storage: function (room) {
     var storages = [Game.spawns['Main']]
-    for (var storage in room.find(FIND_EXTENSION)) {
-      storages.push(storage);
+    extensions = room.find(FIND_MY_STRUCTURES, {
+      filter: {
+        structureType: STRUCTURE_EXTENSION
+      }
+    });
+    for (var ext in extensions) {
+      storages.push(ext);
     }
     for (var storage in storages) {
       if (storage.energy < storage.energyCapacity) {
