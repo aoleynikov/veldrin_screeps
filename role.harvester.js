@@ -17,16 +17,19 @@ var strategy = {
     creep.harvest(source);
   },
   select_storage: function (room) {
-    var storages = [Game.spawns['Main']]
+    var storages = []
+    storages.push(Game.spawns['Main']);
     extensions = room.find(FIND_MY_STRUCTURES, {
       filter: {
         structureType: STRUCTURE_EXTENSION
       }
     });
     for (var ext in extensions) {
+      console.log(ext);
       storages.push(ext);
     }
     for (var storage in storages) {
+      console.log(storage, storage.energy, storage.energyCapacity);
       if (storage.energy < storage.energyCapacity) {
         return storage;
       }
