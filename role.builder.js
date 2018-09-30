@@ -8,7 +8,9 @@ var strategy = {
     upgrade: function (creep) {
         controller = creep.room.controller;
         console.log(controller);
-        if (!creep.upgradeController(controller)) {
+        work = creep.upgradeController(controller)
+        console.log(work)
+        if (work != 0) {
             creep.moveTo(controller.pos.x, controller.pos.y);
         }
     }
