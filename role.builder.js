@@ -20,8 +20,8 @@ var strategy = {
                 if (work == ERR_NOT_IN_RANGE) {
                     creep.moveTo(structure.pos.x, structure.pos.y);
                 }
+                return true;
             }
-            return true;
         }
         return false;
     },
