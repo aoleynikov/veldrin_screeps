@@ -28,6 +28,7 @@ var strategy = {
           return storages[i];
         }
       } else {
+        console.log(storages[i].keys())
         console.log(storages[i].store)
         if (storages[i].store < storages[i].storeCapacity) {
           return storages[i];
@@ -37,7 +38,6 @@ var strategy = {
   },
   store: function (creep) {
     var storage = this.select_storage(creep.room);
-    console.log(storage);
     // if (storage === undefined) {
     //   creep.memory['role'] = 'builder';
     // }
