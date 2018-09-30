@@ -19,6 +19,7 @@ var strategy = {
   select_storage: function (room) {
     var storages = []
     storages.push(Game.spawns['Main']);
+    storages.push(Game.spawns['Main']);
     extensions = room.find(FIND_MY_STRUCTURES, {
       filter: {
         structureType: STRUCTURE_EXTENSION
