@@ -13,11 +13,9 @@ var strategy = {
     standing_near_source: function (creep) {
         creep.memory['source'] = creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE);
         var range = creep.pos.getRangeTo(creep.memory['source'].pos);
-        return range == 1;
+        return range != 1;
     },
     needs_to_move: function (creep) {
-        console.log(this.standing_near_source(creep));
-        console.log(this.standing_on_container(creep));
         return this.standing_near_source(creep) && this.standing_on_container(creep);
     },
     find_mining_position: function (creep) {
