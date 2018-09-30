@@ -19,9 +19,9 @@ var strategy = {
         return this.standing_near_source(creep) && this.standing_on_container(creep);
     },
     find_mining_position: function (creep) {
-        var containers = containers.get(creep.room);
-        for (var i = 0; i < containers.length; ++i) {
-            var position = containers[i].pos
+        var ctrs = containers.get(creep.room);
+        for (var i = 0; i < ctrs.length; ++i) {
+            var position = ctrs[i].pos
             var look = creep.room.lookAt(position.x, position.y);
             var good = true;
             for (var j = 0; j < look.length; ++j) {
@@ -37,7 +37,7 @@ var strategy = {
 }
 
 module.exports = {
-    perfrom: function (creep) {
+    perform: function (creep) {
         if (strategy.needs_to_move(creep)) {
             creep.moveTo(strategy.find_mining_position(creep));
         } else {
