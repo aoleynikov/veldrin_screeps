@@ -35,8 +35,11 @@ module.exports = {
             creep.memory['role'] = 'harvester';
             return;
         }
+        console.log('Building...')
         if (strategy.build(creep)) return;
+        console.log('Repairing...')
         if (strategy.repair(creep)) return;
+        console.log('Upgrading...')
         strategy.upgrade(creep);
     }
 }
