@@ -4,7 +4,7 @@ var room_wrapper = require('room_wrapper')
 var strategy = {
   harvest: function (creep) {
     var work_place = creep.memory['work_place']
-    if (work_place === undefined) { // creep is not assigned, apparently
+    if (work_place === undefined) { // creep is not assigned
       work_place = worker_assignment.assign(creep);
     }
     var at_work_place = work_place.x == creep.pos.x &&
@@ -20,7 +20,7 @@ var strategy = {
   },
   select_storage: function (room) {
     var storages = []
-    console.log(room_wrapper.get_energy_storages(room))
+    var new_storages = room_wrapper.get_energy_storages(room);
 
     storages.push(Game.spawns['Main']);
     exts = room.find(FIND_MY_STRUCTURES, {
