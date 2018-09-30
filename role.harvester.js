@@ -25,9 +25,14 @@ var strategy = {
       }
     });
     console.log(storages);
-    for (var storage in storage) {
+    for (var storage in storages) {
       console.log(storage);
     }
+    // for (var storage in storages) {
+    //   if (storage.energy < storage.energyCapacity) {
+    //     return storage;
+    //   }
+    // }
   },
   store: function (creep) {
     var storage = this.select_storage(creep.room);
