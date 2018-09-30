@@ -24,14 +24,9 @@ var strategy = {
         structureType: STRUCTURE_EXTENSION
       }
     });
-    for (var ext in extensions) {
-      storages.push(ext);
-    }
-    for (var storage in storages) {
+    console.log(storages);
+    for (var storage in storage) {
       console.log(storage);
-      if (storage.energy < storage.energyCapacity) {
-        return storage;
-      }
     }
   },
   store: function (creep) {
