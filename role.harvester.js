@@ -25,11 +25,10 @@ var strategy = {
       }
     });
     for (var ext in extensions) {
-      console.log(ext);
       storages.push(ext);
     }
-    console.log(storages);
     for (var storage in storages) {
+      console.log(storage);
       if (storage.energy < storage.energyCapacity) {
         return storage;
       }
