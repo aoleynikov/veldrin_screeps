@@ -30,7 +30,7 @@ var strategy = {
     upgrade: function (creep) {
         var controller = creep.room.controller;
         var work = creep.upgradeController(controller)
-        if (work != 0) {
+        if (work == ERR_NOT_IN_RANGE) {
             creep.moveTo(controller.pos.x, controller.pos.y);
         }
     }
