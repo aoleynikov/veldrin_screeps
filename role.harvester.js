@@ -19,19 +19,7 @@ var strategy = {
     creep.harvest(source);
   },
   select_storage: function (room) {
-    var storages = []
-    var new_storages = room_wrapper.get_energy_storages(room);
-    console.log(new_storages)
-    storages.push(Game.spawns['Main']);
-    extensions = room.find(FIND_MY_STRUCTURES, {
-      filter: {
-        structureType: STRUCTURE_EXTENSION
-      }
-    });
-
-    for (var i = 0; i < extensions.length; ++i) {
-      storages.push(extensions[i]);
-    }
+    var storages = room_wrapper.get_energy_storages(room);
 
     for (var i = 0; i < storages.length; ++i) {
       if (storages[i].energy < storages[i].energyCapacity) {
