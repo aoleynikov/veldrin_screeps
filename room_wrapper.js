@@ -12,7 +12,6 @@ module.exports = {
                 result.push(structs[j]);
             }
         }
-        console.log(results);
         return result;
     }
 }

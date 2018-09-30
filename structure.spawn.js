@@ -5,8 +5,6 @@ module.exports = {
                 structureType: STRUCTURE_SPAWN
             }
         });
-        console.log(room);
-        console.log(result);
         return result;
     }
 }

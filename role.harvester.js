@@ -21,7 +21,7 @@ var strategy = {
   select_storage: function (room) {
     var storages = []
     var new_storages = room_wrapper.get_energy_storages(room);
-
+    console.log(new_storages);
     storages.push(Game.spawns['Main']);
     extensions = room.find(FIND_MY_STRUCTURES, {
       filter: {
