@@ -28,8 +28,8 @@ var strategy = {
       console.log(ext);
       storages.push(ext);
     }
+    console.log(storages);
     for (var storage in storages) {
-      console.log(storage, storage.energy, storage.energyCapacity);
       if (storage.energy < storage.energyCapacity) {
         return storage;
       }
