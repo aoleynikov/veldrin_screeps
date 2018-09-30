@@ -18,7 +18,7 @@ var strategy = {
   },
   select_storage: function (room) {
     var storages = [Game.spawns['Main']]
-    for (var storage in creep.room.find(FIND_EXTENSION)) {
+    for (var storage in room.find(FIND_EXTENSION)) {
       storages.push(storage);
     }
     for (var storage in storages) {
