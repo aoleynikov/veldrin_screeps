@@ -5,8 +5,6 @@ module.exports = {
                 structureType: STRUCTURE_STORAGE
             }
         });
-        console.log(room);
-        console.log(result);
         return result;
     }
 }
