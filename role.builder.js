@@ -1,3 +1,5 @@
+var room_wrapper = require('room_wrapper');
+
 var strategy = {
     build: function (creep) {
         var construction_sites = creep.room.find(FIND_MY_CONSTRUCTION_SITES);
@@ -12,9 +14,9 @@ var strategy = {
         return false;
     },
     repair: function (creep) {
-        var structures = creep.room.find(FIND_MY_STRUCTURES);
-        for (var i = 0; i < structures.length; ++i) {
-            var structure = structures[i]
+        var repairable = room_wrapper.get_repairable_structures(creep.room);
+        for (var i = 0; i < repairable.length; ++i) {
+            var structure = repairable[i]
             if (structure.hits < structure.hitsMax) {
                 var work = creep.repair(structure);
                 if (work == ERR_NOT_IN_RANGE) {

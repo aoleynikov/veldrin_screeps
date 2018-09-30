@@ -3,7 +3,6 @@ var maintenance = require('role.maintenance')
 var builder = require('role.builder')
 
 var NEARLY_DEAD = 120;
-var HEALTHY = 1300;
 
 module.exports = {
   get_strategy: function (creep) {
@@ -11,7 +10,7 @@ module.exports = {
       creep.memory['old_role'] = creep.memory['role'];
       creep.memory['role'] = 'maintenance';
       return maintenance;
-    } else if (creep.ticksToLive >= HEALTHY && creep.memory['role'] == 'maintenance') {
+    } else if (creep.ticksToLive >= CREEP_LIFE_TIME && creep.memory['role'] == 'maintenance') {
       creep.memory['role'] = creep.memory['old_role'];
     }
 
