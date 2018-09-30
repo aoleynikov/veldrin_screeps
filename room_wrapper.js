@@ -8,9 +8,11 @@ module.exports = {
         var result = []
         for (var i = 0; i < this.providers; ++i) {
             var structs = providers[i].get(room);
-            result = result.concat(structs);
-            console.log(result);
+            for (var j = 0; j < structs.length; ++j) {
+                result.push(structs[j]);
+            }
         }
+        console.log(results);
         return result;
     }
 }
