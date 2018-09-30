@@ -1,9 +1,9 @@
 var spawns = require('structure.spawn')
 var extensions = require('structure.extension')
-var storages = require('structure.storage')
+var containers = require('structure.container')
 
 module.exports = {
-    providers: [spawns, extensions, storages],
+    providers: [spawns, extensions, containers],
     get_energy_storages: function (room) {
         var result = []
         for (var i = 0; i < this.providers.length; ++i) {
