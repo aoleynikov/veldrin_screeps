@@ -6,11 +6,11 @@ var HEALTHY = 1000;
 
 module.exports = {
   get_strategy: function (creep) {
-    if (creep.ticksToLive <= NEARLY_DEAD) {
+    if (creep.ticksToLive <= NEARLY_DEAD && creep.memory['role'] != 'maintenance') {
       creep.memory['old_role'] = creep.memory['role'];
       creep.memory['role'] = 'maintenance';
       return maintenance;
-    } else if (creep.ticksToLive >= HEALTHY) {
+    } else if (creep.ticksToLive >= HEALTHY && creep.memory['role'] == 'maintenance') {
       creep.memory['role'] = creep.memory['old_role'];
     }
 
@@ -18,7 +18,7 @@ module.exports = {
       case 'harvester':
         return harvester;
       case 'maintenance':
-        return harvester;
+        return maintenance;
     }
 
     return harvester;
