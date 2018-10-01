@@ -2,7 +2,7 @@ var room_wrapper = require('room_wrapper');
 
 module.exports = {
     perform: function (creep) {
-        var provider = room_wrapper.get_energy_provider(creep.room);
+        var provider = room_wrapper.get_closest_energy_provider(creep.room, creep.pos);
         if (provider === undefined) {
             return;
         }
