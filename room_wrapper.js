@@ -23,6 +23,11 @@ module.exports = {
                 selection.push(providers[i]);
             }
         }
+
+        // if all containers (if any) are empty, we have to mine
+        if (selection === []) {
+            selection = room.find(FIND_SOURCES_ACTIVE);
+        }
         // Random selection; TODO: rewrite;
         return selection[Math.floor(Math.random() * Math.floor(selection.length))];
     },

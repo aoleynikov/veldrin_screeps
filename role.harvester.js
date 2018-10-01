@@ -1,4 +1,3 @@
-var worker_assignment = require('worker_assignment')
 var room_wrapper = require('room_wrapper')
 
 var strategy = {
@@ -6,9 +5,12 @@ var strategy = {
     var provider = room_wrapper.get_energy_provider(creep.room);
     if (provider !== undefined) {
       harvest_from_storage = creep.withdraw(provider, RESOURCE_ENERGY);
+      console.log(harvest_from_storage);
       if (harvest_from_storage == ERR_NOT_IN_RANGE) {
         creep.moveTo(provider);
         return;
+      } else if (harvest_from_storage == ERR_INVALID_ARGS) {
+        creep.harvest(provider);
       }
     }
 
