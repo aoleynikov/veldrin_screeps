@@ -2,10 +2,6 @@ var containers = require('structure.container')
 
 var strategy = {
     standing_on_container: function (creep) {
-        if (creep.memory['container_id'] === undefined) {
-            this.find_mining_position(creep);
-        }
-
         var container = Game.getObjectById(creep.memory['container_id'])
         return creep.pos.x == container.pos.x && creep.pos.y == container.pos.y;
     },
@@ -15,6 +11,10 @@ var strategy = {
         return range != 1;
     },
     needs_to_move: function (creep) {
+        if (creep.name == 'miner4') {
+            console.log(this.standing_near_source(creep));
+            console.log(this.standing_on_container(creep));
+        }
         return this.standing_near_source(creep) && this.standing_on_container(creep);
     },
     find_mining_position: function (creep) {
