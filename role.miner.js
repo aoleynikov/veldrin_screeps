@@ -2,13 +2,8 @@ var containers = require('structure.container')
 
 var strategy = {
     standing_on_container: function (creep) {
-        var look = creep.room.lookAt(creep.pos.x, creep.pos.y);
-        for (var i = 0; i < look.length; ++i) {
-            if (look[i].type == 'creep' && look[i].creep.id == creep.id) {
-                return true;
-            }
-        }
-        return false;
+        return creep.pos.x == creep.memory['container'].pos.x &&
+            creep.pos.y == creep.memory['container'].pos.y;
     },
     standing_near_source: function (creep) {
         creep.memory['source'] = creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE);
@@ -38,8 +33,11 @@ var strategy = {
 
 module.exports = {
     perform: function (creep) {
+        if (creep.memory['container'] === undefined) {
+            strategy.find_mining_position(creep)
+        }
         if (strategy.needs_to_move(creep)) {
-            creep.moveTo(strategy.find_mining_position(creep));
+            creep.moveTo(creep.memory['container']);
         } else {
             creep.harvest(creep.memory['source']);
         }

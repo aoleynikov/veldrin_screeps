@@ -1,7 +1,18 @@
-var harvester = require('role.harvester')
-var maintenance = require('role.maintenance')
-var builder = require('role.builder')
+var harvester = require('role.harvester');
+var maintenance = require('role.maintenance');
+var builder = require('role.builder');
 var miner = require('role.miner');
+var repairer = require('role.repairer');
+var upgrader = require('role.upgrader');
+
+roles = {
+  'harvester': harvester,
+  'maintenance': maintenance,
+  'builder': builder,
+  'miner': miner,
+  'repairer': repairer,
+  'upgrader': upgrader
+}
 
 var NEARLY_DEAD = 120;
 
@@ -15,17 +26,10 @@ module.exports = {
       creep.memory['role'] = creep.memory['old_role'];
     }
 
-    switch (creep.memory['role']) {
-      case 'harvester':
-        return harvester;
-      case 'maintenance':
-        return maintenance;
-      case 'builder':
-        return builder;
-      case 'miner':
-        return miner;
+    strategy = roles[creep.memory['role']];
+    if (strategy === undefined) {
+      console.log(creep.name);
     }
-
-    return harvester;
+    return strategy || harvester;
   }
 }
