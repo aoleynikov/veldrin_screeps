@@ -34,8 +34,9 @@ var strategy = {
       return;
     }
     store = creep.transfer(storage, RESOURCE_ENERGY);
+    console.log(store);
     if (store == ERR_NOT_IN_RANGE) {
-      creep.moveTo(storage.pos.x, storage.pos.y);
+      console.log(creep.moveTo(storage.pos.x, storage.pos.y));
     }
   }
 }

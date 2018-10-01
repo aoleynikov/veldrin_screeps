@@ -13,7 +13,6 @@ module.exports = {
                 result.push(structs[j]);
             }
         }
-        console.log(result);
         return result;
     },
     // LEGACY
