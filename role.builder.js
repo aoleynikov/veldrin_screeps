@@ -22,7 +22,7 @@ module.exports = {
             get_energy_behavior.perform(creep);
             return;
         }
-        var busy = strategy.repair(creep);
+        var busy = strategy.build(creep);
         if (!busy) {
             upgrader_role.perform(creep);
         }
