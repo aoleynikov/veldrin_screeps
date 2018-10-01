@@ -11,11 +11,7 @@ var strategy = {
         return range != 1;
     },
     needs_to_move: function (creep) {
-        if (creep.name == 'miner4') {
-            console.log(this.standing_near_source(creep));
-            console.log(this.standing_on_container(creep));
-        }
-        return this.standing_near_source(creep) && this.standing_on_container(creep);
+        return !this.standing_near_source(creep) || !this.standing_on_container(creep);
     },
     find_mining_position: function (creep) {
         var ctrs = containers.get(creep.room);
