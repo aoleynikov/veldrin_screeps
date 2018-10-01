@@ -16,22 +16,16 @@ module.exports = {
         return result;
     },
     get_energy_providers: function (room) {
-        var providers = containers.get(room);
+        var result = containers.get(room);
+
         var result = []
         for (var i = 0; i < providers.length; ++i) {
             if (providers[i].store[RESOURCE_ENERGY] > 0) {
                 result.push(providers[i]);
             }
         }
-
-        // if all containers (if any) are empty, we have to mine
-        if (result.length == 0) {
-            sources = room.find(FIND_SOURCES_ACTIVE)
-            for (var i = 0; i < sources.length; ++i) {
-                result.push(sources[i])
-            }
-        }
-        return result;
+        if (result.length > 0) return result;
+        return room.find(FIND_SOURCES_ACTIVE);
     },
     get_closest_energy_provider: function (room, pos) {
         providers = this.get_energy_providers(room);
