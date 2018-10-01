@@ -9,6 +9,8 @@ var strategy = {
             var work = creep.build(site);
             if (work == ERR_NOT_IN_RANGE) {
                 creep.moveTo(site.pos.x, site.pos.y);
+            } else if (work == ERR_NOT_ENOUGH_ENERGY) {
+                creep.memory['refill'] = true;
             }
             return true;
         }
@@ -18,7 +20,7 @@ var strategy = {
 
 module.exports = {
     perform: function (creep) {
-        if (creep.carry[RESOURCE_ENERGY] == 0) {
+        if (creep.memory['refill']) {
             get_energy_behavior.perform(creep);
             return;
         }

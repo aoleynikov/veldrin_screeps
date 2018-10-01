@@ -27,9 +27,6 @@ module.exports = {
     }
 
     strategy = roles[creep.memory['role']];
-    if (strategy === undefined) {
-      console.log(creep.name);
-    }
     return strategy || harvester;
   }
 }

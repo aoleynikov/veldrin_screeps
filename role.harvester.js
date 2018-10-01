@@ -31,13 +31,11 @@ var strategy = {
   store: function (creep) {
     var storage = this.select_storage(creep.room);
     if (storage === undefined) {
-      console.log('oops!')
       return;
     }
     store = creep.transfer(storage, RESOURCE_ENERGY);
-    console.log(store);
     if (store == ERR_NOT_IN_RANGE) {
-      console.log(creep.moveTo(storage.pos.x, storage.pos.y));
+      creep.moveTo(storage.pos.x, storage.pos.y);
     }
   }
 }

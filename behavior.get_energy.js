@@ -15,5 +15,9 @@ module.exports = {
         if (work_result == ERR_NOT_IN_RANGE) {
             creep.moveTo(provider.pos.x, provider.pos.y);
         }
+
+        if (creep.carry[RESOURCE_ENERGY] == creep.carryCapacity) {
+            creep.memory['refill'] = false;
+        }
     }
 }
