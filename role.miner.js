@@ -34,7 +34,7 @@ module.exports = {
         }
         if (strategy.needs_to_move(creep)) {
             var container = Game.getObjectById(creep.memory['container_id'])
-            creep.moveTo(container.pos.x, counainer.pos.y);
+            creep.moveTo(container.pos.x, container.pos.y);
         } else {
             var source = creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE);
             creep.harvest(source);
