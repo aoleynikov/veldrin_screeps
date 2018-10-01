@@ -6,8 +6,13 @@ module.exports = {
         if (provider === undefined) {
             return;
         }
-        get_energy = creep.withdraw(provider, RESOURCE_ENERGY);
-        if (get_energy == ERR_NOT_IN_RANGE) {
+        var work_result = undefined;
+        if (provider.structureType == STRUCTURE_STORAGE) {
+            work_result = creep.withdraw(provider, RESOURCE_ENERGY);
+        } else {
+            work_result = creep.harvest(provider);
+        }
+        if (work_result == ERR_NOT_IN_RANGE) {
             creep.moveTo(provider.pos.x, provider.pos.y);
         }
     }
