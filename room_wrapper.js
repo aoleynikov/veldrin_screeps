@@ -25,9 +25,9 @@ module.exports = {
         }
 
         // if all containers (if any) are empty, we have to mine
-        if (result === []) {
+        if (result.length == 0) {
             sources = room.find(FIND_SOURCES_ACTIVE)
-            for (var i = 0; i < source.length; ++i) {
+            for (var i = 0; i < sources.length; ++i) {
                 result.push(sources[i])
             }
         }
