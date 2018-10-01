@@ -28,13 +28,13 @@ module.exports = {
         return room.find(FIND_SOURCES_ACTIVE);
     },
     get_closest_energy_provider: function (room, pos) {
-        providers = this.get_energy_providers(room);
+        provs = this.get_energy_providers(room);
         var minRange = 99999;
         var result = undefined;
-        for (var i = 0; i < providers.length; ++i) {
-            var range = pos.getRangeTo(providers[i].pos);
+        for (var i = 0; i < provs.length; ++i) {
+            var range = pos.getRangeTo(provs[i].pos);
             if (range < minRange) {
-                result = this.providers[i];
+                result = this.provs[i];
                 minRange = range;
             }
         }
