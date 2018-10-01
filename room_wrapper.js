@@ -16,12 +16,12 @@ module.exports = {
         return result;
     },
     get_energy_providers: function (room) {
-        var result = containers.get(room);
+        var ctrs = containers.get(room);
 
         var result = []
-        for (var i = 0; i < providers.length; ++i) {
-            if (providers[i].store[RESOURCE_ENERGY] > 0) {
-                result.push(providers[i]);
+        for (var i = 0; i < ctrs.length; ++i) {
+            if (ctrs[i].store[RESOURCE_ENERGY] > 0) {
+                result.push(ctrs[i]);
             }
         }
         if (result.length > 0) return result;
