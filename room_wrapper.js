@@ -15,21 +15,40 @@ module.exports = {
         }
         return result;
     },
+    // LEGACY
     get_energy_provider: function (room) {
+        var result = this.get_energy_providers(room);
+        // Random selection; TODO: rewrite;
+        return result[Math.floor(Math.random() * Math.floor(selection.length))];
+    },
+    get_energy_providers: function (room) {
         var providers = containers.get(room);
-        var selection = []
+        var result = []
         for (var i = 0; i < providers.length; ++i) {
             if (providers[i].store[RESOURCE_ENERGY] > 0) {
-                selection.push(providers[i]);
+                result.push(providers[i]);
             }
         }
 
         // if all containers (if any) are empty, we have to mine
-        if (selection === []) {
-            selection = room.find(FIND_SOURCES_ACTIVE);
+        if (result === []) {
+            sources = room.find(FIND_SOURCES_ACTIVE)
+            for (var i = 0; i < source.length; ++i) {
+                result.push(sources[i])
+            }
         }
-        // Random selection; TODO: rewrite;
-        return selection[Math.floor(Math.random() * Math.floor(selection.length))];
+        return result;
+    },
+    get_closest_energy_provider: function (room, pos) {
+        providers = this.get_energy_providers(room);
+        var minRange = 99999;
+        var result = undefined;
+        for (var i = 0; i < providers.length; ++i) {
+            if (pos.getRangeTo(providers[i].pos) < minRange) {
+                result = this.providers[i];
+            }
+        }
+        return result;
     },
     get_repairable_structures: function (room) {
         var result = room.find(FIND_MY_STRUCTURES);

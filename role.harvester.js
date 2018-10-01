@@ -2,16 +2,16 @@ var room_wrapper = require('room_wrapper')
 
 var strategy = {
   harvest: function (creep) {
-    var provider = room_wrapper.get_energy_provider(creep.room);
+    var provider = room_wrapper.get_closest_energy_provider(creep.room);
+    var work_result = undefined;
+    if (provider.structureType == STRUCTURE_STORAGE) {
+      work_result = creep.withdraw(provider, RESOURCE_ENERGY);
+    } else {
+      work_result = creep.harvest(provider);
+    }
 
-    if (provider !== undefined) {
-      harvest_from_storage = creep.withdraw(provider, RESOURCE_ENERGY);
-      console.log(harvest_from_storage);
-      if (harvest_from_storage == ERR_NOT_IN_RANGE) {
-        creep.moveTo(provider);
-      } else if (harvest_from_storage == ERR_INVALID_ARGS) {
-        creep.harvest(provider);
-      }
+    if (work_result == ERR_NOT_IN_RANGE) {
+      creep.moveTo(provider.pos.x, provider.pos.y);
     }
   },
   select_storage: function (room) {
