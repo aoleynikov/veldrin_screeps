@@ -2,6 +2,10 @@ var containers = require('structure.container')
 
 var strategy = {
     standing_on_container: function (creep) {
+        if (creep.memory['container'] === undefined) {
+            this.find_mining_position(creep);
+        }
+
         return creep.pos.x == creep.memory['container'].pos.x &&
             creep.pos.y == creep.memory['container'].pos.y;
     },
@@ -20,7 +24,7 @@ var strategy = {
             var look = creep.room.lookAt(position.x, position.y);
             var good = true;
             for (var j = 0; j < look.length; ++j) {
-                if (look[j].type == 'creep') {
+                if (look[j].type == 'creep' && look[j].creep.id != creep.id) {
                     good = false;
                 }
             }
