@@ -38,8 +38,10 @@ module.exports = {
         var minRange = 99999;
         var result = undefined;
         for (var i = 0; i < providers.length; ++i) {
-            if (pos.getRangeTo(providers[i].pos) < minRange) {
+            var range = pos.getRangeTo(providers[i].pos);
+            if (range < minRange) {
                 result = this.providers[i];
+                minRange = range;
             }
         }
         return result;
