@@ -5,13 +5,8 @@ var strategy = {
         var container = Game.getObjectById(creep.memory['container_id'])
         return creep.pos.x == container.pos.x && creep.pos.y == container.pos.y;
     },
-    standing_near_source: function (creep) {
-        creep.memory['source'] = creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE);
-        var range = creep.pos.getRangeTo(creep.memory['source'].pos);
-        return range != 1;
-    },
     needs_to_move: function (creep) {
-        return !this.standing_near_source(creep) || !this.standing_on_container(creep);
+        return !this.standing_on_container(creep);
     },
     find_mining_position: function (creep) {
         var ctrs = containers.get(creep.room);
@@ -39,9 +34,10 @@ module.exports = {
         }
         if (strategy.needs_to_move(creep)) {
             var container = Game.getObjectById(creep.memory['container_id'])
-            creep.moveTo(container);
+            creep.moveTo(container.pos.x, counainer.pos.y);
         } else {
-            creep.harvest(creep.memory['source']);
+            var source = creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE);
+            creep.harvest(source);
         }
     }
 }
