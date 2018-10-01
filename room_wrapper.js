@@ -19,7 +19,7 @@ module.exports = {
     get_energy_provider: function (room) {
         var result = this.get_energy_providers(room);
         // Random selection; TODO: rewrite;
-        return result[Math.floor(Math.random() * Math.floor(selection.length))];
+        return result[Math.floor(Math.random() * Math.floor(result.length))];
     },
     get_energy_providers: function (room) {
         var providers = containers.get(room);

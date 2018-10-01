@@ -31,6 +31,7 @@ var strategy = {
   store: function (creep) {
     var storage = this.select_storage(creep.room);
     if (storage === undefined) {
+      console.log('oops!')
       return;
     }
     store = creep.transfer(storage, RESOURCE_ENERGY);
