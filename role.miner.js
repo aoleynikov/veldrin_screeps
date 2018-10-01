@@ -25,7 +25,8 @@ var strategy = {
                 }
             }
             if (good) {
-                return position;
+                creep.memory['container'] = ctrs[i];
+                return;
             }
         }
     }
