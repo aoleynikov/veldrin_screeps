@@ -8,6 +8,8 @@ var upgrader_factory = require('factory.upgrader');
 
 var repairer_factory = require('factory.repairer');
 
+var warrior_factory = require('factory.warrior');
+
 var room_wrapper = require('room_wrapper');
 
 var factories = {
@@ -15,7 +17,8 @@ var factories = {
   miner: miner_factory,
   builder: builder_factory,
   upgrader: upgrader_factory,
-  repairer: repairer_factory
+  repairer: repairer_factory,
+  warrior: warrior_factory
 };
 var manager = {
   can_improve: function (creep, maxEnergy) {
