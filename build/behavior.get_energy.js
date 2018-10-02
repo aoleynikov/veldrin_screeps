@@ -10,7 +10,7 @@ module.exports = {
 
     var work_result = undefined;
 
-    if (provider.structureType == STRUCTURE_STORAGE) {
+    if (provider.structureType == STRUCTURE_CONTAINER) {
       work_result = creep.withdraw(provider, RESOURCE_ENERGY);
     } else {
       work_result = creep.harvest(provider);
