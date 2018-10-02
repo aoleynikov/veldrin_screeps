@@ -38,7 +38,7 @@ module.exports = {
 
       if (strategy.needs_to_move(creep)) {
         creep.moveTo(container.pos.x, container.pos.y);
-      } else if (container.store[RESOURCE_ENERGY] == container.storeCapacity) {
+      } else if (container.store[RESOURCE_ENERGY] < container.storeCapacity) {
         var source = creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE);
         creep.harvest(source);
       }
