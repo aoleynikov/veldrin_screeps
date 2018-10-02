@@ -58,14 +58,16 @@ module.exports = {
                 var factory = factories[spawn.memory['replaced_role']];
                 var bodyparts = factory.bodyparts(energy.current)
 
-                var spawn_result = spawn.spawnCreep(bodyparts, spawn.memory['replaced_name'] + '_' + energy.current);
-                if (spawn_result == 0) {
+                var spawn_result = spawn.spawnCreep(bodyparts, spawn.memory['replaced_name']);
+                if (spawn_result == ERR_NAME_EXISTS) {
                     Game.creeps[spawn.memory['replaced_name']].suicide();
+                    if (spawn.spawnCreep(bodyparts, spawn.memory['replaced_name']) == 0) {
+                        spawn.memory['replaced_role'] = undefined;
+                        spawn.memory['replaced_name'] = undefined;
+                    }
                 } else {
                     console.log(spawn_result);
                 }
-                spawn.memory['replaced_role'] = undefined;
-                spawn.memory['replaced_name'] = undefined;
             }
         }
     }
