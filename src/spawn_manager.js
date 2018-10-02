@@ -20,7 +20,7 @@ var manager = {
         if (factory === undefined) {
             return false;
         }
-        return creep.body.length < factory.bodyparts(maxEnergy);
+        return creep.body.length < factory.bodyparts(maxEnergy).length;
     },
     select_improved_creep: function (maxEnergy) {
         for (var name in Game.creeps) {
