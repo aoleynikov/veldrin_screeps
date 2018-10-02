@@ -1,5 +1,6 @@
 var harvester_factory = require('factory.harvester');
-var room_wrapper = require('room_wrapper')
+var miner_factory = require('factory.miner');
+var room_wrapper = require('room_wrapper');
 
 var factories = {
     harvester: harvester_factory,
