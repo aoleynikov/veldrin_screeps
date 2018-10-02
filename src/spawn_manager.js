@@ -50,8 +50,6 @@ module.exports = {
             manager.select_improved_creep(energy.max);
         }
 
-        return;
-
         if (spawn.memory['replaced_name'] !== undefined) {
             if (energy.current == energy.max && manager.creep_is_empty(creep)) {
                 var creep = Game.creeps[spawn.memory['replaced_name']]
