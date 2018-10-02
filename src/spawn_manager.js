@@ -62,7 +62,6 @@ module.exports = {
                     spawn_result = spawn.spawnCreep(bodyparts, spawn.memory['replaced_name']);
                 }
                 if (spawn_result == 0) {
-                    spawn.memory['replaced_role'] = undefined;
                     spawn.memory['replaced_name'] = undefined;
                 }
                 console.log('upgrade spawn result: ', console.log(spawn_result));
