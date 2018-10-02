@@ -29,6 +29,7 @@ var manager = {
             var spawn = Game.spawns['Main'];
             if (this.can_improve(creep, maxEnergy)) {
                 spawn.memory['replaced_name'] = creep.name;
+                spawn.memory['replaced_role'] = creep.memory['role'];
                 return;
             }
         }
@@ -54,8 +55,8 @@ module.exports = {
         if (spawn.memory['replaced_name'] !== undefined) {
             var creep = Game.creeps[spawn.memory['replaced_name']];
             console.log('[UPGRADE] energy: ', energy.current, '/', energy.max);
-            if (energy.current == energy.max && manager.creep_is_empty(creep)) {
-                var factory = factories[creep.role];
+            if (energy.current == energy.max && (creep === undefined || manager.creep_is_empty(creep))) {
+                var factory = factories[spawn.memory['replaced_role']];
                 var bodyparts = factory.bodyparts(energy.current)
 
                 var spawn_result = spawn.spawnCreep(bodyparts, spawn.memory['replaced_name']);
@@ -65,6 +66,7 @@ module.exports = {
                 }
                 if (spawn_result == 0) {
                     spawn.memory['replaced_name'] = undefined;
+                    spawn.memory['replaced_role'] = undefined;
                 }
                 console.log('upgrade spawn result: ', console.log(spawn_result));
             }
