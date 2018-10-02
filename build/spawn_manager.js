@@ -25,7 +25,7 @@ var manager = {
       return false;
     }
 
-    console.log('checking ', creep.name, '... ', creep.body.length, 'vs.', factory.bodyparts(maxEnergy).length);
+    console.log('[UPGRADE] checking ', creep.name, '... ', creep.body.length, 'vs.', factory.bodyparts(maxEnergy).length);
     return creep.body.length < factory.bodyparts(maxEnergy).length;
   },
   select_improved_creep: function (maxEnergy) {
@@ -60,6 +60,7 @@ module.exports = {
 
     if (spawn.memory['replaced_name'] !== undefined) {
       var creep = Game.creeps[spawn.memory['replaced_name']];
+      console.log('[UPGRADE] energy: ', energy.current, '/', energy.max);
 
       if (energy.current == energy.max && manager.creep_is_empty(creep)) {
         var factory = factories[creep.role];
