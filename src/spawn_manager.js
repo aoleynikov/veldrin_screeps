@@ -27,11 +27,8 @@ var manager = {
             var creep = Game.creeps[name];
             var spawn = Game.spawns['Main'];
             if (this.can_improve(creep, maxEnergy)) {
-                if (this.creep_is_empty(creep)) {
-                    spawn.memory['replaced_name'] = creep.name;
-                    spawn.memory['replaced_role'] = creep.memory['role'];
-                    return;
-                }
+                spawn.memory['replaced_name'] = creep.name;
+                return;
             }
         }
     },
@@ -53,21 +50,24 @@ module.exports = {
             manager.select_improved_creep(energy.max);
         }
 
+        return;
+
         if (spawn.memory['replaced_name'] !== undefined) {
-            if (energy.current == energy.max) {
-                var factory = factories[spawn.memory['replaced_role']];
+            if (energy.current == energy.max && manager.creep_is_empty(creep)) {
+                var creep = Game.creeps[spawn.memory['replaced_name']]
+                var factory = factories[creep.role];
                 var bodyparts = factory.bodyparts(energy.current)
 
                 var spawn_result = spawn.spawnCreep(bodyparts, spawn.memory['replaced_name']);
                 if (spawn_result == ERR_NAME_EXISTS) {
                     Game.creeps[spawn.memory['replaced_name']].suicide();
-                    if (spawn.spawnCreep(bodyparts, spawn.memory['replaced_name']) == 0) {
-                        spawn.memory['replaced_role'] = undefined;
-                        spawn.memory['replaced_name'] = undefined;
-                    }
-                } else {
-                    console.log(spawn_result);
+                    spawn_result = spawn.spawnCreep(bodyparts, spawn.memory['replaced_name']);
                 }
+                if (spawn_result == 0) {
+                    spawn.memory['replaced_role'] = undefined;
+                    spawn.memory['replaced_name'] = undefined;
+                }
+                console.log('upgrade spawn result: ', console.log(spawn_result));
             }
         }
     }
