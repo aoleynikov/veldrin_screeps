@@ -1,19 +1,7 @@
 var room_wrapper = require('room_wrapper')
+var get_energy_behavior = require('behavior.get_energy')
 
 var strategy = {
-  harvest: function (creep) {
-    var provider = room_wrapper.get_closest_energy_provider(creep.room, creep.pos);
-    var work_result = undefined;
-    if (provider.structureType == STRUCTURE_STORAGE) {
-      work_result = creep.withdraw(provider, RESOURCE_ENERGY);
-    } else {
-      work_result = creep.harvest(provider);
-    }
-
-    if (work_result == ERR_NOT_IN_RANGE) {
-      creep.moveTo(provider.pos.x, provider.pos.y);
-    }
-  },
   select_storage: function (room) {
     var storages = room_wrapper.get_energy_storages(room);
     for (var i = 0; i < storages.length; ++i) {
@@ -36,16 +24,18 @@ var strategy = {
     store = creep.transfer(storage, RESOURCE_ENERGY);
     if (store == ERR_NOT_IN_RANGE) {
       creep.moveTo(storage.pos.x, storage.pos.y);
+    } else if (store == ERR_NOT_ENOUGH_ENERGY) {
+      creep.memory['refill'] = true;
     }
   }
 }
 
 module.exports = {
   perform: function (creep) {
-    if (creep.carry[RESOURCE_ENERGY] != creep.carryCapacity) {
-      strategy.harvest(creep);
-    } else {
-      strategy.store(creep);
+    if (creep.memory['refill']) {
+      get_energy_behavior.perform(creep);
+      return;
     }
+    strategy.store(creep);
   }
 }

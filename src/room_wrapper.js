@@ -27,6 +27,24 @@ module.exports = {
         if (result.length > 0) return result;
         return room.find(FIND_SOURCES_ACTIVE);
     },
+    get_spawning_energy: function (room) {
+        spawn = room.find(FIND_MY_SPAWNS)[0]
+
+        exts_energy = 0;
+        exts = extensions.get();
+        var per_ext = 50;
+        if (exts.length > 0) {
+            per_ext = exts[0].energyCapacity;
+        }
+        for (var i = 0; i < exts.length; ++i) {
+            exts_energy += exts[i].energy;
+        }
+
+        return {
+            current: spawn.energy + exts_energy,
+            max: spawn.energyCapacity + exts.length * per_ext
+        };
+    },
     get_closest_energy_provider: function (room, pos) {
         var provs = this.get_energy_providers(room);
         var minRange = 99999;
