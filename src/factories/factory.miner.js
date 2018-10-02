@@ -5,7 +5,7 @@ module.exports = {
 
         body.push(MOVE);
 
-        while (energy > 0) {
+        while (energy >= 100) {
             energy -= 100;
             body.push(WORK);
         }
