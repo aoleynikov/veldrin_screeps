@@ -38,8 +38,8 @@ var manager = {
 };
 module.exports = {
   run: function () {
-    var energy = room_wrapper.get_spawning_energy(spawn.room);
     var spawn = Game.spawns['Main'];
+    var energy = room_wrapper.get_spawning_energy(spawn.room);
 
     if (spawn.memory['replaced_name'] === undefined) {
       manager.select_improved_creep(energy.max);
