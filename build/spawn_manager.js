@@ -64,7 +64,7 @@ module.exports = {
       if (energy.current == energy.max) {
         var factory = factories[spawn.memory['replaced_role']];
         var bodyparts = factory.bodyparts(energy.current);
-        creep.suicide();
+        Game.creeps[spawn.memory['replaced_name']].suicide();
         spawn.spawnCreep(bodyparts, spawn.memory['replaced_name']);
       }
     }
