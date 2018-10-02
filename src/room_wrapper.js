@@ -31,7 +31,7 @@ module.exports = {
         spawn = room.find(FIND_MY_SPAWNS)[0]
 
         exts_energy = 0;
-        exts = extensions.get();
+        exts = extensions.get(room);
         var per_ext = 50;
         if (exts.length > 0) {
             per_ext = exts[0].energyCapacity;
