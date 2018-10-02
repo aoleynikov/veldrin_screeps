@@ -35,6 +35,7 @@ var manager = {
       if (this.can_improve(creep, maxEnergy)) {
         if (this.creep_is_empty(creep)) {
           spawn.memory['replaced_name'] = creep.name;
+          spawn.memory['replaced_role'] = creep.memory['role'];
           return;
         }
       }
@@ -61,7 +62,7 @@ module.exports = {
 
     if (spawn.memory['replaced_name'] !== undefined) {
       if (energy.current == energy.max) {
-        var factory = factories[creep.memory['role']];
+        var factory = factories[spawn.memory['replaced_role']];
         var bodyparts = factory.bodyparts(energy.current);
         creep.suicide();
         spawn.spawnCreep(bodyparts, spawn.memory['replaced_name']);
