@@ -59,6 +59,8 @@ module.exports = {
                 var bodyparts = factory.bodyparts(energy.current)
                 Game.creeps[spawn.memory['replaced_name']].suicide();
                 spawn.spawnCreep(bodyparts, spawn.memory['replaced_name']);
+                spawn.memory['replaced_role'] = undefined;
+                spawn.memory['replaced_name'] = undefined;
             }
         }
     }
