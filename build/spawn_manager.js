@@ -11,6 +11,11 @@ var factories = {
 var manager = {
   can_improve: function (creep, maxEnergy) {
     var factory = factories[creep.memory['role']];
+
+    if (factory === undefined) {
+      return false;
+    }
+
     return creep.body.length < factory.bodyparts(maxEnergy);
   },
   select_improved_creep: function (maxEnergy) {
