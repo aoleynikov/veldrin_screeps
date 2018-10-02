@@ -20,7 +20,7 @@ module.exports = {
 
         var result = []
         for (var i = 0; i < ctrs.length; ++i) {
-            if (ctrs[i].store[RESOURCE_ENERGY] > 0) {
+            if (ctrs[i].store[RESOURCE_ENERGY] > 150) {
                 result.push(ctrs[i]);
             }
         }

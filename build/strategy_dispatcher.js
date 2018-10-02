@@ -10,13 +10,16 @@ var repairer = require('role.repairer');
 
 var upgrader = require('role.upgrader');
 
+var warrior = require('role.warrior');
+
 roles = {
   'harvester': harvester,
   'maintenance': maintenance,
   'builder': builder,
   'miner': miner,
   'repairer': repairer,
-  'upgrader': upgrader
+  'upgrader': upgrader,
+  'warrior': warrior
 };
 var NEARLY_DEAD = 120;
 module.exports = {
