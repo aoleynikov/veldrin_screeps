@@ -59,8 +59,9 @@ module.exports = {
     }
 
     if (spawn.memory['replaced_name'] !== undefined) {
+      var creep = Game.creeps[spawn.memory['replaced_name']];
+
       if (energy.current == energy.max && manager.creep_is_empty(creep)) {
-        var creep = Game.creeps[spawn.memory['replaced_name']];
         var factory = factories[creep.role];
         var bodyparts = factory.bodyparts(energy.current);
         var spawn_result = spawn.spawnCreep(bodyparts, spawn.memory['replaced_name']);
