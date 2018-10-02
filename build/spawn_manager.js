@@ -25,7 +25,7 @@ var manager = {
       return false;
     }
 
-    console.log(creep.name, 'checking...', creep.body.length, 'vs.', factory.bodyparts(maxEnergy).length);
+    console.log('checking ', creep.name, '... ', creep.body.length, 'vs.', factory.bodyparts(maxEnergy).length);
     return creep.body.length < factory.bodyparts(maxEnergy).length;
   },
   select_improved_creep: function (maxEnergy) {

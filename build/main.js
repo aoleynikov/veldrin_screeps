@@ -2,6 +2,8 @@ var dispatcher = require('strategy_dispatcher');
 
 var spawn_manager = require('spawn_manager');
 
+var buildings_manager = require('buildings_manager');
+
 module.exports.loop = function () {
   for (var name in Game.creeps) {
     var creep = Game.creeps[name];
@@ -14,4 +16,5 @@ module.exports.loop = function () {
   }
 
   spawn_manager.run();
+  buildings_manager.run(Game.rooms['W46S47']);
 };
