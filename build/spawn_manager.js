@@ -65,7 +65,6 @@ module.exports = {
 
     if (spawn.memory['replaced_name'] !== undefined) {
       var creep = Game.creeps[spawn.memory['replaced_name']];
-      console.log('[UPGRADE] energy: ', energy.current, '/', energy.max);
 
       if (energy.current == energy.max && (creep === undefined || manager.creep_is_empty(creep))) {
         var factory = factories[spawn.memory['replaced_role']];
@@ -81,8 +80,6 @@ module.exports = {
           spawn.memory['replaced_name'] = undefined;
           spawn.memory['replaced_role'] = undefined;
         }
-
-        console.log('upgrade spawn result: ', console.log(spawn_result));
       }
     }
   }

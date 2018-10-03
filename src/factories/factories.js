@@ -5,7 +5,7 @@ var upgrader_factory = require('factory.upgrader');
 var repairer_factory = require('factory.repairer');
 var warrior_factory = require('factory.warrior');
 
-var factories = {
+module.exports = {
     harvester: harvester_factory,
     miner: miner_factory,
     builder: builder_factory,
