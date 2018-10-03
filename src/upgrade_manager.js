@@ -1,20 +1,5 @@
-var harvester_factory = require('factory.harvester');
-var miner_factory = require('factory.miner');
-var builder_factory = require('factory.builder');
-var upgrader_factory = require('factory.upgrader');
-var repairer_factory = require('factory.repairer');
-var warrior_factory = require('factory.warrior')
-
 var room_wrapper = require('room_wrapper');
-
-var factories = {
-    harvester: harvester_factory,
-    miner: miner_factory,
-    builder: builder_factory,
-    upgrader: upgrader_factory,
-    repairer: repairer_factory,
-    warrior: warrior_factory
-};
+var factories = require('factories')
 
 var manager = {
     can_improve: function (creep, maxEnergy) {
@@ -57,10 +42,10 @@ module.exports = {
 
         if (spawn.memory['replaced_name'] !== undefined) {
             var creep = Game.creeps[spawn.memory['replaced_name']];
-            console.log('[UPGRADE] energy: ', energy.current, '/', energy.max);
-            if (energy.current == energy.max && (creep === undefined || manager.creep_is_empty(creep))) {
+            console.log('[UPGRADE] energy: ', spawn.room.energyAvailable, '/', energy.max);
+            if (spawn.room.energyAvailable == energy.max && (creep === undefined || manager.creep_is_empty(creep))) {
                 var factory = factories[spawn.memory['replaced_role']];
-                var bodyparts = factory.bodyparts(energy.current)
+                var bodyparts = factory.bodyparts(spawn.room.energyAvailable)
 
                 var spawn_result = spawn.spawnCreep(bodyparts, spawn.memory['replaced_name']);
                 if (spawn_result == ERR_NAME_EXISTS) {

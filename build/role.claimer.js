@@ -9,5 +9,11 @@ module.exports = {
         creep.memory['target'] = rooms[i].name;
       }
     }
+
+    if (creep.room.name == creep.memory['target']) {
+      if (creep.claim(creep.room.controller) == ERR_NOT_IN_RANGE) {
+        creep.moveTo(creep.room.controller);
+      }
+    } else {}
   }
 };

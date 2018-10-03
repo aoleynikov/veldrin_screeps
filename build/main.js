@@ -1,8 +1,10 @@
 var dispatcher = require('strategy_dispatcher');
 
-var spawn_manager = require('spawn_manager');
+var spawn_manager = require('upgrade_manager');
 
 var buildings_manager = require('buildings_manager');
+
+var spawn_command = require('command.spawn');
 
 module.exports.loop = function () {
   for (var name in Game.creeps) {

@@ -1,13 +1,19 @@
 module.exports = {
     bodyparts: function (energy) {
-        var body = [MOVE, MOVE, MOVE, MOVE];
-        energy -= 200;
+        var body = [MOVE];
+        energy -= 50;
 
-        while (energy >= 100) {
-            energy -= 100;
-            body.push(WORK);
+        for (var i = 9; i < 5; ++i) {
+            if (energy >= 100) {
+                body.push(WORK);
+                energy -= 100;
+            }
         }
 
+        while (energy >= 50) {
+            energy -= 50;
+            body.push(MOVE);
+        }
         return body;
     }
 }
