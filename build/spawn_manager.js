@@ -55,6 +55,8 @@ var manager = {
 module.exports = {
   run: function () {
     var spawn = Game.spawns['Main'];
+    var construction_sites = spawn.room.find(FIND_MY_CONSTRUCTION_SITES);
+    if (construction_sites.length > 0) return;
     var energy = room_wrapper.get_spawning_energy(spawn.room);
 
     if (spawn.memory['replaced_name'] === undefined) {

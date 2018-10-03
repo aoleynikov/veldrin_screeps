@@ -6,8 +6,10 @@ var containers = require('structure.container');
 
 var roads = require('structure.road');
 
+var towers = require('structure.tower');
+
 module.exports = {
-  providers: [spawns, extensions],
+  providers: [spawns, extensions, towers],
   get_energy_storages: function (room) {
     var result = [];
 
