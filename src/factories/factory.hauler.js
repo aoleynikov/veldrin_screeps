@@ -2,12 +2,8 @@ var room_wrapper = require('room_wrapper')
 
 module.exports = {
     bodyparts: function (energy) {
-        var body = [];
-        energy -= 150;
-
-        body.push(MOVE);
-        body.push(MOVE);
-        body.push(MOVE);
+        var body = [MOVE, MOVE, MOVE, MOVE];
+        energy -= 200;
 
         while (energy >= 50) {
             energy -= 50;

@@ -16,7 +16,7 @@ roles = {
   'warrior': warrior
 }
 
-var NEARLY_DEAD = 120;
+var NEARLY_DEAD = 220;
 
 module.exports = {
   get_strategy: function (creep) {

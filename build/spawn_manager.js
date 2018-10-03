@@ -28,7 +28,6 @@ var manager = {
       return false;
     }
 
-    console.log('[UPGRADE] checking ', creep.name, '... ', creep.body.length, 'vs.', factory.bodyparts(maxEnergy).length);
     return creep.body.length < factory.bodyparts(maxEnergy).length;
   },
   select_improved_creep: function (maxEnergy) {

@@ -21,7 +21,7 @@ roles = {
   'upgrader': upgrader,
   'warrior': warrior
 };
-var NEARLY_DEAD = 120;
+var NEARLY_DEAD = 220;
 module.exports = {
   get_strategy: function (creep) {
     if (creep.ticksToLive <= NEARLY_DEAD && creep.memory['role'] != 'maintenance') {
