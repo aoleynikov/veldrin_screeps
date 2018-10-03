@@ -1,10 +1,9 @@
 module.exports = {
     bodyparts: function (maxEnergy) {
-        maxEnergy -= 6 * 50;
-        var result = [MOVE, MOVE, MOVE, MOVE, MOVE, MOVE]
-        while (maxEnergy >= 80) {
-            maxEnergy -= 80;
+        while (maxEnergy >= 130) {
+            maxEnergy -= 130;
             result.push(ATTACK);
+            result.push(MOVE);
         }
         return result;
     }

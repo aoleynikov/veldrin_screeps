@@ -7,9 +7,10 @@ module.exports = {
             result.push(WORK);
             maxEnergy -= 150;
         }
-        while (maxEnergy >= 50) {
-            maxEnergy -= 50;
+        while (maxEnergy >= 100) {
+            maxEnergy -= 100;
             result.push(CARRY);
+            result.push(MOVE);
         }
         return result;
     }
