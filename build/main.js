@@ -19,4 +19,5 @@ module.exports.loop = function () {
 
   spawn_manager.run();
   buildings_manager.run(Game.rooms['W46S47']);
+  spawn_command.execute();
 };
