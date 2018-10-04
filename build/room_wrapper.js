@@ -8,8 +8,10 @@ var roads = require('structure.road');
 
 var towers = require('structure.tower');
 
+var storages = require('structure.storage');
+
 module.exports = {
-  providers: [spawns, extensions, towers],
+  providers: [spawns, extensions, towers, storages],
   get_energy_storages: function (room) {
     var result = [];
 
@@ -24,36 +26,23 @@ module.exports = {
     return result;
   },
   get_energy_providers: function (room) {
-    var ctrs = containers.get(room);
+    var quick = containers.get(room);
+    var storages = sotrages.get(room);
+
+    for (var i = 0; i < storages.length; ++i) {
+      quick.push(storage[i]);
+    }
+
     var result = [];
 
-    for (var i = 0; i < ctrs.length; ++i) {
-      if (ctrs[i].store[RESOURCE_ENERGY] > 150) {
-        result.push(ctrs[i]);
+    for (var i = 0; i < quick.length; ++i) {
+      if (quick[i].store[RESOURCE_ENERGY] > 150) {
+        result.push(quick[i]);
       }
     }
 
     if (result.length > 0) return result;
     return room.find(FIND_SOURCES_ACTIVE);
-  },
-  get_spawning_energy: function (room) {
-    spawn = room.find(FIND_MY_SPAWNS)[0];
-    exts_energy = 0;
-    exts = extensions.get(room);
-    var per_ext = 50;
-
-    if (exts.length > 0) {
-      per_ext = exts[0].energyCapacity;
-    }
-
-    for (var i = 0; i < exts.length; ++i) {
-      exts_energy += exts[i].energy;
-    }
-
-    return {
-      current: spawn.energy + exts_energy,
-      max: spawn.energyCapacity + exts.length * per_ext
-    };
   },
   get_closest_energy_provider: function (room, pos) {
     var provs = this.get_energy_providers(room);
