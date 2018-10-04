@@ -3,7 +3,7 @@ module.exports = {
     var body = [MOVE];
     energy -= 50;
 
-    for (var i = 9; i < 5; ++i) {
+    for (var i = 0; i < 5; ++i) {
       if (energy >= 100) {
         body.push(WORK);
         energy -= 100;

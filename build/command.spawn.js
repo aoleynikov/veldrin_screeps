@@ -4,6 +4,10 @@ var room_wrapper = require('room_wrapper');
 
 module.exports = {
   execute: function () {
+    if (Game.spawns['Main'].room.energyAvailable < Game.spawns['Main'].room.energyCapacityAvailable) {
+      return;
+    }
+
     if (Game.spawns['Main'].memory['spawn_command'] != undefined) {
       var role = Game.spawns['Main'].memory['spawn_command'];
       var bodyparts = factories[role];
