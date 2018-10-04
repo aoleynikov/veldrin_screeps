@@ -36,12 +36,11 @@ module.exports = {
         var construction_sites = spawn.room.find(FIND_MY_CONSTRUCTION_SITES)
         if (construction_sites.length > 0) return;
         if (spawn.memory['replaced_name'] === undefined) {
-            manager.select_improved_creep(energy.max);
+            manager.select_improved_creep(spawn.room.energyCapacityAvailable);
         }
 
         if (spawn.memory['replaced_name'] !== undefined) {
             var creep = Game.creeps[spawn.memory['replaced_name']];
-            console.log('[UPGRADE] energy: ', spawn.room.energyAvailable, '/', spawn.room.energyCapacityAvailable);
             if (spawn.room.energyAvailable == spawn.room.energyCapacityAvailable &&
                 (creep === undefined || manager.creep_is_empty(creep))) {
                 var factory = factories[spawn.memory['replaced_role']];

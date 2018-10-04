@@ -27,10 +27,10 @@ module.exports = {
   },
   get_energy_providers: function (room) {
     var quick = containers.get(room);
-    var storages = sotrages.get(room);
+    var stores = storages.get(room);
 
-    for (var i = 0; i < storages.length; ++i) {
-      quick.push(storage[i]);
+    for (var i = 0; i < stores.length; ++i) {
+      quick.push(stores[i]);
     }
 
     var result = [];
