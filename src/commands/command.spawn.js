@@ -6,6 +6,7 @@ module.exports = {
         if (Game.spawns['Main'].memory['spawn_command'] != undefined) {
             var role = Game.spawns['Main'].memory['spawn_command']
             var bodyparts = factories[role];
+            var cnt = 1;
             for (var creep in Game.creeps) {
                 if (Game.creeps[creep].memory['role'] == role) {
                     ++cnt;
