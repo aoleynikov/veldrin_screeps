@@ -6,7 +6,7 @@ var towers = require('structure.tower')
 var storages = require('structure.storage')
 
 module.exports = {
-    energy_storages: [spawns, towers, extensions, storages],
+    energy_storages: [spawns, towers, extensions],
     energy_providers: [containers, storages],
     get_energy_storages: function (room) {
         var result = []
