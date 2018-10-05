@@ -9,7 +9,7 @@ module.exports = {
 
         // we are in the room
         var controller = creep.room.controller;
-        var result = creep.claim(controller);
+        var result = creep.claimController(controller);
         if (result == ERR_GCL_NOT_ENOUGH) {
             result = creep.reserveController(controller);
         }
