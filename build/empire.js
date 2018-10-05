@@ -1,11 +1,9 @@
 var main_spawn = Game.spawns['Main'];
 module.exports = {
   get_rooms: function () {
-    var result = [main_spawn.room];
-
-    for (var room in main_spawn.memory['colonies']) {
-      result.push(Game.rooms[room]);
-    }
+    var result = [main_spawn.room]; // for (var room of main_spawn.memory['colonies']) {
+    //     result.push(Game.rooms[room]);
+    // }
 
     return result;
   },
