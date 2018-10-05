@@ -32,6 +32,7 @@ var manager = {
 
 module.exports = {
     run: function () {
+        return;
         var spawn = Game.spawns['Main'];
         var construction_sites = spawn.room.find(FIND_MY_CONSTRUCTION_SITES)
         if (construction_sites.length > 0) return;
