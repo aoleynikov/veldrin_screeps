@@ -24,7 +24,7 @@ var strategy = {
     store = creep.transfer(storage, RESOURCE_ENERGY);
     if (store == ERR_NOT_IN_RANGE) {
       creep.moveTo(storage.pos.x, storage.pos.y);
-    } else if (store == 0) {
+    } else if (store == ERR_NOT_ENOUGH_ENERGY) {
       creep.memory['refill'] = true;
     }
   }
