@@ -29,7 +29,7 @@ var strategy = {
 
     if (store == ERR_NOT_IN_RANGE) {
       creep.moveTo(storage.pos.x, storage.pos.y);
-    } else if (store == ERR_NOT_ENOUGH_ENERGY) {
+    } else if (store == 0) {
       creep.memory['refill'] = true;
     }
   }
