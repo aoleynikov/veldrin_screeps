@@ -4,6 +4,9 @@ module.exports = {
     check: function () {
         for (var name in Game.creeps) {
             var creep = Game.creeps[name];
+            if (creep.memory['role'] == 'claimer' || creep.memory['old_role'] == 'claimer') {
+                continue;
+            }
             if (creep.ticksToLive <= NEARLY_DEAD && creep.memory['role'] != 'maintenance') {
                 creep.memory['old_role'] = creep.memory['role'];
                 creep.memory['role'] = 'maintenance';
@@ -14,7 +17,7 @@ module.exports = {
                 creep.memory['target'] = creep.memory['work_place'];
 
             } else {
-                if (creep.memory['role'] == 'maintenance' && creep.memory['old_role'] != 'claimer') {
+                if (creep.memory['role'] == 'maintenance') {
                     Game.spawns['Main'].renewCreep(creep);
                 }
             }
