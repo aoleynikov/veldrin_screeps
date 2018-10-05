@@ -30,16 +30,17 @@ module.exports = {
     var result = [];
 
     for (var i = 0; i < this.energy_providers.length; ++i) {
-      var structs = this.energy_providers[i].get(room);
+      var provs = this.energy_providers[i].get(room);
 
-      for (var j = 0; j < structs.length; ++j) {
-        if (structs[j].store[RESOURCE_ENERGY] > 150) {
-          result.push(structs[j]);
+      for (var j = 0; j < provs.length; ++j) {
+        if (provs[j].store[RESOURCE_ENERGY] > 150) {
+          result.push(provs[j]);
         }
       }
+
+      if (result.length > 0) return result;
     }
 
-    if (result.length > 0) return result;
     return room.find(FIND_SOURCES_ACTIVE);
   },
   get_closest_energy_provider: function (room, pos) {
