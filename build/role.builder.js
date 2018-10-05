@@ -2,9 +2,11 @@ var upgrader_role = require('role.upgrader');
 
 var get_energy_behavior = require('behavior.get_energy');
 
+var empire = require('empire');
+
 var strategy = {
   build: function (creep) {
-    var construction_sites = creep.room.find(FIND_MY_CONSTRUCTION_SITES);
+    var construction_sites = empire.get_construction_sites();
 
     for (var i = 0; i < construction_sites.length; ++i) {
       var site = construction_sites[i];

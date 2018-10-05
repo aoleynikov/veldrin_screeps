@@ -4,30 +4,22 @@ var builder = require('role.builder');
 var miner = require('role.miner');
 var repairer = require('role.repairer');
 var upgrader = require('role.upgrader');
-var warrior = require('role.warrior')
+var warrior = require('role.warrior');
+var claimer = require('role.claimer');
 
-roles = {
+var roles = {
   'harvester': harvester,
   'maintenance': maintenance,
   'builder': builder,
   'miner': miner,
   'repairer': repairer,
   'upgrader': upgrader,
-  'warrior': warrior
-}
-
-var NEARLY_DEAD = 220;
+  'warrior': warrior,
+  'claimer': claimer
+};
 
 module.exports = {
   get_strategy: function (creep) {
-    if (creep.ticksToLive <= NEARLY_DEAD && creep.memory['role'] != 'maintenance') {
-      creep.memory['old_role'] = creep.memory['role'];
-      creep.memory['role'] = 'maintenance';
-      return maintenance;
-    } else if (creep.ticksToLive >= CREEP_LIFE_TIME - 100 && creep.memory['role'] == 'maintenance') {
-      creep.memory['role'] = creep.memory['old_role'];
-    }
-
     strategy = roles[creep.memory['role']];
     return strategy || harvester;
   }
