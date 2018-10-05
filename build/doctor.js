@@ -13,7 +13,7 @@ module.exports = {
         creep.memory['role'] = creep.memory['old_role'];
         creep.memory['target'] = creep.memory['work_place'];
       } else {
-        if (creep.memory['role'] == 'maintenance') {
+        if (creep.memory['role'] == 'maintenance' && creep.memory['old_role'] != 'claimer') {
           Game.spawns['Main'].renewCreep(creep);
         }
       }
