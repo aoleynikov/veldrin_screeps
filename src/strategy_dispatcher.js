@@ -6,6 +6,7 @@ var repairer = require('role.repairer');
 var upgrader = require('role.upgrader');
 var warrior = require('role.warrior');
 var claimer = require('role.claimer');
+var hauler = require('role.hauler')
 
 var roles = {
   'harvester': harvester,
@@ -15,7 +16,8 @@ var roles = {
   'repairer': repairer,
   'upgrader': upgrader,
   'warrior': warrior,
-  'claimer': claimer
+  'claimer': claimer,
+  'hauler': hauler
 };
 
 module.exports = {

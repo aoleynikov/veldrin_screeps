@@ -14,6 +14,8 @@ var warrior = require('role.warrior');
 
 var claimer = require('role.claimer');
 
+var hauler = require('role.hauler');
+
 var roles = {
   'harvester': harvester,
   'maintenance': maintenance,
@@ -22,7 +24,8 @@ var roles = {
   'repairer': repairer,
   'upgrader': upgrader,
   'warrior': warrior,
-  'claimer': claimer
+  'claimer': claimer,
+  'hauler': hauler
 };
 module.exports = {
   get_strategy: function (creep) {
