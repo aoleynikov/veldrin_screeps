@@ -19,12 +19,12 @@ module.exports = {
         return result;
     },
     get_energy_providers: function (room) {
-        var result = []
+        var result = [];
         for (var i = 0; i < this.energy_providers.length; ++i) {
             var structs = this.energy_providers[i].get(room);
             for (var j = 0; j < structs.length; ++j) {
                 if (structs[j].store[RESOURCE_ENERGY] > 150) {
-                    result.push(structs[i]);
+                    result.push(structs[j]);
                 }
             }
         }

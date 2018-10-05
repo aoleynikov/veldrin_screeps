@@ -34,7 +34,7 @@ module.exports = {
 
       for (var j = 0; j < structs.length; ++j) {
         if (structs[j].store[RESOURCE_ENERGY] > 150) {
-          result.push(structs[i]);
+          result.push(structs[j]);
         }
       }
     }
