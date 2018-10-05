@@ -1,7 +1,7 @@
 var get_energy_behavior = require('behavior.get_energy');
 
 var upgrade = function (creep) {
-  var controller = creep.room.controller;
+  var controller = Game.rooms[creep.memory['home']].controller;
   var work = creep.upgradeController(controller);
 
   if (work == ERR_NOT_IN_RANGE) {
