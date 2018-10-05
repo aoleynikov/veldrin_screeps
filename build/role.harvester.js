@@ -1,6 +1,6 @@
 var room_wrapper = require('room_wrapper');
 
-var get_energy_behavior = require('behavior.get_energy');
+var get_energy = require('behavior.get_energy');
 
 var strategy = {
   select_storage: function (room) {
@@ -37,7 +37,7 @@ var strategy = {
 module.exports = {
   perform: function (creep) {
     if (creep.memory['refill']) {
-      get_energy_behavior.perform(creep);
+      get_energy.perform(creep);
       return;
     }
 

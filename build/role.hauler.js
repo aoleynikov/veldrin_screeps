@@ -1,5 +1,7 @@
 var room_travel = require('behavior.room_travel');
 
+var get_energy = require('behavior.get_energy');
+
 var storages = require('structure.storage');
 
 var strategy = {
@@ -21,7 +23,7 @@ module.exports = {
     if (creep.memory['refill']) {
       creep.memory['target'] = creep.memory['work_place'];
       if (room_travel.perform(creep)) return;
-      get_energy_behavior.perform(creep);
+      get_energy.perform(creep);
       return;
     }
 
