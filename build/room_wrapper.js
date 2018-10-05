@@ -11,12 +11,13 @@ var towers = require('structure.tower');
 var storages = require('structure.storage');
 
 module.exports = {
-  providers: [spawns, extensions, towers, storages],
+  energy_storages: [spawns, towers, extensions, storages],
+  energy_providers: [containers, storages],
   get_energy_storages: function (room) {
     var result = [];
 
-    for (var i = 0; i < this.providers.length; ++i) {
-      var structs = this.providers[i].get(room);
+    for (var i = 0; i < this.energy_storages.length; ++i) {
+      var structs = this.energy_storages[i].get(room);
 
       for (var j = 0; j < structs.length; ++j) {
         result.push(structs[j]);
@@ -26,18 +27,15 @@ module.exports = {
     return result;
   },
   get_energy_providers: function (room) {
-    var quick = containers.get(room);
-    var stores = []; //storages.get(room);
-
-    for (var i = 0; i < stores.length; ++i) {
-      quick.push(stores[i]);
-    }
-
     var result = [];
 
-    for (var i = 0; i < quick.length; ++i) {
-      if (quick[i].store[RESOURCE_ENERGY] > 150) {
-        result.push(quick[i]);
+    for (var i = 0; i < this.energy_providers.length; ++i) {
+      var structs = this.energy_providers[i].get(room);
+
+      for (var j = 0; j < structs.length; ++j) {
+        if (structs[j].store[RESOURCE_ENERGY] > 150) {
+          result.push(structs[i]);
+        }
       }
     }
 
