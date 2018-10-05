@@ -1,10 +1,10 @@
 var upgrader_role = require('role.upgrader');
-var get_energy_behavior = require('behavior.get_energy');
-var empire = require('empire');
+var energy_behavior = require('behavior.get_energy');
+var room_travel = require('behavior.room_travel');
 
 var strategy = {
     build: function (creep) {
-        var construction_sites = empire.get_construction_sites();
+        var construction_sites = creep.room.find(FIND_MY_CONSTRUCTION_SITES);
         for (var i = 0; i < construction_sites.length; ++i) {
             var site = construction_sites[i]
             var work = creep.build(site);
@@ -22,9 +22,11 @@ var strategy = {
 module.exports = {
     perform: function (creep) {
         if (creep.memory['refill']) {
-            get_energy_behavior.perform(creep);
+            energy_behavior.perform(creep);
             return;
         }
+        if (room_travel.perform(creep)) return;
+
         var busy = strategy.build(creep);
         if (!busy) {
             upgrader_role.perform(creep);

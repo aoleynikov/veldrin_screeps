@@ -1,22 +1,20 @@
-var empire = require('empire')
+var room_travel = require('behavior.room_travel');
 
 module.exports = {
     perform: function (creep) {
-        var rooms = empire.get_rooms();
-        var controller = undefined;
-        for (var i = 0; i < rooms.length; ++i) {
-            if (!rooms[i].contoller.my) {
-                controller = creep.room.controller;
-                break;
-            }
-        }
+        var room_name = creep.memory['target'];
 
+        // if we are not in the room
+        if (room_travel.perform(creep)) return;
+
+        // we are in the room
+        var controller = creep.room.controller;
         var result = creep.claim(controller);
         if (result == ERR_GCL_NOT_ENOUGH) {
             result = creep.reserveController(controller);
         }
         if (result == ERR_NOT_IN_RANGE) {
-            creep.moveTo(new RoomPosition(controller.pos.x, controller.pos.y, controller.room.name));
+            result = creep.moveTo(controller);
         }
     }
 }
