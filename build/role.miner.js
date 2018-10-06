@@ -1,5 +1,7 @@
 var containers = require('structure.container');
 
+var room_travel = require('behavior.room_travel');
+
 var strategy = {
   standing_on_container: function (creep) {
     var container = Game.getObjectById(creep.memory['container_id']);
