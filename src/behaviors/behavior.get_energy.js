@@ -18,7 +18,7 @@ module.exports = {
 
         if (creep.carry[RESOURCE_ENERGY] == creep.carryCapacity) {
             creep.memory['refill'] = false;
-            creep.moveTo(creep.room.controller);
+            // creep.moveTo(creep.room.controller);
         }
     }
 }
