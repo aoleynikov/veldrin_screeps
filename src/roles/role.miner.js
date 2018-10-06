@@ -29,6 +29,7 @@ var strategy = {
 
 module.exports = {
     perform: function (creep) {
+        if (room_travel.perform(creep)) return;
         if (creep.memory['container_id'] === undefined) {
             strategy.find_mining_position(creep)
         } else {

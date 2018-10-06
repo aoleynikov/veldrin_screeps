@@ -1,6 +1,7 @@
 var upgrader_role = require('role.upgrader');
 var get_energy_behavior = require('behavior.get_energy');
 var room_wrapper = require('room_wrapper');
+var room_travel = require('behavior.room_travel');
 
 var repair = function (creep) {
     var repairable = room_wrapper.get_repairable_structures(creep.room);
@@ -25,6 +26,7 @@ module.exports = {
             get_energy_behavior.perform(creep);
             return;
         }
+        if (room_travel.perform(creep)) return;
         var busy = repair(creep);
         if (!busy) {
             upgrader_role.perform(creep);

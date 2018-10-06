@@ -4,6 +4,8 @@ var get_energy_behavior = require('behavior.get_energy');
 
 var room_wrapper = require('room_wrapper');
 
+var room_travel = require('behavior.room_travel');
+
 var repair = function (creep) {
   var repairable = room_wrapper.get_repairable_structures(creep.room);
 
@@ -33,6 +35,7 @@ module.exports = {
       return;
     }
 
+    if (room_travel.perform(creep)) return;
     var busy = repair(creep);
 
     if (!busy) {
