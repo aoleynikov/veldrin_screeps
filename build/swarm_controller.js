@@ -1,10 +1,37 @@
 var population = {
   'W46S47': {
-    upgrader: 3
+    upgrader: {
+      count: 3,
+      body: [WORK, MOVE, CARRY]
+    },
+    repairer: {
+      count: 1,
+      body: [WORK, MOVE, CARRY]
+    }
   },
-  'W46S48': {},
+  'W46S48': {
+    claimer: {
+      count: 1,
+      body: [CLAIM, CLAIM, MOVE, MOVE]
+    },
+    repairer: {
+      count: 1,
+      body: [WORK, MOVE, CARRY]
+    }
+  },
   'W47S47': {
-    builder: 1
+    builder: {
+      count: 1,
+      body: [WORK, MOVE, CARRY]
+    },
+    claimer: {
+      count: 1,
+      body: [CLAIM, CLAIM, MOVE, MOVE]
+    },
+    repairer: {
+      count: 1,
+      body: [WORK, MOVE, CARRY]
+    }
   }
 };
 var controller = {
@@ -22,14 +49,14 @@ var controller = {
 
     return result;
   },
-  spawn: function (room_name, role) {
+  spawn: function (room_name, role, body) {
     var try_count = 0;
     var spawn_result = undefined;
 
     do {
       var name = role + try_count;
       try_count += 1;
-      spawn_result = Game.spawns['Main'].spawnCreep([MOVE, CARRY, WORK], name, {
+      spawn_result = Game.spawns['Main'].spawnCreep(body, name, {
         memory: {
           role: role,
           target: room_name,
@@ -51,8 +78,8 @@ module.exports = {
       for (var role in population[room.name]) {
         var actual = controller.count_creeps(room, role);
 
-        if (actual < population[room.name][role]) {
-          controller.spawn(room_name, role);
+        if (actual < population[room.name][role].count) {
+          controller.spawn(room_name, role, population[room_name][role].body);
         }
       }
     }
