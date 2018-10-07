@@ -1,21 +1,38 @@
 var room_travel = require('behavior.room_travel');
 
+var strategy = {
+  find_patient: function () {
+    for (var name in Game.creeps) {
+      var creep = Game.creeps[name];
+
+      if (creep.hits < creep.hitsMax) {
+        return creep;
+      }
+    }
+  }
+};
 module.exports = {
   perform: function (creep) {
-    for (var name in Game.creeps) {
-      var patient = Game.creeps[name];
+    if (creep.memory['patient'] === undefined) {
+      patient = strategy.find_patient();
 
-      if (creep.room.name != patient.room.name) {
-        creep.memory['target'];
-        if (room_travel.perform(creep)) return;
+      if (patient === undefined) {
+        creep.moveTo(Game.flags['Rax']);
+        return;
       }
 
-      if (patient.hits < patient.hitsMax) {
-        if (creep.heal(patient) == ERR_NOT_IN_RANGE) {
-          creep.moveTo(patient);
-          return;
-        }
-      }
+      creep.memory['patient'] = patient.name;
+    }
+
+    var patient = Game.creeps[creep.memory['patient']];
+
+    if (creep.room.name != patient.room.name) {
+      creep.memory['target'] = patient.room.name;
+      if (room_travel.perform(creep)) return;
+    }
+
+    if (creep.heal(patient) == ERR_NOT_IN_RANGE) {
+      creep.moveTo(patient);
     }
 
     creep.moveTo(Game.flags['Rax']);
