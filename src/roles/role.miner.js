@@ -39,7 +39,9 @@ module.exports = {
         } else {
             var container = Game.getObjectById(creep.memory['container_id'])
             if (strategy.needs_to_move(creep)) {
-                creep.moveTo(container.pos.x, container.pos.y);
+                if (creep.moveTo(container.pos.x, container.pos.y) != 0) {
+                    strategy.find_mining_position(creep);
+                }
             } else if (container.store[RESOURCE_ENERGY] < container.storeCapacity) {
                 var source = creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE);
                 if (creep.harvest(source) != 0) {
