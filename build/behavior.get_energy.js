@@ -21,7 +21,11 @@ module.exports = {
     }
 
     if (creep.carry[RESOURCE_ENERGY] == creep.carryCapacity) {
-      creep.memory['refill'] = false; // creep.moveTo(creep.room.controller);
+      creep.memory['refill'] = false;
+
+      if (creep.room.name == 'W47S47') {
+        creep.moveTo(creep.room.controller);
+      }
     }
   }
 };

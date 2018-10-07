@@ -3,7 +3,9 @@ var population = {
         upgrader: 3
     },
     'W46S48': {},
-    'W47S47': {}
+    'W47S47': {
+        builder: 1
+    }
 }
 
 var controller = {
@@ -28,7 +30,8 @@ var controller = {
                 memory: {
                     role: role,
                     target: room_name,
-                    type: 'swarm'
+                    type: 'swarm',
+                    refill: true
                 }
             });
         } while (spawn_result == ERR_NAME_EXISTS);
