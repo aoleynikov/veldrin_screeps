@@ -3,8 +3,9 @@ var room_travel = require('behavior.room_travel');
 var military = require('behavior.military');
 
 var strategy = {
-  find_patient: function () {
+  find_patient: function (own) {
     for (var name in Game.creeps) {
+      if (name == own) continue;
       var creep = Game.creeps[name];
 
       if (creep.hits < creep.hitsMax) {
@@ -16,7 +17,7 @@ var strategy = {
 module.exports = {
   perform: function (creep) {
     if (creep.memory['patient'] === undefined) {
-      patient = strategy.find_patient();
+      patient = strategy.find_patient(creep.name);
 
       if (patient === undefined) {
         military.perform(creep);
