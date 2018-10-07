@@ -1,4 +1,5 @@
 var room_travel = require('behavior.room_travel');
+var military = require('behavior.military');
 
 var strategy = {
     find_patient: function () {
@@ -16,7 +17,7 @@ module.exports = {
         if (creep.memory['patient'] === undefined) {
             patient = strategy.find_patient();
             if (patient === undefined) {
-                creep.moveTo(Game.flags['Rax']);
+                military.perform(creep);
                 return;
             }
             creep.memory['patient'] = patient.name;
