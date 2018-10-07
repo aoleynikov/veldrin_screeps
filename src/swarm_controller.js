@@ -31,6 +31,10 @@ var population = {
         repairer: {
             count: 1,
             body: [WORK, MOVE, CARRY]
+        },
+        miner: {
+            count: 1,
+            body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE]
         }
     }
 }
