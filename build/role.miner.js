@@ -20,6 +20,10 @@ var strategy = {
 
       for (var j = 0; j < look.length; ++j) {
         if (look[j].type == 'creep' && look[j].creep.id != creep.id) {
+          if (creep.memory['container_id'] == ctrs[i].id) {
+            creep.memory['container_id'] = undefined;
+          }
+
           good = false;
         }
       }
