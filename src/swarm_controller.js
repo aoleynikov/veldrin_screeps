@@ -5,7 +5,7 @@ var population = {
             body: [WORK, MOVE, CARRY]
         },
         repairer: {
-            count: 1,
+            count: 3,
             body: [WORK, MOVE, CARRY]
         },
         miner: {
@@ -23,7 +23,7 @@ var population = {
             body: [CLAIM, CLAIM, MOVE, MOVE]
         },
         repairer: {
-            count: 1,
+            count: 2,
             body: [WORK, MOVE, CARRY]
         },
         hauler: {
@@ -41,7 +41,7 @@ var population = {
             body: [CLAIM, CLAIM, MOVE, MOVE]
         },
         repairer: {
-            count: 1,
+            count: 2,
             body: [WORK, MOVE, MOVE, CARRY]
         },
         miner: {
