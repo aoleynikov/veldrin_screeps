@@ -80,7 +80,7 @@ var controller = {
             var creep = Game.creeps[creep_name];
             if (creep.memory['type'] != 'swarm') continue;
             if ((creep.room.name == room_name ||
-                    creep.memory['work_place'] == room.name ||
+                    creep.memory['work_place'] == room_name ||
                     creep.memory['target'] == room_name) &&
                 creep.memory['role'] == role) {
                 ++result;
