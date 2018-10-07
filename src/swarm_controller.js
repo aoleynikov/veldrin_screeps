@@ -74,14 +74,14 @@ var population = {
 }
 
 var controller = {
-    count_creeps: function (room, role) {
+    count_creeps: function (room_name, role) {
         var result = 0;
         for (var creep_name in Game.creeps) {
             var creep = Game.creeps[creep_name];
             if (creep.memory['type'] != 'swarm') continue;
-            if ((creep.room.name == room.name ||
+            if ((creep.room.name == room_name ||
                     creep.memory['work_place'] == room.name ||
-                    creep.memory['target'] == room.name) &&
+                    creep.memory['target'] == room_name) &&
                 creep.memory['role'] == role) {
                 ++result;
             }
@@ -116,7 +116,7 @@ module.exports = {
         for (var room_name in population) {
             var room = Game.rooms[room_name];
             for (var role in population[room.name]) {
-                var actual = controller.count_creeps(room, role);
+                var actual = controller.count_creeps(room_name, role);
                 if (actual < population[room.name][role].count) {
                     controller.spawn(room_name, role, population[room_name][role].body)
                 }
