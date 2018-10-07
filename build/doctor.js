@@ -3,6 +3,7 @@ module.exports = {
   check: function () {
     for (var name in Game.creeps) {
       var creep = Game.creeps[name];
+      if (creep.memory['type'] == 'swarm') continue;
 
       if (creep.memory['role'] == 'claimer' || creep.memory['old_role'] == 'claimer') {
         continue;

@@ -8,6 +8,8 @@ var spawn_command = require('command.spawn');
 
 var doctor = require('doctor');
 
+var swarm = require('swarm_controller');
+
 module.exports.loop = function () {
   for (var name in Game.creeps) {
     var creep = Game.creeps[name];
@@ -22,6 +24,6 @@ module.exports.loop = function () {
 
   spawn_manager.run();
   buildings_manager.run(Game.rooms['W46S47']);
-  spawn_command.execute();
+  swarm.respawn();
   doctor.check();
 };
