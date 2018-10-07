@@ -7,6 +7,10 @@ var population = {
     repairer: {
       count: 1,
       body: [WORK, MOVE, CARRY]
+    },
+    miner: {
+      count: 4,
+      body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE]
     }
   },
   'W46S48': {
@@ -35,6 +39,14 @@ var population = {
     miner: {
       count: 1,
       body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE]
+    },
+    hauler: {
+      count: 3,
+      body: [MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY]
+    },
+    builder: {
+      count: 2,
+      body: [WORK, MOVE, MOVE, CARRY]
     }
   }
 };
