@@ -24,11 +24,11 @@ module.exports = {
         }
         var patient = Game.creeps[creep.memory['patient']];
 
-        if (creep.room.name != patient.room.name) {
+        if (patient !== undefined && creep.room.name != patient.room.name) {
             creep.memory['target'] = patient.room.name;
             if (room_travel.perform(creep)) return;
         }
-        if (creep.heal(patient) == ERR_NOT_IN_RANGE) {
+        if (patient !== undefined && creep.heal(patient) == ERR_NOT_IN_RANGE) {
             creep.moveTo(patient);
         }
         creep.moveTo(Game.flags['Rax']);
