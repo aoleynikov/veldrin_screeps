@@ -6,8 +6,19 @@ var room_wrapper = require('room_wrapper');
 
 var room_travel = require('behavior.room_travel');
 
+var containers = require('structure.container');
+
 var repair = function (creep) {
-  var repairable = room_wrapper.get_repairable_structures(creep.room);
+  var repairable = [];
+  var conts = containers.get(creep.room);
+
+  for (var cont of conts) {
+    if (cont.hits < cont.hitsMax) repairable.push(cont);
+  }
+
+  if (repairable.length == 0) {
+    repairable = room_wrapper.get_repairable_structures(creep.room);
+  }
 
   for (var i = 0; i < repairable.length; ++i) {
     var structure = repairable[i];
