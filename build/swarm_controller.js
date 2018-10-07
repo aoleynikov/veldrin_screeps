@@ -23,7 +23,7 @@ var population = {
       body: [CLAIM, CLAIM, MOVE, MOVE]
     },
     repairer: {
-      count: 2,
+      count: 3,
       body: [WORK, MOVE, CARRY]
     },
     hauler: {
@@ -33,6 +33,10 @@ var population = {
     miner: {
       count: 2,
       body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE]
+    },
+    builder: {
+      cound: 5,
+      body: [WORK, MOVE, CARRY]
     }
   },
   'W47S47': {
@@ -41,7 +45,7 @@ var population = {
       body: [CLAIM, CLAIM, MOVE, MOVE]
     },
     repairer: {
-      count: 2,
+      count: 3,
       body: [WORK, MOVE, MOVE, CARRY]
     },
     miner: {
@@ -53,8 +57,8 @@ var population = {
       body: [MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY]
     },
     builder: {
-      count: 2,
-      body: [WORK, MOVE, MOVE, CARRY]
+      count: 5,
+      body: [WORK, MOVE, CARRY]
     }
   }
 };
