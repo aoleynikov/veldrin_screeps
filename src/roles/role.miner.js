@@ -42,7 +42,9 @@ module.exports = {
                 creep.moveTo(container.pos.x, container.pos.y);
             } else if (container.store[RESOURCE_ENERGY] < container.storeCapacity) {
                 var source = creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE);
-                creep.harvest(source);
+                if (creep.harvest(source) != 0) {
+                    strategy.find_mining_position(creep);
+                }
             }
         }
     }
