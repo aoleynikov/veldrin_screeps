@@ -16,6 +16,8 @@ var claimer = require('role.claimer');
 
 var hauler = require('role.hauler');
 
+var healer = require('role.healer');
+
 var roles = {
   'harvester': harvester,
   'maintenance': maintenance,
@@ -24,6 +26,7 @@ var roles = {
   'repairer': repairer,
   'upgrader': upgrader,
   'warrior': warrior,
+  'healer': healer,
   'claimer': claimer,
   'hauler': hauler
 };
