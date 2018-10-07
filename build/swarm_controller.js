@@ -86,7 +86,8 @@ var controller = {
           target: room_name,
           type: 'swarm',
           refill: true,
-          work_place: room_name
+          work_place: room_name,
+          container_id: undefined
         }
       });
     } while (spawn_result == ERR_NAME_EXISTS);
