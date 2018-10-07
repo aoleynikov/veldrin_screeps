@@ -61,7 +61,8 @@ var controller = {
           role: role,
           target: room_name,
           type: 'swarm',
-          refill: true
+          refill: true,
+          work_place: room_name
         }
       });
     } while (spawn_result == ERR_NAME_EXISTS);
