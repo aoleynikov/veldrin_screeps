@@ -30,7 +30,7 @@ var population = {
     },
     repairer: {
       count: 1,
-      body: [WORK, MOVE, CARRY]
+      body: [WORK, MOVE, MOVE, CARRY]
     },
     miner: {
       count: 1,
