@@ -33,7 +33,7 @@ module.exports = {
       var provs = this.energy_providers[i].get(room);
 
       for (var j = 0; j < provs.length; ++j) {
-        if (provs[j].store[RESOURCE_ENERGY] > 150) {
+        if (provs[j].store[RESOURCE_ENERGY] >= 400) {
           result.push(provs[j]);
         }
       }
