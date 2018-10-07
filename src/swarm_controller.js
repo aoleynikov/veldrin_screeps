@@ -115,9 +115,9 @@ module.exports = {
     respawn: function () {
         for (var room_name in population) {
             var room = Game.rooms[room_name];
-            for (var role in population[room.name]) {
+            for (var role in population[room_name]) {
                 var actual = controller.count_creeps(room_name, role);
-                if (actual < population[room.name][role].count) {
+                if (actual < population[room_name][role].count) {
                     controller.spawn(room_name, role, population[room_name][role].body)
                 }
             }
