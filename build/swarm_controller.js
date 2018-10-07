@@ -17,13 +17,13 @@ var population = {
     repairer: {
       count: 1,
       body: [WORK, MOVE, CARRY]
+    },
+    hauler: {
+      count: 3,
+      body: [MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY]
     }
   },
   'W47S47': {
-    builder: {
-      count: 1,
-      body: [WORK, MOVE, CARRY]
-    },
     claimer: {
       count: 1,
       body: [CLAIM, CLAIM, MOVE, MOVE]
