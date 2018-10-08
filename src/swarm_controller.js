@@ -63,7 +63,7 @@ var population = {
     },
     'W46S49': {
         builder: {
-            count: 3,
+            count: 4,
             body: [WORK, MOVE, CARRY]
         },
         repairer: {
@@ -75,11 +75,11 @@ var population = {
             body: [CLAIM, CLAIM, MOVE, MOVE]
         },
         miner: {
-            count: 2,
+            count: 4,
             body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE]
         },
         hauler: {
-            count: 3,
+            count: 6,
             body: [MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY]
         }
     }
@@ -102,9 +102,10 @@ var controller = {
     },
     spawn: function (room_name, role, body) {
         var try_count = 0;
+        var name = '';
         var spawn_result = undefined;
         do {
-            var name = role + try_count;
+            name = role + try_count;
             try_count += 1;
             spawn_result = Game.spawns['Main'].spawnCreep(body, name, {
                 memory: {
@@ -112,8 +113,7 @@ var controller = {
                     target: room_name,
                     type: 'swarm',
                     refill: true,
-                    work_place: room_name,
-                    container_id: undefined
+                    work_place: room_name
                 }
             });
         } while (spawn_result == ERR_NAME_EXISTS);
