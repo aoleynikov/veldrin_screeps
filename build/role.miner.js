@@ -9,7 +9,7 @@ var strategy = {
       var good = true;
 
       for (var item of look) {
-        if (item.type == 'creep') {
+        if (item.type == 'creep' && item.creep.id != creep.id) {
           good = false;
           break;
         }
@@ -25,7 +25,7 @@ module.exports = {
     if (room_travel.perform(creep)) return;
     var container = strategy.find_free_container(creep);
     var source = creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE);
-    if (source === null) return;
+    if (!source || !container) return;
 
     if (creep.harvest(source) != 0) {
       creep.moveTo(container.pos.x, container.pos.y);
