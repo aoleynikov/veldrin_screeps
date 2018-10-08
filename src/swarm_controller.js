@@ -73,6 +73,14 @@ var population = {
         claimer: {
             count: 1,
             body: [CLAIM, CLAIM, MOVE, MOVE]
+        },
+        miner: {
+            count: 2,
+            body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE]
+        },
+        hauler: {
+            count: 3,
+            body: [MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY]
         }
     }
 }
@@ -117,6 +125,13 @@ var controller = {
 // but these creeps will be rebuilt instead of renewed
 module.exports = {
     respawn: function () {
+        for (var creep_name in Game.creeps) {
+            var creep = Game.creeps[creep_name];
+            if (creep.memory['role'] == 'maintenance') {
+                return;
+            }
+        }
+
         for (var room_name in population) {
             var room = Game.rooms[room_name];
             for (var role in population[room_name]) {
