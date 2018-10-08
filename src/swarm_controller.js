@@ -35,7 +35,7 @@ var population = {
             body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE]
         },
         builder: {
-            cound: 5,
+            count: 5,
             body: [WORK, MOVE, CARRY]
         }
     },
@@ -114,7 +114,7 @@ var controller = {
 
 // swarm is a set of very cheap creeps doing certain tasks.
 // most of creep code will still be handeled by role model,
-// but these creeps well be rebuilt instead of renewed
+// but these creeps will be rebuilt instead of renewed
 module.exports = {
     respawn: function () {
         for (var room_name in population) {
