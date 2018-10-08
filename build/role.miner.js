@@ -24,11 +24,8 @@ module.exports = {
   perform: function (creep) {
     if (room_travel.perform(creep)) return;
     var container = strategy.find_free_container(creep);
-    var source = creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE); // creep is on the container, but the source is empty
-
-    if (source.energy == 0 && creep.pos.getRangeTo(source) == 1) {
-      return;
-    }
+    var source = creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE);
+    if (source === null) return;
 
     if (creep.harvest(source) != 0) {
       creep.moveTo(container.pos.x, container.pos.y);
