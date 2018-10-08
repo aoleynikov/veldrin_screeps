@@ -5,8 +5,8 @@ var population = {
       body: [WORK, MOVE, CARRY]
     },
     repairer: {
-      count: 6,
-      body: [WORK, MOVE, CARRY]
+      count: 4,
+      body: [WORK, WORK, MOVE, MOVE, CARRY, CARRY]
     },
     miner: {
       count: 5,
