@@ -2,12 +2,11 @@ var containers = require('structure.container');
 var room_travel = require('behavior.room_travel');
 
 var strategy = {
-    find_free_container: function(creep) {
-        var container = undefined;
-        for(var cont of containers.get(creep.room)) {
-            var look = creep.room.lookAt(position.x, position.y);
+    find_free_container: function (creep) {
+        for (var cont of containers.get(creep.room)) {
+            var look = creep.room.lookAt(cont.pos.x, cont.pos.y);
             var good = true;
-            for( var item of look) {
+            for (var item of look) {
                 if (item.type == 'creep') {
                     good = false;
                     break;
@@ -24,7 +23,7 @@ module.exports = {
         if (room_travel.perform(creep)) return;
         var container = strategy.find_free_container(creep);
         var source = creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE);
-        if(creep.harvest(source) != 0) {
+        if (creep.harvest(source) != 0) {
             creep.moveTo(container.pos.x, container.pos.y)
         }
     }

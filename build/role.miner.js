@@ -4,10 +4,8 @@ var room_travel = require('behavior.room_travel');
 
 var strategy = {
   find_free_container: function (creep) {
-    var container = undefined;
-
     for (var cont of containers.get(creep.room)) {
-      var look = creep.room.lookAt(position.x, position.y);
+      var look = creep.room.lookAt(cont.pos.x, cont.pos.y);
       var good = true;
 
       for (var item of look) {
