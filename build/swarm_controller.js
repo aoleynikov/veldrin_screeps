@@ -5,11 +5,11 @@ var population = {
       body: [WORK, MOVE, CARRY]
     },
     repairer: {
-      count: 3,
+      count: 6,
       body: [WORK, MOVE, CARRY]
     },
     miner: {
-      count: 4,
+      count: 5,
       body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE]
     },
     builder: {
@@ -53,16 +53,20 @@ var population = {
       body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE]
     },
     hauler: {
-      count: 4,
+      count: 3,
       body: [MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY]
     },
     builder: {
-      count: 5,
+      count: 0,
       body: [WORK, MOVE, CARRY]
     }
   },
   'W46S49': {
     builder: {
+      count: 3,
+      body: [WORK, MOVE, CARRY]
+    },
+    repairer: {
       count: 3,
       body: [WORK, MOVE, CARRY]
     },

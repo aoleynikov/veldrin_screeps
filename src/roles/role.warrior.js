@@ -1,8 +1,15 @@
 var military = require('behavior.military');
 
+var enemies_find = [FIND_HOSTILE_CREEPS, FIND_HOSTILE_STRUCTURES, FIND_HOSTILE_SPAWNS, FIND_HOSTILE_CONSTRUCTION_SITES]
+
 module.exports = {
     perform: function (creep) {
-        var enemies = creep.room.find(FIND_HOSTILE_CREEPS);
+        var enemies = [];
+        for (var find of enemies_find) {
+            enemies = creep.room.find(find);
+            if (enemies.length > 0) break;
+        }
+
         if (enemies.length == 0) {
             military.perform(creep);
             return;
