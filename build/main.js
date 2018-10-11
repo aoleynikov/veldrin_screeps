@@ -1,13 +1,8 @@
 var dispatcher = require('strategy_dispatcher');
-
 var spawn_manager = require('upgrade_manager');
-
 var buildings_manager = require('buildings_manager');
-
 var spawn_command = require('command.spawn');
-
 var doctor = require('doctor');
-
 var swarm = require('swarm_controller');
 
 module.exports.loop = function () {
@@ -26,4 +21,4 @@ module.exports.loop = function () {
   buildings_manager.run(Game.rooms['W46S47']);
   swarm.respawn();
   doctor.check();
-};
+}

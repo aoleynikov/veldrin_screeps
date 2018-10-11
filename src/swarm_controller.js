@@ -1,89 +1,108 @@
 var population = {
-    'W46S47': {
-        upgrader: {
-            count: 3,
-            body: [WORK, MOVE, CARRY]
-        },
-        repairer: {
-            count: 4,
-            body: [WORK, WORK, MOVE, MOVE, CARRY, CARRY]
-        },
-        miner: {
-            count: 5,
-            body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE]
-        },
-        builder: {
-            count: 3,
-            body: [WORK, CARRY, MOVE]
-        }
+  'W46S47': {
+    upgrader: {
+      count: 6,
+      body: [WORK, MOVE, CARRY],
+      type: 'swarm'
     },
-    'W46S48': {
-        claimer: {
-            count: 1,
-            body: [CLAIM, CLAIM, MOVE, MOVE]
-        },
-        repairer: {
-            count: 3,
-            body: [WORK, MOVE, CARRY]
-        },
-        hauler: {
-            count: 4,
-            body: [MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY]
-        },
-        miner: {
-            count: 2,
-            body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE]
-        },
-        builder: {
-            count: 5,
-            body: [WORK, MOVE, CARRY]
-        }
+    repairer: {
+      count: 6,
+      body: [WORK, WORK, MOVE, MOVE, CARRY, CARRY],
+      type: 'swarm'
     },
-    'W47S47': {
-        claimer: {
-            count: 1,
-            body: [CLAIM, CLAIM, MOVE, MOVE]
-        },
-        repairer: {
-            count: 3,
-            body: [WORK, MOVE, MOVE, CARRY]
-        },
-        miner: {
-            count: 1,
-            body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE]
-        },
-        hauler: {
-            count: 3,
-            body: [MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY]
-        },
-        builder: {
-            count: 0,
-            body: [WORK, MOVE, CARRY]
-        }
+    miner: {
+      count: 5,
+      body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE],
+      type: 'swarm'
     },
-    'W46S49': {
-        builder: {
-            count: 4,
-            body: [WORK, MOVE, CARRY]
-        },
-        repairer: {
-            count: 3,
-            body: [WORK, MOVE, CARRY]
-        },
-        claimer: {
-            count: 1,
-            body: [CLAIM, CLAIM, MOVE, MOVE]
-        },
-        miner: {
-            count: 4,
-            body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE]
-        },
-        hauler: {
-            count: 6,
-            body: [MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY]
-        }
+    builder: {
+      count: 5,
+      body: [WORK, CARRY, MOVE],
+      type: 'swarm'
     }
-}
+  },
+  'W46S48': {
+    claimer: {
+      count: 1,
+      body: [CLAIM, CLAIM, MOVE, MOVE],
+      type: 'swarm'
+    },
+    repairer: {
+      count: 8,
+      body: [WORK, MOVE, CARRY],
+      type: 'swarm'
+    },
+    hauler: {
+      count: 4,
+      body: [MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY],
+      type: 'swarm'
+    },
+    miner: {
+      count: 2,
+      body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE],
+      type: 'swarm'
+    },
+    builder: {
+      count: 3,
+      body: [WORK, MOVE, CARRY],
+      type: 'swarm'
+    }
+  },
+  'W47S47': {
+    claimer: {
+      count: 1,
+      body: [CLAIM, CLAIM, MOVE, MOVE],
+      type: 'swarm'
+    },
+    repairer: {
+      count: 6,
+      body: [WORK, MOVE, CARRY],
+      type: 'swarm'
+    },
+    miner: {
+      count: 1,
+      body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE],
+      type: 'swarm'
+    },
+    hauler: {
+      count: 3,
+      body: [MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY],
+      type: 'swarm'
+    },
+    builder: {
+      count: 3,
+      body: [WORK, MOVE, CARRY],
+      type: 'swarm'
+    }
+  },
+  'W46S49': {
+    builder: {
+      count: 5,
+      body: [WORK, MOVE, CARRY],
+      type: 'swarm'
+    },
+    repairer: {
+      count: 5,
+      body: [WORK, MOVE, CARRY],
+      type: 'swarm'
+    },
+    upgrader: {
+      count: 6,
+      body: [WORK, MOVE, CARRY],
+      type: 'swarm'
+    },
+    miner: {
+      count: 5,
+      body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE],
+      type: 'swarm'
+    },
+    hauler: {
+      count: 6,
+      body: [MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY],
+      type: 'swarm'
+    }
+  }
+};
 
 var controller = {
     count_creeps: function (room_name, role) {
@@ -100,7 +119,7 @@ var controller = {
         }
         return result;
     },
-    spawn: function (room_name, role, body) {
+    spawn: function (room_name, role, body, type) {
         var try_count = 0;
         var name = '';
         var spawn_result = undefined;
@@ -111,7 +130,7 @@ var controller = {
                 memory: {
                     role: role,
                     target: room_name,
-                    type: 'swarm',
+                    type: type,
                     refill: true,
                     work_place: room_name
                 }
@@ -136,8 +155,9 @@ module.exports = {
             var room = Game.rooms[room_name];
             for (var role in population[room_name]) {
                 var actual = controller.count_creeps(room_name, role);
-                if (actual < population[room_name][role].count) {
-                    controller.spawn(room_name, role, population[room_name][role].body)
+                var template = population[room_name][role];
+                if (actual < template.count) {
+                    controller.spawn(room_name, role, template.body, template.type)
                 }
             }
         }
