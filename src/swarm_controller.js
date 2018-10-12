@@ -125,27 +125,29 @@ var controller = {
         return result;
     },
     spawn: function (room_name, role, body, type) {
-        var try_count = 0;
-        var name = '';
-        var spawn_result = undefined;
-        do {
-            name = role + try_count;
-            try_count += 1;
-            for(var spawn_name in Game.spawns) {
-              var spawn = Game.spawns[spawn_name];
-              if (spawn.spawning) continue;
-              spawn_result = spawn.spawnCreep(body, name, {
-                memory: {
-                    role: role,
-                    target: room_name,
-                    type: type,
-                    refill: true,
-                    work_place: room_name
-                }
-              });
-              if (spawn_result == ERR_NAME_EXISTS) break;
-            }
-        } while (spawn_result == ERR_NAME_EXISTS);
+        for (var spawn_name in Game.spawns) {
+          var spawn = Game.spawns[spawn_name];
+          if (spawn.spawning) continue;
+          var try_count = 0;
+          var name = '';
+          var spawn_result = undefined;
+          do {
+              name = role + try_count;
+              try_count += 1;
+              for(var spawn_name in Game.spawns) {
+                var spawn = Game.spawns[spawn_name];
+                spawn_result = spawn.spawnCreep(body, name, {
+                  memory: {
+                      role: role,
+                      target: room_name,
+                      type: type,
+                      refill: true,
+                      work_place: room_name
+                  }
+                });
+              }
+          } while (spawn_result == ERR_NAME_EXISTS);
+        }
     }
 }
 
