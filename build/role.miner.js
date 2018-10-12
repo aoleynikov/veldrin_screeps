@@ -7,7 +7,8 @@ var strategy = {
             var look = creep.room.lookAt(cont.pos.x, cont.pos.y);
             var good = true;
             for (var item of look) {
-                if (item.type == 'creep' && item.creep.memory['role'] == 'miner') {
+                if (item.type == 'creep' && item.creep.memory['role'] == 'miner' && 
+                    item.creep.id != creep.id) {
                     good = false;
                     break;
                 }
