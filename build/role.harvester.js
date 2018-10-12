@@ -23,7 +23,14 @@ var strategy = {
     });
   },
   store: function (creep) {
-    var storage = this.select_storage(creep);
+
+    var storage = undefined;
+    if(creep.memory['storage_id'] === undefined) {
+      storage = this.select_storage(creep);
+      creep.memory['storage_id'] = storage.id;
+    } else {
+      storage = Game.getObjectById(creep.memory['storage_id']);
+    }
     if (storage === undefined) {
       return;
     }
@@ -32,6 +39,8 @@ var strategy = {
       creep.moveTo(storage.pos.x, storage.pos.y);
     } else if (store == ERR_NOT_ENOUGH_ENERGY) {
       creep.memory['refill'] = true;
+    } else if (store == 0) {
+      creep.memory['storage_id'] = undefined;
     }
   }
 }
