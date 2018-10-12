@@ -17,7 +17,7 @@ module.exports = {
             work_result = creep.harvest(provider);
         }
         if (work_result == ERR_NOT_IN_RANGE) {
-            creep.moveTo(provider.pos.x, provider.pos.y);
+            creep.moveTo(provider, {reusePath: 50});
         }
 
         if (creep.carry[RESOURCE_ENERGY] == creep.carryCapacity) {

@@ -33,7 +33,7 @@ var strategy = {
     } else {
       storage = Game.getObjectById(creep.memory['storage_id']);
     }
-    if (storage === undefined) {
+    if (storage === undefined || storage.energy == storage.energyCapacity) {
       creep.memory['storage_id'] = undefined;
       return;
     }
@@ -50,8 +50,9 @@ var strategy = {
 
 module.exports = {
   perform: function (creep) {
-    if (energy_behavior.perform(creep)) return;
     if (room_travel.perform(creep)) return;
+    if (creep.room.energyAvailable == creep.room.energyCapacityAvailable) return;
+    if (energy_behavior.perform(creep)) return;
     strategy.store(creep);
   }
 }
