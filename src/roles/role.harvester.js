@@ -26,7 +26,7 @@ var strategy = {
     var storage = undefined;
     if(creep.memory['storage_id'] === undefined) {
       storage = this.select_storage(creep);
-      if (storage === undefined) { // all storages are full
+      if (!storage) { // all storages are full
         return;
       }
       creep.memory['storage_id'] = storage.id;
