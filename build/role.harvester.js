@@ -4,8 +4,14 @@ var room_travel = require('behavior.room_travel');
 
 var strategy = {
   check_towers: function(room) {
-    
-  }
+    var twrs = towers.get(room);
+    for(var tower of twrs) {
+      if(tower.energy < tower.energyCapacity) {
+        return tower;
+      }
+    }
+    return undefined;
+  },
   select_storage: function (creep) {
     var tower = this.check_towers(creep.room);
     if (tower) return tower;

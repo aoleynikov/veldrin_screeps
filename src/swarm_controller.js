@@ -81,6 +81,11 @@ var population = {
       body: [WORK, MOVE, CARRY],
       type: 'swarm'
     },
+    harvester: {
+      count: 4,
+      body: [WORK, WORK, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE],
+      type: 'regular'
+    }
     repairer: {
       count: 5,
       body: [WORK, MOVE, CARRY],
