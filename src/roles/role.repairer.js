@@ -42,7 +42,7 @@ var strategy = {
             creep.memory['refill'] = true;
             creep.memory['repairable_id'] = undefined;
         } else if (work == ERR_NOT_IN_RANGE) {
-            creep.moveTo(struct);
+            creep.moveTo(struct, {reusePath: 50});
         }
         if(struct.hits == struct.hitsMax) { 
             creep.memory['repairable_id'] = undefined;

@@ -9,7 +9,7 @@ var strategy = {
             var site = construction_sites[i]
             var work = creep.build(site);
             if (work == ERR_NOT_IN_RANGE) {
-                creep.moveTo(site.pos.x, site.pos.y);
+                creep.moveTo(site, {reusePath: 50});
             } else if (work == ERR_NOT_ENOUGH_ENERGY) {
                 creep.memory['refill'] = true;
             }

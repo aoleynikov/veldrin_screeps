@@ -28,11 +28,11 @@ module.exports = {
         if (!source || !container) return;
 
         if (creep.pos.x != container.pos.x || creep.pos.y != container.pos.y) {
-            creep.moveTo(container.pos.x, container.pos.y);
+            creep.moveTo(container, {reusePath: 50});
         }
 
         if (creep.harvest(source) != 0) {
-            creep.moveTo(container.pos.x, container.pos.y);
+            creep.moveTo(container, {reusePath: 50});
         }
     }
 }

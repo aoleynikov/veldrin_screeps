@@ -5,7 +5,7 @@ var upgrade = function (creep) {
     var controller = creep.room.controller;
     var work = creep.upgradeController(controller)
     if (work == ERR_NOT_IN_RANGE) {
-        creep.moveTo(controller.pos.x, controller.pos.y);
+        creep.moveTo(controller, {reusePath: 50});
     } else if (work == ERR_NOT_ENOUGH_ENERGY) {
         creep.memory['refill'] = true;
     }
