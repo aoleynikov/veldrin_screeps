@@ -23,15 +23,18 @@ var strategy = {
     });
   },
   store: function (creep) {
-
     var storage = undefined;
     if(creep.memory['storage_id'] === undefined) {
       storage = this.select_storage(creep);
+      if (storage === undefined) { // all storages are full
+        return;
+      }
       creep.memory['storage_id'] = storage.id;
     } else {
       storage = Game.getObjectById(creep.memory['storage_id']);
     }
     if (storage === undefined) {
+      creep.memory['storage_id'] = undefined;
       return;
     }
     store = creep.transfer(storage, RESOURCE_ENERGY);
