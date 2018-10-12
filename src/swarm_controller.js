@@ -1,13 +1,13 @@
 var population = {
   'W46S47': {
     upgrader: {
-      count: 6,
-      body: [WORK, MOVE, CARRY],
+      count: 2,
+      body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, WORK, MOVE, CARRY],
       type: 'swarm'
     },
     repairer: {
-      count: 6,
-      body: [WORK, WORK, MOVE, MOVE, CARRY, CARRY],
+      count: 2,
+      body: [WORK, WORK, MOVE, MOVE, CARRY, CARRY, WORK, WORK, MOVE, MOVE, CARRY, CARRY],
       type: 'swarm'
     },
     miner: {
@@ -16,8 +16,8 @@ var population = {
       type: 'swarm'
     },
     builder: {
-      count: 5,
-      body: [WORK, CARRY, MOVE],
+      count: 2,
+      body: [WORK, CARRY, MOVE, WORK, WORK, MOVE, MOVE, CARRY, CARRY],
       type: 'swarm'
     }
   },
@@ -28,8 +28,8 @@ var population = {
       type: 'swarm'
     },
     repairer: {
-      count: 8,
-      body: [WORK, MOVE, CARRY],
+      count: 2,
+      body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, WORK, MOVE, CARRY],
       type: 'swarm'
     },
     hauler: {
@@ -43,8 +43,8 @@ var population = {
       type: 'swarm'
     },
     builder: {
-      count: 3,
-      body: [WORK, MOVE, CARRY],
+      count: 1,
+      body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, WORK, MOVE, CARRY],
       type: 'swarm'
     }
   },
@@ -55,8 +55,8 @@ var population = {
       type: 'swarm'
     },
     repairer: {
-      count: 6,
-      body: [WORK, MOVE, CARRY],
+      count: 2,
+      body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, WORK, MOVE, CARRY],
       type: 'swarm'
     },
     miner: {
@@ -71,29 +71,29 @@ var population = {
     },
     builder: {
       count: 3,
-      body: [WORK, MOVE, CARRY],
+      body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, WORK, MOVE, CARRY],
       type: 'swarm'
     }
   },
   'W46S49': {
     builder: {
-      count: 5,
-      body: [WORK, MOVE, CARRY],
+      count: 2,
+      body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, WORK, MOVE, CARRY],
       type: 'swarm'
     },
     harvester: {
       count: 4,
       body: [WORK, WORK, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE],
       type: 'regular'
-    }
+    },
     repairer: {
-      count: 5,
-      body: [WORK, MOVE, CARRY],
+      count: 2,
+      body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, WORK, MOVE, CARRY],
       type: 'swarm'
     },
     upgrader: {
-      count: 6,
-      body: [WORK, MOVE, CARRY],
+      count: 1,
+      body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, WORK, MOVE, CARRY],
       type: 'swarm'
     },
     miner: {
