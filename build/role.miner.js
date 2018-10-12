@@ -7,7 +7,7 @@ var strategy = {
             var look = creep.room.lookAt(cont.pos.x, cont.pos.y);
             var good = true;
             for (var item of look) {
-                if (item.type == 'creep' && item.creep.id != creep.id) {
+                if (item.type == 'creep' && item.creep.memory['role'] == 'miner') {
                     good = false;
                     break;
                 }
@@ -26,8 +26,12 @@ module.exports = {
 
         if (!source || !container) return;
 
+        if (creep.pos.x != container.pos.x || creep.pos.y != container.pos.y) {
+            creep.moveTo(container.pos.x, container.pos.y);
+        }
+
         if (creep.harvest(source) != 0) {
-            creep.moveTo(container.pos.x, container.pos.y)
+            creep.moveTo(container.pos.x, container.pos.y);
         }
     }
 }

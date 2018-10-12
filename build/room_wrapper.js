@@ -2,8 +2,8 @@ var spawns = require('structure.spawn');
 var extensions = require('structure.extension');
 var containers = require('structure.container');
 var roads = require('structure.road');
-var towers = require('structure.tower')
-var storages = require('structure.storage')
+var towers = require('structure.tower');
+var storages = require('structure.storage');
 
 module.exports = {
     energy_storages: [spawns, towers, extensions],

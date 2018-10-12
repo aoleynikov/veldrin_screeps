@@ -2,9 +2,13 @@ var room_wrapper = require('room_wrapper');
 
 module.exports = {
     perform: function (creep) {
+        if(!creep.memory['refill']) {
+            return false;
+        }
+
         var provider = room_wrapper.get_closest_energy_provider(creep.room, creep.pos);
         if (provider === undefined) {
-            return;
+            return true;
         }
         var work_result = undefined;
         if (provider.structureType == STRUCTURE_CONTAINER || provider.structureType == STRUCTURE_STORAGE) {
@@ -18,9 +22,7 @@ module.exports = {
 
         if (creep.carry[RESOURCE_ENERGY] == creep.carryCapacity) {
             creep.memory['refill'] = false;
-            if (creep.room.name == 'W47S47') {
-                creep.moveTo(creep.room.controller);
-            }
         }
+        return creep.memory['refill'];
     }
 }

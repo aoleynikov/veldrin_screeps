@@ -1,4 +1,4 @@
-var upgrader_role = require('role.upgrader');
+var repairer_role = require('role.repairer');
 var energy_behavior = require('behavior.get_energy');
 var room_travel = require('behavior.room_travel');
 
@@ -21,15 +21,12 @@ var strategy = {
 
 module.exports = {
     perform: function (creep) {
-        if (creep.memory['refill']) {
-            energy_behavior.perform(creep);
-            return;
-        }
+        if (energy_behavior.perform(creep)) return;
         if (room_travel.perform(creep)) return;
 
         var busy = strategy.build(creep);
         if (!busy) {
-            upgrader_role.perform(creep);
+            repairer_role.perform(creep);
         }
     }
 }

@@ -2,7 +2,7 @@ var upgrader_role = require('role.upgrader');
 var get_energy_behavior = require('behavior.get_energy');
 var room_travel = require('behavior.room_travel');
 var containers = require('structure.container');
-var roads = require('structure.roads')
+var roads = require('structure.road')
 
 
 var strategy = {
@@ -20,9 +20,10 @@ var strategy = {
         var max_hp_part = 1.0;
         var repairable_id = undefined;
         for(var i = 0; i < repairable.length; ++i) {
-            if (repairable.hits / repairable.hitsMax < max_hp_part) {
-                max_hp_part = repairable.hits / repairable.hitsMax;
-                repairable_id = repairable.id;
+            var value = 1.0 * repairable[i].hits / repairable[i].hitsMax;
+            if (value < max_hp_part) {
+                max_hp_part = value;
+                repairable_id = repairable[i].id;
             }
         }
         return repairable_id;
@@ -43,7 +44,7 @@ var strategy = {
         } else if (work == ERR_NOT_IN_RANGE) {
             creep.moveTo(struct);
         }
-        else {
+        if(struct.hits == struct.hitsMax) { 
             creep.memory['repairable_id'] = undefined;
         }
         return true;

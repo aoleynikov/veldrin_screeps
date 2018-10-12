@@ -1,20 +1,17 @@
-var room_wrapper = require('room_wrapper')
-var get_energy = require('behavior.get_energy')
+var spawns = require('structure.spawn');
+var extensions = require('structure.extension');
+var towers = require('structure.tower');
+var energy_behavior = require('behavior.get_energy');
+var room_travel = require('behavior.room_travel');
 
 var strategy = {
-  select_storage: function (room) {
-    var storages = room_wrapper.get_energy_storages(room);
-    for (var i = 0; i < storages.length; ++i) {
-      if (storages[i].energy !== undefined) {
-        if (storages[i].energy < storages[i].energyCapacity) {
-          return storages[i];
-        }
-      } else {
-        if (storages[i].store[RESOURCE_ENERGY] < storages[i].storeCapacity) {
-          return storages[i];
-        }
+  select_storage: function (creep) {
+    return creep.pos.findClosestByRange(FIND_STRUCTURES, {
+      filter: function(s) {
+        return s.energy < s.energyCapacity &&
+          (s.structureType == STRUCTURE_SPAWN || s.structureType == STRUCTURE_EXTENSION);
       }
-    }
+    });
   },
   store: function (creep) {
     var storage = this.select_storage(creep.room);
@@ -32,10 +29,8 @@ var strategy = {
 
 module.exports = {
   perform: function (creep) {
-    if (creep.memory['refill']) {
-      get_energy.perform(creep);
-      return;
-    }
+    if (energy_behavior.perform(creep)) return;
+    if (room_travel.perform(creep)) return;
     strategy.store(creep);
   }
 }

@@ -21,8 +21,7 @@ module.exports = {
         if (creep.memory['refill']) {
             creep.memory['target'] = creep.memory['work_place'];
             if (room_travel.perform(creep)) return;
-            get_energy.perform(creep);
-            return;
+            if (energy_behavior.perform(creep)) return;
         }
 
         creep.memory['target'] = Game.spawns['Main'].room.name;
