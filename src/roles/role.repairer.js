@@ -1,5 +1,5 @@
 var upgrader_role = require('role.upgrader');
-var get_energy_behavior = require('behavior.get_energy');
+var energy_behavior = require('behavior.get_energy');
 var room_travel = require('behavior.room_travel');
 var containers = require('structure.container');
 var roads = require('structure.road')
@@ -54,7 +54,7 @@ var strategy = {
 module.exports = {
     perform: function (creep) {
         if (creep.memory['refill']) {
-            get_energy_behavior.perform(creep);
+            energy_behavior.perform(creep);
             return;
         }
         if (room_travel.perform(creep)) return;

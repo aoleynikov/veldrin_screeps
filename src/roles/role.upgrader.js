@@ -1,4 +1,4 @@
-var get_energy_behavior = require('behavior.get_energy')
+var energy_behavior = require('behavior.get_energy')
 var room_travel = require('behavior.room_travel');
 
 var upgrade = function (creep) {

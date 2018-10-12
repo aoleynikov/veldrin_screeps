@@ -1,11 +1,14 @@
-var spawns = require('structure.spawn');
-var extensions = require('structure.extension');
 var towers = require('structure.tower');
 var energy_behavior = require('behavior.get_energy');
 var room_travel = require('behavior.room_travel');
 
 var strategy = {
+  check_towers: function(room) {
+    
+  }
   select_storage: function (creep) {
+    var tower = this.check_towers(creep.room);
+    if (tower) return tower;
     return creep.pos.findClosestByRange(FIND_STRUCTURES, {
       filter: function(s) {
         return s.energy < s.energyCapacity &&
@@ -14,7 +17,7 @@ var strategy = {
     });
   },
   store: function (creep) {
-    var storage = this.select_storage(creep.room);
+    var storage = this.select_storage(creep);
     if (storage === undefined) {
       return;
     }

@@ -1,5 +1,5 @@
 var room_travel = require('behavior.room_travel');
-var get_energy = require('behavior.get_energy')
+var energy_behavior = require('behavior.get_energy')
 var storages = require('structure.storage');
 
 var strategy = {

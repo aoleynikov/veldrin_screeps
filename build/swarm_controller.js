@@ -126,7 +126,10 @@ var controller = {
         do {
             name = role + try_count;
             try_count += 1;
-            spawn_result = Game.spawns['Main'].spawnCreep(body, name, {
+            for(var spawn_name in Game.spawns) {
+              var spawn = Game.spawns[spawn_name];
+              if (spawn.spawning) continue;
+              spawn_result = spawn.spawnCreep(body, name, {
                 memory: {
                     role: role,
                     target: room_name,
@@ -134,7 +137,9 @@ var controller = {
                     refill: true,
                     work_place: room_name
                 }
-            });
+              });
+              if (spawn_result == ERR_NAME_EXISTS) break;
+            }
         } while (spawn_result == ERR_NAME_EXISTS);
     }
 }
