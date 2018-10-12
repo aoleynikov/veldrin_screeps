@@ -124,7 +124,7 @@ var controller = {
         }
         return result;
     },
-    spawn: function (room_name, role, body, type) {
+    spawnCreep: function (room_name, role, body, type) {
         for (var spawn_name in Game.spawns) {
           var spawn = Game.spawns[spawn_name];
           if (spawn.spawning) continue;
@@ -169,7 +169,7 @@ module.exports = {
                 var actual = controller.count_creeps(room_name, role);
                 var template = population[room_name][role];
                 if (actual < template.count) {
-                    controller.spawn(room_name, role, template.body, template.type)
+                    controller.spawnCreep(room_name, role, template.body, template.type)
                 }
             }
         }
