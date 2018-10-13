@@ -1,112 +1,132 @@
 var population = {
-  'W46S47': {
-    upgrader: {
+  'W46S47': [
+    {
       count: 2,
+      role: 'upgrader',
       body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, WORK, MOVE, CARRY],
       type: 'swarm'
     },
-    repairer: {
+    {
       count: 2,
+      role: 'repairer',
       body: [WORK, WORK, MOVE, MOVE, CARRY, CARRY, WORK, WORK, MOVE, MOVE, CARRY, CARRY],
       type: 'swarm'
     },
-    miner: {
+    {
       count: 5,
+      role: 'miner',
       body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE],
       type: 'swarm'
     },
-    builder: {
+    {
       count: 2,
+      role: 'builder',
       body: [WORK, CARRY, MOVE, WORK, WORK, MOVE, MOVE, CARRY, CARRY],
       type: 'swarm'
     }
-  },
-  'W46S48': {
-    claimer: {
+  ],
+  'W46S48': [
+    {
       count: 1,
+      role: 'claimer',
       body: [CLAIM, CLAIM, MOVE, MOVE],
       type: 'swarm'
     },
-    repairer: {
+    {
       count: 2,
+      role: 'repairer',
       body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, WORK, MOVE, CARRY],
       type: 'swarm'
     },
-    hauler: {
+    {
       count: 4,
+      role: 'hauler',
       body: [MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY],
       type: 'swarm'
     },
-    miner: {
+    {
       count: 2,
+      role: 'miner',
       body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE],
       type: 'swarm'
     },
-    builder: {
+    {
       count: 1,
+      roler: 'builder',
       body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, WORK, MOVE, CARRY],
       type: 'swarm'
     }
-  },
-  'W47S47': {
-    claimer: {
+  ],
+  'W47S47': [
+    {
       count: 1,
+      roler: 'claimer',
       body: [CLAIM, CLAIM, MOVE, MOVE],
       type: 'swarm'
     },
-    repairer: {
+    {
       count: 2,
+      role: 'repairer',
       body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, WORK, MOVE, CARRY],
       type: 'swarm'
     },
-    miner: {
+    {
       count: 1,
+      role: 'miner',
       body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE],
       type: 'swarm'
     },
-    hauler: {
+    {
       count: 3,
+      role: 'hauler',
       body: [MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY],
       type: 'swarm'
     },
-    builder: {
+    {
       count: 3,
+      role: 'builder',
       body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, WORK, MOVE, CARRY],
       type: 'swarm'
     }
-  },
-  'W46S49': {
+  ],
+  'W46S49': [
     builder: {
       count: 2,
+      roler: 'builder',
       body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, WORK, MOVE, CARRY],
       type: 'swarm'
     },
-    harvester: {
+    {
       count: 4,
+      role: 'harvester',
       body: [WORK, WORK, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE],
       type: 'regular'
     },
-    repairer: {
+    {
       count: 2,
+      role: 'repairer',
       body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, WORK, MOVE, CARRY],
       type: 'swarm'
     },
-    upgrader: {
+    {
       count: 1,
+      role: 'upgrader',
       body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, WORK, MOVE, CARRY],
       type: 'swarm'
     },
-    miner: {
+    {
       count: 5,
+      role: 'miner',
       body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE],
       type: 'swarm'
     },
-    hauler: {
+    {
       count: 6,
+      role: 'hauler',
       body: [MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY],
       type: 'swarm'
     }
-  }
+  ]
 };
 
 var controller = {
@@ -124,29 +144,21 @@ var controller = {
         }
         return result;
     },
-    spawnCreep: function (room_name, role, body, type) {
-        for (var spawn_name in Game.spawns) {
+    spawnCreep: function (room_name, template) {
+        for(var spawn_name in Game.spawns) {
           var spawn = Game.spawns[spawn_name];
-          if (spawn.spawning) continue;
-          var try_count = 0;
-          var name = '';
-          var spawn_result = undefined;
-          do {
-              name = role + try_count;
-              try_count += 1;
-              for(var spawn_name in Game.spawns) {
-                var spawn = Game.spawns[spawn_name];
-                spawn_result = spawn.spawnCreep(body, name, {
-                  memory: {
-                      role: role,
-                      target: room_name,
-                      type: type,
-                      refill: true,
-                      work_place: room_name
-                  }
-                });
-              }
-          } while (spawn_result == ERR_NAME_EXISTS);
+          if(spawn.spawning) continue;
+          for (var i = 0; i < template.count; ++i) {
+            var name = template.role + '_' + room_name + '_' + i;
+            if (!Game.crpeeps[name]) continue;
+            var result = spawn.spawnCreep(name, template.body, {memory: {
+              role: template.role,
+              work_place: room_name,
+              target: room_name,
+              type: template.type,
+              refill: true
+            }});
+          }
         }
     }
 }
@@ -165,11 +177,10 @@ module.exports = {
 
         for (var room_name in population) {
             var room = Game.rooms[room_name];
-            for (var role in population[room_name]) {
-                var actual = controller.count_creeps(room_name, role);
-                var template = population[room_name][role];
+            for (var template of population[room_name]) {
+                var actual = controller.count_creeps(room_name, template.role);
                 if (actual < template.count) {
-                    controller.spawnCreep(room_name, role, template.body, template.type)
+                    controller.spawnCreep(room_name, role, template)
                 }
             }
         }

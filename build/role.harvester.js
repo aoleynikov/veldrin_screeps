@@ -23,27 +23,13 @@ var strategy = {
     });
   },
   store: function (creep) {
-    var storage = undefined;
-    if(creep.memory['storage_id'] === undefined) {
-      storage = this.select_storage(creep);
-      if (!storage) { // all storages are full
-        return;
-      }
-      creep.memory['storage_id'] = storage.id;
-    } else {
-      storage = Game.getObjectById(creep.memory['storage_id']);
-    }
-    if (storage === undefined || storage.energy == storage.energyCapacity) {
-      creep.memory['storage_id'] = undefined;
-      return;
-    }
+    var storage = this.select_storage(creep);
+    if (!storage) return;
     store = creep.transfer(storage, RESOURCE_ENERGY);
     if (store == ERR_NOT_IN_RANGE) {
       creep.moveTo(storage, {reusePath: 50});
     } else if (store == ERR_NOT_ENOUGH_ENERGY) {
       creep.memory['refill'] = true;
-    } else if (store == 0) {
-      creep.memory['storage_id'] = undefined;
     }
   }
 }
