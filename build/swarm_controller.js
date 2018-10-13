@@ -7,6 +7,12 @@ var population = {
       type: 'swarm'
     },
     {
+      count: 4,
+      role: 'harvester',
+      body: [WORK, WORK, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE],
+      type: 'regular'
+    },
+    {
       count: 2,
       role: 'repairer',
       body: [WORK, WORK, MOVE, MOVE, CARRY, CARRY, WORK, WORK, MOVE, MOVE, CARRY, CARRY],
@@ -90,7 +96,13 @@ var population = {
     }
   ],
   'W46S49': [
-    builder: {
+    {
+      count: 1,
+      roler: 'claimer',
+      body: [CLAIM, CLAIM, MOVE, MOVE],
+      type: 'swarm'
+    },
+    {
       count: 2,
       roler: 'builder',
       body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, WORK, MOVE, CARRY],
@@ -150,8 +162,8 @@ var controller = {
           if(spawn.spawning) continue;
           for (var i = 0; i < template.count; ++i) {
             var name = template.role + '_' + room_name + '_' + i;
-            if (!Game.crpeeps[name]) continue;
-            var result = spawn.spawnCreep(name, template.body, {memory: {
+            if (Game.crpeeps[name]) continue;
+            var result = spawn.spawnCreep(template.body, name, {memory: {
               role: template.role,
               work_place: room_name,
               target: room_name,
@@ -180,7 +192,7 @@ module.exports = {
             for (var template of population[room_name]) {
                 var actual = controller.count_creeps(room_name, template.role);
                 if (actual < template.count) {
-                    controller.spawnCreep(room_name, role, template)
+                    controller.spawnCreep(room_name, template)
                 }
             }
         }
