@@ -5,7 +5,7 @@ module.exports = {
     if (room_travel.perform(creep)) return;
     var spawn = Game.spawns['Main']
     if (creep.transfer(spawn, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-      creep.moveTo(spawn, {reusePath: 50});
+      creep.moveTo(spawn);
     }
   }
 }

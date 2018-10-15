@@ -19,7 +19,7 @@ module.exports = {
             result = creep.reserveController(controller);
         }
         if (result == ERR_NOT_IN_RANGE) {
-            result = creep.moveTo(controller, {reusePath: 50});
+            result = creep.moveTo(controller);
         }
     }
 }
