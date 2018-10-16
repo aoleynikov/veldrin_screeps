@@ -33,6 +33,7 @@ var manager = {
 
 module.exports = {
     run: function () {
+        return;
         var spawn = Game.spawns['Main'];
         if (spawn.memory['replaced_name'] === undefined) {
             manager.select_improved_creep(spawn.room.energyCapacityAvailable);

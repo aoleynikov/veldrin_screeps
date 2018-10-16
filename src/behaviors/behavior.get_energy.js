@@ -109,6 +109,8 @@ module.exports = {
         creep.memory['refill'] = true;
         if (creep.memory['role'] == 'hauler') return;
         var provider = behavior.get_closest_energy_provider(creep);
+        if (provider === undefined) return;
+        if (!behavior.is_fast_provider(provider)) return;
         creep.memory['provider_id'] = provider.id;
         creep.room.memory['energy_correction'] = creep.room.memory['energy_correction'] || {};
         if (creep.room.memory['energy_correction'][provider.id] === undefined) {
