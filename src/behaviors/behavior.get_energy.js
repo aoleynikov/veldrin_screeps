@@ -39,6 +39,7 @@ var behavior = {
         for (var i = 0; i < this.energy_providers.length; ++i) {
             var provs = this.energy_providers[i].get(creep.room);
             for (var j = 0; j < provs.length; ++j) {
+                creep.room.memory['energy_correction'] = creep.room.memory['energy_correction'] || {};
                 var correction = creep.room.memory['energy_correction'][provs[j].id] || 0;
                 if (provs[j].store[RESOURCE_ENERGY] - correction >= creep.carryCapacity) {
                     result.push(provs[j]);
@@ -85,8 +86,12 @@ module.exports = {
         var work_result = undefined;
         if (behavior.is_fast_provider(provider)) {
             work_result = creep.withdraw(provider, RESOURCE_ENERGY);
-            if (work_result == 0) {
+            if (work_result == 0 && creep.memory['provider_id'] == provider.id) {
                 creep.room.memory['energy_correction'][provider.id] -= creep.carryCapacity;
+                if (creep.room.memory['energy_correction'][provider.id] < 0) {
+                    creep.room.memory['energy_correction'][provider.id] = 0;
+                }
+                creep.memory['provider_id'] = undefined;
             }
         } else {
             work_result = creep.harvest(provider);
@@ -102,9 +107,10 @@ module.exports = {
     },
     refill: function(creep) {
         creep.memory['refill'] = true;
-        if (creep.memory['work_place'] != creep.memory.room.name) return;
+        if (creep.memory['role'] == 'hauler') return;
         var provider = behavior.get_closest_energy_provider(creep);
         creep.memory['provider_id'] = provider.id;
+        creep.room.memory['energy_correction'] = creep.room.memory['energy_correction'] || {};
         if (creep.room.memory['energy_correction'][provider.id] === undefined) {
             creep.room.memory['energy_correction'][provider.id] = 0;
         }

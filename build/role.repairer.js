@@ -40,7 +40,7 @@ var strategy = {
         if (!struct) return;
         var work = creep.repair(struct);
         if (work == ERR_NOT_ENOUGH_ENERGY) {
-            creep.memory['refill'] = true;
+            energy_behavior.refill(creep);
             creep.memory['repairable_id'] = undefined;
         } else if (work == ERR_NOT_IN_RANGE) {
             creep.moveTo(struct);
@@ -54,10 +54,7 @@ var strategy = {
 
 module.exports = {
     perform: function (creep) {
-        if (creep.memory['refill']) {
-            energy_behavior.perform(creep);
-            return;
-        }
+        if (energy_behavior.perform(creep)) return;
         if (room_travel.perform(creep)) return;
         var busy = strategy.repair(creep);
         if (!busy) {

@@ -15,7 +15,7 @@ var population = {
     {
       count: 3,
       role: 'miner',
-      body: [WORK, WORK, WORK, WORK, WORK, MOVE],
+      body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE],
       type: 'swarm'
     },
     {
