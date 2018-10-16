@@ -1,18 +1,21 @@
+var containers = require('structure.container');
+var storages = require('structure.storage');
+
 var behavior = {
     energy_providers: [containers, storages],
     is_fast_provider: function(provider) {
         return provider.structureType == STRUCTURE_CONTAINER || provider.structureType == STRUCTURE_STORAGE;
     },
-    source_occupied: function(provider) {
+    source_occupied: function(provider, exception_creep) {
         if(this.is_fast_provider(provider)) return false;
 
-        var occupied = false;
+        var free = false;
 
         var dx = [1, 1, 0, -1, -1, -1, 0, 1];
         var dy = [0, 1, 1, 1, 0, -1, -1, -1];
 
         for(var i = 0; i < dx.length; ++i) {
-            var pos = RoomPosition(provider.pos.x + dx[i], provider.pos.y + dy[i], provider.room.name);
+            var pos = new RoomPosition(provider.pos.x + dx[i], provider.pos.y + dy[i], provider.room.name);
             var look = provider.room.lookAt(pos);
             if (look.length == 1 && look[0].type == 'terrain') { // wall
                 continue;
@@ -21,13 +24,16 @@ var behavior = {
             var has_creep = false;
             for(var j = 0; j < look.length; ++j) {
                 if (look[j].type == 'creep') {
+                    if (look[j].creep.name == exception_creep.name) {
+                        return false;
+                    }
                     has_creep = true;
                 }
             }
-            occupied ||= !has_creep;
+            free = free || !has_creep;
         }
-        return occupied;
-    }
+        return !free;
+    },
     get_energy_providers: function (room) {
         var result = [];
         for (var i = 0; i < this.energy_providers.length; ++i) {
@@ -41,13 +47,15 @@ var behavior = {
         }
         return room.find(FIND_SOURCES_ACTIVE);
     },
-    get_closest_energy_provider: function (room, pos) {
+    get_closest_energy_provider: function (creep) {
+        var pos = creep.pos;
+        var room = creep.room;
         var provs = this.get_energy_providers(room);
         var minRange = 99999;
         var result = undefined;
         for (var i = 0; i < provs.length; ++i) {
             var range = pos.getRangeTo(provs[i].pos);
-            var occupied = this.source_occupied(provs[i]);
+            var occupied = this.source_occupied(provs[i], creep);
             if (range < minRange && !occupied) {
                 result = provs[i];
                 minRange = range;
@@ -63,7 +71,7 @@ module.exports = {
             return false;
         }
 
-        var provider = behavior.get_closest_energy_provider(creep.room, creep.pos);
+        var provider = behavior.get_closest_energy_provider(creep);
         if (provider === undefined) {
             return true;
         }

@@ -1,141 +1,27 @@
 var population = {
-  'W46S47': [
+  'W31S51': [
     {
-      count: 2,
+      count: 3,
       role: 'upgrader',
-      body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, WORK, MOVE, CARRY],
+      body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, WORK, MOVE],
       type: 'swarm'
-    },
-    {
-      count: 4,
-      role: 'harvester',
-      body: [WORK, WORK, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE],
-      type: 'regular'
     },
     {
       count: 2,
       role: 'repairer',
-      body: [WORK, WORK, MOVE, MOVE, CARRY, CARRY, WORK, WORK, MOVE, MOVE, CARRY, CARRY],
+      body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, WORK, MOVE],
       type: 'swarm'
     },
     {
-      count: 5,
+      count: 3,
       role: 'miner',
-      body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE],
+      body: [WORK, WORK, WORK, WORK, WORK, MOVE],
       type: 'swarm'
     },
     {
       count: 2,
       role: 'builder',
-      body: [WORK, CARRY, MOVE, WORK, WORK, MOVE, MOVE, CARRY, CARRY],
-      type: 'swarm'
-    }
-  ],
-  'W46S48': [
-    {
-      count: 1,
-      role: 'claimer',
-      body: [CLAIM, CLAIM, MOVE, MOVE],
-      type: 'swarm'
-    },
-    {
-      count: 2,
-      role: 'repairer',
-      body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, WORK, MOVE, CARRY],
-      type: 'swarm'
-    },
-    {
-      count: 4,
-      role: 'hauler',
-      body: [MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY],
-      type: 'swarm'
-    },
-    {
-      count: 2,
-      role: 'miner',
-      body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE],
-      type: 'swarm'
-    },
-    {
-      count: 1,
-      roler: 'builder',
-      body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, WORK, MOVE, CARRY],
-      type: 'swarm'
-    }
-  ],
-  'W47S47': [
-    {
-      count: 1,
-      roler: 'claimer',
-      body: [CLAIM, CLAIM, MOVE, MOVE],
-      type: 'swarm'
-    },
-    {
-      count: 2,
-      role: 'repairer',
-      body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, WORK, MOVE, CARRY],
-      type: 'swarm'
-    },
-    {
-      count: 1,
-      role: 'miner',
-      body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE],
-      type: 'swarm'
-    },
-    {
-      count: 3,
-      role: 'hauler',
-      body: [MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY],
-      type: 'swarm'
-    },
-    {
-      count: 3,
-      role: 'builder',
-      body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, WORK, MOVE, CARRY],
-      type: 'swarm'
-    }
-  ],
-  'W46S49': [
-    {
-      count: 1,
-      roler: 'claimer',
-      body: [CLAIM, CLAIM, MOVE, MOVE],
-      type: 'swarm'
-    },
-    {
-      count: 2,
-      roler: 'builder',
-      body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, WORK, MOVE, CARRY],
-      type: 'swarm'
-    },
-    {
-      count: 4,
-      role: 'harvester',
-      body: [WORK, WORK, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE],
-      type: 'regular'
-    },
-    {
-      count: 2,
-      role: 'repairer',
-      body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, WORK, MOVE, CARRY],
-      type: 'swarm'
-    },
-    {
-      count: 1,
-      role: 'upgrader',
-      body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, WORK, MOVE, CARRY],
-      type: 'swarm'
-    },
-    {
-      count: 5,
-      role: 'miner',
-      body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE],
-      type: 'swarm'
-    },
-    {
-      count: 6,
-      role: 'hauler',
-      body: [MOVE, MOVE, MOVE, MOVE, MOVE, CARRY, CARRY, CARRY, CARRY, CARRY],
+      body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, WORK, MOVE],
       type: 'swarm'
     }
   ]
