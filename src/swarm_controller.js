@@ -25,7 +25,7 @@ var population = {
       type: 'swarm'
     }
   ],
-  'W32S61': [
+  'W32S51': [
     {
       count: 2,
       role: 'builder',
