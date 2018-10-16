@@ -3,6 +3,7 @@ var factories = require('factories')
 
 var manager = {
     can_improve: function (creep, maxEnergy) {
+        if (creep.memory['type'] == 'swarm') return false;
         var factory = factories[creep.memory['role']];
         if (factory === undefined) {
             return false;
@@ -32,10 +33,7 @@ var manager = {
 
 module.exports = {
     run: function () {
-        return;
         var spawn = Game.spawns['Main'];
-        var construction_sites = spawn.room.find(FIND_MY_CONSTRUCTION_SITES)
-        if (construction_sites.length > 0) return;
         if (spawn.memory['replaced_name'] === undefined) {
             manager.select_improved_creep(spawn.room.energyCapacityAvailable);
         }
@@ -56,7 +54,6 @@ module.exports = {
                     spawn.memory['replaced_name'] = undefined;
                     spawn.memory['replaced_role'] = undefined;
                 }
-                console.log('upgrade spawn result: ', console.log(spawn_result));
             }
         }
     }

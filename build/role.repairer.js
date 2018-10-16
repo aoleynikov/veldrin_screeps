@@ -37,12 +37,13 @@ var strategy = {
             return false;
         }
         var struct = Game.getObjectById(creep.memory['repairable_id']);
+        if (!struct) return;
         var work = creep.repair(struct);
         if (work == ERR_NOT_ENOUGH_ENERGY) {
             creep.memory['refill'] = true;
             creep.memory['repairable_id'] = undefined;
         } else if (work == ERR_NOT_IN_RANGE) {
-            creep.moveTo(struct, {reusePath: 50});
+            creep.moveTo(struct);
         }
         if(struct.hits == struct.hitsMax) { 
             creep.memory['repairable_id'] = undefined;

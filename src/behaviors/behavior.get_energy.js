@@ -39,7 +39,8 @@ var behavior = {
         for (var i = 0; i < this.energy_providers.length; ++i) {
             var provs = this.energy_providers[i].get(creep.room);
             for (var j = 0; j < provs.length; ++j) {
-                if (provs[j].store[RESOURCE_ENERGY] >= creep.carryCapacity) {
+                var correction = creep.room.memory['energy_correction'][provs[j].id] || 0;
+                if (provs[j].store[RESOURCE_ENERGY] - correction >= creep.carryCapacity) {
                     result.push(provs[j]);
                 }
             }
@@ -70,13 +71,23 @@ module.exports = {
             return false;
         }
 
-        var provider = behavior.get_closest_energy_provider(creep);
+        var provider_id = creep.memory['provider_id'];
+        var provider = undefined;
+        if (provider_id === undefined) {
+            provider = behavior.get_closest_energy_provider(creep);
+        } else {
+            provider = Game.getObjectById(provider_id);
+        }
+
         if (provider === undefined) {
             return true;
         }
         var work_result = undefined;
         if (behavior.is_fast_provider(provider)) {
             work_result = creep.withdraw(provider, RESOURCE_ENERGY);
+            if (work_result == 0) {
+                creep.room.memory['energy_correction'][provider.id] -= creep.carryCapacity;
+            }
         } else {
             work_result = creep.harvest(provider);
         }
@@ -88,5 +99,15 @@ module.exports = {
             creep.memory['refill'] = false;
         }
         return creep.memory['refill'];
+    },
+    refill: function(creep) {
+        creep.memory['refill'] = true;
+        if (creep.memory['work_place'] != creep.memory.room.name) return;
+        var provider = behavior.get_closest_energy_provider(creep);
+        creep.memory['provider_id'] = provider.id;
+        if (creep.room.memory['energy_correction'][provider.id] === undefined) {
+            creep.room.memory['energy_correction'][provider.id] = 0;
+        }
+        creep.room.memory['energy_correction'][provider.id] += creep.carryCapacity;
     }
 }
