@@ -49,8 +49,7 @@ var behavior = {
     },
     get_closest_energy_provider: function (creep) {
         var pos = creep.pos;
-        var room = creep.room;
-        var provs = this.get_energy_providers(room);
+        var provs = this.get_energy_providers(creep);
         var minRange = 99999;
         var result = undefined;
         for (var i = 0; i < provs.length; ++i) {
