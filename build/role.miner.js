@@ -31,6 +31,10 @@ module.exports = {
             creep.moveTo(container);
         }
 
+        if (container.store[RESOURCE_ENERGY] == container.storeCapacity) {
+            return;
+        }
+
         if (creep.harvest(source) != 0) {
             creep.moveTo(container);
         }
