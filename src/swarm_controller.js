@@ -24,6 +24,14 @@ var population = {
       body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, WORK, MOVE],
       type: 'swarm'
     }
+  ],
+  'W32S61': [
+    {
+      count: 2,
+      role: 'builder',
+      body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, WORK, MOVE],
+      type: 'swarm'
+    }
   ]
 };
 

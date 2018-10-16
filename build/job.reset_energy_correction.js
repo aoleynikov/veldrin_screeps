@@ -1,5 +1,5 @@
 module.exports = {
-	period: 20,
+	period: 600,
 	execute: function() {
 		for (var room_name in Game.memory['rooms']) {
 			for (var provider_id in Game.memory['rooms'][room_name]['energy_correction']) {
