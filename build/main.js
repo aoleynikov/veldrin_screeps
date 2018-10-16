@@ -4,7 +4,6 @@ var buildings_manager = require('buildings_manager');
 var spawn_command = require('command.spawn');
 var doctor = require('doctor');
 var swarm = require('swarm_controller');
-var gc = require('gc');
 
 module.exports.loop = function () {
   for (var name in Game.creeps) {
@@ -21,5 +20,4 @@ module.exports.loop = function () {
   buildings_manager.run(Game.spawns['Main'].room);
   swarm.respawn();
   doctor.check();
-  gc.perform();
 }

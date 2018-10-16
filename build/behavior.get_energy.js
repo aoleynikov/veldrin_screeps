@@ -34,18 +34,18 @@ var behavior = {
         }
         return !free;
     },
-    get_energy_providers: function (room) {
+    get_energy_providers: function (creep) {
         var result = [];
         for (var i = 0; i < this.energy_providers.length; ++i) {
-            var provs = this.energy_providers[i].get(room);
+            var provs = this.energy_providers[i].get(creep.room);
             for (var j = 0; j < provs.length; ++j) {
-                if (provs[j].store[RESOURCE_ENERGY] >= 400) {
+                if (provs[j].store[RESOURCE_ENERGY] >= creep.carryCapacity) {
                     result.push(provs[j]);
                 }
             }
             if (result.length > 0) return result;
         }
-        return room.find(FIND_SOURCES_ACTIVE);
+        return creep.room.find(FIND_SOURCES_ACTIVE);
     },
     get_closest_energy_provider: function (creep) {
         var pos = creep.pos;
