@@ -31,6 +31,12 @@ var population = {
       role: 'builder',
       body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, WORK, MOVE],
       type: 'swarm'
+    },
+    {
+      count: 2,
+      role: 'importing_upgrader',
+      body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, WORK, MOVE],
+      type: 'swarm'
     }
   ]
 };
