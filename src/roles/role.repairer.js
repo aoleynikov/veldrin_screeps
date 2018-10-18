@@ -60,6 +60,7 @@ var work = function(creep) {
 
 module.exports = {
     perform: function (creep) {
-        energy_behavior.perform(creep, work);
+        if (energy_behavior.perform(creep)) return;
+        work(creep);
     }
 }
