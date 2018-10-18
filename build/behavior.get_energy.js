@@ -39,9 +39,7 @@ var behavior = {
         for (var i = 0; i < this.energy_providers.length; ++i) {
             var provs = this.energy_providers[i].get(creep.room);
             for (var j = 0; j < provs.length; ++j) {
-                creep.room.memory['energy_correction'] = creep.room.memory['energy_correction'] || {};
-                var correction = creep.room.memory['energy_correction'][provs[j].id] || 0;
-                if (provs[j].store[RESOURCE_ENERGY] - correction >= creep.carryCapacity) {
+                if (provs[j].store[RESOURCE_ENERGY] >= creep.carryCapacity) {
                     result.push(provs[j]);
                 }
             }
@@ -72,6 +70,11 @@ module.exports = {
             return false;
         }
 
+        if (creep.carry[RESOURCE_ENERGY] == creep.carryCapacity) {
+            creep.memory['refill'] = false;
+            return false;
+        }
+
         var provider_id = creep.memory['provider_id'];
         var provider = undefined;
         if (provider_id === undefined) {
@@ -99,23 +102,9 @@ module.exports = {
         if (work_result == ERR_NOT_IN_RANGE) {
             creep.moveTo(provider);
         }
-
-        if (creep.carry[RESOURCE_ENERGY] == creep.carryCapacity) {
-            creep.memory['refill'] = false;
-        }
-        return creep.memory['refill'];
+        return true;
     },
     refill: function(creep) {
         creep.memory['refill'] = true;
-        if (creep.memory['role'] == 'hauler') return;
-        var provider = behavior.get_closest_energy_provider(creep);
-        if (provider === undefined) return;
-        if (!behavior.is_fast_provider(provider)) return;
-        creep.memory['provider_id'] = provider.id;
-        creep.room.memory['energy_correction'] = creep.room.memory['energy_correction'] || {};
-        if (creep.room.memory['energy_correction'][provider.id] === undefined) {
-            creep.room.memory['energy_correction'][provider.id] = 0;
-        }
-        creep.room.memory['energy_correction'][provider.id] += creep.carryCapacity;
     }
 }
