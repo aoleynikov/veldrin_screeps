@@ -10,11 +10,14 @@ var build = function (creep) {
         var build_result = creep.build(site);
         if (build_result == ERR_NOT_IN_RANGE) {
             creep.moveTo(site);
+            return true;
         } else if (build_result == ERR_NOT_ENOUGH_ENERGY) {
             energy_behavior.refill(creep);
+        } else if (build_result == 0) {
+            return true;
         }
     }
-    return true;
+    return false;
 };
 
 var work = function (creep) {
