@@ -1,5 +1,4 @@
 var energy_behavior = require('behavior.get_energy');
-var importer = require('behavior.importer');
 
 var strategy = {
     store: function (creep) {

@@ -8,7 +8,6 @@ var warrior = require('role.warrior');
 var claimer = require('role.claimer');
 var hauler = require('role.hauler');
 var healer = require('role.healer');
-var importing_upgrader = require('role.importing_upgrader');
 
 var roles = {
   'harvester': harvester,
@@ -20,8 +19,7 @@ var roles = {
   'warrior': warrior,
   'healer': healer,
   'claimer': claimer,
-  'hauler': hauler,
-  'importing_upgrader': importing_upgrader
+  'hauler': hauler
 };
 
 module.exports = {

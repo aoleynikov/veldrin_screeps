@@ -62,7 +62,7 @@ var population = {
       role: 'builder',
       body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE],
       type: 'swarm'
-    }
+    },
     {
       count: 1,
       role: 'miner',

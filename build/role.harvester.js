@@ -36,6 +36,6 @@ var strategy = {
 
 module.exports = {
   perform: function (creep) {
-    energy_behavior.perform(creep, store);
+    energy_behavior.perform(creep, strategy.store);
   }
 }
