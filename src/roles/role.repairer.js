@@ -30,7 +30,7 @@ var find_repairable = function(room) {
 
 var repair = function(creep) {
     if (creep.memory['repairable_id'] === undefined) {
-        creep.memory['repairable_id'] = this.find_repairable(creep.room);
+        creep.memory['repairable_id'] = find_repairable(creep.room);
     }
 
     if (creep.memory['repairable_id'] === undefined) {
