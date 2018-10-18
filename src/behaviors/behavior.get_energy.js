@@ -9,11 +9,12 @@ module.exports = {
 			creep.memory['target'] = room;
 			if (room_travel.perform(creep)) return true;
 			if (get_room_energy.perform(creep)) return true;
+		} else {
+			room = creep.memory['work_place'] || creep.room.name;
+			creep.memory['target'] = room;
+			if (room_travel.perform(creep)) return true;
+			return false;
 		}
-		room = creep.memory['work_place'] || creep.room.name;
-		creep.memory['target'] = room;
-		if (room_travel.perform(creep)) return true;
-		return false;
 	},
 	refill: function(creep) {
         creep.memory['refill'] = true;
