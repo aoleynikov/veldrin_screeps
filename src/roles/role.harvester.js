@@ -21,10 +21,10 @@ var select_storage =  function (creep) {
 var store = function (creep) {
   var storage = select_storage(creep);
   if (!storage) return;
-  store = creep.transfer(storage, RESOURCE_ENERGY);
-  if (store == ERR_NOT_IN_RANGE) {
+  var work = creep.transfer(storage, RESOURCE_ENERGY);
+  if (work == ERR_NOT_IN_RANGE) {
     creep.moveTo(storage);
-  } else if (store == ERR_NOT_ENOUGH_ENERGY) {
+  } else if (work == ERR_NOT_ENOUGH_ENERGY) {
     energy_behavior.refill(creep);
   }
 };
