@@ -27,7 +27,7 @@ var behavior = {
     },
     get_closest_energy_provider: function (creep) {
         var result = [];
-        var self = this.
+        var self = this;
         result = creep.pos.findClosestByRange(FIND_STRUCTURES, { filter: function(s) {
             return self.is_fast_provider(s) && s.store[RESOURCE_ENERGY] >= creep.carryCapacity;
         }});
