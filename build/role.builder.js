@@ -18,7 +18,7 @@ var build = function (creep) {
 };
 
 var work = function (creep) {
-    var busy = this.build(creep);
+    var busy = build(creep);
     if (!busy) {
         repairer_role.perform(creep);
     }

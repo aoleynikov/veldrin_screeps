@@ -52,7 +52,7 @@ var repair = function(creep) {
 };
     
 var work = function(creep) {
-    var busy = strategy.repair(creep);
+    var busy = repair(creep);
     if (!busy) {
         upgrader_role.perform(creep);
     }
