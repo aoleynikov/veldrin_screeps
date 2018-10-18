@@ -27,12 +27,13 @@ var behavior = {
     },
     get_closest_energy_provider: function (creep) {
         var result = [];
-        result = creep.pos.findClosestByRange(FIND_STRUCTURE, { filter: function(s) {
-            return is_fast_provider(s) && s.store[RESOURCE_ENERGY] >= creep.carryCapacity;
+        var self = this.
+        result = creep.pos.findClosestByRange(FIND_STRUCTURES, { filter: function(s) {
+            return self.is_fast_provider(s) && s.store[RESOURCE_ENERGY] >= creep.carryCapacity;
         }});
         if (result) return result;
         return creep.room.findClosestByRange(FIND_SOURCES_ACTIVE, {filter: function(s) {
-            return !this.source_occupied(s, creep);
+            return !self.source_occupied(s, creep);
         }});
     }
 }
