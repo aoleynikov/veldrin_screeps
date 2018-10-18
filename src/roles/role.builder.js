@@ -7,10 +7,10 @@ var build = function (creep) {
     if (construction_sites.length == 0) return false;
     for (var i = 0; i < construction_sites.length; ++i) {
         var site = construction_sites[i]
-        var work = creep.build(site);
-        if (work == ERR_NOT_IN_RANGE) {
+        var build_result = creep.build(site);
+        if (build_result == ERR_NOT_IN_RANGE) {
             creep.moveTo(site);
-        } else if (work == ERR_NOT_ENOUGH_ENERGY) {
+        } else if (build_result == ERR_NOT_ENOUGH_ENERGY) {
             energy_behavior.refill(creep);
         }
     }
