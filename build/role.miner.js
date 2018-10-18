@@ -3,7 +3,7 @@ var room_travel = require('behavior.room_travel');
 
 var strategy = {
     find_container: function (creep) {
-        var creepLook = creep.room.lookAt(cont.pos.x, cont.pos.y);
+        var creepLook = creep.room.lookAt(creep.pos.x, creep.pos.y);
         for(var item of creepLook) {
             if(item.type == 'structure' && item.structure.structureType == STRUCTURE_CONTAINER) {
                 return item.structure;

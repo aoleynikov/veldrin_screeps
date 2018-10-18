@@ -36,9 +36,6 @@ var strategy = {
 
 module.exports = {
   perform: function (creep) {
-    if (room_travel.perform(creep)) return;
-    if (creep.room.energyAvailable == creep.room.energyCapacityAvailable) return;
-    if (energy_behavior.perform(creep)) return;
-    strategy.store(creep);
+    energy_behavior.perform(creep, store);
   }
 }

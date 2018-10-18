@@ -1,7 +1,7 @@
 /* 
 WARNING! If price of supporting the swarm per 300 ticks is more than energy 
 income available to harvesters, the swarm doesn't function as intended.
-From experience: there were 2 complete colony wipes while the swarm was overloaded,
+From experience: there were 3 complete colony wipes while the swarm was overloaded,
 but I am not sure if it is related.
 
 If you have a storage, it provides an easy way to monitor the economy balance.
@@ -42,12 +42,6 @@ var population = {
       type: 'swarm'
     },
     {
-      count: 2,
-      role: 'importing_upgrader',
-      body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE],
-      type: 'swarm'
-    },
-    {
       count: 1,
       role: 'miner',
       body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE],
@@ -60,12 +54,6 @@ var population = {
       role: 'builder',
       body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE],
       type: 'swarm'
-    },
-    {
-      count: 1,
-      role: 'importing_upgrader',
-      body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE],
-      type: 'swarm'
     }
   ],
   'W32S52': [
@@ -74,13 +62,7 @@ var population = {
       role: 'builder',
       body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE],
       type: 'swarm'
-    },
-    {
-      count: 1,
-      role: 'importing_upgrader',
-      body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE],
-      type: 'swarm'
-    },
+    }
     {
       count: 1,
       role: 'miner',

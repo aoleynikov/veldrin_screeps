@@ -1,5 +1,5 @@
 var energy_behavior = require('behavior.get_energy');
-var importer = require('role.importer');
+var importer = require('behavior.importer');
 
 var strategy = {
     store: function (creep) {
@@ -16,6 +16,6 @@ var strategy = {
 
 module.exports = {
     perform: function(creep) {
-        importer.perform(creep, strategy.store);
+        energy_behavior.perform(creep, store);
     }
 }

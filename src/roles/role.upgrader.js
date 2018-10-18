@@ -13,8 +13,6 @@ var upgrade = function (creep) {
 
 module.exports = {
     perform: function (creep) {
-        if (energy_behavior.perform(creep)) return;
-        if (room_travel.perform(creep)) return;
-        upgrade(creep);
+        energy_behavior.perform(creep, upgrade);
     }
 }

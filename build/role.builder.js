@@ -5,6 +5,7 @@ var room_travel = require('behavior.room_travel');
 var strategy = {
     build: function (creep) {
         var construction_sites = creep.room.find(FIND_MY_CONSTRUCTION_SITES);
+        if (construction_sites.length == 0) return false;
         for (var i = 0; i < construction_sites.length; ++i) {
             var site = construction_sites[i]
             var work = creep.build(site);
@@ -13,20 +14,19 @@ var strategy = {
             } else if (work == ERR_NOT_ENOUGH_ENERGY) {
                 energy_behavior.refill(creep);
             }
-            return true;
         }
-        return false;
+        return true;
+    },
+    work: function (creep) {
+        var busy = this.build(creep);
+        if (!busy) {
+            repairer_role.perform(creep);
+        }
     }
 }
 
 module.exports = {
     perform: function (creep) {
-        if (energy_behavior.perform(creep)) return;
-        if (room_travel.perform(creep)) return;
-
-        var busy = strategy.build(creep);
-        if (!busy) {
-            repairer_role.perform(creep);
-        }
+        energy_behavior.perform(creep, strategy.work);
     }
 }

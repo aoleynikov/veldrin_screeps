@@ -49,16 +49,17 @@ var strategy = {
             creep.memory['repairable_id'] = undefined;
         }
         return true;
+    },
+    work: function(creep) {
+        var busy = strategy.repair(creep);
+        if (!busy) {
+            upgrader_role.perform(creep);
+        }
     }
 }
 
 module.exports = {
     perform: function (creep) {
-        if (energy_behavior.perform(creep)) return;
-        if (room_travel.perform(creep)) return;
-        var busy = strategy.repair(creep);
-        if (!busy) {
-            upgrader_role.perform(creep);
-        }
+        energy_behavior.perform(creep, strategy.work);
     }
 }
