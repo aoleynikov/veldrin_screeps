@@ -38,11 +38,11 @@ var repair = function(creep) {
     }
     var struct = Game.getObjectById(creep.memory['repairable_id']);
     if (!struct) return;
-    var work = creep.repair(struct);
-    if (work == ERR_NOT_ENOUGH_ENERGY) {
+    var repair_result = creep.repair(struct);
+    if (repair_result == ERR_NOT_ENOUGH_ENERGY) {
         energy_behavior.refill(creep);
         creep.memory['repairable_id'] = undefined;
-    } else if (work == ERR_NOT_IN_RANGE) {
+    } else if (repair_result == ERR_NOT_IN_RANGE) {
         creep.moveTo(struct);
     }
     if(struct.hits == struct.hitsMax) { 
