@@ -6,13 +6,16 @@ module.exports = {
 		var room = undefined;
 		if (creep.memory['refill']) {
 			room = creep.memory['energy_room'] || creep.room.name;
-			if (room_travel.perform(creep)) return;
-			if (get_room_energy.perform(creep)) return;
-
+			creep.memory['target'] = room;
+			if (room_travel.perform(creep)) return true;
+			if (get_room_energy.perform(creep)) return true;
 		}
-
 		room = creep.memory['work_place'] || creep.room.name;
-		if (room_travel.perform(creep)) return;
-		work_action(creep);
-	}
+		creep.memory['target'] = room;
+		if (room_travel.perform(creep)) return true;
+		return false;
+	},
+	refill: function(creep) {
+        creep.memory['refill'] = true;
+    }
 }
