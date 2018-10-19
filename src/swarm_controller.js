@@ -33,14 +33,14 @@ var population = {
       type: 'swarm'
     },
     {
-      count: 2,
+      count: 3,
       role: 'hauler',
       body: [MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY],
       type: 'swarm',
-      energy_room: 'W31S51'
+      energy_room: 'W32S51'
     },
     {
-      count: 2,
+      count: 4,
       role: 'hauler',
       body: [MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY],
       type: 'swarm',
@@ -61,11 +61,18 @@ var population = {
     }
   ],
   'W31S52': [{
-    count: 2,
-    role: 'builder',
-    body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE],
-    type: 'swarm'
-  }],
+      count: 2,
+      role: 'builder',
+      body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE],
+      type: 'swarm'
+    },
+    {
+      count: 3,
+      role: 'miner',
+      body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE],
+      type: 'swarm'
+    }
+  ],
   'W32S52': [{
       count: 2,
       role: 'builder',
@@ -116,6 +123,7 @@ var controller = {
             energy_room: template.energy_room
           }
         });
+        console.log('SPAWNING ', template.role, ' FOR ', room_name, ': result - ', spawnResult);
       }
     }
   }
