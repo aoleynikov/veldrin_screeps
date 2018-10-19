@@ -18,6 +18,5 @@ module.exports.loop = function () {
 
   spawn_manager.run();
   buildings_manager.run(Game.spawns['Main'].room);
-  swarm.respawn();
   doctor.check();
 }

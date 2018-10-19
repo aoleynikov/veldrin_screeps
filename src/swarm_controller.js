@@ -158,14 +158,6 @@ var controller = {
 // but these creeps will be rebuilt instead of renewed
 module.exports = {
   respawn: function () {
-    for (var creep_name in Game.creeps) {
-      var creep = Game.creeps[creep_name];
-      if (creep.memory['role'] == 'maintenance' && creep.room.name == Game.spawns['Main'].room.name) {
-        console.log('[SWARM] Swarm regeneration paused. Maintenance in progress.')
-        return;
-      }
-    }
-
     for (var room_name in population) {
       for (var template of population[room_name]) {
         var actual = controller.count_creeps(template, room_name);
