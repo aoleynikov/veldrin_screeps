@@ -14,7 +14,7 @@ var storeEnergy = function (creep) {
 
 module.exports = {
     perform: function (creep) {
-        energy_behavior.perform(creep);
+        if (energy_behavior.perform(creep)) return;
         storeEnergy(creep);
     }
 }
