@@ -1,4 +1,5 @@
 var energy_behavior = require('behavior.get_energy');
+var storages = require('structure.storage');
 
 var store = function (creep) {
     var storage = storages.get(creep.room);
@@ -12,7 +13,7 @@ var store = function (creep) {
 };
 
 module.exports = {
-    perform: function(creep) {
+    perform: function (creep) {
         energy_behavior.perform(creep);
         store(creep);
     }
