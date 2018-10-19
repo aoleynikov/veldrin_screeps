@@ -112,7 +112,7 @@ var controller = {
       for (var i = 0; i < template.count; ++i) {
         var name = template.role + '_' + room_name + '_' + i;
         if (Game.creeps[name]) continue;
-        spawn.spawnCreep(template.body, name, {
+        var spawnResult = spawn.spawnCreep(template.body, name, {
           memory: {
             role: template.role,
             work_place: room_name,
