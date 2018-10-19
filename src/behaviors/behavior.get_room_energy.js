@@ -5,25 +5,30 @@ var behavior = {
     source_occupied: function (provider, exception_creep) {
         if (this.is_fast_provider(provider)) return false;
 
-        var look = provider.room.lookAtArea(provider.pos.x - 1,
-            provider.pos.y - 1,
-            provider.pos.x + 1,
-            provider.pos.y + 1);
+        var free = false;
 
-        for (var x in look) {
-            for (var y in look[x]) {
-                for (item of look[x][y]) {
-                    if (item['type'] == 'terrain' && item['terrain'] == 'wall' || item['type'] == 'source') continue;
-                    if (item['type'] == 'creep') {
-                        if (item['creep'].id == exception_creep.id)
-                            return false;
-                        else
-                            break;
+        var dx = [1, 1, 0, -1, -1, -1, 0, 1];
+        var dy = [0, 1, 1, 1, 0, -1, -1, -1];
+
+        for (var i = 0; i < dx.length; ++i) {
+            var pos = new RoomPosition(provider.pos.x + dx[i], provider.pos.y + dy[i], provider.room.name);
+            var look = provider.room.lookAt(pos);
+            if (look.length == 1 && look[0].type == 'terrain') { // wall
+                continue;
+            }
+
+            var has_creep = false;
+            for (var j = 0; j < look.length; ++j) {
+                if (look[j].type == 'creep') {
+                    if (look[j].creep.name == exception_creep.name) {
+                        return false;
                     }
+                    has_creep = true;
                 }
             }
+            free = free || !has_creep;
         }
-        return true;
+        return !free;
     },
     get_closest_energy_provider: function (creep) {
         var result = [];
