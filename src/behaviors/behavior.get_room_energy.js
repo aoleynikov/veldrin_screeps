@@ -53,7 +53,7 @@ module.exports = {
         }
 
         var provider = behavior.get_closest_energy_provider(creep);
-        if (provider === undefined) {
+        if (!provider) {
             return true;
         }
 
