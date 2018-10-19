@@ -39,6 +39,13 @@ var population = {
       energy_room: 'W32S51'
     },
     {
+      count: 3,
+      role: 'hauler',
+      body: [MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY],
+      type: 'swarm',
+      energy_room: 'W31S52'
+    },
+    {
       count: 4,
       role: 'hauler',
       body: [MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY],
