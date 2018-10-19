@@ -35,14 +35,14 @@ var population = {
     {
       count: 2,
       role: 'hauler',
-      body: [],
+      body: [MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY],
       type: 'swarm',
       energy_room: 'W31S51'
     },
     {
       count: 2,
       role: 'hauler',
-      body: [],
+      body: [MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY],
       type: 'swarm',
       energy_room: 'W32S52'
     }
