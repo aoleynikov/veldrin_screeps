@@ -62,11 +62,17 @@ var population = {
     {
       count: 2,
       role: 'builder',
-      body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE],
+      body: [WORK, MOVE, CARRY, MOVE, WORK, CARRY, MOVE],
       type: 'swarm'
     },
     {
       count: 2,
+      role: 'repairer',
+      body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE, WORK],
+      type: 'swarm'
+    },
+    {
+      count: 3,
       role: 'miner',
       body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE],
       type: 'swarm'
@@ -81,7 +87,13 @@ var population = {
     {
       count: 2,
       role: 'builder',
-      body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE],
+      body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, MOVE],
+      type: 'swarm'
+    },
+    {
+      count: 2,
+      role: 'repairer',
+      body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE, WORK],
       type: 'swarm'
     },
     {
@@ -107,6 +119,12 @@ var population = {
       count: 3,
       role: 'miner',
       body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE],
+      type: 'swarm'
+    },
+    {
+      count: 2,
+      role: 'repairer',
+      body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE, WORK],
       type: 'swarm'
     }
   ]

@@ -18,7 +18,6 @@ module.exports = {
             } else if (creep.ticksToLive >= CREEP_LIFE_TIME - 100 && creep.memory['role'] == 'maintenance') {
                 creep.memory['role'] = creep.memory['old_role'];
                 creep.memory['target'] = creep.memory['work_place'];
-
             } else {
                 if (creep.memory['role'] == 'maintenance') {
                     Game.spawns['Main'].renewCreep(creep);
