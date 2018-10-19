@@ -1,8 +1,7 @@
 /* 
 WARNING! If price of supporting the swarm per 300 ticks is more than energy 
 income available to harvesters, the swarm doesn't function as intended.
-From experience: there were 3 complete colony wipes while the swarm was overloaded,
-but I am not sure if it is related.
+
 
 If you have a storage, it provides an easy way to monitor the economy balance.
 For RCL <= 3, don't get greedy.
@@ -123,7 +122,7 @@ var controller = {
             energy_room: template.energy_room
           }
         });
-        console.log('SPAWNING ', template.role, ' FOR ', room_name, ': result - ', spawnResult);
+        console.log('[SWARM] spawning', template.role, ' for ', room_name, ': result - ', spawnResult);
       }
     }
   }
@@ -136,7 +135,8 @@ module.exports = {
   respawn: function () {
     for (var creep_name in Game.creeps) {
       var creep = Game.creeps[creep_name];
-      if (creep.memory['role'] == 'maintenance') {
+      if (creep.memory['role'] == 'maintenance' && creep.room.name == Game.spawns['Main'].room.name) {
+        console.log('[SWARM] Swarm regeneration paused. Maintenance in progress.')
         return;
       }
     }
