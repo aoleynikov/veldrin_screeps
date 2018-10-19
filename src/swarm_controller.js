@@ -10,13 +10,13 @@ var population = {
   'W31S51': [{
       count: 2,
       role: 'upgrader',
-      body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE],
+      body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE, WORK],
       type: 'swarm'
     },
     {
       count: 2,
       role: 'repairer',
-      body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE],
+      body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE, WORK],
       type: 'swarm'
     },
     {
@@ -47,6 +47,12 @@ var population = {
     }
   ],
   'W32S51': [{
+      count: 1,
+      role: 'claimer',
+      body: [CLAIM, CLAIM, MOVE, MOVE],
+      type: 'swarm'
+    },
+    {
       count: 2,
       role: 'builder',
       body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE],
@@ -60,6 +66,12 @@ var population = {
     }
   ],
   'W31S52': [{
+      count: 1,
+      role: 'claimer',
+      body: [CLAIM, CLAIM, MOVE, MOVE],
+      type: 'swarm'
+    },
+    {
       count: 2,
       role: 'builder',
       body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE],
@@ -73,6 +85,12 @@ var population = {
     }
   ],
   'W32S52': [{
+      count: 1,
+      role: 'claimer',
+      body: [CLAIM, CLAIM, MOVE, MOVE],
+      type: 'swarm'
+    },
+    {
       count: 2,
       role: 'builder',
       body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE],
