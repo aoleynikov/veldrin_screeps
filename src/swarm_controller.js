@@ -1,11 +1,3 @@
-/* 
-WARNING! If price of supporting the swarm per 300 ticks is more than energy 
-income available to harvesters, the swarm doesn't function as intended.
-
-
-If you have a storage, it provides an easy way to monitor the economy balance.
-For RCL <= 3, don't get greedy.
-*/
 var population = require('population');
 
 var controller = {
@@ -30,7 +22,15 @@ var controller = {
     for (var spawn_name in Game.spawns) {
       var spawn = Game.spawns[spawn_name];
       if (spawn.spawning) continue;
-      for (var i = 0; i < template.count; ++i) {
+
+      var count = 0;
+      population[room].forEach(t => {
+        if (t.role == template.role) {
+          count += template.count;
+        }
+      });
+
+      for (var i = 0; i < count; ++i) {
         var name = template.role + '_' + room_name + '_' + i;
         if (Game.creeps[name]) continue;
         var spawnResult = spawn.spawnCreep(template.body, name, {
@@ -61,7 +61,8 @@ module.exports = {
       for (var template of population[room_name]) {
         var actual = controller.count_creeps(template, room_name);
         if (actual < template.count) {
-          if (controller.spawnCreep(room_name, template)) return;
+          controller.spawnCreep(room_name, template)
+          return;
         }
       }
     }
