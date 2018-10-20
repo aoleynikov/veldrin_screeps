@@ -23,8 +23,5 @@ var roles = {
 };
 
 module.exports = {
-  get_strategy: function (creep) {
-    strategy = roles[creep.memory['role']];
-    return strategy || harvester;
-  }
+  get_strategy: (creep) => roles[creep.memory['role']] || harvester
 }

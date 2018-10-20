@@ -18,7 +18,7 @@ module.exports = {
             type: 'swarm'
         },
         {
-            count: 1,
+            count: 3,
             role: 'builder',
             body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE],
             type: 'swarm'
@@ -53,12 +53,6 @@ module.exports = {
         },
         {
             count: 2,
-            role: 'builder',
-            body: [WORK, MOVE, CARRY, MOVE, WORK, CARRY, MOVE],
-            type: 'swarm'
-        },
-        {
-            count: 2,
             role: 'repairer',
             body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE, WORK],
             type: 'swarm'
@@ -78,12 +72,6 @@ module.exports = {
         },
         {
             count: 2,
-            role: 'builder',
-            body: [WORK, MOVE, CARRY, WORK, MOVE, CARRY, MOVE],
-            type: 'swarm'
-        },
-        {
-            count: 2,
             role: 'repairer',
             body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE, WORK],
             type: 'swarm'
@@ -99,12 +87,6 @@ module.exports = {
             count: 1,
             role: 'claimer',
             body: [CLAIM, CLAIM, MOVE, MOVE],
-            type: 'swarm'
-        },
-        {
-            count: 2,
-            role: 'builder',
-            body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE],
             type: 'swarm'
         },
         {

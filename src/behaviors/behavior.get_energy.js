@@ -2,7 +2,7 @@ var get_room_energy = require('behavior.get_room_energy');
 var room_travel = require('behavior.room_travel');
 
 module.exports = {
-	perform: function(creep, work_action) {
+	perform: function (creep) {
 		var room = undefined;
 		if (creep.memory['refill']) {
 			room = creep.memory['energy_room'] || creep.room.name;
@@ -15,7 +15,5 @@ module.exports = {
 		if (room_travel.perform(creep)) return true;
 		return false;
 	},
-	refill: function(creep) {
-        creep.memory['refill'] = true;
-    }
+	refill: (creep) => creep.memory['refill'] = true
 }
