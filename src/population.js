@@ -2,7 +2,7 @@ module.exports = {
     'W31S51': [{
             count: 2,
             role: 'upgrader',
-            body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE, WORK],
+            body: [WORK, MOVE, WORK, MOVE, CARRY, MOVE, CARRY, MOVE, WORK],
             type: 'swarm'
         },
         {
