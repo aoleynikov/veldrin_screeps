@@ -20,7 +20,7 @@ module.exports = {
         {
             count: 3,
             role: 'builder',
-            body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE],
+            body: [WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, MOVE, CARRY, MOVE],
             type: 'swarm'
         },
         {
