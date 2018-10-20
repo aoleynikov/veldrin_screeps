@@ -61,8 +61,7 @@ module.exports = {
       for (var template of population[room_name]) {
         var actual = controller.count_creeps(template, room_name);
         if (actual < template.count) {
-          controller.spawnCreep(room_name, template)
-          return;
+          if (controller.spawnCreep(room_name, template)) return;
         }
       }
     }
