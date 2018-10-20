@@ -24,7 +24,7 @@ var controller = {
       if (spawn.spawning) continue;
 
       var count = 0;
-      population[room].forEach(t => {
+      population[room_name].forEach(t => {
         if (t.role == template.role) {
           count += template.count;
         }
