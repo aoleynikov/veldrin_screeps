@@ -33,8 +33,10 @@ var work = function (creep) {
   }
 };
 
-export function perform(creep) {
-  if (room_travel.perform(creep)) return;
-  if (energy_behavior.perform(creep)) return;
-  work(creep);
-}
+module.exports = {
+  perform: creep => {
+    if (room_travel.perform(creep)) return;
+    if (energy_behavior.perform(creep)) return;
+    work(creep);
+  }
+};
