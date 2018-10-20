@@ -7,7 +7,6 @@ If you have a storage, it provides an easy way to monitor the economy balance.
 For RCL <= 3, don't get greedy.
 */
 module.exports = {
-  varsion: 1,
   'W31S51': [{
     count: 3,
     role: 'miner',
