@@ -1,8 +1,8 @@
 var behavior = {
-    is_fast_provider: (provider) => {
+    is_fast_provider: function (provider) {
         return provider.structureType == STRUCTURE_CONTAINER || provider.structureType == STRUCTURE_STORAGE;
     },
-    source_occupied: (provider, exception_creep) => {
+    source_occupied: function (provider, exception_creep) {
         if (this.is_fast_provider(provider)) return false;
 
         var free = false;
