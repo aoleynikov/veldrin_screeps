@@ -67,7 +67,5 @@ module.exports = {
         }
       }
     }
-
-    console.log('[SWARM] The swarm is fully developed.');
   }
 };
