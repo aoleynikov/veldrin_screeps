@@ -8,7 +8,7 @@ module.exports = {
             if (!room) continue;
             var count = count_func(room);
 
-            console.log('[SWARM] Setting ' + role + ' count to ' + count + 'for room ' + key);
+            console.log('[SWARM] Setting ' + role + ' count to ' + count + ' for room ' + key);
 
             var room_swarm = spawn.memory['population'][key];
             spawn.memory['population'][key] = room_swarm.filter((t) => {
