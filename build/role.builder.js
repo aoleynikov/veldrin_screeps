@@ -12,7 +12,8 @@ var build = function (creep) {
     var build_result = creep.build(site);
 
     if (build_result == ERR_NOT_IN_RANGE) {
-      creep.moveTo(site);
+      var path = PathFinder.search(creep, site);
+      creep.moveByPath(path);
       return true;
     } else if (build_result == ERR_NOT_ENOUGH_ENERGY) {
       energy_behavior.refill(creep);
