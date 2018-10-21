@@ -18,12 +18,14 @@ module.exports = {
                 }
             }
 
-            spawn.memory['population'][key].push({
-                count: count,
-                role: role,
-                body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE],
-                type: 'swarm'
-            });
+            if (count > 0) {
+                spawn.memory['population'][key].push({
+                    count: count,
+                    role: role,
+                    body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE],
+                    type: 'swarm'
+                });
+            }
         }
     }
 }
