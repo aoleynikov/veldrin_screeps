@@ -53,7 +53,7 @@ module.exports = {
     type: 'swarm'
   }, {
     count: 2,
-    role: 'builder',
+    role: 'repairer',
     body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE, WORK],
     type: 'swarm'
   }, {
@@ -71,6 +71,11 @@ module.exports = {
     count: 2,
     role: 'repairer',
     body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE, WORK],
+    type: 'swarm'
+  }, {
+    count: 2,
+    role: 'builder',
+    body: [WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, MOVE, CARRY, MOVE],
     type: 'swarm'
   }, {
     count: 3,
