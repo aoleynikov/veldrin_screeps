@@ -57,7 +57,8 @@ var controller = {
 // but these creeps will be rebuilt instead of renewed
 module.exports = {
   respawn: function () {
-    for (var room_name in population) {
+    for (var room_name in Game.spawns['Main'].memory['population']) {
+      if (room_name == 'version') continue;
       for (var template of population[room_name]) {
         var actual = controller.count_creeps(template, room_name);
         if (actual < template.count) {

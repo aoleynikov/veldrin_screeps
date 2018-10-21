@@ -1,7 +1,8 @@
 var dispatcher = require('strategy_dispatcher');
-var spawn_manager = require('upgrade_manager');
+var upgrade_manager = require('upgrade_manager');
 var buildings_manager = require('buildings_manager');
 var doctor = require('doctor');
+var population = require('population');
 
 module.exports.loop = function () {
   for (var name in Game.creeps) {
@@ -14,7 +15,11 @@ module.exports.loop = function () {
     }
   }
 
-  spawn_manager.run();
+  upgrade_manager.run();
   buildings_manager.run(Game.spawns['Main'].room);
   doctor.check();
+
+  if (Game.spawns['Main'].memory['population'].version < population) {
+    Game.spawns['Main'].memory['population'] = population;
+  }
 }

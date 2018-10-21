@@ -1,5 +1,3 @@
-var room_wrapper = require('room_wrapper');
-
 var factories = require('factories');
 
 var manager = {
@@ -37,7 +35,6 @@ var manager = {
 };
 module.exports = {
   run: function () {
-    return;
     var spawn = Game.spawns['Main'];
 
     if (spawn.memory['replaced_name'] === undefined) {

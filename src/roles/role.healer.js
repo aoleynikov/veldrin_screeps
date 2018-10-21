@@ -23,15 +23,19 @@ module.exports = {
             }
             creep.memory['patient'] = patient.name;
         }
-        var patient = Game.creeps[creep.memory['patient']];
 
-        if (patient !== undefined && creep.room.name != patient.room.name) {
+        var patient = Game.creeps[creep.memory['patient']];
+        if (patient !== undefined || patient.hits == patient.hitsMax) {
+            creep.memory['patient'] = undefined;
+            return;
+        }
+
+        if (creep.room.name != patient.room.name) {
             creep.memory['target'] = patient.room.name;
             if (room_travel.perform(creep)) return;
         }
-        if (patient !== undefined && creep.heal(patient) == ERR_NOT_IN_RANGE) {
+        if (creep.heal(patient) == ERR_NOT_IN_RANGE) {
             creep.moveTo(patient);
         }
-        creep.moveTo(Game.flags['Rax']);
     }
 }

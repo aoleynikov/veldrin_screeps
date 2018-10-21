@@ -8,6 +8,7 @@ For RCL <= 3, don't get greedy.
 */
 
 module.exports = {
+    version: 1,
     'W31S51': [{
             count: 3,
             role: 'miner',
@@ -35,21 +36,21 @@ module.exports = {
         {
             count: 3,
             role: 'hauler',
-            body: [MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY],
+            body: [MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY],
             type: 'swarm',
             energy_room: 'W32S51'
         },
         {
             count: 3,
             role: 'hauler',
-            body: [MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY],
+            body: [MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY],
             type: 'swarm',
             energy_room: 'W31S52'
         },
         {
             count: 4,
             role: 'hauler',
-            body: [MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY],
+            body: [MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY],
             type: 'swarm',
             energy_room: 'W32S52'
         }
@@ -83,12 +84,6 @@ module.exports = {
             count: 2,
             role: 'repairer',
             body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE, WORK],
-            type: 'swarm'
-        },
-        {
-            count: 2,
-            role: 'builder',
-            body: [WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, MOVE, CARRY, MOVE],
             type: 'swarm'
         },
         {

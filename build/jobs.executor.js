@@ -1,4 +1,4 @@
-var jobs = [require('job.miners_count'), require('job.reset_energy_correction')];
+var jobs = [require('job.miners_count')];
 module.exports = {
   run: () => {
     jobs.forEach(job => {
