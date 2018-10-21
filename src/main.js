@@ -21,7 +21,7 @@ module.exports.loop = function () {
   doctor.check();
   jobs.run();
 
-  if (Game.spawns['Main'].memory['population'].version < population) {
+  if (Game.spawns['Main'].memory['population'].version < population.version) {
     Game.spawns['Main'].memory['population'] = population;
   }
 }
