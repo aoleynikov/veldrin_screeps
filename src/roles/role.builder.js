@@ -3,7 +3,7 @@ var energy_behavior = require('behavior.get_energy');
 var room_travel = require('behavior.room_travel');
 
 var build = function (creep) {
-    for (var id in Game.constructionSites) {
+    for (var id in creep.room.find(FIND_MY_CONSTRUCTION_SITES)) {
         var site = Game.getObjectById(id);
 
         creep.memory['target'] = site.room.name;
