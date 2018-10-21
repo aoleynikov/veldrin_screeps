@@ -13,9 +13,9 @@ module.exports = {
     body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE],
     type: 'swarm'
   }, {
-    count: 2,
+    count: 3,
     role: 'upgrader',
-    body: [WORK, MOVE, WORK, MOVE, CARRY, MOVE, CARRY, MOVE, WORK],
+    body: [WORK, MOVE, WORK, MOVE, WORK, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, WORK],
     type: 'swarm'
   }, {
     count: 2,
