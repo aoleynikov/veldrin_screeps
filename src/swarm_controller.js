@@ -44,9 +44,7 @@ var controller = {
           }
         });
         console.log('[SWARM] spawning', template.role, ' for ', room_name, ': result - ', spawnResult);
-        if (spawnResult == 0) {
-          return true;
-        }
+        return spawnResult == 0;
       }
     }
   }
@@ -59,7 +57,7 @@ module.exports = {
   respawn: function () {
     for (var room_name in Game.spawns['Main'].memory['population']) {
       if (room_name == 'version') continue;
-      for (var template of population[room_name]) {
+      for (var template of Game.spawns['Main'].memory['population'][room_name]) {
         var actual = controller.count_creeps(template, room_name);
         if (actual < template.count) {
           if (controller.spawnCreep(room_name, template)) return;

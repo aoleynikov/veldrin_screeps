@@ -43,10 +43,7 @@ var controller = {
           }
         });
         console.log('[SWARM] spawning', template.role, ' for ', room_name, ': result - ', spawnResult);
-
-        if (spawnResult == 0) {
-          return true;
-        }
+        return spawnResult == 0;
       }
     }
   } // swarm is a set of very cheap creeps doing certain tasks.
