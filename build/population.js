@@ -7,92 +7,133 @@ If you have a storage, it provides an easy way to monitor the economy balance.
 For RCL <= 3, don't get greedy.
 */
 module.exports = {
-  version: 1,
-  'W31S51': [{
+  version: 2,
+  rooms: ["W31S51", "W32S51", "W31S52", "W32S52"],
+  templates: [{
     count: 3,
-    role: 'miner',
-    body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE],
-    type: 'swarm'
-  }, {
-    count: 3,
-    role: 'upgrader',
-    body: [WORK, MOVE, WORK, MOVE, WORK, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, WORK],
-    type: 'swarm'
+    body: [WORK, MOVE, WORK, WORK, MOVE, MOVE, CARRY, MOVE, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY],
+    memory: {
+      role: "upgrader",
+      type: "swarm",
+      work_place: "W31S51",
+      target: "W31S51"
+    }
   }, {
     count: 2,
-    role: 'repairer',
     body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE, WORK],
-    type: 'swarm'
+    memory: {
+      role: "repairer",
+      type: "swarm",
+      work_place: "W31S51",
+      target: "W31S51"
+    }
   }, {
     count: 3,
-    role: 'builder',
     body: [WORK, WORK, WORK, MOVE, MOVE, MOVE, CARRY, MOVE, CARRY, MOVE],
-    type: 'swarm'
+    memory: {
+      role: "builder",
+      type: "swarm",
+      work_place: "W31S51",
+      target: "W31S51"
+    }
   }, {
     count: 3,
-    role: 'hauler',
     body: [MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY],
-    type: 'swarm',
-    energy_room: 'W32S51'
+    memory: {
+      role: "hauler",
+      type: "swarm",
+      energy_room: "W32S51",
+      work_place: "W31S51"
+    }
   }, {
     count: 3,
-    role: 'hauler',
     body: [MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY],
-    type: 'swarm',
-    energy_room: 'W31S52'
+    memory: {
+      role: "hauler",
+      type: "swarm",
+      energy_room: "W31S52",
+      work_place: "W31S51"
+    }
   }, {
     count: 4,
-    role: 'hauler',
     body: [MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY],
-    type: 'swarm',
-    energy_room: 'W32S52'
-  }],
-  'W32S51': [{
+    memory: {
+      role: "hauler",
+      type: "swarm",
+      energy_room: "W32S52",
+      work_place: "W31S51"
+    }
+  }, {
     count: 1,
-    role: 'claimer',
     body: [CLAIM, CLAIM, MOVE, MOVE],
-    type: 'swarm'
+    memory: {
+      role: "claimer",
+      type: "swarm",
+      target: "W32S51"
+    }
   }, {
     count: 2,
-    role: 'repairer',
     body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE, WORK],
-    type: 'swarm'
+    memory: {
+      role: "repairer",
+      type: "swarm",
+      target: "W32S51"
+    }
   }, {
     count: 3,
-    role: 'miner',
     body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE],
-    type: 'swarm'
-  }],
-  'W31S52': [{
+    memory: {
+      role: "miner",
+      type: "swarm",
+      target: "W32S51"
+    }
+  }, {
     count: 1,
-    role: 'claimer',
     body: [CLAIM, CLAIM, MOVE, MOVE],
-    type: 'swarm'
+    memory: {
+      role: "claimer",
+      type: "swarm",
+      target: "W31S52"
+    }
   }, {
     count: 2,
-    role: 'repairer',
     body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE, WORK],
-    type: 'swarm'
+    memory: {
+      role: "repairer",
+      type: "swarm",
+      target: "W31S52"
+    }
   }, {
     count: 3,
-    role: 'miner',
     body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE],
-    type: 'swarm'
-  }],
-  'W32S52': [{
+    memory: {
+      role: "miner",
+      type: "swarm",
+      target: "W31S52"
+    }
+  }, {
     count: 1,
-    role: 'claimer',
     body: [CLAIM, CLAIM, MOVE, MOVE],
-    type: 'swarm'
+    memory: {
+      role: "claimer",
+      type: "swarm",
+      target: "W32S52"
+    }
   }, {
-    count: 2,
-    role: 'miner',
+    count: 3,
     body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE],
-    type: 'swarm'
+    memory: {
+      role: "miner",
+      type: "swarm",
+      target: "W32S52"
+    }
   }, {
     count: 2,
-    role: 'repairer',
     body: [WORK, MOVE, CARRY, MOVE, CARRY, MOVE, WORK],
-    type: 'swarm'
+    memory: {
+      role: "repairer",
+      type: "swarm",
+      target: "W32S52"
+    }
   }]
 };

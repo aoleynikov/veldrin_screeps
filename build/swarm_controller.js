@@ -23,7 +23,7 @@ var controller = {
       var spawn = Game.spawns[spawn_name];
       if (spawn.spawning) continue;
       var count = 0;
-      population[room_name].forEach(t => {
+      Game.spawns['Main'].memory['population'][room_name].forEach(t => {
         if (t.role == template.role) {
           count += template.count;
         }
@@ -33,14 +33,7 @@ var controller = {
         var name = template.role + '_' + room_name + '_' + i;
         if (Game.creeps[name]) continue;
         var spawnResult = spawn.spawnCreep(template.body, name, {
-          memory: {
-            role: template.role,
-            work_place: room_name,
-            target: room_name,
-            type: template.type,
-            refill: true,
-            energy_room: template.energy_room
-          }
+          memory: template.memory
         });
         console.log('[SWARM] spawning', template.role, ' for ', room_name, ': result - ', spawnResult);
         return spawnResult == 0;
@@ -53,15 +46,11 @@ var controller = {
 };
 module.exports = {
   respawn: function () {
-    for (var room_name in Game.spawns['Main'].memory['population']) {
-      if (room_name == 'version') continue;
+    for (var template of Game.spawns['Main'].memory['population']['templates']) {
+      var actual = controller.count_creeps(template, room_name);
 
-      for (var template of population[room_name]) {
-        var actual = controller.count_creeps(template, room_name);
-
-        if (actual < template.count) {
-          if (controller.spawnCreep(room_name, template)) return;
-        }
+      if (actual < template.count) {
+        if (controller.spawnCreep(room_name, template)) return;
       }
     }
   }
