@@ -37,17 +37,7 @@ var find_repairable = function (room) {
   return repairable_id;
 };
 
-var repair = function (creep) {
-  if (creep.memory['repairable_id'] === undefined) {
-    creep.memory['repairable_id'] = find_repairable(creep.room);
-  }
-
-  if (creep.memory['repairable_id'] === undefined) {
-    return false;
-  }
-
-  var struct = Game.getObjectById(creep.memory['repairable_id']);
-  if (!struct) return;
+var repair = function (creep, struct) {
   var repair_result = creep.repair(struct);
 
   if (repair_result == ERR_NOT_ENOUGH_ENERGY) {
@@ -60,12 +50,37 @@ var repair = function (creep) {
   if (struct.hits == struct.hitsMax) {
     creep.memory['repairable_id'] = undefined;
   }
+};
 
+var repair_my_sructures = function (creep) {
+  if (creep.memory['repairable_id'] === undefined) {
+    creep.memory['repairable_id'] = find_repairable(creep.room);
+  }
+
+  if (creep.memory['repairable_id'] === undefined) {
+    return false;
+  }
+
+  var struct = Game.getObjectById(creep.memory['repairable_id']);
+  if (!struct) return;
+  repair(creep, struct);
   return true;
 };
 
+var repair_walls = function (creep) {
+  var walls = creep.room.find(FIND_STRUCTURES, {
+    filter: s => s.structureType == STRUCTURE_WALL && s.hits < s.hitsMax
+  });
+
+  if (walls.length == 0) {
+    return false;
+  }
+
+  repair(creep, walls[0]);
+};
+
 var work = function (creep) {
-  var busy = repair(creep);
+  var busy = repair_my_sructures(creep) || repair_walls(creep);
 
   if (!busy) {
     upgrader_role.perform(creep);
