@@ -11,7 +11,7 @@ module.exports = {
             filter: (c) => c.memory['role'] == 'maintenance'
         });
         if (maintenance_creeps.length == 0) {
-            swarm.respawn();
+            //swarm.respawn();
         } else {
             console.log('[SWARM] Swarm regeneration paused. Maintenance in progress.')
         }

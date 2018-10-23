@@ -16,12 +16,12 @@ module.exports.loop = function () {
     }
   }
 
-  upgrade_manager.run();
+  //upgrade_manager.run();
   buildings_manager.run(Game.spawns['Main'].room);
   doctor.check();
-  jobs.run();
+  //jobs.run();
 
-  if (Game.spawns['Main'].memory['population'].version < population.version) {
-    Game.spawns['Main'].memory['population'] = population;
-  }
+  // if (Game.spawns['Main'].memory['population'].version < population.version) {
+  //   Game.spawns['Main'].memory['population'] = population;
+  // }
 }

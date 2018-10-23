@@ -19,14 +19,12 @@ module.exports.loop = function () {
     if (creep.memory['role'] == 'maintenance') {
       Game.spawns['Main'].renewCreep(creep);
     }
-  }
+  } //upgrade_manager.run();
 
-  upgrade_manager.run();
+
   buildings_manager.run(Game.spawns['Main'].room);
-  doctor.check();
-  jobs.run();
-
-  if (Game.spawns['Main'].memory['population'].version < population.version) {
-    Game.spawns['Main'].memory['population'] = population;
-  }
+  doctor.check(); //jobs.run();
+  // if (Game.spawns['Main'].memory['population'].version < population.version) {
+  //   Game.spawns['Main'].memory['population'] = population;
+  // }
 };

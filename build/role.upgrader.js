@@ -1,7 +1,6 @@
 var energy_behavior = require('behavior.get_energy');
 
 var upgrade = creep => {
-  creep.memory['energy_room'] = creep.room.controller;
   var controller = Game.spawns['Main'].room.controller;
   var work = creep.upgradeController(controller);
 

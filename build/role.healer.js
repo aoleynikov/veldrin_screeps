@@ -7,6 +7,7 @@ var strategy = {
     for (var name in Game.creeps) {
       if (name == own) continue;
       var creep = Game.creeps[name];
+      if (creep.room.name != Game.creeps[own].room.name) continue;
 
       if (creep.hits < creep.hitsMax) {
         return creep;

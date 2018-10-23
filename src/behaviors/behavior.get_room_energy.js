@@ -13,7 +13,7 @@ var behavior = {
         for (var i = 0; i < dx.length; ++i) {
             var pos = new RoomPosition(provider.pos.x + dx[i], provider.pos.y + dy[i], provider.room.name);
             var look = provider.room.lookAt(pos);
-            if (look.length == 1 && look[0].type == 'terrain') { // wall
+            if (look.length == 1 && look[0].type == 'terrain' && look[0].terrain == 'wall') { // wall
                 continue;
             }
 
