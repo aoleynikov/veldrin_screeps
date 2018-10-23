@@ -24,7 +24,8 @@ module.exports.loop = function () {
 
   buildings_manager.run(Game.spawns['Main'].room);
   doctor.check(); //jobs.run();
-  // if (Game.spawns['Main'].memory['population'].version < population.version) {
-  //   Game.spawns['Main'].memory['population'] = population;
-  // }
+
+  if (Game.spawns['Main'].memory['population'] === undefined) {
+    Game.spawns['Main'].memory['population'] = population;
+  }
 };

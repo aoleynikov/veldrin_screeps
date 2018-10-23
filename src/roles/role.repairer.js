@@ -11,24 +11,21 @@ var repair = function (creep, struct) {
     } else if (repair_result == ERR_NOT_IN_RANGE) {
         move.perform(creep, struct.pos);
     }
-    if (struct.hits == struct.hitsMax) {
-        creep.memory['repairable_id'] = undefined;
-    }
 }
 
 var repair_my_sructures = function (creep) {
-    var repairables = creep.pos.findClosestByRange(FIND_STRUCTURES, {
-        filter: (s) => s.hist < s.hitsMax
+    var repairable = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+        filter: s => s.hits < s.hitsMax
     });
-    if (repairables.length == 0) return false;
-    repair(creep, repairables[0]);
+    if (!repairable) return false;
+    repair(creep, repairable);
     return true;
 };
 
 var work = function (creep) {
     var busy = repair_my_sructures(creep);
     if (!busy) {
-        upgrader_role.perform(creep);
+        //upgrader_role.perform(creep);
     }
 }
 
