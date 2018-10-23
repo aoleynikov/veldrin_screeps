@@ -12,8 +12,6 @@ module.exports = {
         });
         if (maintenance_creeps.length == 0) {
             swarm.respawn();
-        } else {
-            console.log('[SWARM] Swarm regeneration paused. Maintenance in progress.')
         }
     }
 }

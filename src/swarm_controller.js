@@ -24,14 +24,14 @@ var controller = {
       if (spawn.spawning) continue;
 
       var count = 0;
-      Game.spawns['Main'].memory['population'][room_name].forEach(t => {
+      Game.spawns['Main'].memory['population']['templates'].forEach(t => {
         if (t.role == template.role) {
           count += template.count;
         }
       });
 
       for (var i = 0; i < count; ++i) {
-        var name = template.role + '_' + room_name + '_' + i;
+        var name = template.role + '_' + template.memory.work_place + '_' + i;
         if (Game.creeps[name]) continue;
         var spawnResult = spawn.spawnCreep(template.body, name, {
           memory: template.memory
