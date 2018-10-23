@@ -1,11 +1,18 @@
 var military = require('behavior.military');
 
-var enemies_find = [FIND_HOSTILE_CREEPS, FIND_HOSTILE_STRUCTURES, FIND_HOSTILE_SPAWNS, FIND_HOSTILE_CONSTRUCTION_SITES]
+var enemies_find = [FIND_HOSTILE_CREEPS, FIND_HOSTILE_STRUCTURES, FIND_HOSTILE_SPAWNS]
 
 var target_filter = (t) => t.structureType === undefined || t.structureType != STRUCTURE_CONTROLLER
 
 module.exports = {
     perform: function (creep) {
+        var squad = creep.memory['squad'];
+        var flag = Game.flags[squad] || Game.flags['Rax'];
+        if (flag.room.name != creep.room.name) {
+            creep.moveTo(flag);
+            return;
+        }
+
         var enemies = [];
         var target = undefined;
         for (var find of enemies_find) {
@@ -19,10 +26,12 @@ module.exports = {
                 break;
             }
         }
+
         if (target === undefined) {
-            military.perform(creep);
+            creep.moveTo(flag);
             return;
         }
+
         var attack_result = creep.attack(target);
         if (attack_result == ERR_NOT_IN_RANGE) {
             creep.moveTo(target);

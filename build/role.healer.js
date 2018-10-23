@@ -7,7 +7,6 @@ var strategy = {
     for (var name in Game.creeps) {
       if (name == own) continue;
       var creep = Game.creeps[name];
-      if (creep.room.name != Game.creeps[own].room.name) continue;
 
       if (creep.hits < creep.hitsMax) {
         return creep;
@@ -17,6 +16,14 @@ var strategy = {
 };
 module.exports = {
   perform: function (creep) {
+    var squad = creep.memory['squad'];
+    var flag = Game.flags[squad] || Game.flags['Rax'];
+
+    if (flag.room.name != creep.room.name) {
+      creep.moveTo(flag);
+      return true;
+    }
+
     if (creep.memory['patient'] === undefined) {
       patient = strategy.find_patient(creep.name);
 
@@ -32,6 +39,7 @@ module.exports = {
 
     if (patient !== undefined || patient.hits == patient.hitsMax) {
       creep.memory['patient'] = undefined;
+      creep.moveTo(flag);
       return;
     }
 
