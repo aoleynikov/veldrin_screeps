@@ -10,9 +10,16 @@ var impassable = (item) => {
 
 module.exports = {
     perform: function (creep, goal) {
+        creep.memory['prev_position'] = creep.pos;
         if (creep.pos.getRangeTo(goal) >= 4) {
             var path = PathFinder.search(creep.pos, goal);
             var next_step = path.path[0];
+
+            var prev = creep.memory['prev_position'];
+            if (prev.isEqualTo(next_step)) {
+                creep.moveTo(goal);
+            }
+
             var look = creep.room.lookAt(next_step);
             for (var item of look) {
                 if (impassable(item)) {
