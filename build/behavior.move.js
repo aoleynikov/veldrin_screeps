@@ -1,3 +1,11 @@
+var impassable = item => {
+  if (item.type == 'structure') {
+    return item.structure.structureType == STRUCTURE_SPAWN || item.structure.structureType == STRUCTURE_EXTENSION || item.structure.structureType == STRUCTURE_TOWER || item.structure.structureType == STRUCTURE_STORAGE;
+  }
+
+  return item.type == 'creep';
+};
+
 module.exports = {
   perform: function (creep, goal) {
     if (creep.pos.getRangeTo(goal) >= 4) {
@@ -6,7 +14,7 @@ module.exports = {
       var look = creep.room.lookAt(next_step);
 
       for (var item of look) {
-        if (item.type == 'structure' && item.strucutreType == STRUCTURE_SPAWN) {
+        if (impassable(item)) {
           creep.moveTo(goal);
           return;
         }
