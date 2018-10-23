@@ -2,6 +2,8 @@ var containers = require('structure.container');
 
 var room_travel = require('behavior.room_travel');
 
+var move = require('behavior.move');
+
 var strategy = {
   find_container: function (creep) {
     var creepLook = creep.room.lookAt(creep.pos.x, creep.pos.y);
@@ -36,7 +38,7 @@ module.exports = {
     if (!source || !container) return;
 
     if (creep.pos.x != container.pos.x || creep.pos.y != container.pos.y) {
-      creep.moveTo(container);
+      move.perform(creep, container.pos);
     }
 
     if (container.store[RESOURCE_ENERGY] == container.storeCapacity) {
@@ -44,7 +46,7 @@ module.exports = {
     }
 
     if (creep.harvest(source) != 0) {
-      creep.moveTo(container);
+      move.perform(creep, container.pos);
     }
   }
 };

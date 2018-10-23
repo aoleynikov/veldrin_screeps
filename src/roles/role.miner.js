@@ -1,11 +1,12 @@
 var containers = require('structure.container');
 var room_travel = require('behavior.room_travel');
+var move = require('behavior.move');
 
 var strategy = {
     find_container: function (creep) {
         var creepLook = creep.room.lookAt(creep.pos.x, creep.pos.y);
-        for(var item of creepLook) {
-            if(item.type == 'structure' && item.structure.structureType == STRUCTURE_CONTAINER) {
+        for (var item of creepLook) {
+            if (item.type == 'structure' && item.structure.structureType == STRUCTURE_CONTAINER) {
                 return item.structure;
             }
         }
@@ -13,7 +14,7 @@ var strategy = {
             var look = creep.room.lookAt(cont.pos.x, cont.pos.y);
             var good = true;
             for (var item of look) {
-                if (item.type == 'creep' && item.creep.memory['role'] == 'miner' && 
+                if (item.type == 'creep' && item.creep.memory['role'] == 'miner' &&
                     item.creep.id != creep.id) {
                     good = false;
                     break;
@@ -34,7 +35,7 @@ module.exports = {
         if (!source || !container) return;
 
         if (creep.pos.x != container.pos.x || creep.pos.y != container.pos.y) {
-            creep.moveTo(container);
+            move.perform(creep, container.pos);
         }
 
         if (container.store[RESOURCE_ENERGY] == container.storeCapacity) {
@@ -42,7 +43,7 @@ module.exports = {
         }
 
         if (creep.harvest(source) != 0) {
-            creep.moveTo(container);
+            move.perform(creep, container.pos);
         }
     }
 }

@@ -18,7 +18,7 @@ module.exports = {
         var squad = creep.memory['squad'];
         var flag = Game.flags[squad] || Game.flags['Rax'];
         if (flag.room.name != creep.room.name) {
-            creep.moveTo(flag);
+            move.perform(crepe, flag.pos);
             return true;
         }
         if (creep.memory['patient'] === undefined) {
@@ -33,7 +33,7 @@ module.exports = {
         var patient = Game.creeps[creep.memory['patient']];
         if (patient !== undefined || patient.hits == patient.hitsMax) {
             creep.memory['patient'] = undefined;
-            creep.moveTo(flag);
+            move.perform(creep, flag.pos);
             return;
         }
 
@@ -42,7 +42,7 @@ module.exports = {
             if (room_travel.perform(creep)) return;
         }
         if (creep.heal(patient) == ERR_NOT_IN_RANGE) {
-            creep.moveTo(patient);
+            move.perform(creep, patient.pos);
         }
     }
 }
