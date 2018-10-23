@@ -1,14 +1,14 @@
 var population = require('population');
 
 var controller = {
-  count_creeps: function (template, room_name) {
+  count_creeps: function (template) {
     var result = 0;
     for (var creep_name in Game.creeps) {
       var creep = Game.creeps[creep_name];
       if (creep.memory['type'] != 'swarm') continue;
 
       var role_match = creep.memory['role'] == template.role;
-      var work_place_match = creep.memory['work_place'] == room_name;
+      var work_place_match = creep.memory['work_place'] == template.memory['work_place'];
       var energy_room_match = creep.memory['energy_room'] == template.energy_room;
 
       if (role_match && work_place_match && energy_room_match) {
@@ -18,7 +18,7 @@ var controller = {
     }
     return result;
   },
-  spawnCreep: function (room_name, template) {
+  spawnCreep: function (template) {
     for (var spawn_name in Game.spawns) {
       var spawn = Game.spawns[spawn_name];
       if (spawn.spawning) continue;
@@ -36,7 +36,6 @@ var controller = {
         var spawnResult = spawn.spawnCreep(template.body, name, {
           memory: template.memory
         });
-        console.log('[SWARM] spawning', template.role, ' for ', room_name, ': result - ', spawnResult);
         return spawnResult == 0;
       }
     }
@@ -49,9 +48,9 @@ var controller = {
 module.exports = {
   respawn: function () {
     for (var template of Game.spawns['Main'].memory['population']['templates']) {
-      var actual = controller.count_creeps(template, room_name);
+      var actual = controller.count_creeps(template);
       if (actual < template.count) {
-        if (controller.spawnCreep(room_name, template)) return;
+        if (controller.spawnCreep(template)) return;
       }
     }
   }
