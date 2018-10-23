@@ -11,6 +11,7 @@ var build = function (creep) {
 
     for (var key in sites) {
         site = Game.getObjectById(key);
+        creep.memory['target'] = site.room.name;
         break;
     }
 
@@ -34,7 +35,7 @@ var work = function (creep) {
 
 module.exports = {
     perform: (creep) => {
-        // if (room_travel.perform(creep)) return;
+        if (room_travel.perform(creep)) return;
         if (energy_behavior.perform(creep)) return;
         work(creep);
     }
