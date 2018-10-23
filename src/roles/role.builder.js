@@ -11,7 +11,7 @@ var build = function (creep) {
 
     for (var key in sites) {
         site = Game.getObjectById(key);
-        creep.memory['target'] = site.room.name;
+        creep.memory['work_place'] = site.room.name;
         break;
     }
 
