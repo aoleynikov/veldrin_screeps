@@ -31,7 +31,7 @@ var controller = {
       });
 
       for (var i = 0; i < count; ++i) {
-        var name = template.role + '_' + template.memory.work_place + '_' + i;
+        var name = template.memory.role + '_' + template.memory.work_place + '_' + i;
         if (Game.creeps[name]) continue;
         var spawnResult = spawn.spawnCreep(template.body, name, {
           memory: template.memory

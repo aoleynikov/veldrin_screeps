@@ -3,6 +3,10 @@ var storages = require('structure.storage');
 var move = require('behavior.move');
 
 var storeEnergy = function (creep) {
+    if (creep.carry == 0) {
+        energy_behavior.refill(creep);
+        return;
+    }
     var storage = storages.get(creep.room);
     if (storage.length == 0) return;
     var store = creep.transfer(storage[0], RESOURCE_ENERGY);

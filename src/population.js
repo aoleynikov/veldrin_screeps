@@ -34,8 +34,8 @@ module.exports = {
       body: [CLAIM, CLAIM, MOVE, MOVE],
       memory: {
         role: 'claimer',
-        target: 'W31N28',
-        work_place: 'W31N28',
+        target: 'W33N28',
+        work_place: 'W33N28',
         type: 'swarm'
       }
     }
