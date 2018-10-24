@@ -1,5 +1,6 @@
 var room_travel = require('behavior.room_travel');
 var military = require('behavior.military');
+var move = require('behavior.move');
 
 var strategy = {
     find_patient: function (own) {
