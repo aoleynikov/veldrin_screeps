@@ -22,14 +22,8 @@ var controller = {
     for (var spawn_name in Game.spawns) {
       var spawn = Game.spawns[spawn_name];
       if (spawn.spawning) continue;
-      var count = 0;
-      Game.spawns['Main'].memory['population']['templates'].forEach(t => {
-        if (t.role == template.role) {
-          count += template.count;
-        }
-      });
 
-      for (var i = 0; i < count; ++i) {
+      for (var i = 0; i < template.count; ++i) {
         var name = template.memory.role + '_' + template.memory.work_place + '_' + i;
         if (Game.creeps[name]) continue;
         var spawnResult = spawn.spawnCreep(template.body, name, {
@@ -49,7 +43,7 @@ module.exports = {
       var actual = controller.count_creeps(template);
 
       if (actual < template.count) {
-        if (controller.spawnCreep(template)) return;
+        controller.spawnCreep(template);
       }
     }
   }
