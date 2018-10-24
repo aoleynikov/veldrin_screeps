@@ -31,5 +31,5 @@ var roles = {
   'hauler': hauler
 };
 module.exports = {
-  get_strategy: creep => roles[creep.memory['role']] || harvester
+  get_strategy: creep => roles[creep.memory['role']] || nanny
 };
