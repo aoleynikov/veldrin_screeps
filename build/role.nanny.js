@@ -22,7 +22,17 @@ var select_storage = function (creep) {
 
 var store = function (creep) {
   var storage = select_storage(creep);
-  if (!storage) return;
+
+  if (!storage) {
+    if (creep.carry[RESOURCE_ENERGY] < creep.carryCapacity) {
+      energy_behavior.refill(creep);
+    } else {
+      var flag = Game.flags['Nanny_base'];
+      if (!flag) return;
+      move.perform(creep, flag.pos);
+    }
+  }
+
   var work = creep.transfer(storage, RESOURCE_ENERGY);
 
   if (work == ERR_NOT_IN_RANGE) {
