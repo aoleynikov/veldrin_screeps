@@ -2,47 +2,22 @@ var room_travel = require('behavior.room_travel');
 var military = require('behavior.military');
 var move = require('behavior.move');
 
-var strategy = {
-    find_patient: function (own) {
-        for (var name in Game.creeps) {
-            if (name == own) continue;
-            var creep = Game.creeps[name];
-            if (creep.hits < creep.hitsMax) {
-                return creep;
-            }
-        }
-    }
-}
-
 module.exports = {
     perform: function (creep) {
-        var squad = creep.memory['squad'];
-        var flag = Game.flags[squad] || Game.flags['Rax'];
-        if (flag.room.name != creep.room.name) {
-            move.perform(crepe, flag.pos);
-            return true;
-        }
-        if (creep.memory['patient'] === undefined) {
-            patient = strategy.find_patient(creep.name);
-            if (patient === undefined) {
-                military.perform(creep);
-                return;
+        var patient = creep.pos.findClosestByRange(FIND_MY_CREEPS, {
+            filter: (c) => {
+                return c.hits < c.hitsMax;
             }
-            creep.memory['patient'] = patient.name;
-        }
+        });
 
-        var patient = Game.creeps[creep.memory['patient']];
-        if (patient !== undefined || patient.hits == patient.hitsMax) {
-            creep.memory['patient'] = undefined;
+        if (!patient) {
+            var squad = creep.memory['squad'];
+            var flag = Game.flags[squad] || Game.flags['Rax'];
             move.perform(creep, flag.pos);
-            return;
         }
 
-        if (creep.room.name != patient.room.name) {
-            creep.memory['target'] = patient.room.name;
-            if (room_travel.perform(creep)) return;
-        }
-        if (creep.heal(patient) == ERR_NOT_IN_RANGE) {
+        var heal_result = creep.heal(patient);
+        if (heal_result == ERR_NOT_IN_RANGE) {
             move.perform(creep, patient.pos);
         }
     }
