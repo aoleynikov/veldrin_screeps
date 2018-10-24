@@ -3,7 +3,7 @@ var impassable = item => {
 
   if (item.type == 'structure') {
     obstacle = item.structure.structureType;
-  } else {
+  } else if (item.type == 'constructionSite') {
     obstacle = item.constructionSite.structureType;
   }
 
