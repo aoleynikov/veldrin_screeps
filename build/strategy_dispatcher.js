@@ -1,4 +1,4 @@
-var harvester = require('role.harvester');
+var nanny = require('role.nanny');
 
 var maintenance = require('role.maintenance');
 
@@ -19,7 +19,7 @@ var hauler = require('role.hauler');
 var healer = require('role.healer');
 
 var roles = {
-  'harvester': harvester,
+  'nanny': nanny,
   'maintenance': maintenance,
   'builder': builder,
   'miner': miner,

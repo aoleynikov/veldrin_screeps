@@ -1,4 +1,4 @@
-var military = require('behavior.military');
+var move = require('behavior.move');
 
 var enemies_find = [FIND_HOSTILE_CREEPS, FIND_HOSTILE_STRUCTURES, FIND_HOSTILE_SPAWNS]
 
@@ -24,13 +24,13 @@ module.exports = {
         }
 
         if (target === undefined) {
-            creep.moveTo(flag);
+            move.perform(creep, flag.pos);
             return;
         }
 
         var attack_result = creep.attack(target);
         if (attack_result == ERR_NOT_IN_RANGE) {
-            creep.moveTo(target);
+            move.perform(creep, target.pos);
         }
     }
 }

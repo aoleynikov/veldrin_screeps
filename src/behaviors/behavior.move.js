@@ -18,7 +18,6 @@ var impassable = (item) => {
 
 module.exports = {
     perform: function (creep, goal) {
-
         if (creep.pos.getRangeTo(goal) >= 4) {
             var path = PathFinder.search(creep.pos, goal);
             var next_step = path.path[0];
