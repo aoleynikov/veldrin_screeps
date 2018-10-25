@@ -8,7 +8,7 @@ var impassable = item => {
   }
 
   if (obstacle !== undefined) {
-    return obstacle == STRUCTURE_SPAWN || obstacle == STRUCTURE_EXTENSION || obstacle == STRUCTURE_TOWER || obstacle == STRUCTURE_STORAGE;
+    return obstacle == STRUCTURE_SPAWN || obstacle == STRUCTURE_EXTENSION || obstacle == STRUCTURE_TOWER || obstacle == STRUCTURE_STORAGE || obstacle == STRUCTURE_WALL;
   }
 
   return item.type == 'creep';
