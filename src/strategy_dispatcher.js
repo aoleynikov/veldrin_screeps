@@ -8,6 +8,7 @@ var warrior = require('role.warrior');
 var claimer = require('role.claimer');
 var hauler = require('role.hauler');
 var healer = require('role.healer');
+var destroyer = require('role.destroyer')
 
 var roles = {
   'nanny': nanny,
@@ -19,7 +20,8 @@ var roles = {
   'warrior': warrior,
   'healer': healer,
   'claimer': claimer,
-  'hauler': hauler
+  'hauler': hauler,
+  'destroyer': destroyer
 };
 
 module.exports = {
