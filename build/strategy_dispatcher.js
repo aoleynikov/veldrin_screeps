@@ -18,6 +18,8 @@ var hauler = require('role.hauler');
 
 var healer = require('role.healer');
 
+var destroyer = require('role.destroyer');
+
 var roles = {
   'nanny': nanny,
   'maintenance': maintenance,
@@ -28,7 +30,8 @@ var roles = {
   'warrior': warrior,
   'healer': healer,
   'claimer': claimer,
-  'hauler': hauler
+  'hauler': hauler,
+  'destroyer': destroyer
 };
 module.exports = {
   get_strategy: creep => roles[creep.memory['role']] || nanny
