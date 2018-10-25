@@ -1,4 +1,4 @@
-module.export = {
+module.exports = {
     perform: function (creep) {
         if (!creep.memory['run']) return false;
         creep.move(creep.memory['run']);

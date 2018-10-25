@@ -17,7 +17,7 @@ module.exports = {
             if (creep.pos.getRangeTo(exit) > 2) {
                 creep.moveTo(exit);
             } else {
-                creep.memory['run'] = run_direction[route[0].exit];
+                creep.memory['run'] = route[0].exit;
                 creep.memory['run_cd'] = 4;
             }
 
