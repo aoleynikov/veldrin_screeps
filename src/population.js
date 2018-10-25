@@ -9,5 +9,12 @@ For RCL <= 3, don't get greedy.
 
 module.exports = {
   rooms: [],
-  templates: []
+  templates: [{
+    count: 1,
+    body: [CLAIM, MOVE],
+    memory: {
+      role: 'claimer',
+      target: 'W18S24'
+    }
+  }]
 };
