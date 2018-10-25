@@ -4,7 +4,7 @@ module.exports = {
   perform: function (creep) {
     var squad = creep.memory['squad'];
     var flag = Game.flags[squad] || Game.flags['Rax'];
-    var target = creep.pos.findClosestByRange(FIND_STRIUCTURE, {
+    var target = creep.pos.findClosestByRange(FIND_STRUCTURES, {
       filter: s => {
         return s.structureType == STRUCTURE_WALL || s.structureType == STRUCTURE_RAMPART && s.owner.name != creep.owner.name;
       }
