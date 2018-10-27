@@ -80,7 +80,7 @@ module.exports = {
   }, {
     count: 3,
     name_prefix: 'importing_upgrader_W18S24_',
-    body: [WORK, WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
+    body: [WORK, WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE, MOVE],
     memory: {
       role: 'upgrader',
       type: 'swarm',
