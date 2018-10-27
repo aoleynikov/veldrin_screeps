@@ -85,6 +85,17 @@ module.exports = {
         type: 'swarm',
         work_place: 'W18S24'
       }
+    },
+    {
+      count: 3,
+      name_prefix: 'importing_upgrader_W18S24_',
+      body: [WORK, WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
+      memory: {
+        role: 'upgrader',
+        type: 'swarm',
+        work_place: 'W18S25',
+        energy_room: 'W18S24'
+      }
     }
   ]
 };
