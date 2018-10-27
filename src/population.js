@@ -96,6 +96,16 @@ module.exports = {
         work_place: 'W18S25',
         energy_room: 'W18S24'
       }
+    },
+    {
+      count: 1,
+      name_prefix: 'repairer_W19S24_',
+      body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
+      memory: {
+        role: 'repairer',
+        type: 'swarm',
+        work_place: 'W19S24'
+      }
     }
   ]
 };
