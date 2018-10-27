@@ -68,7 +68,7 @@ module.exports = {
     {
       count: 1,
       name_prefix: "claimer_W18S24_",
-      body: [CLAIM, MOVE],
+      body: [CLAIM, CLAIM, MOVE, MOVE],
       memory: {
         role: "claimer",
         target: "W18S24",
