@@ -9,9 +9,9 @@ module.exports = {
   perform: function (creep) {
     if (room_travel.perform(creep)) return;
 
-    var message = '💡 I bring light to this realm 💡';
-    if (creep.room.controller.sign != message) {
-      if (creep.signController(message) == ERR_NOT_IN_RAMGE) {
+    var message = 'I bring light to this realm';
+    if (creep.room.controller !== undefined && creep.room.controller.sign.text != message) {
+      if (creep.signController(creep.room.controller, message) == ERR_NOT_IN_RANGE) {
         move.perform(creep, creep.room.controller.pos);
       }
       return;

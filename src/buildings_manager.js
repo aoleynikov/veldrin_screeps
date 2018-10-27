@@ -7,11 +7,13 @@ module.exports = {
             tower_structure.shoot_on_sight(tower);
         });
 
-        var maintenance_creeps = Game.spawns['Main'].pos.findInRange(FIND_MY_CREEPS, 5, {
+        var maintenance_creeps = Game.spawns['Main'].pos.findInRange(FIND_MY_CREEPS, 1, {
             filter: (c) => c.memory['role'] == 'maintenance'
         });
         if (maintenance_creeps.length == 0) {
             swarm.respawn();
+        } else {
+            Game.spawns['Main'].renewCreep(maintenance_creeps[0]);
         }
     }
 }

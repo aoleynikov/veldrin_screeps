@@ -16,12 +16,12 @@ module.exports = {
       var squad = creep.memory['squad'];
       var flag = Game.flags[squad] || Game.flags['Rax'];
       move.perform(creep, flag.pos);
-    }
+    } else {
+      var heal_result = creep.heal(patient);
 
-    var heal_result = creep.heal(patient);
-
-    if (heal_result == ERR_NOT_IN_RANGE) {
-      move.perform(creep, patient.pos);
+      if (heal_result == ERR_NOT_IN_RANGE) {
+        move.perform(creep, patient.pos);
+      }
     }
   }
 };
