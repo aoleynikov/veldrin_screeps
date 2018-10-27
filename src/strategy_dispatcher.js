@@ -27,6 +27,10 @@ var roles = {
   'scout': scout
 };
 
+var useless = {
+  perform: (creep) => creep.moveTo(Game.flags['useless'])
+}
+
 module.exports = {
-  get_strategy: (creep) => roles[creep.memory['role']] || nanny
+  get_strategy: (creep) => roles[creep.memory['role']] || useless
 }
