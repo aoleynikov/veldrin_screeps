@@ -7,6 +7,7 @@ var controller = {
     for (var spawn_name in Game.spawns) {
       var spawn = Game.spawns[spawn_name];
       if (spawn.spawning) continue;
+      var spawn_done = false;
 
       for (var i = 0; i < template.count; ++i) {
         var name = template.name_prefix + i;
@@ -22,9 +23,12 @@ var controller = {
 
         if (spawnResult == ERR_NOT_ENOUGH_ENERGY) {
           if (logging) console.log('Not enough energy to spawn:', name);
+          spawn_done = true;
           break;
         }
       }
+
+      if (spawn_done) break;
     }
   } // swarm is a set of very cheap creeps doing certain tasks.
   // most of creep code will still be handeled by role model,
