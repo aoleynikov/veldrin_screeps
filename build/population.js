@@ -25,7 +25,7 @@ module.exports = {
       type: 'swarm'
     }
   }, {
-    count: 2,
+    count: 4,
     name_prefix: 'builder_W18S24_',
     body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
     memory: {
@@ -47,7 +47,8 @@ module.exports = {
     body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
     memory: {
       role: 'repairer',
-      type: 'swarm'
+      type: 'swarm',
+      work_place: 'W18S25'
     }
   }, {
     count: 2,
@@ -66,6 +67,15 @@ module.exports = {
       role: 'claimer',
       target: 'W18S24',
       type: 'swarm'
+    }
+  }, {
+    count: 2,
+    name_prefix: 'repairer_W18S24_',
+    body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
+    memory: {
+      role: 'repairer',
+      type: 'swarm',
+      work_place: 'W18S24'
     }
   }]
 };
