@@ -2,17 +2,24 @@ var population = require('population');
 
 var controller = {
   spawnCreep: function (template) {
+    var logging = Game.time % 50 == 0;
     for (var spawn_name in Game.spawns) {
       var spawn = Game.spawns[spawn_name];
       if (spawn.spawning) continue;
 
       for (var i = 0; i < template.count; ++i) {
         var name = template.name_prefix + i;
-        if (Game.creeps[name]) continue;
+        if (Game.creeps[name]) {
+          if (logging) console.log('Already exists:', name);
+          continue;
+        }
         var spawnResult = spawn.spawnCreep(template.body, name, {
           memory: template.memory
         });
-        if (spawnResult == ERR_NOT_ENOUGH_ENERGY) break;
+        if (spawnResult == ERR_NOT_ENOUGH_ENERGY) {
+          if (logging) console.log('Not enough energy to spawn:', name);
+          break;
+        }
       }
     }
   }

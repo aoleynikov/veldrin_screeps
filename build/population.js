@@ -24,7 +24,7 @@ module.exports = {
       type: "swarm"
     }
   }, {
-    count: 4,
+    count: 2,
     name_prefix: "builder_W18S24_",
     body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
     memory: {
