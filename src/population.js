@@ -86,14 +86,25 @@ module.exports = {
       }
     },
     {
+      count: 2,
+      name_prefix: 'hauler_W18N24_',
+      body: [CARRY, MOVE, CARRY, MOVE, CARRY, MOVE, CARRY, MOVE],
+      memory: {
+        role: 'hauler',
+        type: 'swarm',
+        work_place: 'W18S25',
+        energy_room: 'W18S24'
+      }
+    },
+    {
       count: 3,
-      name_prefix: "importing_upgrader_W18S24_",
+      name_prefix: "importing_upgrader_W19S24_",
       body: [WORK, WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE, MOVE],
       memory: {
         role: "upgrader",
         type: "swarm",
         work_place: "W18S25",
-        energy_room: "W18S24"
+        energy_room: "W19S24"
       }
     },
     {
