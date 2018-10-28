@@ -136,6 +136,15 @@ module.exports = {
         work_place: 'W19S24',
         target: 'W19S24'
       }
+    },
+    {
+      count: 3,
+      name_prefix: 'scout_1',
+      body: [MOVE],
+      memory: {
+        role: 'scout',
+        type: 'swarm'
+      }
     }
   ]
 };
