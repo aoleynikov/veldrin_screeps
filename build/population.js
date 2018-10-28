@@ -96,7 +96,7 @@ module.exports = {
       work_place: "W19S24"
     }
   }, {
-    count: 3,
+    count: 4,
     name_prefix: 'miner_W19S24_',
     body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
     memory: {
@@ -105,7 +105,7 @@ module.exports = {
       target: 'W19S24'
     }
   }, {
-    count: 5,
+    count: 7,
     name_prefix: 'hauler_W19S24_',
     body: [CARRY, CARRY, CARRY, CARRY, MOVE, MOVE],
     memory: {
