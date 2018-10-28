@@ -134,5 +134,15 @@ module.exports = {
       work_place: 'W18S25',
       energy_room: 'W19S24'
     }
+  }, {
+    count: 1,
+    name_prefix: 'claimer_W19S24_',
+    body: [CLAIM, CLAIM, MOVE, MOVE],
+    memory: {
+      role: 'claimer',
+      type: 'swarm',
+      work_place: 'W19S24',
+      target: 'W19S24'
+    }
   }]
 };
