@@ -23,5 +23,5 @@ module.exports.loop = function () {
   //upgrade_manager.run();
   buildings_manager.run(Game.spawns['Main'].room);
   doctor.check();
-  //jobs.run();
+  jobs.run();
 }

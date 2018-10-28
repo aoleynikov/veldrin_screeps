@@ -27,5 +27,6 @@ module.exports.loop = function () {
 
 
   buildings_manager.run(Game.spawns['Main'].room);
-  doctor.check(); //jobs.run();
+  doctor.check();
+  jobs.run();
 };

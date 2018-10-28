@@ -1,4 +1,4 @@
-var jobs = [require('job.miners_count'), require('job.builders_count')];
+var jobs = [require('jobs.sync_population')];
 module.exports = {
   run: () => {
     jobs.forEach(job => {
