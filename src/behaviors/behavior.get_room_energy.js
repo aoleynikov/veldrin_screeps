@@ -36,7 +36,7 @@ var behavior = {
         var result = [];
         var self = this;
         result = creep.pos.findClosestByRange(FIND_STRUCTURES, {
-            filter: (s) => self.is_fast_provider(s) && s.store[RESOURCE_ENERGY] >= creep.carryCapacity
+            filter: (s) => self.is_fast_provider(s) && s.store[RESOURCE_ENERGY] >= creep.carryCapacity - creep.carry[RESOURCE_ENERGY]
         });
         if (result) return result;
         return creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE, {
