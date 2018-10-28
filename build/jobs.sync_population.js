@@ -1,4 +1,4 @@
-var populaiotn = require('population');
+var population = require('population');
 
 module.exports = {
   period: 100,
