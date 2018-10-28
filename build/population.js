@@ -96,7 +96,7 @@ module.exports = {
       work_place: "W19S24"
     }
   }, {
-    count: 2,
+    count: 3,
     name_prefix: 'miner_W19S24_',
     body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
     memory: {
