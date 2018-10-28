@@ -21,9 +21,13 @@ var controller = {
 
       if (spawnResult == ERR_NOT_ENOUGH_ENERGY) {
         if (logging) console.log('Not enough energy to spawn:', name);
-        return;
+        return false;
+      } else if (spawnResult == 0) {
+        return true;
       }
     }
+
+    return false;
   } // swarm is a set of very cheap creeps doing certain tasks.
   // most of creep code will still be handeled by role model,
   // but these creeps will be rebuilt instead of renewed
@@ -34,7 +38,7 @@ module.exports = {
     for (var template of Game.spawns['Main'].memory['population']['templates']) {
       for (var spawn_name in Game.spawns) {
         var spawn = Game.spawns[spawn_name];
-        controller.spawnCreep(spawn, template);
+        if (controller.spawnCreep(spawn, template)) return;
       }
     }
   }

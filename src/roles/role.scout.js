@@ -10,11 +10,17 @@ module.exports = {
     if (room_travel.perform(creep)) return;
 
     var message = 'I bring light to this realm';
-    if (creep.room.controller !== undefined && creep.room.controller.sign.text != message) {
-      if (creep.signController(creep.room.controller, message) == ERR_NOT_IN_RANGE) {
-        move.perform(creep, creep.room.controller.pos);
+    var current = '';
+    if (creep.room.controller !== undefined) {
+      if (creep.room.controller.sign !== undefined) {
+        current = creep.room.controller.sign.text;
       }
-      return;
+      if (current != message) {
+        if (creep.signController(creep.room.controller, message) == ERR_NOT_IN_RANGE) {
+          move.perform(creep, creep.room.controller.pos);
+        }
+        return;
+      }
     }
 
     var route_home = Game.map.findRoute(creep.room.name, Game.spawns['Main'].room.name);
