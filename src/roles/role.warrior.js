@@ -22,13 +22,13 @@ module.exports = {
         }
 
         if (target === undefined) {
-            move.perform(creep, flag.pos);
+            creep.moveTo(flag);
             return;
         }
 
         var attack_result = creep.attack(target);
         if (attack_result == ERR_NOT_IN_RANGE) {
-            move.perform(creep, target.pos);
+            creep.moveTo(target);
         }
     }
 }
