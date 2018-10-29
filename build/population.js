@@ -208,16 +208,17 @@ module.exports = {
       role: 'healer',
       squad: 'Deimos'
     }
-  }, {
-    count: 3,
-    name_prefix: 'sniper_',
-    body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE],
-    memory: {
-      role: 'sniper',
-      squad: 'snipers_test',
-      type: 'swarm'
-    }
-  }, {
+  }, // {
+  //   count: 3,
+  //   name_prefix: 'sniper_',
+  //   body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE],
+  //   memory: {
+  //     role: 'sniper',
+  //     squad: 'snipers_test',
+  //     type: 'swarm'
+  //   }
+  // },
+  {
     count: 3,
     name_prefix: 'scout_',
     body: [MOVE],
