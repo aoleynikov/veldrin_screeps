@@ -7,10 +7,15 @@ For RCL <= 3, don't get greedy.
 */
 var containers = require('structure.container');
 
+var miners_count = room_name => {
+  var room = Game.rooms[room_name];
+  return room ? containers.get(room).length : 0;
+};
+
 module.exports = {
   rooms: ["W18S25", "W18S24", "W19S24", "W19S25"],
   templates: [{
-    count: containers.get(Game.rooms['W18S25']).length,
+    count: miners_count('W18S25'),
     name_prefix: "miner_W18S25_",
     body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
     memory: {
@@ -43,7 +48,7 @@ module.exports = {
       work_place: "W18S25"
     }
   }, {
-    count: containers.get(Game.rooms['W18S24']).length,
+    count: miners_count('W18S24'),
     name_prefix: "miner_W18S24_",
     body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
     memory: {
@@ -89,7 +94,7 @@ module.exports = {
       work_place: "W19S24"
     }
   }, {
-    count: containers.get(Game.rooms['W19S24']).length,
+    count: miners_count('W19S24'),
     name_prefix: 'miner_W19S24_',
     body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
     memory: {
@@ -127,7 +132,7 @@ module.exports = {
       work_place: "W19S25"
     }
   }, {
-    count: containers.get(Game.rooms['W19S25']).length,
+    count: miners_count('W19S25'),
     name_prefix: 'miner_W19S25_',
     body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
     memory: {
