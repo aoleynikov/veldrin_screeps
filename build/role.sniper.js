@@ -31,6 +31,13 @@ module.exports = {
 
     if (attack_result == ERR_NOT_IN_RANGE) {
       move.perform(creep, target.pos);
+    } else if (attack_result == 0) {
+      if (creep.pos.getRangeTo(target) < 3) {
+        var path = PathFinder.search(creep.pos, target.pos, {
+          flee: true
+        });
+        creep.moveByPath(path.path);
+      }
     }
   }
 };

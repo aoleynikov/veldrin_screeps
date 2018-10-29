@@ -35,7 +35,7 @@ module.exports = {
         if (!source || !container) return;
 
         if (creep.pos.x != container.pos.x || creep.pos.y != container.pos.y) {
-            move.perform(creep, container.pos);
+            creep.moveTo(container);
         }
 
         if (container.store[RESOURCE_ENERGY] == container.storeCapacity) {
@@ -43,7 +43,7 @@ module.exports = {
         }
 
         if (creep.harvest(source) != 0) {
-            move.perform(creep, container.pos);
+            creep.moveTo(container);
         }
     }
 }

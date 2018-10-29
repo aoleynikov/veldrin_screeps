@@ -1,6 +1,5 @@
 var towers = require('structure.tower');
 var energy_behavior = require('behavior.get_energy');
-var move = require('behavior.move');
 
 var select_storage = function (creep) {
   var twrs = towers.get(creep.room);
@@ -26,12 +25,12 @@ var store = function (creep) {
     } else {
       var flag = Game.flags['Nanny_base'];
       if (!flag) return;
-      move.perform(creep, flag.pos);
+      creep.moveTo(flag);
     }
   }
   var work = creep.transfer(storage, RESOURCE_ENERGY);
   if (work == ERR_NOT_IN_RANGE) {
-    move.perform(creep, storage.pos);
+    creep.moveTo(storage);
   } else if (work == ERR_NOT_ENOUGH_ENERGY) {
     energy_behavior.refill(creep);
   }

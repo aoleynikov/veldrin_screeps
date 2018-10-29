@@ -1,6 +1,4 @@
-var upgrader_role = require('role.upgrader');
 var energy_behavior = require('behavior.get_energy');
-var move = require('behavior.move');
 
 
 var repair = function (creep, struct) {
@@ -9,7 +7,7 @@ var repair = function (creep, struct) {
         energy_behavior.refill(creep);
         creep.memory['repairable_id'] = undefined;
     } else if (repair_result == ERR_NOT_IN_RANGE) {
-        move.perform(creep, struct.pos);
+        creep.moveTo(struct);
     }
 }
 
@@ -22,16 +20,9 @@ var repair_my_sructures = function (creep) {
     return true;
 };
 
-var work = function (creep) {
-    var busy = repair_my_sructures(creep);
-    if (!busy) {
-        //upgrader_role.perform(creep);
-    }
-}
-
 module.exports = {
     perform: function (creep) {
         if (energy_behavior.perform(creep)) return;
-        work(creep);
+        repair_my_sructures(creep);
     }
 }

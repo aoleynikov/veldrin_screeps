@@ -1,5 +1,4 @@
 var room_travel = require('behavior.room_travel');
-var move = require('behavior.move');
 
 var randomInt = function (max) {
   return Math.floor(Math.random() * Math.floor(max));
@@ -17,7 +16,7 @@ module.exports = {
       }
       if (current != message) {
         if (creep.signController(creep.room.controller, message) == ERR_NOT_IN_RANGE) {
-          move.perform(creep, creep.room.controller.pos);
+          creep.moveTo(creep.room.controller);
         }
         return;
       }

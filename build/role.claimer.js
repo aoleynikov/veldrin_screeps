@@ -1,7 +1,5 @@
 var room_travel = require('behavior.room_travel');
 
-var move = require('behavior.move');
-
 module.exports = {
   perform: function (creep) {
     var room_name = creep.memory['target']; // if we are not in the room
@@ -22,7 +20,7 @@ module.exports = {
     }
 
     if (result == ERR_NOT_IN_RANGE) {
-      move.perform(creep, controller.pos);
+      creep.moveTo(controller);
     }
   }
 };

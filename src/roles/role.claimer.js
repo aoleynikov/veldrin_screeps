@@ -1,5 +1,4 @@
 var room_travel = require('behavior.room_travel');
-var move = require('behavior.move');
 
 module.exports = {
     perform: function (creep) {
@@ -20,7 +19,7 @@ module.exports = {
             result = creep.reserveController(controller);
         }
         if (result == ERR_NOT_IN_RANGE) {
-            move.perform(creep, controller.pos);
+            creep.moveTo(controller);
         }
     }
 }

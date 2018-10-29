@@ -7,7 +7,7 @@ var upgrade = creep => {
   var work = creep.upgradeController(controller);
 
   if (work == ERR_NOT_IN_RANGE) {
-    move.perform(creep, controller.pos);
+    creep.moveTo(controller);
   } else if (work == ERR_NOT_ENOUGH_ENERGY) {
     energy_behavior.refill(creep);
   }

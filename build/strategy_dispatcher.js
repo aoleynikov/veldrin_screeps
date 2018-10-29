@@ -22,19 +22,22 @@ var destroyer = require('role.destroyer');
 
 var scout = require('role.scout');
 
+var sniper = require('role.sniper');
+
 var roles = {
-  'nanny': nanny,
-  'maintenance': maintenance,
-  'builder': builder,
-  'miner': miner,
-  'repairer': repairer,
-  'upgrader': upgrader,
-  'warrior': warrior,
-  'healer': healer,
-  'claimer': claimer,
-  'hauler': hauler,
-  'destroyer': destroyer,
-  'scout': scout
+  nanny: nanny,
+  maintenance: maintenance,
+  builder: builder,
+  miner: miner,
+  repairer: repairer,
+  upgrader: upgrader,
+  warrior: warrior,
+  healer: healer,
+  claimer: claimer,
+  hauler: hauler,
+  destroyer: destroyer,
+  sniper: sniper,
+  scout: scout
 };
 var useless = {
   perform: creep => creep.moveTo(Game.flags['useless'])

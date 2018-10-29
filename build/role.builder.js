@@ -4,8 +4,6 @@ var energy_behavior = require('behavior.get_energy');
 
 var room_travel = require('behavior.room_travel');
 
-var move = require('behavior.move');
-
 var build = function (creep) {
   var sites = Game.constructionSites;
   if (sites.length == 0) return false;
@@ -21,7 +19,7 @@ var build = function (creep) {
   var build_result = creep.build(site);
 
   if (build_result == ERR_NOT_IN_RANGE) {
-    move.perform(creep, site.pos);
+    creep.moveTo(site);
   } else if (build_result == ERR_NOT_ENOUGH_ENERGY) {
     energy_behavior.refill(creep);
   }
