@@ -6,7 +6,7 @@ module.exports = {
         if (creep.memory['target'] === undefined) return false;
         if (creep.room.name != creep.memory['target']) {
             var route = Game.map.findRoute(creep.room.name, creep.memory['target']);
-            var exit = creep.pos.findClosestByPath(route[0].exit);
+            var exit = creep.pos.findClosestByRange(route[0].exit);
             if (creep.pos.getRangeTo(exit) != 0) {
                 creep.moveTo(exit);
             } else {
