@@ -39,7 +39,7 @@ module.exports = {
       type: "swarm"
     }
   }, {
-    count: 2,
+    count: 3,
     name_prefix: "repairer_W18S25_",
     body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
     memory: {
