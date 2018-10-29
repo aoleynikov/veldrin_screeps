@@ -75,7 +75,7 @@ module.exports = {
       work_place: "W18S24"
     }
   }, {
-    count: 3,
+    count: 2,
     name_prefix: 'hauler_W18N24_',
     body: [CARRY, CARRY, CARRY, CARRY, MOVE, MOVE],
     memory: {
@@ -149,6 +149,16 @@ module.exports = {
       type: 'swarm',
       work_place: 'W19S25',
       target: 'W19S25'
+    }
+  }, {
+    count: 7,
+    name_prefix: 'hauler_W19S25_',
+    body: [CARRY, CARRY, CARRY, CARRY, MOVE, MOVE],
+    memory: {
+      role: 'hauler',
+      type: 'swarm',
+      work_place: 'W18S25',
+      energy_room: 'W19S25'
     }
   }, {
     count: 3,
