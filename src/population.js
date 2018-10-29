@@ -38,7 +38,7 @@ module.exports = {
     {
       count: 2,
       name_prefix: "upgrader_",
-      body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
+      body: [WORK, WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
       memory: {
         role: "upgrader",
         type: "swarm"
@@ -96,7 +96,7 @@ module.exports = {
       }
     },
     {
-      count: 1,
+      count: 2,
       name_prefix: "repairer_W19S24_",
       body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
       memory: {
@@ -106,7 +106,7 @@ module.exports = {
       }
     },
     {
-      count: 4,
+      count: 2,
       name_prefix: 'miner_W19S24_',
       body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
       memory: {
@@ -139,7 +139,70 @@ module.exports = {
     },
     {
       count: 3,
-      name_prefix: 'scout_1',
+      name_prefix: 'warrior_',
+      body: [TOUGH, TOUGH, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
+      memory: {
+        role: 'warrior',
+        squad: 'Rax'
+      }
+    },
+    {
+      count: 1,
+      name_prefix: 'healer_',
+      body: [MOVE, MOVE, HEAL, HEAL],
+      memory: {
+        role: 'healer',
+        squad: 'Rax'
+      }
+    },
+    {
+      count: 3,
+      name_prefix: 'warrior_Phobos_',
+      body: [TOUGH, TOUGH, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
+      memory: {
+        role: 'warrior',
+        squad: 'Phobos'
+      }
+    },
+    {
+      count: 1,
+      name_prefix: 'healer_Phobos_',
+      body: [MOVE, MOVE, HEAL, HEAL],
+      memory: {
+        role: 'healer',
+        squad: 'Phobos'
+      }
+    },
+    {
+      count: 3,
+      name_prefix: 'warrior_Deimos_',
+      body: [TOUGH, TOUGH, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
+      memory: {
+        role: 'warrior',
+        squad: 'Deimos'
+      }
+    },
+    {
+      count: 1,
+      name_prefix: 'healer_Deimos_',
+      body: [MOVE, MOVE, HEAL, HEAL],
+      memory: {
+        role: 'healer',
+        squad: 'Deimos'
+      }
+    },
+    {
+      count: 3,
+      name_prefix: 'destroyer_',
+      body: [ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE],
+      memory: {
+        role: 'destroyer',
+        squad: 'walls_destruction'
+      }
+    },
+    {
+      count: 3,
+      name_prefix: 'scout_',
       body: [MOVE],
       memory: {
         role: 'scout',
