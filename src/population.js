@@ -113,7 +113,7 @@ module.exports = {
       }
     },
     {
-      count: 7,
+      count: 5,
       name_prefix: 'hauler_W19S24_',
       body: [CARRY, CARRY, CARRY, CARRY, MOVE, MOVE],
       memory: {
@@ -166,7 +166,7 @@ module.exports = {
       }
     },
     {
-      count: 7,
+      count: 5,
       name_prefix: 'hauler_W19S25_',
       body: [CARRY, CARRY, CARRY, CARRY, MOVE, MOVE],
       memory: {
