@@ -23,14 +23,14 @@ module.exports = {
     }
 
     if (target === undefined) {
-      move.perform(creep, flag.pos);
+      creep.moveTo(flag);
       return;
     }
 
     var attack_result = creep.attack(target);
 
     if (attack_result == ERR_NOT_IN_RANGE) {
-      move.perform(creep, target.pos);
+      creep.moveTo(target);
     } else if (attack_result == 0) {
       if (creep.pos.getRangeTo(target) < 3) {
         var path = PathFinder.search(creep.pos, target.pos, {
