@@ -12,6 +12,9 @@ var destroyer = require('role.destroyer');
 var scout = require('role.scout');
 var sniper = require('role.sniper');
 
+var manual = {
+  perform: (creep) => {}
+};
 
 var roles = {
   nanny: nanny,
@@ -26,7 +29,8 @@ var roles = {
   hauler: hauler,
   destroyer: destroyer,
   sniper: sniper,
-  scout: scout
+  scout: scout,
+  manual: manual
 };
 
 var useless = {

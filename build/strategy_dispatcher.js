@@ -24,6 +24,9 @@ var scout = require('role.scout');
 
 var sniper = require('role.sniper');
 
+var manual = {
+  perform: creep => {}
+};
 var roles = {
   nanny: nanny,
   maintenance: maintenance,
@@ -37,7 +40,8 @@ var roles = {
   hauler: hauler,
   destroyer: destroyer,
   sniper: sniper,
-  scout: scout
+  scout: scout,
+  manual: manual
 };
 var useless = {
   perform: creep => creep.moveTo(Game.flags['useless'])
