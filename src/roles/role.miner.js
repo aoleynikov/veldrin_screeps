@@ -11,6 +11,7 @@ var strategy = {
             }
         }
         for (var cont of containers.get(creep.room)) {
+            if (cont.store[RESOURCE_ENERGY] == cont.storeCapacity) continue;
             var look = creep.room.lookAt(cont.pos.x, cont.pos.y);
             var good = true;
             for (var item of look) {
