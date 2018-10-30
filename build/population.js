@@ -9,7 +9,28 @@ var containers = require('structure.container');
 
 var miners_count = room_name => {
   var room = Game.rooms[room_name];
-  return room ? containers.get(room).length : 0;
+  if (!room) return 0;
+  var cnt = 0;
+  var conts = containers.get(room);
+
+  for (var cont of conts) {
+    if (cont.store[RESOURCE_ENERGY] != cont.storageCapacity) ++cnt;
+  }
+
+  return cnt;
+};
+
+var haulers_count = room_name => {
+  var room = Game.rooms[room_name];
+  if (!room) return 0;
+  var total_cont_energy = 0;
+  var conts = containers.get(room);
+
+  for (var cont of conts) {
+    total_cont_energy += cont.store[RESOURCE_ENERGY];
+  }
+
+  return total_cont_energy / 800;
 };
 
 module.exports = {
@@ -75,7 +96,7 @@ module.exports = {
       work_place: "W18S24"
     }
   }, {
-    count: 2,
+    count: haulers_count('W18S24'),
     name_prefix: 'hauler_W18N24_',
     body: [CARRY, CARRY, CARRY, CARRY, MOVE, MOVE],
     memory: {
@@ -103,7 +124,7 @@ module.exports = {
       target: 'W19S24'
     }
   }, {
-    count: 5,
+    count: haulers_count('W19S24'),
     name_prefix: 'hauler_W19S24_',
     body: [CARRY, CARRY, CARRY, CARRY, MOVE, MOVE],
     memory: {
@@ -151,7 +172,7 @@ module.exports = {
       target: 'W19S25'
     }
   }, {
-    count: 5,
+    count: haulers_count('W19S25'),
     name_prefix: 'hauler_W19S25_',
     body: [CARRY, CARRY, CARRY, CARRY, MOVE, MOVE],
     memory: {
@@ -208,17 +229,16 @@ module.exports = {
       role: 'healer',
       squad: 'Deimos'
     }
-  }, // {
-  //   count: 3,
-  //   name_prefix: 'sniper_',
-  //   body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE],
-  //   memory: {
-  //     role: 'sniper',
-  //     squad: 'snipers_test',
-  //     type: 'swarm'
-  //   }
-  // },
-  {
+  }, {
+    count: 3,
+    name_prefix: 'sniper_',
+    body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: 'sniper',
+      squad: 'snipers_test',
+      type: 'swarm'
+    }
+  }, {
     count: 3,
     name_prefix: 'scout_',
     body: [MOVE],

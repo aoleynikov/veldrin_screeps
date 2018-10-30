@@ -26,15 +26,16 @@ module.exports = {
       return;
     }
 
-    var attack_result = creep.attack(target);
+    var attack_result = creep.rangedAttack(target);
+
     if (attack_result == ERR_NOT_IN_RANGE) {
       creep.moveTo(target);
     } else if (attack_result == 0) {
       if (creep.pos.getRangeTo(target) < 3) {
-        var path = PathFinder.search(creep.pos, target.pos, {
+        var path = PathFinder.search(creep.pos, {pos: target.pos, range: 3 }, {
           flee: true
         });
-        creep.moveByPath(path.path);
+        creep.moveTo(path.path[0]);
       }
     }
   }
