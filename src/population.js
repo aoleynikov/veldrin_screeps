@@ -29,6 +29,13 @@ var haulers_count = room_name => {
   return total_cont_energy / 800;
 };
 
+var builders_count = () => {
+  for(var id in Game.constructionSites) {
+    return 4;
+  }
+  return 0;
+}
+
 module.exports = {
   rooms: ["W18S25", "W18S24", "W19S24", "W19S25"],
   templates: [{
@@ -40,7 +47,7 @@ module.exports = {
       type: "swarm"
     }
   }, {
-    count: 5,
+    count: builders_count(),
     name_prefix: "builder_",
     body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
     memory: {

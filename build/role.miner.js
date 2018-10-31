@@ -2,14 +2,12 @@ var containers = require('structure.container');
 
 var room_travel = require('behavior.room_travel');
 
-var move = require('behavior.move');
-
 var strategy = {
   find_container: function (creep) {
     var creepLook = creep.room.lookAt(creep.pos.x, creep.pos.y);
 
     for (var item of creepLook) {
-      if (item.type == 'structure' && item.structure.structureType == STRUCTURE_CONTAINER) {
+      if (item.type == 'structure' && item.structure.structureType == STRUCTURE_CONTAINER && item.container.store[RESOURCE_ENERGY] != item.container.storeCapacity) {
         return item.structure;
       }
     }
