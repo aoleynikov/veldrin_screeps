@@ -5,9 +5,9 @@ var strategy = {
     find_container: function (creep) {
         var creepLook = creep.room.lookAt(creep.pos.x, creep.pos.y);
         for (var item of creepLook) {
-            if (item.type == 'structure' && item.structure.structureType == STRUCTURE_CONTAINER &&
-                item.container.store[RESOURCE_ENERGY] != item.container.storeCapacity) {
-                return item.structure;
+            if (item.type == 'structure' && item.structure.structureType == STRUCTURE_CONTAINER)
+                if(item.container.store[RESOURCE_ENERGY] != item.container.storeCapacity) {
+                    return item.structure;
             }
         }
         for (var cont of containers.get(creep.room)) {
