@@ -1,7 +1,7 @@
 var population = require('population');
 
 module.exports = {
-  period: 20,
+  period: 5,
   execute: function () {
     Game.spawns['Main'].memory['population'] = population;
   }

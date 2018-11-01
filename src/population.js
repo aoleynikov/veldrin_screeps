@@ -107,7 +107,8 @@ module.exports = {
       role: 'hauler',
       type: 'swarm',
       work_place: 'W18S25',
-      energy_room: 'W18S24'
+      energy_room: 'W18S24',
+      link_id: '5bd9c6fffd47502f5f46418c'
     }
   }, {
     count: 2,
@@ -135,7 +136,8 @@ module.exports = {
       role: 'hauler',
       type: 'swarm',
       work_place: 'W18S25',
-      energy_room: 'W19S24'
+      energy_room: 'W19S24',
+      link_id: '5bd9c6fffd47502f5f46418c'
     }
   }, {
     count: 1,
@@ -183,7 +185,8 @@ module.exports = {
       role: 'hauler',
       type: 'swarm',
       work_place: 'W18S25',
-      energy_room: 'W19S25'
+      energy_room: 'W19S25',
+      link_id: '5bd9c6fffd47502f5f46418c'
     }
   }, {
     count: 3,
