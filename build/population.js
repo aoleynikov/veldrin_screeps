@@ -29,11 +29,9 @@ var haulers_count = room_name => {
   var conts = containers.get(room);
 
   for (var cont of conts) {
-    console.log(cont, cont.store[RESOURCE_ENERGY]);
     total_cont_energy += cont.store[RESOURCE_ENERGY];
   }
 
-  console.log(total_cont_energy);
   return total_cont_energy / 800;
 };
 
