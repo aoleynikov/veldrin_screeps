@@ -35,7 +35,15 @@ module.exports = {
     for (var template of Game.spawns['Main'].memory['population']['templates']) {
       for (var spawn_name in Game.spawns) {
         var spawn = Game.spawns[spawn_name];
-        if (controller.spawnCreep(spawn, template)) return;
+
+        var maintenance_creeps = spawn.pos.findInRange(FIND_MY_CREEPS, 1, {
+            filter: (c) => c.memory['role'] == 'maintenance'
+        });
+        if (maintenance_creeps.length == 0) {
+          controller.spawnCreep(spawn, template)
+        } else {
+          spawn.renewCreep(maintenance_creeps[0]);
+        }
       }
     }
   }

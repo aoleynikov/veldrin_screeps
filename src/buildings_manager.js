@@ -8,15 +8,8 @@ module.exports = {
             tower_structure.shoot_on_sight(tower);
         });
 
-        // Spawn and renewal
-        var maintenance_creeps = Game.spawns['Main'].pos.findInRange(FIND_MY_CREEPS, 1, {
-            filter: (c) => c.memory['role'] == 'maintenance'
-        });
-        if (maintenance_creeps.length == 0) {
-            swarm.respawn();
-        } else {
-            Game.spawns['Main'].renewCreep(maintenance_creeps[0]);
-        }
+        // Swarm + creeps renewal
+        swarm.respawn();
 
         // Links
         for(var from_id of Game.spawns['Main'].memory['links_from']) {
