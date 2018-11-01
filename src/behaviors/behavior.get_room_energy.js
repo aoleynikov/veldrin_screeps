@@ -2,7 +2,9 @@ var move = require('behavior.move');
 
 var behavior = {
     is_fast_provider: function (provider) {
-        return provider.structureType == STRUCTURE_CONTAINER || provider.structureType == STRUCTURE_STORAGE;
+        return provider.structureType == STRUCTURE_CONTAINER || 
+               provider.structureType == STRUCTURE_STORAGE ||
+               provider.structureType == STRUCTURE_LINK;
     },
     source_occupied: function (provider, exception_creep) {
         if (this.is_fast_provider(provider)) return false;
