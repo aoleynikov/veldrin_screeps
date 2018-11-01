@@ -61,7 +61,7 @@ module.exports = {
     }
   }, {
     count: 1,
-    name_prefix: "upgrader_",
+    name_prefix: "upgrader_W18S25_",
     body: [WORK, WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: "upgrader",
@@ -71,7 +71,7 @@ module.exports = {
     }
   }, {
     count: 1,
-    name_prefix: "upgrader_",
+    name_prefix: "upgrader_W19S25_",
     body: [WORK, WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: "upgrader",
