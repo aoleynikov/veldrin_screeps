@@ -21,7 +21,7 @@ module.exports = {
         // Links
         for(var from_id of Game.spawns['Main'].memory['links_from']) {
             var link_from = Game.getObjectById(from_id);
-            if (!link_from) continue;
+            if (!link_from || link_from.energy < link_from.energyCapacity) continue;
             for(var to_id of Game.spawns['Main'].memory['links_to']) {
                 var link_to = Game.getObjectById(to_id);
                 if (link_to.energy < link_to.energyCapacity) {
