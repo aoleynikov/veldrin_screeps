@@ -14,7 +14,9 @@ var miners_count = room_name => {
   var conts = containers.get(room);
 
   for (var cont of conts) {
-    if (cont.store[RESOURCE_ENERGY] != cont.storageCapacity) ++cnt;
+    if (cont.store[RESOURCE_ENERGY] != cont.storeCapacity) {
+      ++cnt;
+    }
   }
 
   return cnt;
@@ -27,18 +29,16 @@ var haulers_count = room_name => {
   var conts = containers.get(room);
 
   for (var cont of conts) {
+    console.log(cont, cont.store[RESOURCE_ENERGY]);
     total_cont_energy += cont.store[RESOURCE_ENERGY];
   }
 
+  console.log(total_cont_energy);
   return total_cont_energy / 800;
 };
 
 var builders_count = () => {
-  for (var id in Game.constructionSites) {
-    return 4;
-  }
-
-  return 0;
+  return Game.constructionSites === {} ? 0 : 4;
 };
 
 module.exports = {
@@ -195,7 +195,8 @@ module.exports = {
     body: [TOUGH, TOUGH, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
     memory: {
       role: 'warrior',
-      squad: 'Rax'
+      squad: 'Rax',
+      type: "swarm"
     }
   }, {
     count: 1,
@@ -203,7 +204,8 @@ module.exports = {
     body: [MOVE, MOVE, HEAL, HEAL],
     memory: {
       role: 'healer',
-      squad: 'Rax'
+      squad: 'Rax',
+      type: "swarm"
     }
   }, {
     count: 3,
@@ -211,7 +213,8 @@ module.exports = {
     body: [TOUGH, TOUGH, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
     memory: {
       role: 'warrior',
-      squad: 'Phobos'
+      squad: 'Phobos',
+      type: "swarm"
     }
   }, {
     count: 1,
@@ -219,7 +222,8 @@ module.exports = {
     body: [MOVE, MOVE, HEAL, HEAL],
     memory: {
       role: 'healer',
-      squad: 'Phobos'
+      squad: 'Phobos',
+      type: "swarm"
     }
   }, {
     count: 3,
@@ -227,7 +231,8 @@ module.exports = {
     body: [TOUGH, TOUGH, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
     memory: {
       role: 'warrior',
-      squad: 'Deimos'
+      squad: 'Deimos',
+      type: "swarm"
     }
   }, {
     count: 1,
@@ -235,7 +240,8 @@ module.exports = {
     body: [MOVE, MOVE, HEAL, HEAL],
     memory: {
       role: 'healer',
-      squad: 'Deimos'
+      squad: 'Deimos',
+      type: "swarm"
     }
   }, {
     count: 3,
