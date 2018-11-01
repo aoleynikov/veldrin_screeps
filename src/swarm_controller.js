@@ -42,7 +42,7 @@ module.exports = {
         if (maintenance_creeps.length == 0) {
           controller.spawnCreep(spawn, template)
         } else {
-          spawn.renewCreep(maintenance_creeps[0]);
+          if(spawn.renewCreep(maintenance_creeps[0])) break;
         }
       }
     }
