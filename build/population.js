@@ -182,16 +182,6 @@ module.exports = {
       target: 'W19S25'
     }
   }, {
-    count: 1,
-    name_prefix: 'claimer_W19S25_',
-    body: [CLAIM, CLAIM, MOVE, MOVE],
-    memory: {
-      role: 'claimer',
-      type: 'swarm',
-      work_place: 'W19S25',
-      target: 'W19S25'
-    }
-  }, {
     count: haulers_count('W19S25'),
     name_prefix: 'hauler_W19S25_',
     body: [CARRY, CARRY, CARRY, CARRY, MOVE, MOVE],
