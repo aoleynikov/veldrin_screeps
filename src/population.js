@@ -56,12 +56,25 @@ module.exports = {
       type: "swarm"
     }
   }, {
-    count: 4,
+    count: 1,
     name_prefix: "upgrader_",
     body: [WORK, WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: "upgrader",
-      type: "swarm"
+      type: "swarm",
+      work_place: 'W18S25',
+      target: 'W18S25'
+    }
+  },
+  {
+    count: 1,
+    name_prefix: "upgrader_",
+    body: [WORK, WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: "upgrader",
+      type: "swarm",
+      work_place: 'W19S25',
+      target: 'W19S25'
     }
   }, {
     count: 3,
