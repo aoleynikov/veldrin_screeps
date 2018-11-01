@@ -4,10 +4,10 @@ module.exports = {
   perform: function (creep) {
     if (room_travel.perform(creep)) return;
     var spawn = Game.spawns['Main'];
-    var spawns_in_room = creep.pos.findClosestByRange(FIND_MY_SPAWNS);
+    var spawn_in_room = creep.pos.findClosestByRange(FIND_MY_SPAWNS);
 
     if (spawns_in_room) {
-      spawn = spawns_in_room[0];
+      spawn = spawn_in_room;
     }
 
     if (creep.transfer(spawn, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
