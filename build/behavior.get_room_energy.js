@@ -4,6 +4,13 @@ var behavior = {
   is_fast_provider: function (provider) {
     return provider.structureType == STRUCTURE_CONTAINER || provider.structureType == STRUCTURE_STORAGE || provider.structureType == STRUCTURE_LINK;
   },
+  provider_energy: function (provider) {
+    if (provider.structureType == STRUCTURE_CONTAINER || provider.structureType == STRUCTURE_STORAGE) {
+      return provider.store[RESOURCE_ENERGY];
+    } else {
+      return provider.energy;
+    }
+  },
   source_occupied: function (provider, exception_creep) {
     if (this.is_fast_provider(provider)) return false;
     var free = false;
@@ -40,7 +47,7 @@ var behavior = {
     var result = [];
     var self = this;
     result = creep.pos.findClosestByRange(FIND_STRUCTURES, {
-      filter: s => self.is_fast_provider(s) && s.store[RESOURCE_ENERGY] >= creep.carryCapacity - creep.carry[RESOURCE_ENERGY]
+      filter: s => self.is_fast_provider(s) && self.provider_energy(s) >= creep.carryCapacity - creep.carry[RESOURCE_ENERGY]
     });
     if (result) return result;
     return creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE, {
