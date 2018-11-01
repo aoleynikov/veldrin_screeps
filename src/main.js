@@ -7,6 +7,8 @@ module.exports.loop = function () {
   if (Game.spawns['Main'].memory['population'] === undefined || Game.time % 5 == 0) {
     Game.spawns['Main'].memory['population'] = population;
   }
+  
+  doctor.check();
 
   for (var name in Game.creeps) {
     var creep = Game.creeps[name];
@@ -19,6 +21,4 @@ module.exports.loop = function () {
   }
 
   buildings_manager.run(Game.spawns['Main'].room);
-  doctor.check();
-  jobs.run();
 }

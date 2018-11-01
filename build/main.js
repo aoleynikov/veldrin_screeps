@@ -11,6 +11,8 @@ module.exports.loop = function () {
     Game.spawns['Main'].memory['population'] = population;
   }
 
+  doctor.check();
+
   for (var name in Game.creeps) {
     var creep = Game.creeps[name];
     var strategy = dispatcher.get_strategy(creep);
@@ -22,6 +24,4 @@ module.exports.loop = function () {
   }
 
   buildings_manager.run(Game.spawns['Main'].room);
-  doctor.check();
-  jobs.run();
 };
