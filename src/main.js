@@ -1,12 +1,10 @@
 var dispatcher = require('strategy_dispatcher');
-var upgrade_manager = require('upgrade_manager');
 var buildings_manager = require('buildings_manager');
 var doctor = require('doctor');
 var population = require('population');
-var jobs = require('jobs.executor');
 
 module.exports.loop = function () {
-  if (Game.spawns['Main'].memory['population'] === undefined) {
+  if (Game.spawns['Main'].memory['population'] === undefined || Game.time % 5 == 0) {
     Game.spawns['Main'].memory['population'] = population;
   }
 
@@ -20,7 +18,6 @@ module.exports.loop = function () {
     }
   }
 
-  //upgrade_manager.run();
   buildings_manager.run(Game.spawns['Main'].room);
   doctor.check();
   jobs.run();
