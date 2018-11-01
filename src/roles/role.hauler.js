@@ -5,7 +5,7 @@ var storeEnergy = function (creep, storage) {
     var store = creep.transfer(storage, RESOURCE_ENERGY);
     if (store == ERR_NOT_IN_RANGE) {
         creep.moveTo(storage);
-    } else if (store == 0) {
+    } else if (store == 0 && creep.carry[RESOURCE_ENERGY] == 0) {
         energy_behavior.refill(creep);
     }
 };
