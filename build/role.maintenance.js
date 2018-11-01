@@ -6,7 +6,7 @@ module.exports = {
     var spawn = Game.spawns['Main'];
     var spawn_in_room = creep.pos.findClosestByRange(FIND_MY_SPAWNS);
 
-    if (spawns_in_room) {
+    if (spawn_in_room) {
       spawn = spawn_in_room;
     }
 
