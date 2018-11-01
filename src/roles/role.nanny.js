@@ -1,6 +1,5 @@
-var towers = require('structure.tower');
 var energy_behavior = require('behavior.get_energy');
-var room_travel = reqiure('behavior.room_travel');
+var room_travel = require('behavior.room_travel');
 
 var select_storage = function (creep) {
   var tower = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, { filter: (s) => {
