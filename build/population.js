@@ -60,12 +60,24 @@ module.exports = {
       type: "swarm"
     }
   }, {
-    count: 4,
+    count: 1,
     name_prefix: "upgrader_",
     body: [WORK, WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: "upgrader",
-      type: "swarm"
+      type: "swarm",
+      work_place: 'W18S25',
+      target: 'W18S25'
+    }
+  }, {
+    count: 1,
+    name_prefix: "upgrader_",
+    body: [WORK, WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: "upgrader",
+      type: "swarm",
+      work_place: 'W19S25',
+      target: 'W19S25'
     }
   }, {
     count: 3,
@@ -111,7 +123,8 @@ module.exports = {
       role: 'hauler',
       type: 'swarm',
       work_place: 'W18S25',
-      energy_room: 'W18S24'
+      energy_room: 'W18S24',
+      link_id: '5bd9c6fffd47502f5f46418c'
     }
   }, {
     count: 2,
@@ -139,7 +152,8 @@ module.exports = {
       role: 'hauler',
       type: 'swarm',
       work_place: 'W18S25',
-      energy_room: 'W19S24'
+      energy_room: 'W19S24',
+      link_id: '5bd9c6fffd47502f5f46418c'
     }
   }, {
     count: 1,
@@ -187,7 +201,8 @@ module.exports = {
       role: 'hauler',
       type: 'swarm',
       work_place: 'W18S25',
-      energy_room: 'W19S25'
+      energy_room: 'W19S25',
+      link_id: '5bd9c6fffd47502f5f46418c'
     }
   }, {
     count: 3,

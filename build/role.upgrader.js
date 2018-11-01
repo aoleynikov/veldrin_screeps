@@ -1,6 +1,6 @@
 var energy_behavior = require('behavior.get_energy');
 
-var move = require('behavior.move');
+var room_travel = require('behavior.room_travel');
 
 var upgrade = creep => {
   var controller = Game.spawns['Main'].room.controller;
@@ -15,6 +15,7 @@ var upgrade = creep => {
 
 module.exports = {
   perform: creep => {
+    if (room_travel.perform(creep)) return;
     if (energy_behavior.perform(creep)) return;
     upgrade(creep);
   }
