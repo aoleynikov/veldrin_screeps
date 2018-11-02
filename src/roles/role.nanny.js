@@ -21,9 +21,7 @@ var store = function (creep) {
     if (creep.carry[RESOURCE_ENERGY] < creep.carryCapacity) {
       energy_behavior.refill(creep);
     } else {
-      var flag = Game.flags['Nanny_base'];
-      if (!flag) return;
-      creep.moveTo(flag);
+      creep.moveTo(creep.pos.findClosestByRange(FIND_MY_SPAWNS));
     }
   }
   var work = creep.transfer(storage, RESOURCE_ENERGY);
