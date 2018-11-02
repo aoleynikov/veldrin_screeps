@@ -189,6 +189,47 @@ module.exports = {
       energy_room: 'W19S25',
       link_id: '5bd9c6fffd47502f5f46418c'
     }
+  },
+  {
+    count: 2,
+    name_prefix: "repairer_W18S23_",
+    body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
+    memory: {
+      role: "repairer",
+      type: "swarm",
+      work_place: "W18S23"
+    }
+  }, {
+    count: miners_count('W18S23'),
+    name_prefix: 'miner_W18S23_',
+    body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
+    memory: {
+      role: 'miner',
+      type: 'swarm',
+      target: 'W18S23'
+    }
+  }, 
+  {
+    count: 1,
+    name_prefix: 'claimer_W19S24_',
+    body: [CLAIM, CLAIM, MOVE, MOVE],
+    memory: {
+      role: 'claimer',
+      type: 'swarm',
+      work_place: 'W19S24',
+      target: 'W19S24'
+    }
+  },{
+    count: haulers_count('W18S23'),
+    name_prefix: 'hauler_W18S23_',
+    body: [CARRY, CARRY, CARRY, CARRY, MOVE, MOVE],
+    memory: {
+      role: 'hauler',
+      type: 'swarm',
+      work_place: 'W18S25',
+      energy_room: 'W18S23',
+      link_id: '5bd9c6fffd47502f5f46418c'
+    }
   }, {
     count: 3,
     name_prefix: 'warrior_',
