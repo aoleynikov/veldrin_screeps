@@ -4,6 +4,10 @@ var room_travel = require('behavior.room_travel');
 
 module.exports = {
   perform: function (creep) {
+    if (creep.carry[RESOURCE_ENERGY] == 0) {
+      this.refill(creep);
+    }
+
     var room = undefined;
 
     if (creep.memory['refill']) {
