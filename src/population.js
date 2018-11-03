@@ -48,7 +48,7 @@ module.exports = {
   }, {
     count: builders_count(),
     name_prefix: "builder_",
-    body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
+    body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: "builder",
       type: "swarm"
