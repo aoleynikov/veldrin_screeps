@@ -210,7 +210,7 @@ module.exports = {
   },{
     count: haulers_count('W18S23', 600),
     name_prefix: 'hauler_W18S23_',
-    body: [CARRY, CARRY, CARRY, CARRY, MOVE, MOVE],
+    body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: 'hauler',
       type: 'swarm',
