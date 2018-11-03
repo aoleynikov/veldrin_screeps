@@ -7,9 +7,9 @@ For RCL <= 3, don't get greedy.
 */
 
 module.exports = {
-  rooms: ["W18S25", "W18S24", "W19S24", "W19S25"],
+  rooms: ["W18S25", "W18S24", "W19S24", "W19S25", "W18S23"],
   templates: [{
-    count: miners_count('W18S25'),
+    count: 4,
     name_prefix: "miner_W18S25_",
     body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
     memory: {
@@ -17,7 +17,7 @@ module.exports = {
       type: "swarm"
     }
   }, {
-    count: builders_count(),
+    count: 4,
     name_prefix: "builder_",
     body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
@@ -300,6 +300,35 @@ module.exports = {
     memory: {
       role: 'sniper',
       squad: 'Venus',
+      type: 'swarm'
+    }
+  },
+  {
+    count: 1,
+    name_prefix: 'warrior_Ganymede_',
+    body: [TOUGH, TOUGH, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
+    memory: {
+      role: 'warrior',
+      squad: 'Ganymede',
+      type: "swarm",
+    }
+  }, {
+    count: 1,
+    name_prefix: 'healer_Ganymede_',
+    body: [MOVE, MOVE, HEAL, HEAL],
+    memory: {
+      role: 'healer',
+      squad: 'Ganymede',
+      type: "swarm",
+    }
+  },
+  {
+    count: 1,
+    name_prefix: 'sniper_Ganymede_',
+    body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: 'sniper',
+      squad: 'Ganymede',
       type: 'swarm'
     }
   },
