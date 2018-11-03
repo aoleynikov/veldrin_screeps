@@ -140,7 +140,7 @@ module.exports = {
       target: 'W19S24'
     }
   }, {
-    count: haulers_count('W19S24', 1400),
+    count: haulers_count('W19S24', 600),
     name_prefix: 'hauler_W19S24_',
     body: [CARRY, CARRY, CARRY, CARRY, MOVE, MOVE],
     memory: {
@@ -179,7 +179,7 @@ module.exports = {
       target: 'W19S25'
     }
   }, {
-    count: haulers_count('W19S25', 1400),
+    count: haulers_count('W19S25', 600),
     name_prefix: 'hauler_W19S25_',
     body: [CARRY, CARRY, CARRY, CARRY, MOVE, MOVE],
     memory: {
@@ -220,7 +220,7 @@ module.exports = {
       target: 'W18S23'
     }
   },{
-    count: haulers_count('W18S23', 1400),
+    count: haulers_count('W18S23', 600),
     name_prefix: 'hauler_W18S23_',
     body: [CARRY, CARRY, CARRY, CARRY, MOVE, MOVE],
     memory: {
