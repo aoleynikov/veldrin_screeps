@@ -7,10 +7,7 @@ var doctor = require('doctor');
 var population = require('population');
 
 module.exports.loop = function () {
-  if (Game.spawns['Main'].memory['population'] === undefined || Game.time % 5 == 0) {
-    Game.spawns['Main'].memory['population'] = population;
-  }
-
+  Game.spawns['Main'].memory['population'] = population;
   doctor.check();
 
   for (var name in Game.creeps) {
