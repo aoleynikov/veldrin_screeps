@@ -23,6 +23,7 @@ var controller = {
         if (logging) console.log('Not enough energy to spawn:', name);
         return false;
       } else if (spawnResult == 0) {
+        if (logging) console.log('SPAWNING:', name);
         return true;
       }
     }
@@ -35,17 +36,17 @@ var controller = {
 };
 module.exports = {
   respawn: function () {
-    for (var template of Game.spawns['Main'].memory['population']['templates']) {
-      for (var spawn_name in Game.spawns) {
-        var spawn = Game.spawns[spawn_name];
-        var maintenance_creeps = spawn.pos.findInRange(FIND_MY_CREEPS, 1, {
-          filter: c => c.memory['role'] == 'maintenance'
-        });
+    for (var spawn_name in Game.spawns) {
+      var spawn = Game.spawns[spawn_name];
+      var maintenance_creeps = spawn.pos.findInRange(FIND_MY_CREEPS, 1, {
+        filter: c => c.memory['role'] == 'maintenance'
+      });
 
-        if (maintenance_creeps.length == 0) {
-          controller.spawnCreep(spawn, template);
-        } else {
-          if (spawn.renewCreep(maintenance_creeps[0])) break;
+      if (maintenance_creeps.length > 0) {
+        spawn.renewCreep(maintenance_creeps[0]);
+      } else {
+        for (var template of Game.spawns['Main'].memory['population']['templates']) {
+          if (controller.spawnCreep(spawn, template)) break;
         }
       }
     }

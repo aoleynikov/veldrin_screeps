@@ -20,7 +20,7 @@ var miners_count = room_name => {
   return cnt;
 };
 
-var haulers_count = room_name => {
+var haulers_count = (room_name, per_hauler) => {
   var room = Game.rooms[room_name];
   if (!room) return 0;
   var total_cont_energy = 0;
@@ -28,7 +28,7 @@ var haulers_count = room_name => {
   for(var cont of conts) {
     total_cont_energy += cont.store[RESOURCE_ENERGY];
   }
-  return total_cont_energy / 800;
+  return total_cont_energy / per_hauler;
 };
 
 var builders_count = () => {
@@ -54,7 +54,7 @@ module.exports = {
       type: "swarm"
     }
   }, {
-    count: 1,
+    count: 5,
     name_prefix: "upgrader_W18S25_",
     body: [WORK, WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
     memory: {
@@ -65,7 +65,7 @@ module.exports = {
     }
   },
   {
-    count: 1,
+    count: 2,
     name_prefix: "upgrader_W19S25_",
     body: [WORK, WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
     memory: {
@@ -111,7 +111,7 @@ module.exports = {
       work_place: "W18S24"
     }
   }, {
-    count: haulers_count('W18S24'),
+    count: haulers_count('W18S24', 800),
     name_prefix: 'hauler_W18N24_',
     body: [CARRY, CARRY, CARRY, CARRY, MOVE, MOVE],
     memory: {
@@ -140,7 +140,7 @@ module.exports = {
       target: 'W19S24'
     }
   }, {
-    count: haulers_count('W19S24'),
+    count: haulers_count('W19S24', 1400),
     name_prefix: 'hauler_W19S24_',
     body: [CARRY, CARRY, CARRY, CARRY, MOVE, MOVE],
     memory: {
@@ -179,7 +179,7 @@ module.exports = {
       target: 'W19S25'
     }
   }, {
-    count: haulers_count('W19S25'),
+    count: haulers_count('W19S25', 1400),
     name_prefix: 'hauler_W19S25_',
     body: [CARRY, CARRY, CARRY, CARRY, MOVE, MOVE],
     memory: {
@@ -211,16 +211,16 @@ module.exports = {
   }, 
   {
     count: 1,
-    name_prefix: 'claimer_W19S24_',
+    name_prefix: 'claimer_W18S23_',
     body: [CLAIM, CLAIM, MOVE, MOVE],
     memory: {
       role: 'claimer',
       type: 'swarm',
-      work_place: 'W19S24',
-      target: 'W19S24'
+      work_place: 'W18S23',
+      target: 'W18S23'
     }
   },{
-    count: haulers_count('W18S23'),
+    count: haulers_count('W18S23', 1400),
     name_prefix: 'hauler_W18S23_',
     body: [CARRY, CARRY, CARRY, CARRY, MOVE, MOVE],
     memory: {
