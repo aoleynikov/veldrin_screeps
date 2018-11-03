@@ -5,35 +5,6 @@ income available to nannies, the swarm doesn't function as intended.
 If you have a storage, it provides an easy way to monitor the economy balance.
 For RCL <= 3, don't get greedy.
 */
-var containers = require('structure.container');
-
-var miners_count = room_name => {
-  var room = Game.rooms[room_name];
-  if (!room) return 0;
-  var cnt = 0;
-  var conts = containers.get(room);
-  for(var cont of conts) {
-    if (cont.store[RESOURCE_ENERGY] != cont.storeCapacity) { 
-      ++cnt;
-    }
-  }
-  return cnt;
-};
-
-var haulers_count = (room_name, per_hauler) => {
-  var room = Game.rooms[room_name];
-  if (!room) return 0;
-  var total_cont_energy = 0;
-  var conts = containers.get(room);
-  for(var cont of conts) {
-    total_cont_energy += cont.store[RESOURCE_ENERGY];
-  }
-  return total_cont_energy / per_hauler;
-};
-
-var builders_count = () => {
-  return Game.constructionSites === {} ? 0 : 4;
-}
 
 module.exports = {
   rooms: ["W18S25", "W18S24", "W19S24", "W19S25"],
@@ -84,7 +55,7 @@ module.exports = {
       work_place: "W18S25"
     }
   }, {
-    count: miners_count('W18S24'),
+    count: 2,
     name_prefix: "miner_W18S24_",
     body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
     memory: {
@@ -111,7 +82,7 @@ module.exports = {
       work_place: "W18S24"
     }
   }, {
-    count: haulers_count('W18S24', 800),
+    count: 3,
     name_prefix: 'hauler_W18N24_',
     body: [CARRY, CARRY, CARRY, CARRY, MOVE, MOVE],
     memory: {
@@ -131,7 +102,7 @@ module.exports = {
       work_place: "W19S24"
     }
   }, {
-    count: miners_count('W19S24'),
+    count: 4,
     name_prefix: 'miner_W19S24_',
     body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
     memory: {
@@ -140,7 +111,7 @@ module.exports = {
       target: 'W19S24'
     }
   }, {
-    count: haulers_count('W19S24', 600),
+    count: 8,
     name_prefix: 'hauler_W19S24_',
     body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
     memory: {
@@ -170,7 +141,7 @@ module.exports = {
       work_place: "W19S25"
     }
   }, {
-    count: miners_count('W19S25'),
+    count: 4,
     name_prefix: 'miner_W19S25_',
     body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
     memory: {
@@ -188,7 +159,7 @@ module.exports = {
       work_place: "W18S23"
     }
   }, {
-    count: miners_count('W18S23'),
+    count: 3,
     name_prefix: 'miner_W18S23_',
     body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
     memory: {
@@ -208,7 +179,7 @@ module.exports = {
       target: 'W18S23'
     }
   },{
-    count: haulers_count('W18S23', 600),
+    count: 6,
     name_prefix: 'hauler_W18S23_',
     body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
     memory: {
@@ -219,25 +190,35 @@ module.exports = {
       link_id: '5bd9c6fffd47502f5f46418c'
     }
   }, {
-    count: 3,
-    name_prefix: 'warrior_',
+    count: 1,
+    name_prefix: 'warrior_Moon_',
     body: [TOUGH, TOUGH, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
     memory: {
       role: 'warrior',
-      squad: 'Rax',
+      squad: 'Moon',
       type: "swarm",
     }
   }, {
     count: 1,
-    name_prefix: 'healer_',
+    name_prefix: 'healer_Moon_',
     body: [MOVE, MOVE, HEAL, HEAL],
     memory: {
       role: 'healer',
-      squad: 'Rax',
+      squad: 'Moon',
       type: "swarm",
     }
+  },
+  {
+    count: 1,
+    name_prefix: 'sniper_Moon_',
+    body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: 'sniper',
+      squad: 'Moon',
+      type: 'swarm'
+    }
   }, {
-    count: 3,
+    count: 1,
     name_prefix: 'warrior_Phobos_',
     body: [TOUGH, TOUGH, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
     memory: {
@@ -254,32 +235,71 @@ module.exports = {
       squad: 'Phobos',
       type: "swarm",
     }
-  }, {
-    count: 3,
-    name_prefix: 'warrior_Deimos_',
+  }, 
+  {
+    count: 1,
+    name_prefix: 'sniper_Phobos_',
+    body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: 'sniper',
+      squad: 'Phobos',
+      type: 'swarm'
+    }
+  },{
+    count: 1,
+    name_prefix: 'warrior_Mars_',
     body: [TOUGH, TOUGH, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
     memory: {
       role: 'warrior',
-      squad: 'Deimos',
+      squad: 'Mars',
       type: "swarm",
     }
   }, {
     count: 1,
-    name_prefix: 'healer_Deimos_',
+    name_prefix: 'healer_Mars_',
     body: [MOVE, MOVE, HEAL, HEAL],
     memory: {
       role: 'healer',
-      squad: 'Deimos',
+      squad: 'Mars',
       type: "swarm",
     }
   }, 
   {
     count: 3,
-    name_prefix: 'sniper_',
+    name_prefix: 'sniper_Mars_',
     body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: 'sniper',
-      squad: 'snipers_test',
+      squad: 'Mars',
+      type: 'swarm'
+    }
+  },
+  {
+    count: 1,
+    name_prefix: 'warrior_Venus_',
+    body: [TOUGH, TOUGH, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
+    memory: {
+      role: 'warrior',
+      squad: 'Venus',
+      type: "swarm",
+    }
+  },{
+    count: 1,
+    name_prefix: 'healer_Venus_',
+    body: [MOVE, MOVE, HEAL, HEAL],
+    memory: {
+      role: 'healer',
+      squad: 'Venus',
+      type: "swarm",
+    }
+  }, 
+  {
+    count: 3,
+    name_prefix: 'sniper_Venus_',
+    body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: 'sniper',
+      squad: 'Venus',
       type: 'swarm'
     }
   },
