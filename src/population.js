@@ -102,7 +102,7 @@ module.exports = {
       type: "swarm"
     }
   }, {
-    count: 2,
+    count: 3,
     name_prefix: "repairer_W18S24_",
     body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
     memory: {
@@ -142,7 +142,7 @@ module.exports = {
   }, {
     count: haulers_count('W19S24', 600),
     name_prefix: 'hauler_W19S24_',
-    body: [CARRY, CARRY, CARRY, CARRY, MOVE, MOVE],
+    body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: 'hauler',
       type: 'swarm',
@@ -179,18 +179,6 @@ module.exports = {
       target: 'W19S25'
     }
   }, {
-    count: haulers_count('W19S25', 600),
-    name_prefix: 'hauler_W19S25_',
-    body: [CARRY, CARRY, CARRY, CARRY, MOVE, MOVE],
-    memory: {
-      role: 'hauler',
-      type: 'swarm',
-      work_place: 'W18S25',
-      energy_room: 'W19S25',
-      link_id: '5bd9c6fffd47502f5f46418c'
-    }
-  },
-  {
     count: 2,
     name_prefix: "repairer_W18S23_",
     body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
