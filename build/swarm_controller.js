@@ -3,7 +3,7 @@ var population = require('population');
 var controller = {
   spawnCreep: function (spawn, template) {
     var logging = Game.time % 50 == 0;
-    if (spawn.spawning) return;
+    if (spawn.spawning) return true;
 
     for (var i = 0; i < template.count; ++i) {
       var name = template.name_prefix + i;
@@ -21,7 +21,7 @@ var controller = {
 
       if (spawnResult == ERR_NOT_ENOUGH_ENERGY) {
         if (logging) console.log('Not enough energy to spawn:', name);
-        return false;
+        return true;
       } else if (spawnResult == 0) {
         if (logging) console.log('SPAWNING:', name);
         return true;

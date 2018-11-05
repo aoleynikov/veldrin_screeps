@@ -34,7 +34,7 @@ module.exports = {
       target: 'W18S25'
     }
   }, {
-    count: 2,
+    count: 4,
     name_prefix: "upgrader_W19S25_",
     body: [WORK, WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
     memory: {
@@ -44,9 +44,9 @@ module.exports = {
       target: 'W19S25'
     }
   }, {
-    count: 3,
+    count: 1,
     name_prefix: "repairer_W18S25_",
-    body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
+    body: [WORK, WORK, WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: "repairer",
       type: "swarm",
@@ -187,6 +187,15 @@ module.exports = {
       link_id: '5bd9c6fffd47502f5f46418c'
     }
   }, {
+    count: 2,
+    name_prefix: "repairer_W17S24_",
+    body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: "repairer",
+      type: "swarm",
+      work_place: "W17S24"
+    }
+  }, {
     count: 1,
     name_prefix: 'warrior_Moon_',
     body: [TOUGH, TOUGH, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
@@ -259,7 +268,7 @@ module.exports = {
       type: "swarm"
     }
   }, {
-    count: 3,
+    count: 1,
     name_prefix: 'sniper_Mars_',
     body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
@@ -286,7 +295,7 @@ module.exports = {
       type: "swarm"
     }
   }, {
-    count: 3,
+    count: 1,
     name_prefix: 'sniper_Venus_',
     body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
