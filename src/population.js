@@ -202,6 +202,39 @@ module.exports = {
   },
   {
     count: 1,
+    name_prefix: 'claimer_W17S24_',
+    body: [CLAIM, CLAIM, MOVE, MOVE],
+    memory: {
+      role: 'claimer',
+      type: 'swarm',
+      work_place: 'W17S24',
+      target: 'W17S24'
+    }
+  },
+  {
+    count: 2,
+    name_prefix: 'miner_W17S24_',
+    body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
+    memory: {
+      role: 'miner',
+      type: 'swarm',
+      target: 'W17S24'
+    }
+  },
+  {
+    count: 2,
+    name_prefix: 'hauler_W17S24_',
+    body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: 'hauler',
+      type: 'swarm',
+      work_place: 'W18S25',
+      energy_room: 'W17S24',
+      link_id: '5bd9c6fffd47502f5f46418c'
+    }
+  },
+  {
+    count: 1,
     name_prefix: 'warrior_Moon_',
     body: [TOUGH, TOUGH, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
     memory: {
