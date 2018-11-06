@@ -20,5 +20,8 @@ module.exports.loop = function () {
     }
   }
 
-  buildings_manager.run(Game.spawns['Main'].room);
+  for (var spawn_name in Game.spawns) {
+    var spawn = Game.spawns[spawn_name];
+    buildings_manager.run(spawn);
+  }
 };
