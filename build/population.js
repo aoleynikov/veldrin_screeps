@@ -265,7 +265,7 @@ module.exports = {
   }, {
     count: 1,
     name_prefix: 'warrior_Phobos_',
-    body: [TOUGH, TOUGH, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
+    body: [TOUGH, TOUGH, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
     memory: {
       role: 'warrior',
       squad: 'Phobos',
@@ -274,7 +274,7 @@ module.exports = {
   }, {
     count: 1,
     name_prefix: 'healer_Phobos_',
-    body: [MOVE, MOVE, HEAL, HEAL],
+    body: [MOVE, MOVE, MOVE, HEAL, HEAL, HEAL],
     memory: {
       role: 'healer',
       squad: 'Phobos',
@@ -283,7 +283,7 @@ module.exports = {
   }, {
     count: 1,
     name_prefix: 'sniper_Phobos_',
-    body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE],
+    body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: 'sniper',
       squad: 'Phobos',
@@ -291,35 +291,8 @@ module.exports = {
     }
   }, {
     count: 1,
-    name_prefix: 'warrior_Mars_',
-    body: [TOUGH, TOUGH, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
-    memory: {
-      role: 'warrior',
-      squad: 'Mars',
-      type: "swarm"
-    }
-  }, {
-    count: 1,
-    name_prefix: 'healer_Mars_',
-    body: [MOVE, MOVE, HEAL, HEAL],
-    memory: {
-      role: 'healer',
-      squad: 'Mars',
-      type: "swarm"
-    }
-  }, {
-    count: 1,
-    name_prefix: 'sniper_Mars_',
-    body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE],
-    memory: {
-      role: 'sniper',
-      squad: 'Mars',
-      type: 'swarm'
-    }
-  }, {
-    count: 1,
     name_prefix: 'warrior_Venus_',
-    body: [TOUGH, TOUGH, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
+    body: [TOUGH, TOUGH, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
     memory: {
       role: 'warrior',
       squad: 'Venus',
@@ -337,7 +310,7 @@ module.exports = {
   }, {
     count: 1,
     name_prefix: 'sniper_Venus_',
-    body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE],
+    body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: 'sniper',
       squad: 'Venus',
@@ -346,7 +319,7 @@ module.exports = {
   }, {
     count: 1,
     name_prefix: 'warrior_Ganymede_',
-    body: [TOUGH, TOUGH, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
+    body: [TOUGH, TOUGH, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
     memory: {
       role: 'warrior',
       squad: 'Ganymede',
@@ -364,19 +337,10 @@ module.exports = {
   }, {
     count: 1,
     name_prefix: 'sniper_Ganymede_',
-    body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE],
+    body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: 'sniper',
       squad: 'Ganymede',
-      type: 'swarm'
-    }
-  }, {
-    count: 2,
-    name_prefix: 'sniper_',
-    body: [TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
-    memory: {
-      role: 'sniper',
-      squad: 'War',
       type: 'swarm'
     }
   }, {
