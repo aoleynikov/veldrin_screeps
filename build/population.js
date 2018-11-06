@@ -34,6 +34,16 @@ module.exports = {
       target: 'W18S25'
     }
   }, {
+    count: 3,
+    name_prefix: "nanny_W19S25_",
+    body: [WORK, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: 'nanny',
+      type: 'swarm',
+      work_place: 'W19S25',
+      target: 'W19S25'
+    }
+  }, {
     count: 4,
     name_prefix: "upgrader_W19S25_",
     body: [WORK, WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
@@ -128,16 +138,6 @@ module.exports = {
       type: 'swarm',
       work_place: 'W19S24',
       target: 'W19S24'
-    }
-  }, {
-    count: 3,
-    name_prefix: "nanny_W19S25_",
-    body: [WORK, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
-    memory: {
-      role: 'nanny',
-      type: 'swarm',
-      work_place: 'W19S25',
-      target: 'W19S25'
     }
   }, {
     count: 2,
