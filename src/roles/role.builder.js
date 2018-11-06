@@ -10,6 +10,7 @@ var build = function (creep) {
 
     for (var key in sites) {
         site = Game.getObjectById(key);
+        if (!site.room) continue;
         creep.memory['work_place'] = site.room.name;
         break;
     }

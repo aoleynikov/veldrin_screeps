@@ -32,18 +32,15 @@ var controller = {
 // most of creep code will still be handeled by role model,
 // but these creeps will be rebuilt instead of renewed
 module.exports = {
-  respawn: function () {
-    for (var spawn_name in Game.spawns) {
-      var spawn = Game.spawns[spawn_name];
-      var maintenance_creeps = spawn.pos.findInRange(FIND_MY_CREEPS, 1, {
-          filter: (c) => c.memory['role'] == 'maintenance'
-      });
-      if (maintenance_creeps.length > 0) {
-        spawn.renewCreep(maintenance_creeps[0])
-      } else {
-        for (var template of Game.spawns['Main'].memory['population']['templates']) {
-          if (controller.spawnCreep(spawn, template)) break;
-        }
+  respawn: function (spawn) {
+    var maintenance_creeps = spawn.pos.findInRange(FIND_MY_CREEPS, 1, {
+        filter: (c) => c.memory['role'] == 'maintenance'
+    });
+    if (maintenance_creeps.length > 0) {
+      spawn.renewCreep(maintenance_creeps[0])
+    } else {
+      for (var template of Game.spawns['Main'].memory['population']['templates']) {
+        if (controller.spawnCreep(spawn, template)) return;
       }
     }
   }
