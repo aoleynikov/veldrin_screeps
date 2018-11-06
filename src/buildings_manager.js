@@ -12,6 +12,7 @@ module.exports = {
         swarm.respawn(spawn);
 
         // Links
+        if (!spawn.memory['links_from']) return;
         for(var from_id of spawn.memory['links_from']) {
             var link_from = Game.getObjectById(from_id);
             if (!link_from || link_from.energy < link_from.energyCapacity) continue;
