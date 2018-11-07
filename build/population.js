@@ -45,7 +45,7 @@ module.exports = {
       target: 'W19S25'
     }
   }, {
-    count: 4,
+    count: 2,
     name_prefix: "upgrader_W19S25_",
     body: [WORK, WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
     memory: {
@@ -82,18 +82,18 @@ module.exports = {
       type: "swarm"
     }
   }, {
-    count: 3,
+    count: 1,
     name_prefix: "repairer_W18S24_",
-    body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
+    body: [WORK, WORK, WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: "repairer",
       type: "swarm",
       work_place: "W18S24"
     }
   }, {
-    count: 3,
+    count: 1,
     name_prefix: 'hauler_W18N24_',
-    body: [CARRY, CARRY, CARRY, CARRY, MOVE, MOVE],
+    body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: 'hauler',
       type: 'swarm',
@@ -102,9 +102,9 @@ module.exports = {
       link_id: '5bd9c6fffd47502f5f46418c'
     }
   }, {
-    count: 2,
+    count: 1,
     name_prefix: "repairer_W19S24_",
-    body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
+    body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: "repairer",
       type: "swarm",
@@ -122,7 +122,7 @@ module.exports = {
   }, {
     count: 8,
     name_prefix: 'hauler_W19S24_',
-    body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
+    body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: 'hauler',
       type: 'swarm',
@@ -141,9 +141,9 @@ module.exports = {
       target: 'W19S24'
     }
   }, {
-    count: 2,
+    count: 1,
     name_prefix: "repairer_W19S25_",
-    body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
+    body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: "repairer",
       type: "swarm",
@@ -161,7 +161,7 @@ module.exports = {
   }, {
     count: 2,
     name_prefix: "repairer_W18S23_",
-    body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
+    body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: "repairer",
       type: "swarm",
@@ -189,7 +189,7 @@ module.exports = {
   }, {
     count: 6,
     name_prefix: 'hauler_W18S23_',
-    body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
+    body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: 'hauler',
       type: 'swarm',
@@ -228,7 +228,7 @@ module.exports = {
   }, {
     count: 2,
     name_prefix: 'hauler_W17S24_',
-    body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
+    body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: 'hauler',
       type: 'swarm',
@@ -239,7 +239,7 @@ module.exports = {
   }, {
     count: 1,
     name_prefix: 'warrior_Moon_',
-    body: [TOUGH, TOUGH, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
+    body: [TOUGH, TOUGH, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
     memory: {
       role: 'warrior',
       squad: 'Moon',
@@ -248,7 +248,7 @@ module.exports = {
   }, {
     count: 1,
     name_prefix: 'healer_Moon_',
-    body: [MOVE, MOVE, HEAL, HEAL],
+    body: [MOVE, MOVE, MOVE, HEAL, HEAL, HEAL],
     memory: {
       role: 'healer',
       squad: 'Moon',
@@ -257,7 +257,7 @@ module.exports = {
   }, {
     count: 1,
     name_prefix: 'sniper_Moon_',
-    body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE],
+    body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: 'sniper',
       squad: 'Moon',
@@ -302,7 +302,7 @@ module.exports = {
   }, {
     count: 1,
     name_prefix: 'healer_Venus_',
-    body: [MOVE, MOVE, HEAL, HEAL],
+    body: [MOVE, MOVE, MOVE, HEAL, HEAL, HEAL],
     memory: {
       role: 'healer',
       squad: 'Venus',
@@ -329,7 +329,7 @@ module.exports = {
   }, {
     count: 1,
     name_prefix: 'healer_Ganymede_',
-    body: [MOVE, MOVE, HEAL, HEAL],
+    body: [MOVE, MOVE, MOVE, HEAL, HEAL, HEAL],
     memory: {
       role: 'healer',
       squad: 'Ganymede',
