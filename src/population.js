@@ -14,9 +14,12 @@ module.exports = {
     memory: {
       role: "miner",
       type: "swarm",
-      target: 'W18S25'
+      target: 'W18S25',
+      find: FIND_SOURCES_ACTIVE,
+      resource: RESOURCE_ENERGY
     }
-  }, {
+  },
+  {
     count: 4,
     name_prefix: "builder_",
     body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE],
@@ -63,6 +66,34 @@ module.exports = {
       type: "swarm",
       work_place: "W18S25"
     }
+  },
+  {
+    count: 1,
+    name_prefix: 'warrior_Moon_',
+    body: [TOUGH, TOUGH, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
+    memory: {
+      role: 'warrior',
+      squad: 'Moon',
+      type: "swarm"
+    }
+  }, {
+    count: 1,
+    name_prefix: 'healer_Moon_',
+    body: [MOVE, MOVE, MOVE, HEAL, HEAL, HEAL],
+    memory: {
+      role: 'healer',
+      squad: 'Moon',
+      type: "swarm"
+    }
+  }, {
+    count: 1,
+    name_prefix: 'sniper_Moon_',
+    body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: 'sniper',
+      squad: 'Moon',
+      type: 'swarm'
+    }
   }, {
     count: 2,
     name_prefix: "miner_W18S24_",
@@ -70,7 +101,9 @@ module.exports = {
     memory: {
       role: "miner",
       target: "W18S24",
-      type: "swarm"
+      type: "swarm",
+      find: FIND_SOURCES_ACTIVE,
+      resource: RESOURCE_ENERGY
     }
   }, {
     count: 1,
@@ -101,6 +134,34 @@ module.exports = {
       energy_room: 'W18S24',
       link_id: '5bd9c6fffd47502f5f46418c'
     }
+  },
+  {
+    count: 1,
+    name_prefix: 'warrior_Phobos_',
+    body: [TOUGH, TOUGH, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
+    memory: {
+      role: 'warrior',
+      squad: 'Phobos',
+      type: "swarm"
+    }
+  }, {
+    count: 1,
+    name_prefix: 'healer_Phobos_',
+    body: [MOVE, MOVE, MOVE, HEAL, HEAL, HEAL],
+    memory: {
+      role: 'healer',
+      squad: 'Phobos',
+      type: "swarm"
+    }
+  }, {
+    count: 1,
+    name_prefix: 'sniper_Phobos_',
+    body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: 'sniper',
+      squad: 'Phobos',
+      type: 'swarm'
+    }
   }, {
     count: 1,
     name_prefix: "repairer_W19S24_",
@@ -117,7 +178,9 @@ module.exports = {
     memory: {
       role: 'miner',
       type: 'swarm',
-      target: 'W19S24'
+      target: 'W19S24',
+      find: FIND_SOURCES_ACTIVE,
+      resource: RESOURCE_ENERGY
     }
   }, {
     count: 8,
@@ -156,141 +219,12 @@ module.exports = {
     memory: {
       role: 'miner',
       type: 'swarm',
-      target: 'W19S25'
+      target: 'W19S25',
+      find: FIND_SOURCES_ACTIVE,
+      resource: RESOURCE_ENERGY
     }
-  }, {
-    count: 2,
-    name_prefix: "repairer_W18S23_",
-    body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
-    memory: {
-      role: "repairer",
-      type: "swarm",
-      work_place: "W18S23"
-    }
-  }, {
-    count: 3,
-    name_prefix: 'miner_W18S23_',
-    body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
-    memory: {
-      role: 'miner',
-      type: 'swarm',
-      target: 'W18S23'
-    }
-  }, {
-    count: 1,
-    name_prefix: 'claimer_W18S23_',
-    body: [CLAIM, CLAIM, MOVE, MOVE],
-    memory: {
-      role: 'claimer',
-      type: 'swarm',
-      work_place: 'W18S23',
-      target: 'W18S23'
-    }
-  }, {
-    count: 6,
-    name_prefix: 'hauler_W18S23_',
-    body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
-    memory: {
-      role: 'hauler',
-      type: 'swarm',
-      work_place: 'W18S25',
-      energy_room: 'W18S23',
-      link_id: '5bd9c6fffd47502f5f46418c'
-    }
-  }, {
-    count: 2,
-    name_prefix: "repairer_W17S24_",
-    body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
-    memory: {
-      role: "repairer",
-      type: "swarm",
-      work_place: "W17S24"
-    }
-  }, {
-    count: 1,
-    name_prefix: 'claimer_W17S24_',
-    body: [CLAIM, CLAIM, MOVE, MOVE],
-    memory: {
-      role: 'claimer',
-      type: 'swarm',
-      work_place: 'W17S24',
-      target: 'W17S24'
-    }
-  }, {
-    count: 2,
-    name_prefix: 'miner_W17S24_',
-    body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
-    memory: {
-      role: 'miner',
-      type: 'swarm',
-      target: 'W17S24'
-    }
-  }, {
-    count: 2,
-    name_prefix: 'hauler_W17S24_',
-    body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
-    memory: {
-      role: 'hauler',
-      type: 'swarm',
-      work_place: 'W18S25',
-      energy_room: 'W17S24',
-      link_id: '5bd9c6fffd47502f5f46418c'
-    }
-  }, {
-    count: 1,
-    name_prefix: 'warrior_Moon_',
-    body: [TOUGH, TOUGH, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
-    memory: {
-      role: 'warrior',
-      squad: 'Moon',
-      type: "swarm"
-    }
-  }, {
-    count: 1,
-    name_prefix: 'healer_Moon_',
-    body: [MOVE, MOVE, MOVE, HEAL, HEAL, HEAL],
-    memory: {
-      role: 'healer',
-      squad: 'Moon',
-      type: "swarm"
-    }
-  }, {
-    count: 1,
-    name_prefix: 'sniper_Moon_',
-    body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
-    memory: {
-      role: 'sniper',
-      squad: 'Moon',
-      type: 'swarm'
-    }
-  }, {
-    count: 1,
-    name_prefix: 'warrior_Phobos_',
-    body: [TOUGH, TOUGH, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
-    memory: {
-      role: 'warrior',
-      squad: 'Phobos',
-      type: "swarm"
-    }
-  }, {
-    count: 1,
-    name_prefix: 'healer_Phobos_',
-    body: [MOVE, MOVE, MOVE, HEAL, HEAL, HEAL],
-    memory: {
-      role: 'healer',
-      squad: 'Phobos',
-      type: "swarm"
-    }
-  }, {
-    count: 1,
-    name_prefix: 'sniper_Phobos_',
-    body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
-    memory: {
-      role: 'sniper',
-      squad: 'Phobos',
-      type: 'swarm'
-    }
-  }, {
+  }, 
+  {
     count: 1,
     name_prefix: 'warrior_Venus_',
     body: [TOUGH, TOUGH, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
@@ -318,6 +252,48 @@ module.exports = {
       type: 'swarm'
     }
   }, {
+    count: 2,
+    name_prefix: "repairer_W18S23_",
+    body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: "repairer",
+      type: "swarm",
+      work_place: "W18S23"
+    }
+  }, {
+    count: 3,
+    name_prefix: 'miner_W18S23_',
+    body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
+    memory: {
+      role: 'miner',
+      type: 'swarm',
+      target: 'W18S23',
+      find: FIND_SOURCES_ACTIVE,
+      resource: RESOURCE_ENERGY
+    }
+  }, {
+    count: 1,
+    name_prefix: 'claimer_W18S23_',
+    body: [CLAIM, CLAIM, MOVE, MOVE],
+    memory: {
+      role: 'claimer',
+      type: 'swarm',
+      work_place: 'W18S23',
+      target: 'W18S23'
+    }
+  }, {
+    count: 6,
+    name_prefix: 'hauler_W18S23_',
+    body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: 'hauler',
+      type: 'swarm',
+      work_place: 'W18S25',
+      energy_room: 'W18S23',
+      link_id: '5bd9c6fffd47502f5f46418c'
+    }
+  }, 
+  {
     count: 1,
     name_prefix: 'warrior_Ganymede_',
     body: [TOUGH, TOUGH, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
@@ -343,6 +319,47 @@ module.exports = {
       role: 'sniper',
       squad: 'Ganymede',
       type: 'swarm'
+    }
+  }, {
+    count: 2,
+    name_prefix: "repairer_W17S24_",
+    body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: "repairer",
+      type: "swarm",
+      work_place: "W17S24"
+    }
+  }, {
+    count: 1,
+    name_prefix: 'claimer_W17S24_',
+    body: [CLAIM, CLAIM, MOVE, MOVE],
+    memory: {
+      role: 'claimer',
+      type: 'swarm',
+      work_place: 'W17S24',
+      target: 'W17S24'
+    }
+  }, {
+    count: 2,
+    name_prefix: 'miner_W17S24_',
+    body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
+    memory: {
+      role: 'miner',
+      type: 'swarm',
+      target: 'W17S24',
+      find: FIND_SOURCES_ACTIVE,
+      resource: RESOURCE_ENERGY
+    }
+  }, {
+    count: 2,
+    name_prefix: 'hauler_W17S24_',
+    body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: 'hauler',
+      type: 'swarm',
+      work_place: 'W18S25',
+      energy_room: 'W17S24',
+      link_id: '5bd9c6fffd47502f5f46418c'
     }
   }, {
     count: 3,
