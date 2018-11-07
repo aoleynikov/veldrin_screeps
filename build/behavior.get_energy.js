@@ -11,7 +11,7 @@ module.exports = {
     tombstones = creep.room.lookForAtArea(LOOK_TOMBSTONES, creep.pos.y - 1, creep.pos.x - 1, creep.pos.y + 1, creep.pos.x + 1, true);
 
     for (var stone of tombstones) {
-      if (stone.store[RESOURCE_ENERGY] > 0) {
+      if (stone && stone.store[RESOURCE_ENERGY] > 0) {
         creep.withdraw(RESOURCE_ENERGY, stone.structure);
       }
     }

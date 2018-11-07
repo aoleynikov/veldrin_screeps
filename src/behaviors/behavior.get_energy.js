@@ -16,7 +16,7 @@ module.exports = {
 			true)
 
 		for(var stone of tombstones) {
-			if(stone.store[RESOURCE_ENERGY] > 0) {
+			if(stone && stone.store[RESOURCE_ENERGY] > 0) {
 				creep.withdraw(RESOURCE_ENERGY, stone.structure);
 			}
 		}
