@@ -14,7 +14,8 @@ module.exports = {
     body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
     memory: {
       role: "miner",
-      type: "swarm"
+      type: "swarm",
+      target: 'W18S25'
     }
   }, {
     count: 4,
