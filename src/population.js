@@ -416,6 +416,39 @@ module.exports = {
     }
   },
   {
+    count: 1,
+    name_prefix: 'claimer_W19S23_',
+    body: [CLAIM, CLAIM, MOVE, MOVE],
+    memory: {
+      role: 'claimer',
+      type: 'swarm',
+      work_place: 'W19S23',
+      target: 'W19S23'
+    }
+  }, {
+    count: 1,
+    name_prefix: 'miner_W19S23_',
+    body: [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
+    memory: {
+      role: 'miner',
+      type: 'swarm',
+      target: 'W19S23',
+      find: FIND_SOURCES_ACTIVE,
+      resource: RESOURCE_ENERGY
+    }
+  }, {
+    count: 6,
+    name_prefix: 'hauler_W19S23_',
+    body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: 'hauler',
+      type: 'swarm',
+      work_place: 'W18S25',
+      energy_room: 'W19S23',
+      link_id: '5bd9c6fffd47502f5f46418c'
+    }
+  },
+  {
     count: 3,
     name_prefix: 'scout_',
     body: [MOVE],
