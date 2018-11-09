@@ -196,7 +196,7 @@ module.exports = {
       type: 'swarm',
       work_place: 'W18S25',
       energy_room: 'W19S24',
-      link_id: '5bd9c6fffd47502f5f46418c'
+      link_id: '5be5a3d62f3e9313ab7c1de7'
     }
   }, {
     count: 1,
