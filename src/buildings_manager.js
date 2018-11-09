@@ -13,8 +13,7 @@ module.exports = {
 
         // Links
         if (!spawn.memory['links_from']) return;
-        for(var i = 9; i < spawn.memory['links_from'].length; ++i) {
-            var from_id = spawn.memory['links_from'][i];
+        for(var from_id of spawn.memory['links_from']) {
             var link_from = Game.getObjectById(from_id);
             if (!link_from || link_from.energy < link_from.energyCapacity) continue;
             for(var to_id of spawn.memory['links_to']) {

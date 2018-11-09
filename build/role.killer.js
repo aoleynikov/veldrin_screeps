@@ -3,7 +3,7 @@ module.exports = {
     var target = undefined;
 
     for (var id of creep.memory['victims']) {
-      target = Game.getObjectById(id);
+      target = Game.getObjectById(id) || target;
     }
 
     if (!target) creep.suicide();
