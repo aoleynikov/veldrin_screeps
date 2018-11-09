@@ -15,14 +15,14 @@ module.exports = {
 			creep.pos.x + 1, 
 			true)
 
-		for(var stone of tombstones) {
-			if(stone.structure && stone.structure.store[RESOURCE_ENERGY] > 0) {
-				creep.withdraw(RESOURCE_ENERGY, stone.structure);
-			}
-		}
-
 		var room = undefined;
 		if (creep.memory['refill']) {
+			for (var stone of tombstones) {
+				if (stone.tombstone && stone.tombstone.store[RESOURCE_ENERGY] > 0) {
+					creep.withdraw(stone.tombstone, RESOURCE_ENERGY);
+					return true;
+				}
+			}
 			room = creep.memory['energy_room'] || creep.room.name;
 			creep.memory['target'] = room;
 			if (room_travel.perform(creep)) return true;

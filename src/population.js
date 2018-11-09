@@ -361,7 +361,36 @@ module.exports = {
       energy_room: 'W17S24',
       link_id: '5bd9c6fffd47502f5f46418c'
     }
+  }, 
+  {
+    count: 1,
+    name_prefix: 'warrior_Io_',
+    body: [TOUGH, TOUGH, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
+    memory: {
+      role: 'warrior',
+      squad: 'Io',
+      type: "swarm"
+    }
   }, {
+    count: 1,
+    name_prefix: 'healer_Io_',
+    body: [MOVE, MOVE, MOVE, HEAL, HEAL, HEAL],
+    memory: {
+      role: 'healer',
+      squad: 'Io',
+      type: "swarm"
+    }
+  }, {
+    count: 1,
+    name_prefix: 'sniper_Io_',
+    body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: 'sniper',
+      squad: 'Io',
+      type: 'swarm'
+    }
+  },
+  {
     count: 3,
     name_prefix: 'scout_',
     body: [MOVE],
