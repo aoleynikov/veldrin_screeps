@@ -18,7 +18,7 @@ module.exports = {
             if (!link_from || link_from.energy < link_from.energyCapacity) continue;
             for(var to_id of spawn.memory['links_to']) {
                 var link_to = Game.getObjectById(to_id);
-                if (link_to.energy < link_to.energyCapacity) {
+                if (link_to.energy < link_to.energyCapacity / 2) {
                     link_from.transferEnergy(link_to);
                 }
             }
