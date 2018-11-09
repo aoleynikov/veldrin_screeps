@@ -21,7 +21,7 @@ module.exports = {
   }, {
     count: 2,
     name_prefix: 'killer_',
-    body: [ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE],
+    body: [ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: 'killer',
       victims: ['5bd2235b1d0d2539531e1700', '5be1f3273d28fe17159630e9', '5bdab7bc2c58a63145951b5d', '5bdc76be0c93d679fa792b38', '5be226319ce418350eb226b4']
