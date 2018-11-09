@@ -24,6 +24,7 @@ var scout = require('role.scout');
 
 var sniper = require('role.sniper');
 
+var killer = reqiure('role.killer');
 var manual = {
   perform: creep => {}
 };
@@ -41,7 +42,8 @@ var roles = {
   destroyer: destroyer,
   sniper: sniper,
   scout: scout,
-  manual: manual
+  manual: manual,
+  killer: killer
 };
 var useless = {
   perform: creep => creep.moveTo(Game.flags['useless'])

@@ -11,6 +11,7 @@ var healer = require('role.healer');
 var destroyer = require('role.destroyer');
 var scout = require('role.scout');
 var sniper = require('role.sniper');
+var killer = reqiure('role.killer')
 
 var manual = {
   perform: (creep) => {}
@@ -30,7 +31,8 @@ var roles = {
   destroyer: destroyer,
   sniper: sniper,
   scout: scout,
-  manual: manual
+  manual: manual,
+  killer: killer
 };
 
 var useless = {
