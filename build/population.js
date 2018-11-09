@@ -10,7 +10,7 @@ module.exports = {
   templates: [{
     count: 2,
     name_prefix: "miner_W18S25_",
-    body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
+    body: [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
     memory: {
       role: "miner",
       type: "swarm",
@@ -103,7 +103,7 @@ module.exports = {
   }, {
     count: 1,
     name_prefix: "miner_W18S24_",
-    body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
+    body: [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
     memory: {
       role: "miner",
       target: "W18S24",
@@ -179,7 +179,7 @@ module.exports = {
   }, {
     count: 2,
     name_prefix: 'miner_W19S24_',
-    body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
+    body: [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
     memory: {
       role: 'miner',
       type: 'swarm',
@@ -220,7 +220,7 @@ module.exports = {
   }, {
     count: 2,
     name_prefix: 'miner_W19S25_',
-    body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
+    body: [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
     memory: {
       role: 'miner',
       type: 'swarm',
@@ -267,7 +267,7 @@ module.exports = {
   }, {
     count: 2,
     name_prefix: 'miner_W18S23_',
-    body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
+    body: [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
     memory: {
       role: 'miner',
       type: 'swarm',
@@ -345,7 +345,7 @@ module.exports = {
   }, {
     count: 1,
     name_prefix: 'miner_W17S24_',
-    body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
+    body: [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
     memory: {
       role: 'miner',
       type: 'swarm',
