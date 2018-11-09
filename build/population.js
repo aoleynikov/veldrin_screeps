@@ -57,6 +57,16 @@ module.exports = {
       target: 'W19S25'
     }
   }, {
+    count: 1,
+    name_prefix: "upgrader_W18S23_",
+    body: [WORK, WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: "upgrader",
+      type: "swarm",
+      work_place: 'W18S23',
+      target: 'W18S23'
+    }
+  }, {
     count: 2,
     name_prefix: "repairer_W18S25_",
     body: [WORK, WORK, WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
