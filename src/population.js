@@ -332,7 +332,7 @@ module.exports = {
   }, {
     count: 1,
     name_prefix: 'claimer_W17S24_',
-    body: [CLAIM, CLAIM, MOVE, MOVE],
+    body: [CLAIM, CLAIM, CLAIM, MOVE, MOVE, MOVE],
     memory: {
       role: 'claimer',
       type: 'swarm',
