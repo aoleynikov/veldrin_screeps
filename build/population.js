@@ -57,7 +57,7 @@ module.exports = {
       target: 'W19S25'
     }
   }, {
-    count: 3,
+    count: 2,
     name_prefix: "repairer_W18S25_",
     body: [WORK, WORK, WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
@@ -316,7 +316,7 @@ module.exports = {
       type: 'swarm'
     }
   }, {
-    count: 2,
+    count: 1,
     name_prefix: "repairer_W17S24_",
     body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
     memory: {
@@ -382,6 +382,15 @@ module.exports = {
       role: 'sniper',
       squad: 'Io',
       type: 'swarm'
+    }
+  }, {
+    count: 1,
+    name_prefix: "repairer_W19S23_",
+    body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: "repairer",
+      type: "swarm",
+      work_place: "W19S23"
     }
   }, {
     count: 3,
