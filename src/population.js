@@ -8,7 +8,7 @@ For RCL <= 3, don't get greedy.
 module.exports = {
   rooms: ["W18S25", "W18S24", "W19S24", "W19S25", "W18S23"],
   templates: [{
-    count: 4,
+    count: 2,
     name_prefix: "miner_W18S25_",
     body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
     memory: {
@@ -110,7 +110,7 @@ module.exports = {
       type: 'swarm'
     }
   }, {
-    count: 2,
+    count: 1,
     name_prefix: "miner_W18S24_",
     body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
     memory: {
@@ -187,7 +187,7 @@ module.exports = {
       work_place: "W19S24"
     }
   }, {
-    count: 4,
+    count: 2,
     name_prefix: 'miner_W19S24_',
     body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
     memory: {
@@ -228,7 +228,7 @@ module.exports = {
       work_place: "W19S25"
     }
   }, {
-    count: 4,
+    count: 2,
     name_prefix: 'miner_W19S25_',
     body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
     memory: {
@@ -276,7 +276,7 @@ module.exports = {
       work_place: "W18S23"
     }
   }, {
-    count: 3,
+    count: 2,
     name_prefix: 'miner_W18S23_',
     body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
     memory: {
@@ -355,7 +355,7 @@ module.exports = {
       target: 'W17S24'
     }
   }, {
-    count: 2,
+    count: 1,
     name_prefix: 'miner_W17S24_',
     body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
     memory: {

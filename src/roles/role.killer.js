@@ -5,7 +5,7 @@ module.exports = {
       target = Game.getObjectById(id);
     }
     if(!target) creep.suicide();
-    if(creep.attack(target) == ERR_OUT_OF_RANGE) {
+    if(creep.attack(target) == ERR_NOT_IN_RANGE) {
       creep.moveTo(target);
     }
   }
