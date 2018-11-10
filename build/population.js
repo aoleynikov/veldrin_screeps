@@ -278,16 +278,6 @@ module.exports = {
       resource: RESOURCE_ENERGY
     }
   }, {
-    count: 1,
-    name_prefix: 'claimer_W18S23_',
-    body: [CLAIM, CLAIM, MOVE, MOVE],
-    memory: {
-      role: 'claimer',
-      type: 'swarm',
-      work_place: 'W18S23',
-      target: 'W18S23'
-    }
-  }, {
     count: 6,
     name_prefix: 'hauler_W18S23_',
     body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
