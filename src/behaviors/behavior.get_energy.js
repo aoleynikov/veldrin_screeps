@@ -7,6 +7,14 @@ module.exports = {
 			this.refill(creep);
 		}
 
+		if (creep.carry[RESOURCE_ENERGY] == creep.carryCapacity) {
+			creep.memory['refill'] = false;
+		}
+
+		if (!creep.memory['refill']) {
+			return false;
+		}
+
 		tombstones = creep.room.lookForAtArea(
 			LOOK_TOMBSTONES, 
 			creep.pos.y - 1, 
