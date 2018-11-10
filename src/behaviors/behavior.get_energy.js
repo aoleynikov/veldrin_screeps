@@ -7,10 +7,6 @@ module.exports = {
 			this.refill(creep);
 		}
 
-		if (creep.carry[RESOURCE_ENERGY] == creep.carryCapacity) {
-			creep.memory['refill'] = false;
-		}
-
 		if (!creep.memory['refill']) {
 			return false;
 		}
@@ -35,6 +31,9 @@ module.exports = {
 			creep.memory['target'] = room;
 			if (room_travel.perform(creep)) return true;
 			if (get_room_energy.perform(creep)) return true;
+			if (creep.carry[RESOURCE_ENERGY] == creep.carryCapacity) {
+				creep.memory['refill'] = false;
+			}
 		}
 		room = creep.memory['work_place'] || creep.room.name;
 		creep.memory['target'] = room;
