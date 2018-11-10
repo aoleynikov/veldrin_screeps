@@ -68,13 +68,13 @@ module.exports = {
     }
   }, {
     count: 3,
-    name_prefix: "nanny_W19S23_",
+    name_prefix: "nanny_W18S23_",
     body: [WORK, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: 'nanny',
       type: 'swarm',
-      work_place: 'W19S23',
-      target: 'W19S23'
+      work_place: 'W18S23',
+      target: 'W18S23'
     }
   }, {
     count: 2,
