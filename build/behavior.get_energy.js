@@ -4,14 +4,6 @@ var room_travel = require('behavior.room_travel');
 
 module.exports = {
   perform: function (creep) {
-    if (creep.carry[RESOURCE_ENERGY] == 0) {
-      this.refill(creep);
-    }
-
-    if (!creep.memory['refill']) {
-      return false;
-    }
-
     tombstones = creep.room.lookForAtArea(LOOK_TOMBSTONES, creep.pos.y - 1, creep.pos.x - 1, creep.pos.y + 1, creep.pos.x + 1, true);
     var room = undefined;
 
@@ -19,6 +11,11 @@ module.exports = {
       for (var stone of tombstones) {
         if (stone.tombstone && stone.tombstone.store[RESOURCE_ENERGY] > 0) {
           creep.withdraw(stone.tombstone, RESOURCE_ENERGY);
+
+          if (creep.carry[RESOURCE_ENERGY] == creep.carryCapacity) {
+            creep.memory['refill'] = false;
+          }
+
           return true;
         }
       }

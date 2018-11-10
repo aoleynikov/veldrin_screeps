@@ -58,6 +58,14 @@ var behavior = {
 
 module.exports = {
     perform: function (creep) {
+        if (creep.carry[RESOURCE_ENERGY] == creep.carryCapacity) {
+            creep.memory['refill'] = false;
+        }
+
+        if (!creep.memory['refill']) {
+            return false;
+        }
+
         var provider = behavior.get_closest_energy_provider(creep);
         if (!provider) {
             return true;
