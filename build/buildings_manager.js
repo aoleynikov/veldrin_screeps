@@ -3,7 +3,6 @@ var tower_structure = require('structure.tower');
 var swarm = require('swarm_controller');
 
 var operate_links = spawn => {
-  // Links
   if (!spawn.memory['links_from']) return;
 
   for (var from_id of spawn.memory['links_from']) {
@@ -29,7 +28,8 @@ module.exports = {
       tower_structure.shoot_on_sight(tower);
     }); // Swarm + creeps renewal
 
-    swarm.respawn(spawn);
+    swarm.respawn(spawn); // Links
+
     operate_links(spawn);
   }
 };

@@ -1,4 +1,5 @@
 var energy_behavior = require('behavior.get_energy');
+var room_travel = require('behavior.room_travel');
 
 
 var repair = function (creep, struct) {
@@ -23,6 +24,7 @@ var repair_my_sructures = function (creep) {
 module.exports = {
     perform: function (creep) {
         if (energy_behavior.perform(creep)) return;
+        if (room_travel.perform(creep)) return;
         repair_my_sructures(creep);
     }
 }
