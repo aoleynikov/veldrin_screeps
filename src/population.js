@@ -59,7 +59,7 @@ module.exports = {
     }
   },
   {
-    count: 1,
+    count: 4,
     name_prefix: "upgrader_W18S23_",
     body: [WORK, WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
     memory: {
@@ -283,18 +283,7 @@ module.exports = {
       find: FIND_SOURCES_ACTIVE,
       resource: RESOURCE_ENERGY
     }
-  }, {
-    count: 6,
-    name_prefix: 'hauler_W18S23_',
-    body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
-    memory: {
-      role: 'hauler',
-      type: 'swarm',
-      work_place: 'W18S25',
-      energy_room: 'W18S23',
-      link_id: '5bd9c6fffd47502f5f46418c'
-    }
-  }, 
+  },
   {
     count: 1,
     name_prefix: 'warrior_Ganymede_',
