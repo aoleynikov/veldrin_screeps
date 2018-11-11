@@ -39,7 +39,7 @@ module.exports = {
   }, {
     count: 3,
     name_prefix: "nanny_W19S25_",
-    body: [WORK, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
+    body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: 'nanny',
       type: 'swarm',
@@ -69,7 +69,7 @@ module.exports = {
   }, {
     count: 3,
     name_prefix: "nanny_W18S23_",
-    body: [WORK, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
+    body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: 'nanny',
       type: 'swarm',
