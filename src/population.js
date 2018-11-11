@@ -227,15 +227,6 @@ module.exports = {
       target: 'W19S24'
     }
   }, {
-    count: 1,
-    name_prefix: "repairer_W19S25_",
-    body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
-    memory: {
-      role: "repairer",
-      type: "swarm",
-      work_place: "W19S25"
-    }
-  }, {
     count: 2,
     name_prefix: 'miner_W19S25_',
     body: [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE],
@@ -245,15 +236,6 @@ module.exports = {
       target: 'W19S25',
       find: FIND_SOURCES_ACTIVE,
       resource: RESOURCE_ENERGY
-    }
-  }, {
-    count: 2,
-    name_prefix: "repairer_W18S23_",
-    body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
-    memory: {
-      role: "repairer",
-      type: "swarm",
-      work_place: "W18S23"
     }
   }, {
     count: 2,
