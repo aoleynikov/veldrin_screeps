@@ -410,7 +410,7 @@ module.exports = {
   {
     count: 10, 
     name_prefix: 'wd_',
-    body: [TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
+    body: [TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, MOVE, MOVE, MOVE, MOVE, ATTACK],
     memory: {
       role: 'destroyer',
       squad: 'walls_destruction'
