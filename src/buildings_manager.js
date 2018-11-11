@@ -16,43 +16,32 @@ var operate_links = (spawn) => {
     }
 }
 
-var operate_towers = (spawn) => {
-    room = spawn.room;
-    towers = room.find(FIND_MY_STRUCTURES, {
-        filter: {
-            structureType: STRUCTURE_TOWER
-        }
-    });
-
-    for(var tower of towers) {
-        var next_tower = false;
+var operate_tower = (tower) => {
         var enemies = room.find(FIND_HOSTILE_CREEPS);
-        for (var i = 0; i < enemies.length; ++i) {
-            var attack_result = tower.attack(enemies[i]);
-            if (attack_result == 0) {
-                next_tower = true;
-                break;
+        for (var enemy of enemies) {
+            if (tower.attack(enemy) == 0) {
+                return;
             }
         }
-        if (next_tower) break;
 
-        repairable_structures = room.find(FIND_STRUCTURES, {filter: s => {
-            return s.hits < s.hitsMax;
-        }});
+        repairable_structures = room.find(FIND_STRUCTURES, { 
+            filter: s => s.hits < s.hitsMax 
+        });
         for (var repairable of repairable_structures) {
             if (tower.repair(repairable) == 0) {
-                next_tower = true;
-                break;
+                return;
             }
         }
-        if (next_tower) break;
     }
 }
 
 module.exports = {
     run: function (spawn) {
         // Towers
-        operate_towers(spawn);
+        var towers = spawn.room.find(FIND_MY_STRUCTURES, { filter: {structureType: STRUCTURE_TOWER}});
+        for (var tower of towers) {
+            operate_tower(tower);
+        }
 
         // Swarm + creeps renewal
         swarm.respawn(spawn);

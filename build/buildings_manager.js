@@ -19,7 +19,7 @@ var operate_links = spawn => {
   }
 };
 
-var operate_towers = spawn => {
+var operate_tower = tower => {
   room = spawn.room;
   towers = room.find(FIND_MY_STRUCTURES, {
     filter: {
@@ -40,7 +40,6 @@ var operate_towers = spawn => {
       }
     }
 
-    if (next_tower) break;
     repairable_structures = room.find(FIND_STRUCTURES, {
       filter: s => {
         return s.hits < s.hitsMax;
@@ -61,7 +60,7 @@ var operate_towers = spawn => {
 module.exports = {
   run: function (spawn) {
     // Towers
-    operate_towers(spawn); // Swarm + creeps renewal
+    operate_tower(spawn); // Swarm + creeps renewal
 
     swarm.respawn(spawn); // Links
 
