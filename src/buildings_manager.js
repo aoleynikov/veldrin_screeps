@@ -17,23 +17,23 @@ var operate_links = (spawn) => {
 }
 
 var operate_tower = (tower) => {
-        var enemies = room.find(FIND_HOSTILE_CREEPS);
-        for (var enemy of enemies) {
-            if (tower.attack(enemy) == 0) {
-                return;
-            }
+    var enemies = tower.room.find(FIND_HOSTILE_CREEPS);
+    for (var enemy of enemies) {
+        if (tower.attack(enemy) == 0) {
+            return;
         }
+    }
 
-        repairable_structures = room.find(FIND_STRUCTURES, { 
-            filter: s => s.hits < s.hitsMax 
-        });
-        for (var repairable of repairable_structures) {
-            if (tower.repair(repairable) == 0) {
-                return;
-            }
+    repairable_structures = tower.room.find(FIND_STRUCTURES, { 
+        filter: s => s.hits < s.hitsMax 
+    });
+    for (var repairable of repairable_structures) {
+        if (tower.repair(repairable) == 0) {
+            return;
         }
     }
 }
+
 
 module.exports = {
     run: function (spawn) {
