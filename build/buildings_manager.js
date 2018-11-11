@@ -61,9 +61,7 @@ var operate_towers = spawn => {
 module.exports = {
   run: function (spawn) {
     // Towers
-    tower_structure.get(spawn.room).forEach(tower => {
-      tower_structure.shoot_on_sight(tower);
-    }); // Swarm + creeps renewal
+    operate_towers(spawn); // Swarm + creeps renewal
 
     swarm.respawn(spawn); // Links
 
