@@ -2,15 +2,12 @@ var energy_behavior = require('behavior.get_energy');
 var room_travel = require('behavior.room_travel');
 
 var select_storage = function (creep) {
-  var tower = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, { filter: (s) => {
-    return s.structureType == STRUCTURE_TOWER && s.energy < s.energyCapacity;
-  }});
-  if (tower) return tower;
-  
   return creep.pos.findClosestByRange(FIND_STRUCTURES, {
     filter: function (s) {
-      return s.energy < s.energyCapacity &&
-        (s.structureType == STRUCTURE_SPAWN || s.structureType == STRUCTURE_EXTENSION);
+      return s.energy < s.energyCapacity && 
+      (s.structureType == STRUCTURE_TOWER || 
+       s.structureType == STRUCTURE_SPAWN || 
+       s.structureType == STRUCTURE_EXTENSION);
     }
   });
 };
