@@ -390,7 +390,17 @@ module.exports = {
     }
   },
   {
-    count: 10, 
+    count: 1,
+    name_prefix: 'co_',
+    body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: 'sniper',
+      squad: 'cut_out',
+      type: 'swarm'
+    }
+  },
+  {
+    count: 20, 
     name_prefix: 'wd_',
     body: [TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, MOVE, MOVE, MOVE, MOVE, ATTACK],
     memory: {
