@@ -246,34 +246,6 @@ module.exports = {
       find: FIND_SOURCES_ACTIVE,
       resource: RESOURCE_ENERGY
     }
-  }, 
-  {
-    count: 1,
-    name_prefix: 'warrior_Venus_',
-    body: [TOUGH, TOUGH, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
-    memory: {
-      role: 'warrior',
-      squad: 'Venus',
-      type: "swarm"
-    }
-  }, {
-    count: 1,
-    name_prefix: 'healer_Venus_',
-    body: [MOVE, MOVE, MOVE, HEAL, HEAL, HEAL],
-    memory: {
-      role: 'healer',
-      squad: 'Venus',
-      type: "swarm"
-    }
-  }, {
-    count: 1,
-    name_prefix: 'sniper_Venus_',
-    body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
-    memory: {
-      role: 'sniper',
-      squad: 'Venus',
-      type: 'swarm'
-    }
   }, {
     count: 2,
     name_prefix: "repairer_W18S23_",
@@ -436,12 +408,12 @@ module.exports = {
     }
   },
   {
-    count: 3,
-    name_prefix: 'scout_',
-    body: [MOVE],
+    count: 10, 
+    name_prefix: 'wd_',
+    body: [TOUGH, TOUGH, TOUGH, TOUGH, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE],
     memory: {
-      role: 'scout',
-      type: 'swarm'
+      role: 'destroyer',
+      squad: 'walls_destruction'
     }
   }]
 };

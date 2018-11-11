@@ -241,33 +241,6 @@ module.exports = {
       resource: RESOURCE_ENERGY
     }
   }, {
-    count: 1,
-    name_prefix: 'warrior_Venus_',
-    body: [TOUGH, TOUGH, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
-    memory: {
-      role: 'warrior',
-      squad: 'Venus',
-      type: "swarm"
-    }
-  }, {
-    count: 1,
-    name_prefix: 'healer_Venus_',
-    body: [MOVE, MOVE, MOVE, HEAL, HEAL, HEAL],
-    memory: {
-      role: 'healer',
-      squad: 'Venus',
-      type: "swarm"
-    }
-  }, {
-    count: 1,
-    name_prefix: 'sniper_Venus_',
-    body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
-    memory: {
-      role: 'sniper',
-      squad: 'Venus',
-      type: 'swarm'
-    }
-  }, {
     count: 2,
     name_prefix: "repairer_W18S23_",
     body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
@@ -424,12 +397,12 @@ module.exports = {
       link_id: '5bd9c6fffd47502f5f46418c'
     }
   }, {
-    count: 3,
-    name_prefix: 'scout_',
-    body: [MOVE],
+    count: 10,
+    name_prefix: 'wd_',
+    body: [TOUGH, TOUGH, TOUGH, TOUGH, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE],
     memory: {
-      role: 'scout',
-      type: 'swarm'
+      role: 'destroyer',
+      squad: 'walls_destruction'
     }
   }]
 };
