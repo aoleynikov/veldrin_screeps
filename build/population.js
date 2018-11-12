@@ -20,6 +20,28 @@ module.exports = {
     }
   }, {
     count: 2,
+    name_prefix: 'miner_W19S25_',
+    body: [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: 'miner',
+      type: 'swarm',
+      target: 'W19S25',
+      find: FIND_SOURCES_ACTIVE,
+      resource: RESOURCE_ENERGY
+    }
+  }, {
+    count: 2,
+    name_prefix: 'miner_W18S23_',
+    body: [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: 'miner',
+      type: 'swarm',
+      target: 'W18S23',
+      find: FIND_SOURCES_ACTIVE,
+      resource: RESOURCE_ENERGY
+    }
+  }, {
+    count: 2,
     name_prefix: "builder_",
     body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
@@ -237,28 +259,6 @@ module.exports = {
       type: 'swarm',
       work_place: 'W19S24',
       target: 'W19S24'
-    }
-  }, {
-    count: 2,
-    name_prefix: 'miner_W19S25_',
-    body: [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE],
-    memory: {
-      role: 'miner',
-      type: 'swarm',
-      target: 'W19S25',
-      find: FIND_SOURCES_ACTIVE,
-      resource: RESOURCE_ENERGY
-    }
-  }, {
-    count: 2,
-    name_prefix: 'miner_W18S23_',
-    body: [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE],
-    memory: {
-      role: 'miner',
-      type: 'swarm',
-      target: 'W18S23',
-      find: FIND_SOURCES_ACTIVE,
-      resource: RESOURCE_ENERGY
     }
   }, {
     count: 1,
