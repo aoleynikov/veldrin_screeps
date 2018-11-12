@@ -55,7 +55,7 @@ module.exports = {
       target: 'W18S25'
     }
   }, {
-    count: 3,
+    count: 5,
     name_prefix: "nanny_W19S25_",
     body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
@@ -85,7 +85,7 @@ module.exports = {
       target: 'W18S23'
     }
   }, {
-    count: 3,
+    count: 5,
     name_prefix: "nanny_W18S23_",
     body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
