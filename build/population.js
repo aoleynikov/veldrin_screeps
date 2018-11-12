@@ -27,6 +27,23 @@ module.exports = {
       type: "swarm"
     }
   }, {
+    count: 1,
+    name_prefix: 'lightbulb_',
+    body: [MOVE],
+    memory: {
+      role: 'lightbulb',
+      type: 'swarm'
+    }
+  }, {
+    count: 2,
+    name_prefix: "builder_edge_",
+    body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: "builder",
+      type: "swarm",
+      energy_room: 'W21S25'
+    }
+  }, {
     count: 5,
     name_prefix: "upgrader_W18S25_",
     body: [WORK, WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],

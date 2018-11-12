@@ -10,7 +10,7 @@ var operate_links = spawn => {
     for (var to_id of spawn.memory['links_to']) {
       var link_to = Game.getObjectById(to_id);
 
-      if (link_to.energy < link_to.energyCapacity / 2) {
+      if (link_to.energy < 650) {
         if (link_from.transferEnergy(link_to) == 0) {
           return;
         }
