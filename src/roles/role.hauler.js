@@ -19,7 +19,7 @@ module.exports = {
         }
     
         var link_id = creep.memory['link_id'];
-        if(link_id) {
+        if (link_id) {
             var link = Game.getObjectById(link_id);
             if(link && link.energy < link.energyCapacity) {
                 storeEnergy(creep, link);

@@ -388,12 +388,14 @@ module.exports = {
       type: 'swarm'
     }
   }, {
-    count: 20,
-    name_prefix: 'wd_',
-    body: [TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, MOVE, MOVE, MOVE, MOVE, ATTACK],
+    count: 6,
+    name_prefix: 'hauler_W21S25_',
+    body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
-      role: 'destroyer',
-      squad: 'walls_destruction'
+      role: 'hauler',
+      type: 'swarm',
+      work_place: 'W19S25',
+      energy_room: 'W21S25'
     }
   }]
 };
