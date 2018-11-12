@@ -32,7 +32,8 @@ module.exports = {
     body: [MOVE],
     memory: {
       role: 'lightbulb',
-      type: 'swarm'
+      type: 'swarm',
+      target: 'W20S25'
     }
   }, {
     count: 2,
