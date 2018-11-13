@@ -44,7 +44,7 @@ module.exports = {
       }
     },
     {
-      count: 2,
+      count: 5,
       name_prefix: "builder_",
       body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE],
       memory: {
@@ -62,7 +62,7 @@ module.exports = {
         target: 'W20S25'
       }
     }, {
-      count: 2,
+      count: 3,
       name_prefix: "builder_edge_",
       body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE],
       memory: {
