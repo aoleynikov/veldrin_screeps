@@ -1038,7 +1038,7 @@ module.exports = {
       }
     },
     {
-      count: 3,
+      count: 1,
       name_prefix: "repairer_W20S25_",
       body: [
         WORK,
@@ -1063,7 +1063,7 @@ module.exports = {
       }
     },
     {
-      count: 3,
+      count: 2,
       name_prefix: "repairer_W21S25_",
       body: [
         WORK,

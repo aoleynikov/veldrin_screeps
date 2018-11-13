@@ -473,7 +473,7 @@ module.exports = {
       type: "swarm"
     }
   }, {
-    count: 3,
+    count: 1,
     name_prefix: "repairer_W20S25_",
     body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
@@ -483,7 +483,7 @@ module.exports = {
       work_place: "W20S25"
     }
   }, {
-    count: 3,
+    count: 2,
     name_prefix: "repairer_W21S25_",
     body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
