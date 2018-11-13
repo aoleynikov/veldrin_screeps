@@ -811,7 +811,7 @@ module.exports = {
       }
     },
     {
-      count: 2,
+      count: 3,
       name_prefix: "hauler_W19S23_",
       body: [
         CARRY,

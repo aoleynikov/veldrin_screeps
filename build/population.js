@@ -386,7 +386,7 @@ module.exports = {
       resource: RESOURCE_ENERGY
     }
   }, {
-    count: 2,
+    count: 3,
     name_prefix: "hauler_W19S23_",
     body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
