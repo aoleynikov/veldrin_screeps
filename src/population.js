@@ -889,13 +889,76 @@ module.exports = {
       }
     },
     {
+      count: 1,
+      name_prefix: "warrior_Phoebe_",
+      body: [
+        TOUGH,
+        TOUGH,
+        ATTACK,
+        ATTACK,
+        ATTACK,
+        ATTACK,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        ATTACK
+      ],
+      memory: {
+        role: "warrior",
+        squad: "Phoebe",
+        type: "swarm"
+      }
+    }, {
+      count: 1,
+      name_prefix: "healer_Phoebe_",
+      body: [MOVE, MOVE, MOVE, HEAL, HEAL, HEAL],
+      memory: {
+        role: "healer",
+        squad: "Phoebe",
+        type: "swarm"
+      }
+    }, {
+      count: 1,
+      name_prefix: "sniper_Phoebe_",
+      body: [
+        TOUGH,
+        TOUGH,
+        RANGED_ATTACK,
+        RANGED_ATTACK,
+        RANGED_ATTACK,
+        RANGED_ATTACK,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE
+      ],
+      memory: {
+        role: "sniper",
+        squad: "Phoebe",
+        type: "swarm"
+      }
+    },
+    {
+      count: 2,
+      name_prefix: 'miner_W21S25_',
+      body: [
+        WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE
+      ],
+      memory: {
+        role: 'miner',
+        type: 'swarm',
+        target: 'W21S25'
+      }
+    }, {
       count: 6,
       name_prefix: "hauler_W21S25_",
       body: [
-        WORK,
-        WORK,
-        WORK,
-        WORK,
         CARRY,
         CARRY,
         CARRY,
@@ -976,64 +1039,6 @@ module.exports = {
         type: "swarm",
         work_place: "W18S23",
         energy_room: "W19S22"
-      }
-    },
-    {
-      count: 1,
-      name_prefix: "warrior_Phoebe_",
-      body: [
-        TOUGH,
-        TOUGH,
-        ATTACK,
-        ATTACK,
-        ATTACK,
-        ATTACK,
-        MOVE,
-        MOVE,
-        MOVE,
-        MOVE,
-        MOVE,
-        MOVE,
-        MOVE,
-        ATTACK
-      ],
-      memory: {
-        role: "warrior",
-        squad: "Phoebe",
-        type: "swarm"
-      }
-    },
-    {
-      count: 1,
-      name_prefix: "healer_Phoebe_",
-      body: [MOVE, MOVE, MOVE, HEAL, HEAL, HEAL],
-      memory: {
-        role: "healer",
-        squad: "Phoebe",
-        type: "swarm"
-      }
-    },
-    {
-      count: 1,
-      name_prefix: "sniper_Phoebe_",
-      body: [
-        TOUGH,
-        TOUGH,
-        RANGED_ATTACK,
-        RANGED_ATTACK,
-        RANGED_ATTACK,
-        RANGED_ATTACK,
-        MOVE,
-        MOVE,
-        MOVE,
-        MOVE,
-        MOVE,
-        MOVE
-      ],
-      memory: {
-        role: "sniper",
-        squad: "Phoebe",
-        type: "swarm"
       }
     },
     {

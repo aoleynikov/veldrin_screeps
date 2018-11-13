@@ -416,36 +416,6 @@ module.exports = {
       energy_room: "W21S25"
     }
   }, {
-    count: 6,
-    name_prefix: "hauler_W21S25_",
-    body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
-    memory: {
-      role: "hauler",
-      type: "swarm",
-      work_place: "W19S25",
-      energy_room: "W21S25"
-    }
-  }, {
-    count: 6,
-    name_prefix: "hauler_W21S24_",
-    body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
-    memory: {
-      role: "hauler",
-      type: "swarm",
-      work_place: "W19S25",
-      energy_room: "W21S24"
-    }
-  }, {
-    count: 3,
-    name_prefix: "hauler_W19S22_",
-    body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
-    memory: {
-      role: "hauler",
-      type: "swarm",
-      work_place: "W18S23",
-      energy_room: "W19S22"
-    }
-  }, {
     count: 1,
     name_prefix: "warrior_Phoebe_",
     body: [TOUGH, TOUGH, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
@@ -471,6 +441,45 @@ module.exports = {
       role: "sniper",
       squad: "Phoebe",
       type: "swarm"
+    }
+  }, {
+    count: 2,
+    name_prefix: 'miner_W21S25_',
+    body: [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: 'miner',
+      type: 'swarm',
+      target: 'W21S25'
+    }
+  }, {
+    count: 6,
+    name_prefix: "hauler_W21S25_",
+    body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: "hauler",
+      type: "swarm",
+      work_place: "W19S25",
+      energy_room: "W21S25"
+    }
+  }, {
+    count: 6,
+    name_prefix: "hauler_W21S24_",
+    body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: "hauler",
+      type: "swarm",
+      work_place: "W19S25",
+      energy_room: "W21S24"
+    }
+  }, {
+    count: 3,
+    name_prefix: "hauler_W19S22_",
+    body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: "hauler",
+      type: "swarm",
+      work_place: "W18S23",
+      energy_room: "W19S22"
     }
   }, {
     count: 1,
