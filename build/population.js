@@ -118,12 +118,12 @@ module.exports = {
     }
   }, {
     count: 2,
-    name_prefix: "repairer_W18S25_",
+    name_prefix: "repairer_W18S23_",
     body: [WORK, WORK, WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: "repairer",
       type: "swarm",
-      work_place: "W18S25"
+      work_place: "W18S23"
     }
   }, {
     count: 1,

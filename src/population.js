@@ -7,8 +7,7 @@ For RCL <= 3, don't get greedy.
 */
 module.exports = {
   rooms: ["W18S25", "W18S24", "W19S24", "W19S25", "W18S23"],
-  templates: [
-    {
+  templates: [{
       count: 2,
       name_prefix: "miner_W18S25_",
       body: [
@@ -229,7 +228,7 @@ module.exports = {
     },
     {
       count: 2,
-      name_prefix: "repairer_W18S25_",
+      name_prefix: "repairer_W18S23_",
       body: [
         WORK,
         WORK,
@@ -253,7 +252,7 @@ module.exports = {
       memory: {
         role: "repairer",
         type: "swarm",
-        work_place: "W18S25"
+        work_place: "W18S23"
       }
     },
     {
