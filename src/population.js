@@ -44,7 +44,7 @@ module.exports = {
       }
     },
     {
-      count: 5,
+      count: 3,
       name_prefix: "builder_",
       body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE],
       memory: {
@@ -418,6 +418,17 @@ module.exports = {
         role: 'sniper',
         squad: 'cut_out',
         type: 'swarm'
+      }
+    },
+    {
+      count: 1,
+      name_prefix: "repairer_W18S25_",
+      body: [WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
+      memory: {
+        role: "repairer",
+        type: "swarm",
+        work_place: "W20S25",
+        energy_room: 'W21S25'
       }
     },
     {
