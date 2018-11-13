@@ -399,13 +399,13 @@ module.exports = {
         resource: RESOURCE_ENERGY
       }
     }, {
-      count: 6,
+      count: 2,
       name_prefix: 'hauler_W19S23_',
       body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE],
       memory: {
         role: 'hauler',
         type: 'swarm',
-        work_place: 'W18S25',
+        work_place: 'W18S23',
         energy_room: 'W19S23',
         link_id: '5bd9c6fffd47502f5f46418c'
       }
