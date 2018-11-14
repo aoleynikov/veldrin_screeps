@@ -7,13 +7,13 @@ var strategy = {
     var creepLook = creep.room.lookAt(creep.pos.x, creep.pos.y);
 
     for (var item of creepLook) {
-      if (item.type == 'structure' && item.structure.structureType == STRUCTURE_CONTAINER) if (item.structure.store[RESOURCE_ENERGY] != item.structure.storeCapacity) {
+      if (item.type == 'structure' && item.structure.structureType == STRUCTURE_CONTAINER) if (item.structure.store[creep.memory['resource']] != item.structure.storeCapacity) {
         return item.structure;
       }
     }
 
     for (var cont of containers.get(creep.room)) {
-      if (cont.store[RESOURCE_ENERGY] == cont.storeCapacity) continue;
+      if (cont.store[creep.memory['resource']] == cont.storeCapacity) continue;
       var look = creep.room.lookAt(cont.pos.x, cont.pos.y);
       var good = true;
 
@@ -33,14 +33,14 @@ module.exports = {
   perform: function (creep) {
     if (room_travel.perform(creep)) return;
     var container = strategy.find_container(creep);
-    var source = creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE);
+    var source = creep.pos.findClosestByRange(creep.memory['find']);
     if (!source || !container) return;
 
     if (creep.pos.x != container.pos.x || creep.pos.y != container.pos.y) {
       creep.moveTo(container);
     }
 
-    if (container.store[RESOURCE_ENERGY] == container.storeCapacity) {
+    if (container.store[creep.memory['resource']] == container.storeCapacity) {
       return;
     }
 
