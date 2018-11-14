@@ -34,7 +34,7 @@ module.exports = {
     },
     {
       count: 2,
-      name_prefix: "miner_W18S25_",
+      name_prefix: "miner_H_W18S25_",
       body: [
         WORK,
         WORK,
