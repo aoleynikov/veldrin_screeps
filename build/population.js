@@ -20,6 +20,17 @@ module.exports = {
     }
   }, {
     count: 2,
+    name_prefix: "miner_W18S25_",
+    body: [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: "miner",
+      type: "swarm",
+      target: "W18S25",
+      find: FIND_MINERALS,
+      resource: RESOURCE_HYDROGEN
+    }
+  }, {
+    count: 2,
     name_prefix: "miner_W19S25_",
     body: [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE],
     memory: {
