@@ -112,7 +112,7 @@ module.exports = {
       memory: {
         role: "lightbulb",
         type: "swarm",
-        target: "W20S25"
+        target: "W19S22"
       }
     },
     {
@@ -142,7 +142,7 @@ module.exports = {
     {
       count: 3,
       name_prefix: "upgrader_W18S25_",
-      body: [WORK, WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
+      body: [WORK, WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE, MOVE],
       memory: {
         role: "upgrader",
         type: "swarm",
@@ -180,7 +180,7 @@ module.exports = {
     {
       count: 2,
       name_prefix: "upgrader_W19S25_",
-      body: [WORK, WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
+      body: [WORK, WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE, MOVE],
       memory: {
         role: "upgrader",
         type: "swarm",
@@ -191,7 +191,7 @@ module.exports = {
     {
       count: 4,
       name_prefix: "upgrader_W18S23_",
-      body: [WORK, WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
+      body: [WORK, WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE, MOVE],
       memory: {
         role: "upgrader",
         type: "swarm",
@@ -953,12 +953,18 @@ module.exports = {
       memory: {
         role: 'miner',
         type: 'swarm',
-        target: 'W21S25'
+        target: 'W21S25',
+        find: FIND_SOURCES_ACTIVE,
+        resource: RESOURCE_ENERGY
       }
     }, {
       count: 6,
       name_prefix: "hauler_W21S25_",
       body: [
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
         CARRY,
         CARRY,
         CARRY,
