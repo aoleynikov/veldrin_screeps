@@ -4,14 +4,15 @@ var room_travel = require('behavior.room_travel');
 var strategy = {
     find_container: function (creep) {
         var creepLook = creep.room.lookAt(creep.pos.x, creep.pos.y);
-        for (var item of creepLook) {
+        for (var item of creepLook)
             if (item.type == 'structure' && item.structure.structureType == STRUCTURE_CONTAINER)
-                if (item.structure.store[creep.memory['resource']] != item.structure.storeCapacity) {
-                    return item.structure;
-                }
-        }
+                if (_.sum(item.structure.store) != item.structure.storeCapacity)
+                    if (item.structure.pos.findInRange(creep.memory['find']))
+                        return item.structure;
+
+
         for (var cont of containers.get(creep.room)) {
-            if (cont.store[creep.memory['resource']] == cont.storeCapacity) continue;
+            if (_.sum(cont.store) == cont.storeCapacity) continue;
             var look = creep.room.lookAt(cont.pos.x, cont.pos.y);
             var good = true;
             for (var item of look) {
