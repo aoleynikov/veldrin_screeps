@@ -6,8 +6,10 @@ module.exports = {
 
         container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
             filter: (s) => {
-                var look = _.filter(s.pos.lookFor(LOOK_CREEPS), c => c.memory['role'] == creep.memory['role'] && c.id != creep.id);
-                if (look) return false;
+                var creepOnTop = s.pos.lookFor(LOOK_CREEPS)[0];
+                if (creepOnTop.id != creep.id) {
+                    return false;
+                }
 
                 return s.findInRange(creep.memory['find'], 1) != null;
             }
