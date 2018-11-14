@@ -5,13 +5,14 @@ module.exports = {
     if (room_travel.perform(creep)) return;
     container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
       filter: s => {
+        if (s.structureType != STRUCTURE_CONTAINER) return false;
         var creepOnTop = s.pos.lookFor(LOOK_CREEPS)[0];
 
-        if (creepOnTop.id != creep.id) {
+        if (creepOnTop !== undefined && creepOnTop.id != creep.id) {
           return false;
         }
 
-        return s.findInRange(creep.memory['find'], 1) != null;
+        return s.pos.findInRange(creep.memory['find'], 1).length > 0;
       }
     });
     if (!container) return;
