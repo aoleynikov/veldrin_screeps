@@ -201,7 +201,7 @@ module.exports = {
       type: "swarm",
       work_place: "W18S25",
       energy_room: "W18S24",
-      link_id: "5bd9c6fffd47502f5f46418c"
+      resource: RESOURCE_ENERGY
     }
   }, {
     count: 1,
@@ -259,7 +259,7 @@ module.exports = {
       type: "swarm",
       work_place: "W18S25",
       energy_room: "W19S24",
-      link_id: "5be5a3d62f3e9313ab7c1de7"
+      resource: RESOURCE_ENERGY
     }
   }, {
     count: 1,
@@ -337,7 +337,7 @@ module.exports = {
       type: "swarm",
       work_place: "W18S25",
       energy_room: "W17S24",
-      link_id: "5bd9c6fffd47502f5f46418c"
+      resource: RESOURCE_ENERGY
     }
   }, {
     count: 1,
@@ -405,7 +405,7 @@ module.exports = {
       type: "swarm",
       work_place: "W18S23",
       energy_room: "W19S23",
-      link_id: "5bd9c6fffd47502f5f46418c"
+      resource: RESOURCE_ENERGY
     }
   }, {
     count: 1,
@@ -472,7 +472,8 @@ module.exports = {
       role: "hauler",
       type: "swarm",
       work_place: "W19S25",
-      energy_room: "W21S25"
+      energy_room: "W21S25",
+      resource: RESOURCE_ENERGY
     }
   }, {
     count: 6,
@@ -482,7 +483,8 @@ module.exports = {
       role: "hauler",
       type: "swarm",
       work_place: "W19S25",
-      energy_room: "W21S24"
+      energy_room: "W21S24",
+      resource: RESOURCE_ENERGY
     }
   }, {
     count: 3,
@@ -492,7 +494,8 @@ module.exports = {
       role: "hauler",
       type: "swarm",
       work_place: "W18S23",
-      energy_room: "W19S22"
+      energy_room: "W19S22",
+      resource: RESOURCE_ENERGY
     }
   }, {
     count: 1,
