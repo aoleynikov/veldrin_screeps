@@ -40,7 +40,7 @@ module.exports = {
       creep.moveTo(container);
     }
 
-    if (container.store[creep.memory['resource']] == container.storeCapacity) {
+    if (_.sum(container.store) == container.storeCapacity) {
       return;
     }
 
