@@ -5,7 +5,7 @@ module.exports = {
     if (energy_behavior.perform(creep)) return;
     var storage = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, {
       filter: s => {
-        return s.structureType == STRUCTURE_STORAGE || s.structureType == STRUCTURE_LINK;
+        return s.structureType == STRUCTURE_STORAGE && _.sum(s.store) < s.storeCapacity || s.structureType == STRUCTURE_LINK && s.energy < s.energyCapacity;
       }
     });
 
