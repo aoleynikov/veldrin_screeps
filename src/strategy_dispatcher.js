@@ -13,6 +13,7 @@ var scout = require('role.scout');
 var sniper = require('role.sniper');
 var killer = require('role.killer');
 var lightbulb = require('role.lightbulb');
+var janitor = require('role.janitor');
 
 var manual = {
   perform: (creep) => {}
@@ -34,7 +35,8 @@ var roles = {
   scout: scout,
   manual: manual,
   killer: killer,
-  lightbulb: lightbulb
+  lightbulb: lightbulb,
+  janitor: janitor
 };
 
 var useless = {

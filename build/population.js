@@ -30,6 +30,15 @@ module.exports = {
       resource: RESOURCE_HYDROGEN
     }
   }, {
+    count: 1,
+    name_prefix: 'janitor_W18S25_',
+    body: [CARRY, MOVE],
+    memory: {
+      role: 'janitor',
+      type: 'swarm',
+      target: 'W18S25'
+    }
+  }, {
     count: 2,
     name_prefix: "miner_W19S25_",
     body: [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE],
