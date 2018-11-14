@@ -22,6 +22,7 @@ module.exports = {
       return;
     }
 
+    if (_.sum(container.store) == container.storeCapacity) return;
     creep.harvest(creep.pos.findClosestByRange(creep.memory['find']));
   }
 };
