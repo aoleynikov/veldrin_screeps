@@ -87,9 +87,9 @@ module.exports = {
       energy_room: "W21S25"
     }
   }, {
-    count: 3,
+    count: 5,
     name_prefix: "upgrader_W18S25_",
-    body: [WORK, WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE, MOVE],
+    body: [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: "upgrader",
       type: "swarm",
@@ -135,15 +135,6 @@ module.exports = {
       type: "swarm",
       work_place: "W18S23",
       target: "W18S23"
-    }
-  }, {
-    count: 2,
-    name_prefix: "repairer_W18S23_",
-    body: [WORK, WORK, WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
-    memory: {
-      role: "repairer",
-      type: "swarm",
-      work_place: "W18S23"
     }
   }, {
     count: 1,
@@ -260,9 +251,9 @@ module.exports = {
       resource: RESOURCE_ENERGY
     }
   }, {
-    count: 8,
+    count: 4,
     name_prefix: "hauler_W19S24_",
-    body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
+    body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: "hauler",
       type: "swarm",
@@ -474,9 +465,9 @@ module.exports = {
       resource: RESOURCE_ENERGY
     }
   }, {
-    count: 6,
+    count: 4,
     name_prefix: "hauler_W21S25_",
-    body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
+    body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: "hauler",
       type: "swarm",
@@ -505,6 +496,15 @@ module.exports = {
       work_place: "W18S23",
       energy_room: "W19S22",
       resource: RESOURCE_ENERGY
+    }
+  }, {
+    count: 1,
+    name_prefix: 'repairer_W19S22_',
+    body: [WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE],
+    memory: {
+      role: 'repairer',
+      type: 'swarm',
+      work_place: 'W19S22'
     }
   }, {
     count: 1,

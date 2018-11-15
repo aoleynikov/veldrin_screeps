@@ -6,6 +6,7 @@ module.exports = {
     container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
       filter: s => {
         if (s.structureType != STRUCTURE_CONTAINER) return false;
+        if (_.sum(s.store) == s.storeCapacity) return false;
         var creepOnTop = s.pos.lookFor(LOOK_CREEPS)[0];
 
         if (creepOnTop !== undefined && creepOnTop.id != creep.id) {
