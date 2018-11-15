@@ -261,35 +261,6 @@ module.exports = {
       }
     },
     {
-      count: 2,
-      name_prefix: "repairer_W18S23_",
-      body: [
-        WORK,
-        WORK,
-        WORK,
-        WORK,
-        WORK,
-        WORK,
-        CARRY,
-        CARRY,
-        CARRY,
-        CARRY,
-        CARRY,
-        CARRY,
-        MOVE,
-        MOVE,
-        MOVE,
-        MOVE,
-        MOVE,
-        MOVE
-      ],
-      memory: {
-        role: "repairer",
-        type: "swarm",
-        work_place: "W18S23"
-      }
-    },
-    {
       count: 1,
       name_prefix: "warrior_Moon_",
       body: [
@@ -549,7 +520,7 @@ module.exports = {
       }
     },
     {
-      count: 8,
+      count: 4,
       name_prefix: "hauler_W19S24_",
       body: [
         CARRY,
@@ -560,6 +531,18 @@ module.exports = {
         CARRY,
         CARRY,
         CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
         MOVE,
         MOVE,
         MOVE,
@@ -992,7 +975,7 @@ module.exports = {
         resource: RESOURCE_ENERGY
       }
     }, {
-      count: 6,
+      count: 4,
       name_prefix: "hauler_W21S25_",
       body: [
         CARRY,
@@ -1007,6 +990,15 @@ module.exports = {
         CARRY,
         CARRY,
         CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        MOVE,
+        MOVE,
+        MOVE,
         MOVE,
         MOVE,
         MOVE,
@@ -1085,6 +1077,25 @@ module.exports = {
       }
     },
     {
+      count: 1,
+      name_prefix: 'repairer_W19S22_',
+      body: [
+        WORK,
+        WORK,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        MOVE,
+        MOVE,
+        MOVE
+      ],
+      memory: {
+        role: 'repairer',
+        type: 'swarm',
+        work_place: 'W19S22'
+      }
+    } {
       count: 1,
       name_prefix: "repairer_W20S25_",
       body: [
