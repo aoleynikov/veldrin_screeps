@@ -31,12 +31,12 @@ module.exports = {
     }
   }, {
     count: 1,
-    name_prefix: 'janitor_W18S25_',
+    name_prefix: "janitor_W18S25_",
     body: [CARRY, MOVE],
     memory: {
-      role: 'janitor',
-      type: 'swarm',
-      target: 'W18S25'
+      role: "janitor",
+      type: "swarm",
+      target: "W18S25"
     }
   }, {
     count: 2,
@@ -87,7 +87,7 @@ module.exports = {
       energy_room: "W21S25"
     }
   }, {
-    count: 5,
+    count: 2,
     name_prefix: "upgrader_W18S25_",
     body: [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
@@ -455,12 +455,12 @@ module.exports = {
     }
   }, {
     count: 2,
-    name_prefix: 'miner_W21S25_',
+    name_prefix: "miner_W21S25_",
     body: [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
-      role: 'miner',
-      type: 'swarm',
-      target: 'W21S25',
+      role: "miner",
+      type: "swarm",
+      target: "W21S25",
       find: FIND_SOURCES_ACTIVE,
       resource: RESOURCE_ENERGY
     }
@@ -499,12 +499,12 @@ module.exports = {
     }
   }, {
     count: 1,
-    name_prefix: 'repairer_W19S22_',
+    name_prefix: "repairer_W19S22_",
     body: [WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE],
     memory: {
-      role: 'repairer',
-      type: 'swarm',
-      work_place: 'W19S22'
+      role: "repairer",
+      type: "swarm",
+      work_place: "W19S22"
     }
   }, {
     count: 1,

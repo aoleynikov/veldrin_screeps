@@ -7,7 +7,8 @@ For RCL <= 3, don't get greedy.
 */
 module.exports = {
   rooms: ["W18S25", "W18S24", "W19S24", "W19S25", "W18S23"],
-  templates: [{
+  templates: [
+    {
       count: 2,
       name_prefix: "miner_W18S25_",
       body: [
@@ -59,14 +60,15 @@ module.exports = {
     },
     {
       count: 1,
-      name_prefix: 'janitor_W18S25_',
+      name_prefix: "janitor_W18S25_",
       body: [CARRY, MOVE],
       memory: {
-        role: 'janitor',
-        type: 'swarm',
-        target: 'W18S25'
+        role: "janitor",
+        type: "swarm",
+        target: "W18S25"
       }
-    }, {
+    },
+    {
       count: 2,
       name_prefix: "miner_W19S25_",
       body: [
@@ -174,11 +176,33 @@ module.exports = {
       }
     },
     {
-      count: 5,
+      count: 2,
       name_prefix: "upgrader_W18S25_",
-      body: [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK,
-        CARRY, CARRY, CARRY, CARRY, CARRY,
-        MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE
+      body: [
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE
       ],
       memory: {
         role: "upgrader",
@@ -932,7 +956,8 @@ module.exports = {
         squad: "Phoebe",
         type: "swarm"
       }
-    }, {
+    },
+    {
       count: 1,
       name_prefix: "healer_Phoebe_",
       body: [MOVE, MOVE, MOVE, HEAL, HEAL, HEAL],
@@ -941,7 +966,8 @@ module.exports = {
         squad: "Phoebe",
         type: "swarm"
       }
-    }, {
+    },
+    {
       count: 1,
       name_prefix: "sniper_Phoebe_",
       body: [
@@ -966,18 +992,35 @@ module.exports = {
     },
     {
       count: 2,
-      name_prefix: 'miner_W21S25_',
+      name_prefix: "miner_W21S25_",
       body: [
-        WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE
       ],
       memory: {
-        role: 'miner',
-        type: 'swarm',
-        target: 'W21S25',
+        role: "miner",
+        type: "swarm",
+        target: "W21S25",
         find: FIND_SOURCES_ACTIVE,
         resource: RESOURCE_ENERGY
       }
-    }, {
+    },
+    {
       count: 4,
       name_prefix: "hauler_W21S25_",
       body: [
@@ -1081,24 +1124,15 @@ module.exports = {
     },
     {
       count: 1,
-      name_prefix: 'repairer_W19S22_',
-      body: [
-        WORK,
-        WORK,
-        CARRY,
-        CARRY,
-        CARRY,
-        CARRY,
-        MOVE,
-        MOVE,
-        MOVE
-      ],
+      name_prefix: "repairer_W19S22_",
+      body: [WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE],
       memory: {
-        role: 'repairer',
-        type: 'swarm',
-        work_place: 'W19S22'
+        role: "repairer",
+        type: "swarm",
+        work_place: "W19S22"
       }
-    }, {
+    },
+    {
       count: 1,
       name_prefix: "repairer_W20S25_",
       body: [
@@ -1158,4 +1192,4 @@ module.exports = {
       }
     }
   ]
-};
+}
