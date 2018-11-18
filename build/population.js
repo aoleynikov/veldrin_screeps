@@ -97,6 +97,17 @@ module.exports = {
       target: "W18S25"
     }
   }, {
+    count: 3,
+    name_prefix: "hauler_H_W18S25_",
+    body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: "hauler",
+      type: "swarm",
+      work_place: "W18S25",
+      energy_room: "W18S25",
+      resource: RESOURCE_HYDROGEN
+    }
+  }, {
     count: 5,
     name_prefix: "nanny_W19S25_",
     body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
