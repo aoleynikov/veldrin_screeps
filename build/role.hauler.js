@@ -13,7 +13,7 @@ module.exports = {
       creep.moveTo(storage);
     }
 
-    if (creep.carry[creep.memory['resource']] == 0) {
+    if (!creep.carry[creep.memory['resource']]) {
       energy_behavior.refill(creep);
     }
   }
