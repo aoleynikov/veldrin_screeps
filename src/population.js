@@ -524,6 +524,30 @@ module.exports = {
     },
     {
       count: 1,
+      name_prefix: "repairer_W19S25_",
+      body: [
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE
+      ],
+      memory: {
+        role: "repairer",
+        type: "swarm",
+        work_place: "W19S25"
+      }
+    },
+    {
+      count: 1,
       name_prefix: "repairer_W19S24_",
       body: [
         WORK,
