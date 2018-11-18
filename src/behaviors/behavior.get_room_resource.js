@@ -8,7 +8,7 @@ var behavior = {
             (provider.structureType == STRUCTURE_LINK && resource == RESOURCE_ENERGY)
         )
     },
-    provider_energy: function (provider, resource) {
+    provider_resource: function (provider, resource) {
         if (
             provider.structureType == STRUCTURE_CONTAINER ||
             provider.structureType == STRUCTURE_STORAGE
@@ -55,14 +55,14 @@ var behavior = {
         }
         return !free
     },
-    get_closest_energy_provider: function (creep) {
+    get_closest_provider: function (creep) {
         var result = []
         var self = this
         var resource = creep.memory["resource"] || RESOURCE_ENERGY
         result = creep.pos.findClosestByRange(FIND_STRUCTURES, {
             filter: s =>
                 self.is_fast_provider(s, resource) &&
-                self.provider_energy(s, resource) >= creep.carryCapacity - creep.carry[resource]
+                self.provider_resource(s, resource) >= creep.carryCapacity - (creep.carry[resource] || 0)
         })
         if (result || resource != resource) return result
         return creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE, {
@@ -82,7 +82,7 @@ module.exports = {
             return false
         }
 
-        var provider = behavior.get_closest_energy_provider(creep)
+        var provider = behavior.get_closest_provider(creep)
         if (!provider) {
             return true
         }

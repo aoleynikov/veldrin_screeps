@@ -211,7 +211,7 @@ module.exports = {
       }
     },
     {
-      count: 3,
+      count: 1,
       name_prefix: "hauler_H_W18S25_",
       body: [
         CARRY,

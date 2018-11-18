@@ -97,7 +97,7 @@ module.exports = {
       target: "W18S25"
     }
   }, {
-    count: 3,
+    count: 1,
     name_prefix: "hauler_H_W18S25_",
     body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
     memory: {
