@@ -9,7 +9,7 @@ module.exports = {
       }
     });
 
-    if (creep.transfer(storage, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+    if (creep.transfer(storage, creep.memory['resource']) == ERR_NOT_IN_RANGE) {
       creep.moveTo(storage);
     }
 

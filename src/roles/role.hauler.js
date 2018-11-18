@@ -10,7 +10,7 @@ module.exports = {
                     (s.structureType == STRUCTURE_LINK && s.energy < s.energyCapacity);
             }
         });
-        if (creep.transfer(storage, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+        if (creep.transfer(storage, creep.memory['resource']) == ERR_NOT_IN_RANGE) {
             creep.moveTo(storage);
         }
         if (creep.carry[RESOURCE_ENERGY] == 0) {
