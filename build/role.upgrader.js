@@ -1,4 +1,4 @@
-var energy_behavior = require('behavior.get_energy');
+var energy_behavior = require('behavior.get_resource');
 
 var room_travel = require('behavior.room_travel');
 

@@ -1,4 +1,4 @@
-var energy_behavior = require('behavior.get_energy');
+var energy_behavior = require('behavior.get_resource');
 
 module.exports = {
     perform: function (creep) {
