@@ -4,7 +4,7 @@ var behavior = {
     is_fast_provider: function (provider, resource) {
         return (
             provider.structureType == STRUCTURE_CONTAINER ||
-            provider.structureType == STRUCTURE_STORAGE ||
+            (provider.structureType == STRUCTURE_STORAGE && resource == RESOURCE_ENERGY) ||
             (provider.structureType == STRUCTURE_LINK && resource == RESOURCE_ENERGY)
         )
     },
