@@ -1147,37 +1147,6 @@ module.exports = {
       }
     },
     {
-      count: 6,
-      name_prefix: "hauler_W21S24_",
-      body: [
-        WORK,
-        WORK,
-        WORK,
-        WORK,
-        CARRY,
-        CARRY,
-        CARRY,
-        CARRY,
-        CARRY,
-        CARRY,
-        CARRY,
-        CARRY,
-        MOVE,
-        MOVE,
-        MOVE,
-        MOVE,
-        MOVE,
-        MOVE
-      ],
-      memory: {
-        role: "hauler",
-        type: "swarm",
-        work_place: "W19S25",
-        energy_room: "W21S24",
-        resource: RESOURCE_ENERGY
-      }
-    },
-    {
       count: 3,
       name_prefix: "hauler_W19S22_",
       body: [
