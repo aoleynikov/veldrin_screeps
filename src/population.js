@@ -152,13 +152,13 @@ module.exports = {
       }
     },
     {
-      count: 3,
+      count: 1,
       name_prefix: "builder_edge_",
       body: [
         WORK,
         WORK,
-        WORK,
-        WORK,
+        CARRY,
+        CARRY,
         CARRY,
         CARRY,
         CARRY,
@@ -167,7 +167,6 @@ module.exports = {
         MOVE,
         MOVE,
         MOVE,
-        MOVE
       ],
       memory: {
         role: "builder",
@@ -258,7 +257,6 @@ module.exports = {
       ],
       memory: {
         role: "nanny",
-        type: "swarm",
         work_place: "W19S25",
         target: "W19S25"
       }
@@ -307,7 +305,6 @@ module.exports = {
       ],
       memory: {
         role: "nanny",
-        type: "swarm",
         work_place: "W18S23",
         target: "W18S23"
       }
@@ -1188,6 +1185,32 @@ module.exports = {
       }
     },
     {
+      count: 2,
+      name_prefix: "miner_W19S22_",
+      body: [
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE
+      ],
+      memory: {
+        role: "miner",
+        type: "swarm",
+        target: "W19S22",
+        find: FIND_SOURCES_ACTIVE,
+        resource: RESOURCE_ENERGY
+      }
+    },
+    {
       count: 1,
       name_prefix: "repairer_W20S25_",
       body: [
@@ -1243,6 +1266,16 @@ module.exports = {
       memory: {
         role: "claimer",
         target: "W21S25",
+        type: "swarm"
+      }
+    },
+    {
+      count: 1,
+      name_prefix: "claimer_W19S22_",
+      body: [CLAIM, CLAIM, CLAIM, MOVE, MOVE, MOVE],
+      memory: {
+        role: "claimer",
+        target: "W19S22",
         type: "swarm"
       }
     }

@@ -8,8 +8,6 @@ var controller = {
       var name = template.name_prefix + i;
       if (Game.creeps[name]) {
         if (logging) console.log('Already exists:', name);
-        // It is a part of the swarm now
-        Game.creeps[name].memory['type'] = 'swarm';
         continue;
       }
 
