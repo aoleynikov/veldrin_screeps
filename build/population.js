@@ -19,7 +19,7 @@ module.exports = {
       resource: RESOURCE_ENERGY
     }
   }, {
-    count: 1,
+    count: 0,
     name_prefix: "miner_H_W18S25_",
     body: [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE],
     memory: {
@@ -28,15 +28,6 @@ module.exports = {
       target: "W18S25",
       find: FIND_MINERALS,
       resource: RESOURCE_HYDROGEN
-    }
-  }, {
-    count: 1,
-    name_prefix: "janitor_W18S25_",
-    body: [CARRY, MOVE],
-    memory: {
-      role: "janitor",
-      type: "swarm",
-      target: "W18S25"
     }
   }, {
     count: 2,
@@ -97,7 +88,7 @@ module.exports = {
       target: "W18S25"
     }
   }, {
-    count: 1,
+    count: 0,
     name_prefix: "hauler_H_W18S25_",
     body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
     memory: {
