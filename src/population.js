@@ -593,7 +593,7 @@ module.exports = {
       }
     },
     {
-      count: 2,
+      count: 4,
       name_prefix: "hauler_W19S24_",
       body: [
         CARRY,
@@ -624,7 +624,7 @@ module.exports = {
       memory: {
         role: "hauler",
         type: "swarm",
-        work_place: "W19S25",
+        work_place: "W18S25",
         energy_room: "W19S24",
         resource: RESOURCE_ENERGY
       }
@@ -1364,6 +1364,64 @@ module.exports = {
     },
     {
       count: 1,
+      name_prefix: "warrior_Oberon_",
+      body: [
+        TOUGH,
+        TOUGH,
+        ATTACK,
+        ATTACK,
+        ATTACK,
+        ATTACK,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        ATTACK
+      ],
+      memory: {
+        role: "warrior",
+        squad: "Oberon",
+        type: "swarm"
+      }
+    },
+    {
+      count: 1,
+      name_prefix: "healer_Oberon_",
+      body: [MOVE, MOVE, MOVE, HEAL, HEAL, HEAL],
+      memory: {
+        role: "healer",
+        squad: "Oberon",
+        type: "swarm"
+      }
+    },
+    {
+      count: 1,
+      name_prefix: "sniper_Oberon_",
+      body: [
+        TOUGH,
+        TOUGH,
+        RANGED_ATTACK,
+        RANGED_ATTACK,
+        RANGED_ATTACK,
+        RANGED_ATTACK,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE
+      ],
+      memory: {
+        role: "sniper",
+        squad: "Oberon",
+        type: "swarm"
+      }
+    },
+    {
+      count: 1,
       name_prefix: "repairer_W17S23_",
       body: [
         WORK,
@@ -1384,6 +1442,71 @@ module.exports = {
         role: "repairer",
         type: "swarm",
         work_place: "W17S23"
+      }
+    },
+    {
+      count: 1,
+      name_prefix: "miner_W17S23_",
+      body: [
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE
+      ],
+      memory: {
+        role: "miner",
+        type: "swarm",
+        target: "W17S23",
+        find: FIND_SOURCES_ACTIVE,
+        resource: RESOURCE_ENERGY
+      }
+    },
+    {
+      count: 4,
+      name_prefix: "hauler_W19S24_",
+      body: [
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE
+      ],
+      memory: {
+        role: "hauler",
+        type: "swarm",
+        work_place: "W18S25",
+        energy_room: "W19S24",
+        resource: RESOURCE_ENERGY
       }
     }
   ]
