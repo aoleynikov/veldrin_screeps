@@ -503,7 +503,7 @@ module.exports = {
   }, {
     count: 4,
     name_prefix: "hauler_W21S25_",
-    body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
+    body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: "hauler",
       type: "swarm",
@@ -514,7 +514,7 @@ module.exports = {
   }, {
     count: 3,
     name_prefix: "hauler_W19S22_",
-    body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
+    body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: "hauler",
       type: "swarm",
@@ -672,8 +672,17 @@ module.exports = {
       role: "hauler",
       type: "swarm",
       work_place: "W18S25",
-      energy_room: "W19S24",
+      energy_room: "W17S23",
       resource: RESOURCE_ENERGY
+    }
+  }, {
+    count: 1,
+    name_prefix: "claimer_W17S23_",
+    body: [CLAIM, CLAIM, CLAIM, MOVE, MOVE, MOVE],
+    memory: {
+      role: "claimer",
+      target: "W17S23",
+      type: "swarm"
     }
   }]
 };
