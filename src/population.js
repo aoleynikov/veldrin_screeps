@@ -1278,6 +1278,89 @@ module.exports = {
         target: "W19S22",
         type: "swarm"
       }
-    }
+    },
+    {
+      count: 1,
+      name_prefix: "warrior_Titan_",
+      body: [
+        TOUGH,
+        TOUGH,
+        ATTACK,
+        ATTACK,
+        ATTACK,
+        ATTACK,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        ATTACK
+      ],
+      memory: {
+        role: "warrior",
+        squad: "Titan",
+        type: "swarm"
+      }
+    },
+    {
+      count: 1,
+      name_prefix: "healer_Titan_",
+      body: [MOVE, MOVE, MOVE, HEAL, HEAL, HEAL],
+      memory: {
+        role: "healer",
+        squad: "Titan",
+        type: "swarm"
+      }
+    },
+    {
+      count: 1,
+      name_prefix: "sniper_Titan_",
+      body: [
+        TOUGH,
+        TOUGH,
+        RANGED_ATTACK,
+        RANGED_ATTACK,
+        RANGED_ATTACK,
+        RANGED_ATTACK,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE
+      ],
+      memory: {
+        role: "sniper",
+        squad: "Titan",
+        type: "swarm"
+      }
+    },
+    {
+      count: 1,
+      name_prefix: "miner_W19S22_",
+      body: [
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE
+      ],
+      memory: {
+        role: "miner",
+        target: "W19S22",
+        type: "swarm",
+        find: FIND_SOURCES_ACTIVE,
+        resource: RESOURCE_ENERGY
+      }
+    },
   ]
 }
