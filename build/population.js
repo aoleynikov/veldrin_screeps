@@ -684,5 +684,14 @@ module.exports = {
       target: "W17S23",
       type: "swarm"
     }
+  }, {
+    count: 1,
+    name_prefix: "destroyer",
+    body: [ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
+    memory: {
+      role: "destroyer",
+      squad: "Oberon",
+      type: "swarm"
+    }
   }]
 };
