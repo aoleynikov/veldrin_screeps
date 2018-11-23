@@ -617,5 +617,14 @@ module.exports = {
       find: FIND_SOURCES_ACTIVE,
       resource: RESOURCE_ENERGY
     }
+  }, {
+    count: 1,
+    name_prefix: "repairer_W17S23_",
+    body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: "repairer",
+      type: "swarm",
+      work_place: "W17S23"
+    }
   }]
 };
