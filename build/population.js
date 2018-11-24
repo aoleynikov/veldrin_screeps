@@ -684,5 +684,52 @@ module.exports = {
       squad: "walls_destruction",
       type: "swarm"
     }
+  }, {
+    count: 1,
+    name_prefix: "warrior_Europa_",
+    body: [TOUGH, TOUGH, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
+    memory: {
+      role: "warrior",
+      squad: "Europa",
+      type: "swarm"
+    }
+  }, {
+    count: 1,
+    name_prefix: "healer_Europa_",
+    body: [MOVE, MOVE, MOVE, HEAL, HEAL, HEAL],
+    memory: {
+      role: "healer",
+      squad: "Europa",
+      type: "swarm"
+    }
+  }, {
+    count: 1,
+    name_prefix: "sniper_Europa_",
+    body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: "sniper",
+      squad: "Europa",
+      type: "swarm"
+    }
+  }, {
+    count: 1,
+    name_prefix: "repairer_W17S25_",
+    body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: "repairer",
+      type: "swarm",
+      work_place: "W17S25"
+    }
+  }, {
+    count: 1,
+    name_prefix: "miner_W17S25_",
+    body: [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: "miner",
+      type: "swarm",
+      target: "W17S25",
+      find: FIND_SOURCES_ACTIVE,
+      resource: RESOURCE_ENERGY
+    }
   }]
 };
