@@ -1174,7 +1174,7 @@ module.exports = {
       }
     },
     {
-      count: 2,
+      count: 1,
       name_prefix: "miner_W19S22_",
       body: [
         WORK,
@@ -1463,7 +1463,7 @@ module.exports = {
     },
     {
       count: 4,
-      name_prefix: "hauler_W19S23_",
+      name_prefix: "hauler_W17S23_",
       body: [
         CARRY,
         CARRY,
@@ -1529,7 +1529,7 @@ module.exports = {
       ],
       memory: {
         role: "destroyer",
-        squad: "Oberon",
+        squad: "walls_destruction",
         type: "swarm"
       }
     },

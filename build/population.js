@@ -523,7 +523,7 @@ module.exports = {
       work_place: "W19S22"
     }
   }, {
-    count: 2,
+    count: 1,
     name_prefix: "miner_W19S22_",
     body: [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
@@ -657,7 +657,7 @@ module.exports = {
     }
   }, {
     count: 4,
-    name_prefix: "hauler_W19S23_",
+    name_prefix: "hauler_W17S23_",
     body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: "hauler",
@@ -681,7 +681,7 @@ module.exports = {
     body: [ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, ATTACK],
     memory: {
       role: "destroyer",
-      squad: "Oberon",
+      squad: "walls_destruction",
       type: "swarm"
     }
   }]
