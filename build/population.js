@@ -657,7 +657,7 @@ module.exports = {
     }
   }, {
     count: 4,
-    name_prefix: "hauler_W19S24_",
+    name_prefix: "hauler_W19S23_",
     body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: "hauler",
