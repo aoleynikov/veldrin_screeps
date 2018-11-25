@@ -1616,7 +1616,7 @@ module.exports = {
       }
     },
     {
-      count: 1,
+      count: 2,
       name_prefix: "miner_W17S25_",
       body: [
         WORK,
@@ -1643,5 +1643,52 @@ module.exports = {
         resource: RESOURCE_ENERGY
       }
     },
+    {
+      count: 4,
+      name_prefix: "hauler_W17S25_",
+      body: [
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE
+      ],
+      memory: {
+        role: "hauler",
+        type: "swarm",
+        work_place: "W18S25",
+        energy_room: "W17S25",
+        resource: RESOURCE_ENERGY
+      }
+    },
+    {
+      count: 1,
+      name_prefix: "claimer_W17S25_",
+      body: [CLAIM, CLAIM, CLAIM, MOVE, MOVE, MOVE],
+      memory: {
+        role: "claimer",
+        target: "W17S25",
+        type: "swarm"
+      }
+    }
   ]
 }
