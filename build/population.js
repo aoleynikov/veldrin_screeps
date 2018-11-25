@@ -751,5 +751,14 @@ module.exports = {
       target: "W17S25",
       type: "swarm"
     }
+  }, {
+    count: 50,
+    name_prefix: "warrior_",
+    body: [TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: "destroyer",
+      squad: "war",
+      type: "swarm"
+    }
   }]
 };
