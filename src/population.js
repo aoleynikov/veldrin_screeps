@@ -583,7 +583,7 @@ module.exports = {
       }
     },
     {
-      count: 4,
+      count: 2,
       name_prefix: "hauler_W19S24_",
       body: [
         CARRY,
@@ -614,7 +614,7 @@ module.exports = {
       memory: {
         role: "hauler",
         type: "swarm",
-        work_place: "W18S25",
+        work_place: "W19S25",
         energy_room: "W19S24",
         resource: RESOURCE_ENERGY
       }
