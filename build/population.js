@@ -752,9 +752,9 @@ module.exports = {
       type: "swarm"
     }
   }, {
-    count: 50,
+    count: 100,
     name_prefix: "warrior_",
-    body: [TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE],
+    body: [TOUGH, ATTACK, MOVE, MOVE],
     memory: {
       role: "destroyer",
       squad: "war",

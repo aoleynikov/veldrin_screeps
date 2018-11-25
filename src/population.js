@@ -1691,19 +1691,11 @@ module.exports = {
       }
     },
     {
-      count: 50,
+      count: 100,
       name_prefix: "warrior_",
       body: [
         TOUGH,
-        TOUGH,
-        TOUGH,
-        TOUGH,
-        TOUGH,
-        TOUGH,
         ATTACK,
-        ATTACK,
-        MOVE,
-        MOVE,
         MOVE,
         MOVE
       ],
