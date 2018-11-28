@@ -783,7 +783,7 @@ module.exports = {
   }, {
     count: 100,
     name_prefix: "warrior_",
-    body: [TOUGH, ATTACK, MOVE, MOVE],
+    body: [TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: "destroyer",
       squad: "war",
