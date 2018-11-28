@@ -1691,6 +1691,101 @@ module.exports = {
       }
     },
     {
+      count: 1,
+      name_prefix: "repairer_W20S26_",
+      body: [
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE
+      ],
+      memory: {
+        role: "repairer",
+        type: "swarm",
+        energy_room: "W21S25",
+        work_place: "W20S26"
+      }
+    },
+    {
+      count: 1,
+      name_prefix: "repairer_W20S27_",
+      body: [
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE
+      ],
+      memory: {
+        role: "repairer",
+        type: "swarm",
+        energy_room: "W19S27",
+        work_place: "W20S27"
+      }
+    },
+    {
+      count: 1,
+      name_prefix: "repairer_W19S27_",
+      body: [
+        WORK,
+        WORK,
+        WORK,
+        WORK,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        CARRY,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE,
+        MOVE
+      ],
+      memory: {
+        role: "repairer",
+        type: "swarm",
+        work_place: "W19S27"
+      }
+    },
+    {
       count: 100,
       name_prefix: "warrior_",
       body: [
