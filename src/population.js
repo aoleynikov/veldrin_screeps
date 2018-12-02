@@ -13,7 +13,7 @@ module.exports = {
       body: [WORK, CARRY, CARRY, MOVE, MOVE],
       memory: {
         role: 'nanny',
-        target: 'W14S51'
+        target: 'W13S51'
       }
     },
     {
@@ -22,7 +22,7 @@ module.exports = {
       body: [WORK, WORK, CARRY, MOVE],
       memory: {
         role: 'upgrader',
-        target: 'W14S51'
+        target: 'W13S51'
       }
     },
     {
@@ -36,7 +36,10 @@ module.exports = {
     {
       count: 2,
       name_prefix: 'repairer_',
-      body: [WORK, WORK, CARRY, MOVE]
+      body: [WORK, WORK, CARRY, MOVE],
+      memory: {
+        role: 'repairer'
+      }
     }
   ]
 }
