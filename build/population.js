@@ -22,7 +22,8 @@ module.exports = {
     memory: {
       role: 'upgrader',
       target: 'W13S51',
-      refill: true
+      refill: true,
+      type: 'swarm'
     }
   }, {
     count: 3,
@@ -30,7 +31,8 @@ module.exports = {
     body: [WORK, WORK, CARRY, MOVE],
     memory: {
       role: 'builder',
-      refill: true
+      refill: true,
+      type: 'swarm'
     }
   }, {
     count: 2,
@@ -38,7 +40,8 @@ module.exports = {
     body: [WORK, WORK, CARRY, MOVE],
     memory: {
       role: 'repairer',
-      refill: true
+      refill: true,
+      type: 'swarm'
     }
   }]
 };
