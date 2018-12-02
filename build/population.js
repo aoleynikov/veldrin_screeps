@@ -9,10 +9,11 @@ module.exports = {
   templates: [{
     count: 3,
     name_prefix: 'nanny_Earth_',
-    body: [WORK, CARRY, CARRY, MOVE, MOVE],
+    body: [WORK, WORK, CARRY, MOVE],
     memory: {
       role: 'nanny',
-      target: 'W13S51'
+      target: 'W13S51',
+      refill: true
     }
   }, {
     count: 3,
@@ -20,21 +21,24 @@ module.exports = {
     body: [WORK, WORK, CARRY, MOVE],
     memory: {
       role: 'upgrader',
-      target: 'W13S51'
+      target: 'W13S51',
+      refill: true
     }
   }, {
     count: 3,
     name_prefix: 'builder_',
     body: [WORK, WORK, CARRY, MOVE],
     memory: {
-      role: 'builder'
+      role: 'builder',
+      refill: true
     }
   }, {
     count: 2,
     name_prefix: 'repairer_',
     body: [WORK, WORK, CARRY, MOVE],
     memory: {
-      role: 'repairer'
+      role: 'repairer',
+      refill: true
     }
   }]
 };
