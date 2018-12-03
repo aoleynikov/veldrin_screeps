@@ -9,7 +9,7 @@ module.exports = {
   templates: [{
     count: 3,
     name_prefix: 'nanny_Earth_',
-    body: [WORK, WORK, CARRY, MOVE],
+    body: [WORK, CARRY, MOVE, CARRY, MOVE],
     memory: {
       role: 'nanny',
       target: 'W37S11',
@@ -37,7 +37,7 @@ module.exports = {
   }, {
     count: 2,
     name_prefix: 'repairer_',
-    body: [WORK, WORK, CARRY, MOVE],
+    body: [WORK, CARRY, MOVE, CARRY, MOVE],
     memory: {
       role: 'repairer',
       refill: true,
