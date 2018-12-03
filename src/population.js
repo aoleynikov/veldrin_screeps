@@ -13,7 +13,7 @@ module.exports = {
       body: [WORK, WORK, CARRY, MOVE],
       memory: {
         role: 'nanny',
-        target: 'W13S51',
+        target: 'W37S11',
         refill: true
       }
     },
@@ -23,7 +23,7 @@ module.exports = {
       body: [WORK, WORK, CARRY, MOVE],
       memory: {
         role: 'upgrader',
-        target: 'W13S51',
+        target: 'W37S11',
         refill: true,
         type: 'swarm'
       }
@@ -45,7 +45,8 @@ module.exports = {
       memory: {
         role: 'repairer',
         refill: true,
-        type: 'swarm'
+        type: 'swarm',
+        target: 'W37S11'
       }
     }
   ]
