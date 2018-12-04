@@ -11,7 +11,11 @@ module.exports = {
     name_prefix: 'miner_Earth_',
     body: [WORK, WORK, WORK, WORK, WORK, MOVE],
     memory: {
-      role: 'miner'
+      role: 'miner',
+      target: 'W37S11',
+      type: 'swarm',
+      find: FIND_SOURCES_ACTIVE,
+      resource: RESOURCE_ENERGY
     }
   }, {
     count: 3,
