@@ -64,6 +64,10 @@ module.exports = {
       return false;
     }
 
+    if (creep.carry[resource] == creep.carryCapacity) {
+      creep.memory["refill"] = false;
+    }
+
     var provider = behavior.get_closest_provider(creep);
 
     if (!provider) {
