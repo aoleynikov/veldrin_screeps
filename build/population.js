@@ -5,88 +5,13 @@ income available to nannies, the swarm doesn't function as intended.
 If you have a storage, it provides an easy way to monitor the economy balance.
 For RCL <= 3, don't get greedy.
 */
+var templates = [];
+var rooms = [require('population.earth')('W37S11'), require('population.common')()];
+
+for (var room of rooms) {
+  templates = templates.concat(room);
+}
+
 module.exports = {
-  templates: [{
-    count: 2,
-    name_prefix: 'miner_Earth_',
-    body: [WORK, WORK, WORK, WORK, WORK, MOVE],
-    memory: {
-      role: 'miner',
-      target: 'W37S11',
-      type: 'swarm',
-      find: FIND_SOURCES_ACTIVE,
-      resource: RESOURCE_ENERGY
-    }
-  }, {
-    count: 3,
-    name_prefix: 'nanny_Earth_',
-    body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
-    memory: {
-      role: 'nanny',
-      target: 'W37S11',
-      refill: true
-    }
-  }, {
-    count: 5,
-    name_prefix: 'upgrader_Earth_',
-    body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
-    memory: {
-      role: 'upgrader',
-      target: 'W37S11',
-      refill: true,
-      type: 'swarm'
-    }
-  }, {
-    count: 3,
-    name_prefix: 'builder_',
-    body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
-    memory: {
-      role: 'builder',
-      refill: true,
-      type: 'swarm'
-    }
-  }, {
-    count: 2,
-    name_prefix: 'repairer_Earth_',
-    body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
-    memory: {
-      role: 'repairer',
-      refill: true,
-      type: 'swarm',
-      target: 'W37S11'
-    }
-  }, {
-    count: 6,
-    name_prefix: 'upgrader_from_Moon_',
-    body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
-    memory: {
-      role: 'upgrader',
-      work_place: 'W37S11',
-      energy_room: 'W37S12',
-      refill: true,
-      type: 'swarm'
-    }
-  }, {
-    count: 6,
-    name_prefix: 'upgrader_from_Mars_',
-    body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
-    memory: {
-      role: 'upgrader',
-      work_place: 'W37S11',
-      energy_room: 'W38S11',
-      refill: true,
-      type: 'swarm'
-    }
-  }, {
-    count: 3,
-    name_prefix: 'upgrader_from_ISS_',
-    body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
-    memory: {
-      role: 'upgrader',
-      work_place: 'W37S11',
-      energy_room: 'W36S11',
-      refill: true,
-      type: 'swarm'
-    }
-  }]
+  templates: templates
 };
