@@ -1,5 +1,7 @@
 var miners_count = (room_id) => {
-  return Game.rooms[room_id] === undefined ? 1 : Game.rooms[room_id].find(FIND_SOURCES_ACTIVE).length;
+  var room = Game.rooms[room_id]
+  if (!room) return 1
+  return Game.rooms[room_id].find(FIND_SOURCES_ACTIVE).length;
 }
 
 module.exports = function(room_name, room_id) {
