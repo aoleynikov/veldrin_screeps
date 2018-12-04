@@ -41,5 +41,12 @@ module.exports = function () {
       work_place: 'W37S11',
       energy_room: 'W36S11'
     }
+  }, {
+    count: 1,
+    name_prefix: 'scout_',
+    body: [MOVE],
+    memory: {
+      role: 'scout'
+    }
   }];
 };
