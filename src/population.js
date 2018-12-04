@@ -9,8 +9,8 @@ For RCL <= 3, don't get greedy.
 var templates = []
 
 var rooms = [
-  require('population.earth')('W37S11'),
-  require('population.common')()
+  require('population.earth')('W37S11')//,
+  //require('population.common')()
 ]
 
 for(var room of rooms) {
