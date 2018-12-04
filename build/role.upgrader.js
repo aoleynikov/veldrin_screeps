@@ -6,7 +6,7 @@ var upgrade = creep => {
   var controller = creep.room.controller;
   var work = creep.upgradeController(controller);
 
-  if (work == ERR_NOT_IN_RANGE || work == 0) {
+  if (work == ERR_NOT_IN_RANGE) {
     creep.moveTo(controller);
   } else if (work == ERR_NOT_ENOUGH_ENERGY) {
     energy_behavior.refill(creep);
