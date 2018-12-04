@@ -6,9 +6,7 @@ If you have a storage, it provides an easy way to monitor the economy balance.
 For RCL <= 3, don't get greedy.
 */
 var templates = [];
-var rooms = [require('population.earth')('W37S11') //,
-//require('population.common')()
-];
+var rooms = [require('population.earth')('W37S11'), require('population.common')()];
 
 for (var room of rooms) {
   templates = templates.concat(room);
