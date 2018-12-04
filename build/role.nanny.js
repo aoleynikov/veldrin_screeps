@@ -3,9 +3,15 @@ var energy_behavior = require('behavior.get_resource');
 var room_travel = require('behavior.room_travel');
 
 var select_storage = function (creep) {
+  var result = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+    filter: function (s) {
+      return s.energy < s.energyCapacity && (s.structureType == STRUCTURE_SPAWN || s.structureType == STRUCTURE_EXTENSION);
+    }
+  });
+  if (result) return result;
   return creep.pos.findClosestByRange(FIND_STRUCTURES, {
     filter: function (s) {
-      return s.energy < s.energyCapacity && (s.structureType == STRUCTURE_TOWER && !creep.memory['ignore_towers'] || s.structureType == STRUCTURE_SPAWN || s.structureType == STRUCTURE_EXTENSION);
+      return s.energy < s.energyCapacity && s.structureType == STRUCTURE_TOWER;
     }
   });
 };
