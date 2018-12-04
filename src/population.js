@@ -10,6 +10,7 @@ var templates = []
 
 var rooms = [
   require('population.earth')('W37S11'),
+  reqiure('population.colony')('Moon', 'W38S11'),
   require('population.common')()
 ]
 
