@@ -11,9 +11,9 @@ module.exports = function() {
   },
   {
     count: 6,
-    name_prefix: 'upgrader_from_Moon',
+    name_prefix: 'upgrader_from_Moon_',
     body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
-    mamory: {
+    memory: {
       role: 'upgrader',
       refill: true, 
       type: 'swarm',
@@ -23,9 +23,9 @@ module.exports = function() {
   },
   {
     count: 6,
-    name_prefix: 'upgrader_from_Mars',
+    name_prefix: 'upgrader_from_Mars_',
     body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
-    mamory: {
+    memory: {
       role: 'upgrader',
       refill: true, 
       type: 'swarm',
@@ -35,9 +35,9 @@ module.exports = function() {
   },
   {
     count: 6,
-    name_prefix: 'upgrader_from_ISS',
+    name_prefix: 'upgrader_from_ISS_',
     body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
-    mamory: {
+    memory: {
       role: 'upgrader',
       refill: true, 
       type: 'swarm',
