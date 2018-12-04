@@ -74,9 +74,6 @@ var behavior = {
 module.exports = {
     perform: function (creep) {
         var resource = creep.memory["resource"] || RESOURCE_ENERGY
-        if (creep.carry[resource] == creep.carryCapacity) {
-            creep.memory["refill"] = false
-        }
 
         if (!creep.memory["refill"]) {
             return false

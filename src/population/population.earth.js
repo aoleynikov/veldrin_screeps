@@ -1,7 +1,7 @@
 var colony = require('population.colony')
 
 module.exports = function(room_id) {
-  return [
+  return colony('Earth', room_id).concat([
     {
       count: 3,
       name_prefix: 'nanny_Earth_',
@@ -23,5 +23,5 @@ module.exports = function(room_id) {
         type: 'swarm'
       }
     }
-  ].concat(colony('Earth', room_id))
+  ])
 };
