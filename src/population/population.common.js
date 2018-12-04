@@ -8,5 +8,41 @@ module.exports = function() {
       refill: true,
       type: 'swarm'
     }
+  },
+  {
+    count: 6,
+    name_prefix: 'upgrader_from_Moon',
+    body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
+    mamory: {
+      role: 'upgrader',
+      refill: true, 
+      type: 'swarm',
+      work_place: 'W37S11',
+      energy_room: 'W38S11'
+    }
+  },
+  {
+    count: 6,
+    name_prefix: 'upgrader_from_Mars',
+    body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
+    mamory: {
+      role: 'upgrader',
+      refill: true, 
+      type: 'swarm',
+      work_place: 'W37S11',
+      energy_room: 'W37S12'
+    }
+  },
+  {
+    count: 6,
+    name_prefix: 'upgrader_from_ISS',
+    body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
+    mamory: {
+      role: 'upgrader',
+      refill: true, 
+      type: 'swarm',
+      work_place: 'W37S11',
+      energy_room: 'W36S11'
+    }
   }]
 }
