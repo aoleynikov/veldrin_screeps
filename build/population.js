@@ -7,18 +7,25 @@ For RCL <= 3, don't get greedy.
 */
 module.exports = {
   templates: [{
+    count: 2,
+    name_prefix: 'miner_Earth_',
+    body: [WORK, WORK, WORK, WORK, WORK, MOVE],
+    memory: {
+      role: 'miner'
+    }
+  }, {
     count: 3,
     name_prefix: 'nanny_Earth_',
-    body: [WORK, CARRY, MOVE, CARRY, MOVE],
+    body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: 'nanny',
       target: 'W37S11',
       refill: true
     }
   }, {
-    count: 3,
+    count: 5,
     name_prefix: 'upgrader_Earth_',
-    body: [WORK, WORK, CARRY, MOVE],
+    body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
     memory: {
       role: 'upgrader',
       target: 'W37S11',
@@ -28,7 +35,7 @@ module.exports = {
   }, {
     count: 3,
     name_prefix: 'builder_',
-    body: [WORK, WORK, CARRY, MOVE],
+    body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
     memory: {
       role: 'builder',
       refill: true,
@@ -36,8 +43,8 @@ module.exports = {
     }
   }, {
     count: 2,
-    name_prefix: 'repairer_',
-    body: [WORK, CARRY, MOVE, CARRY, MOVE],
+    name_prefix: 'repairer_Earth_',
+    body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
     memory: {
       role: 'repairer',
       refill: true,
