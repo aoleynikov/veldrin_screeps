@@ -14,7 +14,18 @@ module.exports = function() {
     name_prefix: 'scout_',
     body: [MOVE],
     memory: {
-      role: 'scout'
+      role: 'scout',
+      type: 'swarm'
+    }
+  },
+  {
+    count: 1,
+    name_prefix: 'destroyer_',
+    body: [ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE],
+    target: {
+      role: 'destroyer',
+      type: 'swarm',
+      squad: 'war'
     }
   },
   {

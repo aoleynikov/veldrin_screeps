@@ -8,7 +8,7 @@ var claimers_count = room_id => {
   var room = Game.rooms[room_id];
   if (!room) return 1;
 
-  if (room.controller.owner.name == 'Veldrin') {
+  if (room.controller.my) {
     return 0;
   }
 
