@@ -20,7 +20,7 @@ var haulers_count = (room_id, target_room_id) => {
   }
   // findRoute -> exits
   // rooms = exits + 1
-  var distance = Game.map.findRoute(room_id, target_room_id).length + 1
+  var distance = Game.map.findRoute(room_id, target_room_id).length
   var sources_count = room.find(FIND_SOURCES_ACTIVE).length
   return sources_count * distance * 3
 }
