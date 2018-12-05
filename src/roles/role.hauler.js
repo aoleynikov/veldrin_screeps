@@ -11,7 +11,9 @@ module.exports = {
                         s.structureType == STRUCTURE_LINK && s.energy < s.energyCapacity);
             }
         });
-        if (creep.transfer(storage, creep.memory['resource']) == ERR_NOT_IN_RANGE) {
+        var result = creep.transfer(storage, creep.memory['resource'])
+        console.log(result)
+        if (result != 0) {
             creep.moveTo(storage, { visualizePathStyle: {
                 fill: 'transparent',
                 stroke: '#0f0',
