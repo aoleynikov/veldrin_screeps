@@ -15,7 +15,21 @@ var claimers_count = room_id => {
   return 1;
 };
 
-module.exports = function (room_name, room_id) {
+var haulers_count = (room_id, target_room_id) => {
+  var room = Game.rooms[room_id];
+
+  if (room.controller.my) {
+    return 0;
+  } // findRoute -> exits
+  // rooms = exits + 1
+
+
+  var distance = Game.map.findRoute(room_id, target_room_id).length + 1;
+  var sources_count = room.find(FIND_SOURCES_ACTIVE).length;
+  return sources_count * distance * 3;
+};
+
+module.exports = function (room_name, room_id, metropolia_id) {
   var room_postfix = '_' + room_name + '_';
   return [{
     count: miners_count(room_id),
@@ -55,6 +69,17 @@ module.exports = function (room_name, room_id) {
       refill: true,
       type: 'swarm',
       energy_room: room_id
+    }
+  }, {
+    count: haulers_count(room_id, metropolia_id),
+    name_prefix: 'hauler_from' + room_postfix,
+    body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: 'hauler',
+      refill: true,
+      type: 'swarm',
+      energy_room: room_id,
+      work_place: metropolia_id
     }
   }];
 };
