@@ -9,7 +9,7 @@ module.exports = {
             var exit = creep.pos.findClosestByRange(route[0].exit);
             if (creep.pos.getRangeTo(exit) != 0) {
                 creep.moveTo(exit, { visualizePathStyle: {
-                    fill: 'green',
+                    fill: 'transparent',
                     stroke: '#fff',
                     lineStyle: 'dashed',
                     strokeWidth: .15,

@@ -22,7 +22,7 @@ var build = function (creep) {
   if (build_result == ERR_NOT_IN_RANGE) {
     creep.moveTo(site, {
       visualizePathStyle: {
-        fill: 'green',
+        fill: 'transparent',
         stroke: '#fff',
         lineStyle: 'dashed',
         strokeWidth: .15,

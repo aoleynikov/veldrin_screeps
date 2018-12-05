@@ -30,7 +30,7 @@ var store = function (creep) {
   var work = creep.transfer(storage, RESOURCE_ENERGY);
   if (work == ERR_NOT_IN_RANGE) {
     creep.moveTo(storage, { visualizePathStyle: {
-      fill: 'green',
+      fill: 'transparent',
       stroke: '#fff',
       lineStyle: 'dashed',
       strokeWidth: .15,

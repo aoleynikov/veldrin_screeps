@@ -12,7 +12,7 @@ module.exports = {
     if (creep.transfer(storage, creep.memory['resource']) == ERR_NOT_IN_RANGE) {
       creep.moveTo(storage, {
         visualizePathStyle: {
-          fill: 'green',
+          fill: 'transparent',
           stroke: '#fff',
           lineStyle: 'dashed',
           strokeWidth: .15,
