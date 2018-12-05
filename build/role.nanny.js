@@ -33,7 +33,7 @@ var store = function (creep) {
     creep.moveTo(storage, {
       visualizePathStyle: {
         fill: 'transparent',
-        stroke: '#0f0',
+        stroke: '#ff0',
         lineStyle: 'dashed',
         strokeWidth: .15,
         opacity: .1
