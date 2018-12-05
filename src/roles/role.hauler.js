@@ -11,7 +11,7 @@ module.exports = {
                         s.structureType == STRUCTURE_LINK && s.energy < s.energyCapacity);
             }
         });
-        var result = creep.transfer(storage, creep.memory['resource'])
+        var result = creep.transfer(storage, resource)
         console.log(result)
         if (result != 0) {
             creep.moveTo(storage, { visualizePathStyle: {
