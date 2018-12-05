@@ -13,7 +13,7 @@ module.exports = {
         creep.moveTo(exit, {
           visualizePathStyle: {
             fill: 'transparent',
-            stroke: '#fff',
+            stroke: '#0f0',
             lineStyle: 'dashed',
             strokeWidth: .15,
             opacity: .1

@@ -23,7 +23,7 @@ var build = function (creep) {
     creep.moveTo(site, {
       visualizePathStyle: {
         fill: 'transparent',
-        stroke: '#fff',
+        stroke: '#0f0',
         lineStyle: 'dashed',
         strokeWidth: .15,
         opacity: .1

@@ -31,7 +31,7 @@ var store = function (creep) {
   if (work == ERR_NOT_IN_RANGE) {
     creep.moveTo(storage, { visualizePathStyle: {
       fill: 'transparent',
-      stroke: '#fff',
+      stroke: '#0f0',
       lineStyle: 'dashed',
       strokeWidth: .15,
       opacity: .1
