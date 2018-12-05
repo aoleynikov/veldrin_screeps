@@ -58,7 +58,9 @@ module.exports = function (room_name, room_id, metropolia_id) {
     name_prefix: 'claimer' + room_postfix,
     body: [CLAIM, MOVE],
     memory: {
-      target: room_id
+      target: room_id,
+      role: 'claimer',
+      type: 'swarm'
     }
   }, {
     count: 2,
