@@ -25,7 +25,8 @@ module.exports = function (room_name, room_id) {
       role: 'repairer',
       refill: true,
       type: 'swarm',
-      target: room_id
+      work_place: room_id,
+      energy_room: room_id
     }
   }];
 };

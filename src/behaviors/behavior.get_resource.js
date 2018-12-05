@@ -15,6 +15,7 @@ module.exports = {
 
 		var room = undefined;
 		if (creep.memory['refill']) {
+			
 			for (var stone of tombstones) {
 				if (stone.tombstone && stone.tombstone.store[resource] > 0) {
 					creep.withdraw(stone.tombstone, resource);
@@ -24,6 +25,7 @@ module.exports = {
 					return true;
 				}
 			}
+			
 			room = creep.memory['energy_room'] || creep.room.name;
 			creep.memory['target'] = room;
 			if (room_travel.perform(creep)) return true;
