@@ -30,7 +30,15 @@ var store = function (creep) {
   var work = creep.transfer(storage, RESOURCE_ENERGY);
 
   if (work == ERR_NOT_IN_RANGE) {
-    creep.moveTo(storage);
+    creep.moveTo(storage, {
+      visualizePathStyle: {
+        fill: 'green',
+        stroke: '#fff',
+        lineStyle: 'dashed',
+        strokeWidth: .15,
+        opacity: .1
+      }
+    });
   } else if (work == ERR_NOT_ENOUGH_ENERGY) {
     energy_behavior.refill(creep);
   }

@@ -10,7 +10,15 @@ module.exports = {
     });
 
     if (creep.transfer(storage, creep.memory['resource']) == ERR_NOT_IN_RANGE) {
-      creep.moveTo(storage);
+      creep.moveTo(storage, {
+        visualizePathStyle: {
+          fill: 'green',
+          stroke: '#fff',
+          lineStyle: 'dashed',
+          strokeWidth: .15,
+          opacity: .1
+        }
+      });
     }
 
     if (!creep.carry[creep.memory['resource']]) {
