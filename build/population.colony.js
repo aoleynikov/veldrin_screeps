@@ -53,7 +53,8 @@ module.exports = function (room_name, room_id) {
     memory: {
       role: 'builder',
       refill: true,
-      type: 'swarm'
+      type: 'swarm',
+      energy_room: room_id
     }
   }];
 };
