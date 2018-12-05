@@ -82,7 +82,8 @@ module.exports = function(room_name, room_id, metropolia_id) {
         refill: true,
         type: 'swarm',
         energy_room: room_id,
-        work_place: metropolia_id
+        work_place: metropolia_id,
+        resource: RESOURCE_ENERGY
       }
     }
   ]
