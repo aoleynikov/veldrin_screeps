@@ -21,9 +21,7 @@ var haulers_count = (room_id, target_room_id) => {
 
   if (room.controller.my) {
     return 0;
-  } // findRoute -> exits
-  // rooms = exits + 1
-
+  }
 
   var distance = Game.map.findRoute(room_id, target_room_id).length;
   var sources_count = room.find(FIND_SOURCES_ACTIVE).length;
@@ -84,6 +82,15 @@ module.exports = function (room_name, room_id, metropolia_id) {
       energy_room: room_id,
       work_place: metropolia_id,
       resource: RESOURCE_ENERGY
+    }
+  }, {
+    count: 2,
+    name_prefix: 'guard' + room_postfix,
+    body: [TOUGH, TOUGH, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      type: 'swarm',
+      role: 'warrior',
+      squad: room_name
     }
   }];
 };

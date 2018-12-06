@@ -8,11 +8,14 @@ For RCL <= 3, don't get greedy.
 
 var templates = []
 
+var colony_function = require('population.colony')
+
 var rooms = [
   require('population.earth')('W37S11'),
-  require('population.colony')('Moon', 'W38S11', 'W37S11'),
-  require('population.colony')('ISS', 'W37S12', 'W37S11'),
-  require('population.colony')('Mars', 'W36S11', 'W37S11'),
+  colony_function('Mars', 'W38S11', 'W37S11'),
+  colony_function('ISS', 'W37S12', 'W37S11'),
+  colony_function('Moon', 'W36S11', 'W37S11'),
+  colony_function('Phobos', 'W39S11', 'W37S11'),
   require('population.common')()
 ]
 
