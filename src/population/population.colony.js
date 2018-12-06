@@ -27,16 +27,16 @@ var haulers_count = (room_id, target_room_id) => {
 module.exports = function(room_name, room_id, metropolia_id) {
   var room_postfix = '_' + room_name + '_'
   return [
-    {
-      count: 2,
-      name_prefix: 'guard' + room_postfix,
-      body: [TOUGH, TOUGH, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
-      memory: {
-        type: 'swarm',
-        role: 'warrior',
-        squad: room_name
-      }
-    },
+    // {
+    //   count: 2,
+    //   name_prefix: 'guard' + room_postfix,
+    //   body: [TOUGH, TOUGH, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
+    //   memory: {
+    //     type: 'swarm',
+    //     role: 'warrior',
+    //     squad: room_name
+    //   }
+    // },
     {
       count: miners_count(room_id),
       name_prefix: 'miner' + room_postfix,
