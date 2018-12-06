@@ -28,6 +28,16 @@ module.exports = function(room_name, room_id, metropolia_id) {
   var room_postfix = '_' + room_name + '_'
   return [
     {
+      count: 2,
+      name_prefix: 'guard' + room_postfix,
+      body: [TOUGH, TOUGH, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
+      memory: {
+        type: 'swarm',
+        role: 'warrior',
+        squad: room_name
+      }
+    },
+    {
       count: miners_count(room_id),
       name_prefix: 'miner' + room_postfix,
       body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
@@ -83,16 +93,6 @@ module.exports = function(room_name, room_id, metropolia_id) {
         energy_room: room_id,
         work_place: metropolia_id,
         resource: RESOURCE_ENERGY
-      }
-    },
-    {
-      count: 2,
-      name_prefix: 'guard' + room_postfix,
-      body: [TOUGH, TOUGH, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
-      memory: {
-        type: 'swarm',
-        role: 'warrior',
-        squad: room_name
       }
     }
   ]
