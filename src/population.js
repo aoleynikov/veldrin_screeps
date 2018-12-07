@@ -17,6 +17,7 @@ var rooms = [
   colony_function('Moon', 'W36S11', 'W37S11'),
   colony_function('Phobos', 'W39S11', 'W37S11'),
   colony_function('Deimos', 'W35S11', 'W37S11'),
+  colony_function('Io', 'W37S13', 'W37S11'),
   require('population.common')()
 ]
 
