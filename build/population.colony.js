@@ -73,7 +73,7 @@ module.exports = function (room_name, room_id, metropolia_id) {
   }, {
     count: 2,
     name_prefix: 'builder_from' + room_postfix,
-    body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
+    body: [WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE],
     memory: {
       role: 'builder',
       refill: true,
