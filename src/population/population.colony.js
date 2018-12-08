@@ -50,9 +50,9 @@ module.exports = function(room_name, room_id, metropolia_id) {
       }
     },
     {
-      count: 2,
+      count: 1,
       name_prefix: 'repairer' + room_postfix,
-      body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
+      body: [WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
       memory: {
         role: 'repairer',
         refill: true,
