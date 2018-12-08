@@ -11,7 +11,7 @@ var claimers_count = (room_id) => {
     return 0
   }
   if (room.controller.reservation === undefined) return 1
-  if (room.controller.reservation.username == 'Veldrin' && room.controller.reservation.ticksToEnd > 4650) {
+  if (room.controller.reservation.username == 'Veldrin' && room.controller.reservation.ticksToEnd > 3000) {
     return 0
   }
   return 1
