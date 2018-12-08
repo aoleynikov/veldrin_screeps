@@ -17,8 +17,11 @@ var select_storage = function (creep) {
         (s.structureType == STRUCTURE_TOWER);
     }
   });
-  if (!towers) return towers;
 
+  return towers;
+};
+
+var store = function (creep) {
   var any_storage = creep.pos.findClosestByRange(FIND_STRUCTURES, {
     filter: function (s) {
       return (s.structureType == STRUCTURE_SPAWN ||
@@ -28,12 +31,9 @@ var select_storage = function (creep) {
   });
   if (!any_storage) {
     creep.memory['role'] = 'builder'
+    return
   }
 
-  return towers;
-};
-
-var store = function (creep) {
   var storage = select_storage(creep);
   if (!storage) {
     if (creep.carry[RESOURCE_ENERGY] < creep.carryCapacity) {
