@@ -14,6 +14,7 @@ var rooms = [
   require('population.earth')('W37S11'),
   require('population.mars')('W38S11'),
   require('population.venus')('W34S12'),
+  require('population.jupiter')('W39S13'),
   colony_function('ISS', 'W37S12', 'W37S11'),
   colony_function('Moon', 'W36S11', 'W37S11'),
   colony_function('Phobos', 'W39S11', 'W37S11'),
