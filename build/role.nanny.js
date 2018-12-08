@@ -9,11 +9,23 @@ var select_storage = function (creep) {
     }
   });
   if (result) return result;
-  return creep.pos.findClosestByRange(FIND_STRUCTURES, {
+  var towers = creep.pos.findClosestByRange(FIND_STRUCTURES, {
     filter: function (s) {
       return s.energy < s.energyCapacity && s.structureType == STRUCTURE_TOWER;
     }
   });
+  if (!towers) return towers;
+  var any_storage = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+    filter: function (s) {
+      return s.structureType == STRUCTURE_SPAWN || s.structureType == STRUCTURE_EXTENSION || s.structureType == STRUCTURE_TOWER;
+    }
+  });
+
+  if (!any_storage) {
+    creep.memory['role'] = 'builder';
+  }
+
+  return towers;
 };
 
 var store = function (creep) {
