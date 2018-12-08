@@ -15,6 +15,9 @@ var controller = {
         memory: template.memory
       });
       if (spawnResult == ERR_NOT_ENOUGH_ENERGY) {
+        if (spawn.room.energyAvailable == spawn.room.energyAvailableCapacity) {
+          return false;
+        }
         if (logging) console.log('Not enough energy to spawn:', name);
         return true;
       } else if (spawnResult == 0) {
