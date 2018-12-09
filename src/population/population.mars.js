@@ -20,7 +20,8 @@ module.exports = function(room_id) {
         role: 'upgrader',
         target: room_id,
         refill: true,
-        type: 'swarm'
+        type: 'swarm',
+        sticky: true
       }
     }
   ])

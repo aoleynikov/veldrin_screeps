@@ -9,7 +9,7 @@ var templates = [];
 
 var colony = require('population.colony');
 
-var rooms = [require('population.earth')('W37S11'), require('population.mars')('W38S11'), require('population.venus')('W34S12'), require('population.jupiter')('W39S13'), colony('ISS', 'W37S12', 'W37S11'), colony('Moon', 'W36S11', 'W37S11'), colony('Phobos', 'W39S11', 'W37S11'), colony('Deimos', 'W35S11', 'W37S11'), colony('Io', 'W37S13', 'W37S11'), colony('Titan', 'W35S12', 'W37S11'), colony('Phoebe', 'W38S12', 'W37S11'), require('population.common')()];
+var rooms = [require('population.earth')('W37S11'), require('population.mars')('W38S11'), require('population.venus')('W34S12'), require('population.jupiter')('W39S13'), colony('ISS', 'W37S12', 'W37S11'), colony('Phobos', 'W39S11', 'W38S11'), colony('Moon', 'W36S11', 'W37S11'), colony('Phoebe', 'W38S12', 'W38S11'), colony('Deimos', 'W35S11', 'W37S11'), colony('Io', 'W37S13', 'W37S11'), colony('Titan', 'W35S12', 'W37S11'), require('population.common')()];
 
 for (var room of rooms) {
   templates = templates.concat(room);

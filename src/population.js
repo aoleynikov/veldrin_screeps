@@ -16,12 +16,12 @@ var rooms = [
   require('population.venus')('W34S12'),
   require('population.jupiter')('W39S13'),
   colony('ISS', 'W37S12', 'W37S11'),
+  colony('Phobos', 'W39S11', 'W38S11'),
   colony('Moon', 'W36S11', 'W37S11'),
-  colony('Phobos', 'W39S11', 'W37S11'),
+  colony('Phoebe', 'W38S12', 'W38S11'),
   colony('Deimos', 'W35S11', 'W37S11'),
   colony('Io', 'W37S13', 'W37S11'),
   colony('Titan', 'W35S12', 'W37S11'),
-  colony('Phoebe', 'W38S12', 'W37S11'),
   require('population.common')()
 ]
 

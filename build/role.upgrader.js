@@ -8,7 +8,7 @@ var upgrade = creep => {
 
   if (work == ERR_NOT_IN_RANGE) {
     creep.moveTo(controller);
-  } else if (work == ERR_NOT_ENOUGH_ENERGY) {
+  } else if (work == ERR_NOT_ENOUGH_ENERGY || work == 0 && creep.memory['sticky']) {
     energy_behavior.refill(creep);
   }
 };
