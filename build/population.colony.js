@@ -57,9 +57,9 @@ module.exports = function (room_name, room_id, metropolia_id) {
       resource: RESOURCE_ENERGY
     }
   }, {
-    count: 1,
+    count: miners_count(room_1d),
     name_prefix: 'repairer' + room_postfix,
-    body: [WORK, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE],
+    body: [WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE],
     memory: {
       role: 'repairer',
       refill: true,
