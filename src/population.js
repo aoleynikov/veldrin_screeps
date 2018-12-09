@@ -21,6 +21,7 @@ var rooms = [
   colony('Deimos', 'W35S11', 'W37S11'),
   colony('Io', 'W37S13', 'W37S11'),
   colony('Titan', 'W35S12', 'W37S11'),
+  colony('Phoebe', 'W38S12', 'W37S11'),
   require('population.common')()
 ]
 
