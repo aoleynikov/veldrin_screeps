@@ -77,9 +77,9 @@ module.exports = function (room_name, room_id, metropolia_id) {
       type: 'swarm'
     }
   }, {
-    count: 2,
+    count: 1,
     name_prefix: 'builder_from' + room_postfix,
-    body: [WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE],
+    body: [WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: 'builder',
       refill: true,
@@ -89,7 +89,7 @@ module.exports = function (room_name, room_id, metropolia_id) {
   }, {
     count: haulers_count(room_id, metropolia_id),
     name_prefix: 'hauler_from' + room_postfix,
-    body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
+    body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: 'hauler',
       refill: true,

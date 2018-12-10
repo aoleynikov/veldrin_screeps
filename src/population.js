@@ -9,12 +9,15 @@ For RCL <= 3, don't get greedy.
 var templates = []
 
 var colony = require('population.colony')
+var metropolia = require('population.metropolia')
+var police = require('population.police')
 
 var rooms = [
-  require('population.earth')('W37S11'),
-  require('population.mars')('W38S11'),
-  require('population.venus')('W34S12'),
-  require('population.jupiter')('W39S13'),
+  police(),
+  metropolia('Earth', 'W37S11'),
+  metropolia('Mars', 'W38S11'),
+  metropolia('Venus', 'W34S12'),
+  metropolia('Jupiter', 'W39S13'),
   colony('ISS', 'W37S12', 'W37S11'),
   colony('Phobos', 'W39S11', 'W38S11'),
   colony('Moon', 'W36S11', 'W37S11'),
@@ -22,6 +25,7 @@ var rooms = [
   colony('Deimos', 'W35S11', 'W37S11'),
   colony('Io', 'W37S13', 'W37S11'),
   colony('Titan', 'W35S12', 'W37S11'),
+  colony('Oberon', 'W35S13', 'W37S11'),
   require('population.common')()
 ]
 

@@ -1,4 +1,4 @@
-var enemies_find = [FIND_HOSTILE_CREEPS, FIND_HOSTILE_STRUCTURES, FIND_HOSTILE_SPAWNS];
+var enemies_find = [FIND_HOSTILE_CREEPS, FIND_HOSTILE_STRUCTURES, FIND_HOSTILE_SPAWNS, FIND_HOSTILE_CONSTRUCTION_SITES];
 
 var target_filter = t => t.structureType === undefined || t.structureType != STRUCTURE_CONTROLLER;
 

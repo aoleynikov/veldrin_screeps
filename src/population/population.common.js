@@ -10,6 +10,26 @@ module.exports = function() {
     }
   },
   {
+    count: 1,
+    name_prefix: 'sniper_alpha_',
+    body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      type: 'swarm',
+      role: 'sniper',
+      squad: 'war'
+    }
+  },
+  {
+    count: 1,
+    name_prefix: 'sniper_beta_',
+    body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      type: 'swarm',
+      role: 'sniper',
+      squad: 'harrass'
+    }
+  },
+  {
     count: 10,
     name_prefix: 'upgrade_boost_',
     body: [
