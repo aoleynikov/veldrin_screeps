@@ -1,5 +1,3 @@
-var move = require('behavior.move');
-
 module.exports = {
   perform: function (creep) {
     var squad = creep.memory['squad'];

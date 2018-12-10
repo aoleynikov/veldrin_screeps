@@ -28,8 +28,8 @@ var operate_tower = tower => {
     }
   }
 
-  repairable_structures = tower.room.find(FIND_STRUCTURES, {
-    filter: s => s.hits < s.hitsMax
+  var repairable_structures = tower.room.find(FIND_STRUCTURES, {
+    filter: s => s.hits < s.hitsMax && s.structureType != STRUCTURE_RAMPART && s.structureType != STRUCTURE_WALL
   });
 
   for (var repairable of repairable_structures) {
@@ -37,6 +37,20 @@ var operate_tower = tower => {
       return;
     }
   }
+
+  var repairable_defences = tower.room.find(FIND_STRUCTURES, {
+    filter: s => s.hits < s.hitsMax && (s.structureType == STRUCTURE_RAMPART || s.structureType == STRUCTURE_WALL)
+  });
+  if (repairable_defences.length == 0) return;
+  var target = repairable_defences[0];
+
+  for (var repairable of repairable_defences) {
+    if (1.0 * repairable.hits / repairable.hitsMax < 1.0 * target.hits / target.hitsMax) {
+      target = repairable;
+    }
+  }
+
+  tower.repair(target);
 };
 
 module.exports = {

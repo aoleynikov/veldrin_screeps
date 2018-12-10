@@ -1,5 +1,3 @@
-var move = require("behavior.move")
-
 var behavior = {
     is_fast_provider: function (provider, resource) {
         return (
@@ -99,7 +97,7 @@ module.exports = {
             work_result = creep.harvest(provider)
         }
         if (work_result == ERR_NOT_IN_RANGE) {
-            move.perform(creep, provider.pos)
+            creep.moveTo(provider);
         }
         return true
     }

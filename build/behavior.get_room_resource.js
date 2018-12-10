@@ -1,5 +1,3 @@
-var move = require("behavior.move");
-
 var behavior = {
   is_fast_provider: function (provider, resource) {
     return provider.structureType == STRUCTURE_CONTAINER || provider.structureType == STRUCTURE_STORAGE && resource == RESOURCE_ENERGY || provider.structureType == STRUCTURE_LINK && resource == RESOURCE_ENERGY;
@@ -87,7 +85,7 @@ module.exports = {
     }
 
     if (work_result == ERR_NOT_IN_RANGE) {
-      move.perform(creep, provider.pos);
+      creep.moveTo(provider);
     }
 
     return true;

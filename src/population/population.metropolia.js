@@ -49,23 +49,23 @@ module.exports = function(room_name, room_id) {
     ],
     [
       nannies(3, '', [WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE]),
-      upgraders(3, [WORK, WORK, CARRY, CARRY, MOVE, MOVE])
+      upgraders(5, [WORK, WORK, CARRY, CARRY, MOVE, MOVE])
     ],
     [
       nannies(3, '', [WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE]),
-      upgraders(3, [WORK, WORK, CARRY, CARRY, MOVE, MOVE])
+      upgraders(5, [WORK, WORK, CARRY, CARRY, MOVE, MOVE])
     ],
     [
       nannies(3, '', [WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE]),
-      upgraders(3, [WORK, WORK, CARRY, CARRY, MOVE, MOVE])
+      upgraders(5, [WORK, WORK, CARRY, CARRY, MOVE, MOVE])
     ],
     [
       nannies(3, '', [WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE]),
-      upgraders(3, [WORK, WORK, CARRY, CARRY, MOVE, MOVE])
+      upgraders(5, [WORK, WORK, CARRY, CARRY, MOVE, MOVE])
     ],
     [
       nannies(3, '', [WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE]),
-      upgraders(3, [WORK, WORK, CARRY, CARRY, MOVE, MOVE])
+      upgraders(5, [WORK, WORK, CARRY, CARRY, MOVE, MOVE])
     ]
   ]
 
