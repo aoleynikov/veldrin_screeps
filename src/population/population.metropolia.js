@@ -52,12 +52,12 @@ module.exports = function(room_name, room_id) {
     ],
     5: [
       nannies(3, '', [WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE]),
-      nannies(2, 'large', [CARRY, CARRY, CARRY, CARRY, 
-                           CARRY, CARRY, CARRY, CARRY, 
-                           CARRY, CARRY, CARRY, CARRY, 
-                           CARRY, CARRY, CARRY, CARRY, 
-                           MOVE, MOVE, MOVE, MOVE, 
-                           MOVE, MOVE, MOVE, MOVE]),
+      nannies(2, 'large_', [CARRY, CARRY, CARRY, CARRY, 
+                            CARRY, CARRY, CARRY, CARRY, 
+                            CARRY, CARRY, CARRY, CARRY, 
+                            CARRY, CARRY, CARRY, CARRY, 
+                            MOVE, MOVE, MOVE, MOVE, 
+                            MOVE, MOVE, MOVE, MOVE]),
       upgraders(5, [WORK, WORK, CARRY, CARRY, MOVE, MOVE])
     ],
     6: [

@@ -20,6 +20,11 @@ var claimers_count = (room_id) => {
 var haulers_count = (room_id, target_room_id) => {
   var room = Game.rooms[room_id]
   if (!room) return 0
+
+  if (room.find(FIND_MY_STRUCTURES, {filter: {structureType: STRUCTURE_STORAGE}}).length == 0) {
+    return 0
+  }
+
   if (room.controller.my) {
     return 0
   }
