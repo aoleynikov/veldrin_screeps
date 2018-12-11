@@ -29,7 +29,7 @@ var rooms = [
   colony('Oberon', 'W35S13', 'W34S12'),
   colony('Europa', 'W39S12', 'W39S13'),
   colony('Ganymede', 'W34S13', 'W34S12'),
-  // lcolony('Callisto', 'W39S14', 'W39S13'),
+  // colony('Callisto', 'W39S14', 'W39S13'),
   common()
 ]
 
