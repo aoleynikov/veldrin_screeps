@@ -26,7 +26,7 @@ var haulers_count = (room_id, target_room_id) => {
   }
   var distance = Game.map.findRoute(room_id, target_room_id).length
   var sources_count = room.find(FIND_SOURCES_ACTIVE).length
-  return sources_count * distance
+  return sources_count * distance * 2
 }
 
 module.exports = function(room_name, room_id, metropolia_id) {
