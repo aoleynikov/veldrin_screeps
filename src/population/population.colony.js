@@ -26,7 +26,7 @@ var haulers_count = (room_id, target_room_id) => {
   }
   var distance = Game.map.findRoute(room_id, target_room_id).length
   var sources_count = room.find(FIND_SOURCES_ACTIVE).length
-  return sources_count * distance * 2
+  return sources_count * distance
 }
 
 module.exports = function(room_name, room_id, metropolia_id) {
@@ -90,7 +90,9 @@ module.exports = function(room_name, room_id, metropolia_id) {
     {
       count: haulers_count(room_id, metropolia_id),
       name_prefix: 'hauler_from' + room_postfix,
-      body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
+      body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, 
+             CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY,
+             MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
       memory: {
         role: 'hauler',
         refill: true,

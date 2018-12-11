@@ -15,7 +15,7 @@ var repair = function (creep, struct) {
 
 var repair_my_sructures = function (creep) {
   var repairable = creep.pos.findClosestByRange(FIND_STRUCTURES, {
-    filter: s => s.hits < s.hitsMax
+    filter: s => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL
   });
   repair(creep, repairable);
 };

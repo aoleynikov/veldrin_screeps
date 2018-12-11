@@ -28,6 +28,7 @@ var rooms = [
   colony('Titan', 'W35S12', 'W34S12'),
   colony('Oberon', 'W35S13', 'W34S12'),
   colony('Europa', 'W39S12', 'W38S11'),
+  colony('Ganymede', 'W34S13', 'W34S12'),
   common()
 ]
 
