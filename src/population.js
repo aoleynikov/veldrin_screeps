@@ -27,8 +27,9 @@ var rooms = [
   colony('Io', 'W37S13', 'W37S11'),
   colony('Titan', 'W35S12', 'W34S12'),
   colony('Oberon', 'W35S13', 'W34S12'),
-  colony('Europa', 'W39S12', 'W38S11'),
+  colony('Europa', 'W39S12', 'W39S13'),
   colony('Ganymede', 'W34S13', 'W34S12'),
+  // lcolony('Callisto', 'W39S14', 'W39S13'),
   common()
 ]
 

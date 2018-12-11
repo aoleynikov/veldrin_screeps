@@ -29,6 +29,14 @@ var haulers_count = (room_id, target_room_id) => {
   return sources_count * distance
 }
 
+var healers_count = (room_id) => {
+  var room = Game.rooms[room_id]
+  if (!room) return 0
+
+  var damaged = room.find(FIND_MY_CREEPS, { filter: c => c.hits < c.hitsMax })
+  return damaged.length == 0 ? 0 : 1
+}
+
 module.exports = function(room_name, room_id, metropolia_id) {
   var room_postfix = '_' + room_name + '_'
   return [
@@ -100,6 +108,16 @@ module.exports = function(room_name, room_id, metropolia_id) {
         energy_room: room_id,
         work_place: metropolia_id,
         resource: RESOURCE_ENERGY
+      }
+    },
+    {
+      count: healers_count(room_id),
+      name_prefix: 'healer' + room_postfix,
+      body: [HEAL, HEAL, MOVE, MOVE],
+      memory: {
+        type: 'swarm',
+        role: 'healer',
+        squad: room_name
       }
     }
   ]

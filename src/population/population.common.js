@@ -10,6 +10,17 @@ module.exports = function() {
     }
   },
   {
+    count: 2,
+    name_prefix: 'extra_repairer_Callisto_',
+    body: [WORK, WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      type: 'swarm',
+      role: 'repairer',
+      work_place: 'W39S14',
+      target: 'W39S14'
+    }
+  },
+  {
     count: 0,
     name_prefix: 'sniper_alpha_',
     body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
