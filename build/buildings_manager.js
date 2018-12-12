@@ -68,7 +68,7 @@ module.exports = {
 
 
     swarm.respawn(spawn);
-    console.log("spawn name -", spawn.memory['state']); // Links
+    console.log(spawn.name, "-", spawn.memory['state']); // Links
 
     operate_links(spawn);
   }
