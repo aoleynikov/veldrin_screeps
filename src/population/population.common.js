@@ -31,5 +31,28 @@ module.exports = function() {
       role: 'sniper',
       squad: 'war'
     }
+  },
+  {
+    count: 10,
+    name_prefix: 'upgrader_',
+    body: [
+      WORK, WORK,
+      CARRY, CARRY,
+      MOVE, MOVE,
+      WORK, WORK,
+      CARRY, CARRY,
+      MOVE, MOVE,
+      WORK, WORK,
+      CARRY, CARRY,
+      MOVE, MOVE,
+      CARRY, MOVE
+    ],
+    memory: {
+      role: 'upgrader',
+      type: 'swarm',
+      work_place: 'W37S11',
+      energy_room: 'W37S11',
+      refill: true
+    }
   }]
 }

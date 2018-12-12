@@ -11,7 +11,7 @@ var select_storage = function (creep) {
   if (result) return result;
   var towers = creep.pos.findClosestByRange(FIND_STRUCTURES, {
     filter: function (s) {
-      return s.energy < s.energyCapacity && s.structureType == STRUCTURE_TOWER;
+      return s.energy < s.energyCapacity * 0.8 && s.structureType == STRUCTURE_TOWER;
     }
   });
   return towers;
