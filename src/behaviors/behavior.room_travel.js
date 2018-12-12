@@ -8,13 +8,7 @@ module.exports = {
             var route = Game.map.findRoute(creep.room.name, creep.memory['target']);
             var exit = creep.pos.findClosestByRange(route[0].exit);
             if (creep.pos.getRangeTo(exit) != 0) {
-                creep.moveTo(exit, { visualizePathStyle: {
-                    fill: 'transparent',
-                    stroke: '#0f0',
-                    lineStyle: 'dashed',
-                    strokeWidth: .15,
-                    opacity: .1
-                }});
+                creep.moveTo(exit, {reusePath: 50});
             } else {
                 creep.memory['run'] = route[0].exit;
                 creep.memory['run_cd'] = 2;

@@ -30,7 +30,7 @@ module.exports = function () {
   }, {
     count: 10,
     name_prefix: 'upgrader_',
-    body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE, WORK, WORK, CARRY, CARRY, MOVE, MOVE, WORK, WORK, CARRY, CARRY, MOVE, MOVE, CARRY, MOVE],
+    body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE, WORK, WORK, CARRY, CARRY, MOVE, MOVE, WORK, WORK, CARRY, CARRY, MOVE, MOVE, WORK, WORK, CARRY, CARRY, MOVE, MOVE, CARRY, CARRY, MOVE, MOVE],
     memory: {
       role: 'upgrader',
       type: 'swarm',

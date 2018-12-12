@@ -45,7 +45,11 @@ module.exports = function() {
       WORK, WORK,
       CARRY, CARRY,
       MOVE, MOVE,
-      CARRY, MOVE
+      WORK, WORK,
+      CARRY, CARRY,
+      MOVE, MOVE,
+      CARRY, CARRY,
+      MOVE, MOVE
     ],
     memory: {
       role: 'upgrader',

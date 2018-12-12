@@ -11,13 +11,7 @@ module.exports = {
 
       if (creep.pos.getRangeTo(exit) != 0) {
         creep.moveTo(exit, {
-          visualizePathStyle: {
-            fill: 'transparent',
-            stroke: '#0f0',
-            lineStyle: 'dashed',
-            strokeWidth: .15,
-            opacity: .1
-          }
+          reusePath: 50
         });
       } else {
         creep.memory['run'] = route[0].exit;
