@@ -20,6 +20,7 @@ var controller = {
         spawn.memory['state'] = 'charging'
         return true
       } else if (spawnResult == 0) {
+        spawn.memory['state'] = 'spawning'
         return true
       }
     }
@@ -41,6 +42,7 @@ module.exports = {
     } else {
       for (var template of Game.spawns['Main'].memory['population']['templates']) {
         if (controller.spawnCreep(spawn, template)) return;
+        spawn.memory['state'] = 'idle'
       }
     }
   }
