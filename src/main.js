@@ -4,6 +4,7 @@ var doctor = require('doctor');
 var population = require('population');
 
 module.exports.loop = function () {
+  console.log('==========================================================')
   Game.spawns['Main'].memory['population'] = population;
   
   doctor.check();
