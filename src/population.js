@@ -23,13 +23,13 @@ var rooms = [
   colony('Phobos', 'W39S11', 'W38S11'),
   colony('Moon', 'W36S11', 'W37S11'),
   colony('Phoebe', 'W38S12', 'W38S11'),
-  colony('Deimos', 'W35S11', 'W37S11'),
-  colony('Io', 'W37S13', 'W37S11'),
   colony('Titan', 'W35S12', 'W34S12'),
   colony('Oberon', 'W35S13', 'W34S12'),
+  colony('Callisto', 'W39S14', 'W39S13'),
   colony('Europa', 'W39S12', 'W39S13'),
   colony('Ganymede', 'W34S13', 'W34S12'),
-  // colony('Callisto', 'W39S14', 'W39S13'),
+  colony('Deimos', 'W35S11', 'W37S11'),
+  colony('Io', 'W37S13', 'W37S11'),
   common()
 ]
 
