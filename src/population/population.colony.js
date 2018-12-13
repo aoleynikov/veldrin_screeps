@@ -37,6 +37,13 @@ var healers_count = (room_id) => {
   return damaged.length == 0 ? 0 : 1
 }
 
+var builders_count = () => {
+  for (var id in Game.constructionSites) {
+    return 1
+  }
+  return 0
+}
+
 module.exports = function(room_name, room_id, metropolia_id) {
   var room_postfix = '_' + room_name + '_'
   return [
@@ -85,7 +92,7 @@ module.exports = function(room_name, room_id, metropolia_id) {
       }
     },
     {
-      count: 1,
+      count: builders_count(),
       name_prefix: 'builder_from' + room_postfix,
       body: [WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
       memory: {
