@@ -50,10 +50,10 @@ module.exports = function(room_name, room_id, metropolia_id) {
     {
       count: 1,
       name_prefix: 'guard' + room_postfix,
-      body: [TOUGH, TOUGH, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
+      body: [ATTACK, MOVE],
       memory: {
         type: 'swarm',
-        role: 'warrior',
+        role: 'guard',
         squad: room_name
       }
     },
