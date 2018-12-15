@@ -30,8 +30,6 @@ var lightbulb = require('role.lightbulb');
 
 var janitor = require('role.janitor');
 
-var guard = require('role.guard');
-
 var manual = {
   perform: creep => {}
 };
@@ -52,8 +50,7 @@ var roles = {
   manual: manual,
   killer: killer,
   lightbulb: lightbulb,
-  janitor: janitor,
-  guard: guard
+  janitor: janitor
 };
 var useless = {
   perform: creep => creep.moveTo(Game.flags['useless'])
