@@ -1,3 +1,10 @@
+var warriors_count = room_id => {
+  var room = Game.rooms[room_id];
+  if (!room) return 0;
+  var enemies = room.find(FIND_HOSTILE_CREEPS);
+  return enemies.length > 0 ? 1 : 0;
+};
+
 var miners_count = room_id => {
   var room = Game.rooms[room_id];
   if (!room) return 1;
@@ -54,18 +61,18 @@ var builders_count = () => {
 module.exports = function (room_name, room_id, metropolia_id) {
   var room_postfix = '_' + room_name + '_';
   return [{
-    count: 1,
-    name_prefix: 'guard' + room_postfix,
-    body: [ATTACK, MOVE],
+    count: warriors_count(room_id),
+    name_prefix: 'warrior' + room_postfix,
+    body: [TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
       type: 'swarm',
-      role: 'guard',
+      role: 'warrior',
       squad: room_name
     }
   }, {
     count: miners_count(room_id),
     name_prefix: 'miner' + room_postfix,
-    body: [WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE],
+    body: [WORK, WORK, WORK, WORK, WORK, CARRY, MOVE, MOVE, MOVE],
     memory: {
       role: 'miner',
       target: room_id,

@@ -10,11 +10,9 @@ var templates = []
 
 var colony = require('population.colony')
 var metropolia = require('population.metropolia')
-var police = require('population.police')
-var common = require('population.common');
+var common = require('population.common')
 
 var rooms = [
-  police(),
   metropolia('Earth', 'W37S11'),
   metropolia('Mars', 'W38S11'),
   metropolia('Venus', 'W34S12'),

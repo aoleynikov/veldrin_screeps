@@ -19,7 +19,8 @@ module.exports = {
     }
 
     if (add) {
-      Game.spawns['Main'].memory['victims'].append(target.id);
+      if (!Game.spawns['Main'].memory['victims']) Game.spawns['Main'].memory['victims'] = [];
+      Game.spawns['Main'].memory['victims'].concat([target.id]);
     }
 
     var attack_result = creep.attack(target);
