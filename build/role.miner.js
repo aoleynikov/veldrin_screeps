@@ -4,7 +4,7 @@ module.exports = {
   perform: function (creep) {
     if (room_travel.perform(creep)) return;
 
-    if (creep.ticksToLive <= 20) {
+    if (creep.ticksToLive <= 40) {
       creep.memory['role'] = 'repairer';
       return;
     }

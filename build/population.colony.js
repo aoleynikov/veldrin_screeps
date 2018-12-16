@@ -63,7 +63,7 @@ module.exports = function (room_name, room_id, metropolia_id) {
   return [{
     count: warriors_count(room_id),
     name_prefix: 'warrior' + room_postfix,
-    body: [TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
+    body: [TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
       type: 'swarm',
       role: 'warrior',
@@ -72,7 +72,7 @@ module.exports = function (room_name, room_id, metropolia_id) {
   }, {
     count: miners_count(room_id),
     name_prefix: 'miner' + room_postfix,
-    body: [WORK, WORK, WORK, WORK, WORK, CARRY, MOVE, MOVE, MOVE],
+    body: [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: 'miner',
       target: room_id,
@@ -103,7 +103,7 @@ module.exports = function (room_name, room_id, metropolia_id) {
   }, {
     count: builders_count(),
     name_prefix: 'builder_from' + room_postfix,
-    body: [WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
+    body: [WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: 'builder',
       refill: true,
