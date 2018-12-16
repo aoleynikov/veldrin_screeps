@@ -2,7 +2,7 @@ var warriors_count = room_id => {
   var room = Game.rooms[room_id];
   if (!room) return 0;
   var enemies = room.find(FIND_HOSTILE_CREEPS);
-  return enemies.length > 0 ? 1 : 0;
+  return enemies.length;
 };
 
 var miners_count = room_id => {
@@ -63,7 +63,7 @@ module.exports = function (room_name, room_id, metropolia_id) {
   return [{
     count: warriors_count(room_id),
     name_prefix: 'warrior' + room_postfix,
-    body: [TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
+    body: [TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
       type: 'swarm',
       role: 'warrior',
@@ -81,9 +81,9 @@ module.exports = function (room_name, room_id, metropolia_id) {
       resource: RESOURCE_ENERGY
     }
   }, {
-    count: miners_count(room_id),
+    count: 1,
     name_prefix: 'repairer' + room_postfix,
-    body: [WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE],
+    body: [WORK, CARRY, MOVE],
     memory: {
       role: 'repairer',
       refill: true,
