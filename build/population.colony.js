@@ -8,7 +8,7 @@ var warriors_count = room_id => {
 var miners_count = room_id => {
   var room = Game.rooms[room_id];
   if (!room) return 1;
-  return Game.rooms[room_id].find(FIND_SOURCES_ACTIVE).length;
+  return Game.rooms[room_id].find(FIND_SOURCES).length;
 };
 
 var claimers_count = room_id => {

@@ -14,10 +14,10 @@ var metropolia = require('population.metropolia');
 var common = require('population.common');
 
 var spawns = {
-  'Earth': [].concat.apply([], [metropolia('Earth', 'W37S11'), colony('ISS', 'W37S12', 'W37S11'), colony('Moon', 'W36S11', 'W37S11'), colony('Ganymede', 'W34S13', 'W34S12'), colony('Deimos', 'W35S11', 'W37S11'), colony('Io', 'W37S13', 'W37S11'), common()]),
-  'Mars': [].concat.apply([], [metropolia('Mars', 'W38S11'), colony('Phobos', 'W39S11', 'W38S11'), colony('Phoebe', 'W38S12', 'W38S11'), metropolia('Earth', 'W37S11'), colony('ISS', 'W37S12', 'W37S11'), colony('Europa', 'W39S12', 'W39S13'), common()]),
-  'Venus': [].concat.apply([], [metropolia('Venus', 'W34S12'), colony('Titan', 'W35S12', 'W34S12'), colony('Oberon', 'W35S13', 'W34S12'), colony('Ganymede', 'W34S13', 'W34S12'), colony('Deimos', 'W35S11', 'W37S11'), common()]),
-  'Jupiter': [].concat.apply([], [metropolia('Jupiter', 'W39S13'), colony('Callisto', 'W39S14', 'W39S13'), colony('Europa', 'W39S12', 'W39S13'), colony('Phoebe', 'W38S12', 'W38S11'), common()])
+  'Earth': [].concat.apply([], [metropolia('Earth', 'W37S11'), colony('ISS', 'W37S12', 'W37S11'), colony('Moon', 'W36S11', 'W37S11'), colony('Ganymede', 'W34S13', 'W34S12'), colony('Deimos', 'W35S11', 'W37S11'), colony('Io', 'W37S13', 'W37S11'), metropolia('Mars', 'W38S11'), metropolia('Venus', 'W34S12'), metropolia('Jupiter', 'W39S13'), common()]),
+  'Mars': [].concat.apply([], [metropolia('Mars', 'W38S11'), colony('Phobos', 'W39S11', 'W38S11'), colony('Phoebe', 'W38S12', 'W38S11'), metropolia('Earth', 'W37S11'), colony('ISS', 'W37S12', 'W37S11'), colony('Europa', 'W39S12', 'W39S13'), metropolia('Venus', 'W34S12'), metropolia('Jupiter', 'W39S13'), common()]),
+  'Venus': [].concat.apply([], [metropolia('Venus', 'W34S12'), colony('Titan', 'W35S12', 'W34S12'), colony('Oberon', 'W35S13', 'W34S12'), colony('Ganymede', 'W34S13', 'W34S12'), colony('Deimos', 'W35S11', 'W37S11'), metropolia('Earth', 'W37S11'), metropolia('Mars', 'W38S11'), metropolia('Jupiter', 'W39S13'), common()]),
+  'Jupiter': [].concat.apply([], [metropolia('Jupiter', 'W39S13'), colony('Callisto', 'W39S14', 'W39S13'), colony('Europa', 'W39S12', 'W39S13'), colony('Phoebe', 'W38S12', 'W38S11'), metropolia('Earth', 'W37S11'), metropolia('Mars', 'W38S11'), metropolia('Venus', 'W34S12'), common()])
 };
 module.exports = {
   rooms: {
