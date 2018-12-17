@@ -43,7 +43,6 @@ var spawns = {
     colony('Deimos', 'W35S11', 'W37S11'),
     metropolia('Earth', 'W37S11'),
     metropolia('Mars', 'W38S11'),
-    metropolia('Jupiter', 'W39S13'),
     common()
   ]),
   'Jupiter': [].concat.apply([], [
@@ -53,7 +52,6 @@ var spawns = {
     colony('Phoebe', 'W38S12', 'W38S11'),
     metropolia('Earth', 'W37S11'),
     metropolia('Mars', 'W38S11'),
-    metropolia('Venus', 'W34S12'),
     common()
   ])
 }
