@@ -43,7 +43,10 @@ module.exports = {
       spawn.renewCreep(maintenance_creeps[0]);
       spawn.memory['state'] = 'renewing';
     } else {
-      for (var template of Game.spawns['Main'].memory['population']['templates']) {
+      var population = Game.spawns['Main'].memory['population'];
+      var room_name = population['rooms'][spawn.room.name];
+
+      for (var template of population['spawns'][room_name]) {
         if (controller.spawnCreep(spawn, template)) return;
         spawn.memory['state'] = 'idle';
       }
