@@ -26,6 +26,5 @@ module.exports = {
     'W34S12': 'Venus',
     'W39S13': 'Jupiter'
   },
-  templates: [].concat.apply([], rooms),
   spawns: spawns
 };
