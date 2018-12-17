@@ -17,7 +17,6 @@ var spawns = {
     metropolia('Earth', 'W37S11'),
     colony('ISS', 'W37S12', 'W37S11'),
     colony('Moon', 'W36S11', 'W37S11'),
-    colony('Ganymede', 'W34S13', 'W34S12'),
     colony('Deimos', 'W35S11', 'W37S11'),
     colony('Io', 'W37S13', 'W37S11'),
     metropolia('Mars', 'W38S11'),
