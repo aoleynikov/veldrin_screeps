@@ -3,12 +3,7 @@ var room_travel = require('behavior.room_travel');
 module.exports = {
     perform: function (creep) {
         if (room_travel.perform(creep)) return;
-
-        if (creep.ticksToLive <= 40) {
-            creep.memory['role'] = 'repairer'
-            return
-        }
-
+        
         container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
             filter: s => {
                 if (s.structureType != STRUCTURE_CONTAINER) return false;

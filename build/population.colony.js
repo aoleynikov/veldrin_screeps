@@ -72,7 +72,7 @@ module.exports = function (room_name, room_id, metropolia_id) {
   }, {
     count: miners_count(room_id),
     name_prefix: 'miner' + room_postfix,
-    body: [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE],
+    body: [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: 'miner',
       target: room_id,
@@ -83,7 +83,7 @@ module.exports = function (room_name, room_id, metropolia_id) {
   }, {
     count: 1,
     name_prefix: 'repairer' + room_postfix,
-    body: [WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE],
+    body: [WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: 'repairer',
       refill: true,
@@ -125,7 +125,7 @@ module.exports = function (room_name, room_id, metropolia_id) {
   }, {
     count: healers_count(room_id),
     name_prefix: 'healer' + room_postfix,
-    body: [HEAL, HEAL, MOVE, MOVE],
+    body: [HEAL, HEAL, HEAL, MOVE, MOVE, MOVE],
     memory: {
       type: 'swarm',
       role: 'healer',
