@@ -22,7 +22,7 @@ module.exports = {
     perform: function (creep) {
         if (energy_behavior.perform(creep)) return;
         if (room_travel.perform(creep)) return;
-        var tower = creep.room.findClosestByRange(FIND_STRUCTURES, {filter: {structureType: STRUCTURE_TOWER}})
+        var tower = creep.pos.findClosestByRange(FIND_STRUCTURES, {filter: {structureType: STRUCTURE_TOWER}})
         if(tower) {
             if (creep.transfer(tower, RESOURCE_ENERGY) != 0) {
                 creep.moveTo(tower)
