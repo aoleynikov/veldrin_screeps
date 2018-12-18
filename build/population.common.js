@@ -9,7 +9,7 @@ module.exports = function () {
       type: 'swarm'
     }
   }, {
-    count: 2,
+    count: 1,
     name_prefix: 'extra_repairer_Callisto_',
     body: [WORK, WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {

@@ -30,8 +30,12 @@ module.exports = {
     });
 
     if (tower) {
-      if (creep.transfer(tower, RESOURCE_ENERGY) != 0) {
+      var result = creep.transfer(tower, RESOURCE_ENERGY);
+
+      if (result == ERR_NOT_IN_RANGE) {
         creep.moveTo(tower);
+      } else if (result == ERR_NOT_ENOUGH_ENERGY) {
+        energy_behavior.refill(creep);
       }
     } else {
       repair_my_sructures(creep);

@@ -24,8 +24,12 @@ module.exports = {
         if (room_travel.perform(creep)) return;
         var tower = creep.pos.findClosestByRange(FIND_STRUCTURES, {filter: {structureType: STRUCTURE_TOWER}})
         if(tower) {
-            if (creep.transfer(tower, RESOURCE_ENERGY) != 0) {
+            var result = creep.transfer(tower, RESOURCE_ENERGY)
+            if (result == ERR_NOT_IN_RANGE) {
                 creep.moveTo(tower)
+            }
+            else if (result == ERR_NOT_ENOUGH_ENERGY) {
+                energy_behavior.refill(creep)
             }
         }
         else {
