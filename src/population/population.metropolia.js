@@ -58,7 +58,7 @@ module.exports = function(room_name, room_id) {
                             CARRY, CARRY, CARRY, CARRY, 
                             MOVE, MOVE, MOVE, MOVE, 
                             MOVE, MOVE, MOVE, MOVE]),
-      upgraders(5, [WORK, WORK, CARRY, CARRY, MOVE, MOVE])
+      upgraders(2, [WORK, WORK, CARRY, CARRY, MOVE, MOVE])
     ],
     6: [
       nannies(3, '', [WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE]),
@@ -68,7 +68,7 @@ module.exports = function(room_name, room_id) {
         CARRY, CARRY, CARRY, CARRY, 
         MOVE, MOVE, MOVE, MOVE, 
         MOVE, MOVE, MOVE, MOVE]),
-      upgraders(5, [WORK, WORK, CARRY, CARRY, MOVE, MOVE])
+      upgraders(2, [WORK, WORK, CARRY, CARRY, MOVE, MOVE])
     ],
     7: [
       nannies(3, '', [WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE]),
@@ -78,7 +78,7 @@ module.exports = function(room_name, room_id) {
         CARRY, CARRY, CARRY, CARRY, 
         MOVE, MOVE, MOVE, MOVE, 
         MOVE, MOVE, MOVE, MOVE]),
-      upgraders(5, [WORK, WORK, CARRY, CARRY, MOVE, MOVE])
+      upgraders(2, [WORK, WORK, CARRY, CARRY, MOVE, MOVE])
     ],
     8: [
       nannies(3, '', [WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE]),
@@ -88,7 +88,7 @@ module.exports = function(room_name, room_id) {
         CARRY, CARRY, CARRY, CARRY, 
         MOVE, MOVE, MOVE, MOVE, 
         MOVE, MOVE, MOVE, MOVE]),
-      upgraders(5, [WORK, WORK, CARRY, CARRY, MOVE, MOVE])
+      upgraders(2, [WORK, WORK, CARRY, CARRY, MOVE, MOVE])
     ]
   }
 
