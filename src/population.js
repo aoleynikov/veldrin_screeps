@@ -33,6 +33,7 @@ var spawns = {
     colony('Phoebe', 'W38S12', 'W38S11'),
     colony('ISS', 'W37S12', 'W37S11'),
     colony('Europa', 'W39S12', 'W39S13'),
+    colony('Amalthea', 'W38S13', 'W38S11'),
     common()
   ]),
   'Venus': [].concat.apply([], [
@@ -52,6 +53,7 @@ var spawns = {
     colony('Callisto', 'W39S14', 'W39S13'),
     colony('Europa', 'W39S12', 'W39S13'),
     colony('Phoebe', 'W38S12', 'W38S11'),
+    colony('Amalthea', 'W38S13', 'W38S11'),
     common()
   ])
 }
