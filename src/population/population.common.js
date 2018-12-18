@@ -33,7 +33,7 @@ module.exports = function() {
     }
   },
   {
-    count: 10,
+    count: 5,
     name_prefix: 'upgrader_',
     body: [
       WORK, WORK,

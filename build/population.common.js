@@ -28,7 +28,7 @@ module.exports = function () {
       squad: 'war'
     }
   }, {
-    count: 10,
+    count: 5,
     name_prefix: 'upgrader_',
     body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE, WORK, WORK, CARRY, CARRY, MOVE, MOVE, WORK, WORK, CARRY, CARRY, MOVE, MOVE, WORK, WORK, CARRY, CARRY, MOVE, MOVE, CARRY, CARRY, MOVE, MOVE],
     memory: {
