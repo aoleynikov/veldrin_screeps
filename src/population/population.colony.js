@@ -1,3 +1,14 @@
+const HAULERS_COUNT = {
+  1: 1,
+  2: 3,
+  3: 3,
+  4: 5,
+  5: 5,
+  6: 7,
+  7: 7,
+  8: 7
+}
+
 var warriors_count = (room_id) => {
   var room = Game.rooms[room_id]
   if (!room) return 0
@@ -34,7 +45,7 @@ var haulers_count = (room_id, target_room_id) => {
   }
   var distance = Game.map.findRoute(room_id, target_room_id).length
   var sources_count = room.find(FIND_SOURCES_ACTIVE).length
-  return sources_count * distance
+  return HAULERS_COUNT[sources_count * distance] || 1
 }
 
 var healers_count = (room_id) => {
@@ -78,7 +89,7 @@ module.exports = function(room_name, room_id, metropolia_id) {
         role: 'miner',
         target: room_id,
         type: 'swarm',
-        find: FIND_SOURCES_ACTIVE,
+        find: FIND_SOURCES,
         resource: RESOURCE_ENERGY
       }
     },
