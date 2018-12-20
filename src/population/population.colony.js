@@ -26,7 +26,7 @@ var claimers_count = (room_id) => {
   var room = Game.rooms[room_id]
   if (!room) return 1
   if (room.controller.my) {
-    return 0
+    return 1
   }
   if (room.controller.reservation === undefined) return 1
   if (room.controller.reservation.username == 'Veldrin' && 
