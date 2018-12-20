@@ -27,7 +27,7 @@ var claimers_count = room_id => {
   if (!room) return 1;
 
   if (room.controller.my) {
-    return 1;
+    return 0;
   }
 
   if (room.controller.reservation === undefined) return 1;
