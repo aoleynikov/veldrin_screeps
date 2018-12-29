@@ -11,6 +11,7 @@ var templates = []
 var colony = require('population.colony')
 var metropolia = require('population.metropolia')
 var common = require('population.common')
+var wild = require('population.wild')
 
 var spawns = {
   'Earth': [].concat.apply([], [

@@ -1,6 +1,18 @@
 var colony = require('population.colony');
 
-var nannies_func = (room_name, room_id) => (count, prefix, body) => {
+var nannies_func = (room_name, room_id) => (count, prefix, size) => {
+  var body = [WORK, CARRY, MOVE];
+  size--;
+
+  for (var i = 0; i < size; ++i) {
+    body.push(CARRY);
+    body.push(CARRY);
+  }
+
+  for (var i = 0; i < size; ++i) {
+    body.push(MOVE);
+  }
+
   return {
     count: count,
     name_prefix: prefix + 'nanny_' + room_name + '_',
@@ -13,7 +25,22 @@ var nannies_func = (room_name, room_id) => (count, prefix, body) => {
   };
 };
 
-var upgraders_func = (room_name, room_id) => (count, body) => {
+var upgraders_func = (room_name, room_id) => (count, size) => {
+  var body = [WORK, CARRY, MOVE];
+  size--;
+
+  for (var i = 0; i < size; ++i) {
+    body.push(WORK);
+  }
+
+  for (var i = 0; i < size; ++i) {
+    body.push(CARRY);
+  }
+
+  for (var i = 0; i < size; ++i) {
+    body.push(MOVE);
+  }
+
   return {
     count: count,
     name_prefix: 'upgrader_' + room_name + '_',
@@ -32,14 +59,14 @@ module.exports = function (room_name, room_id) {
   nannies = nannies_func(room_name, room_id);
   upgraders = upgraders_func(room_name, room_id);
   var creeps = {
-    1: [nannies(1, 'small_', [WORK, CARRY, CARRY, MOVE, MOVE]), upgraders(3, [WORK, CARRY, MOVE])],
-    2: [nannies(3, '', [WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE]), upgraders(3, [WORK, WORK, CARRY, CARRY, MOVE, MOVE])],
-    3: [nannies(2, '', [WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE]), upgraders(3, [WORK, WORK, CARRY, CARRY, MOVE, MOVE])],
-    4: [nannies(2, '', [WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE]), upgraders(5, [WORK, WORK, CARRY, CARRY, MOVE, MOVE])],
-    5: [nannies(2, '', [WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE]), nannies(2, 'large_', [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE]), upgraders(2, [WORK, WORK, CARRY, CARRY, MOVE, MOVE])],
-    6: [nannies(3, '', [WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE]), nannies(2, 'large_', [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE]), upgraders(2, [WORK, WORK, CARRY, CARRY, MOVE, MOVE])],
-    7: [nannies(3, '', [WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE]), nannies(2, 'large_', [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE]), upgraders(2, [WORK, WORK, CARRY, CARRY, MOVE, MOVE])],
-    8: [nannies(3, '', [WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE]), nannies(2, 'large_', [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE]), upgraders(2, [WORK, WORK, CARRY, CARRY, MOVE, MOVE])]
+    1: [nannies(1, 'small_', 1), upgraders(3, [WORK, CARRY, MOVE])],
+    2: [nannies(1, 'small_', 1), nannies(2, '', 3), upgraders(3, 1)],
+    3: [nannies(1, 'small_', 1), nannies(2, '', 3), upgraders(3, 3)],
+    4: [nannies(1, 'small_', 1), nannies(2, '', 3), upgraders(3, 3)],
+    5: [nannies(1, 'small_', 1), nannies(2, '', 3), nannies(1, 'large_', 8), upgraders(3, 3)],
+    6: [nannies(1, 'small_', 1), nannies(2, '', 3), nannies(1, 'large_', 8), upgraders(3, 3)],
+    7: [nannies(1, 'small_', 1), nannies(2, '', 3), nannies(1, 'large_', 8), upgraders(3, 3)],
+    8: [nannies(1, 'small_', 1), nannies(2, '', 3), nannies(1, 'large_', 8), upgraders(3, 3)]
   };
   return creeps[level].concat(colony(room_name, room_id));
 };

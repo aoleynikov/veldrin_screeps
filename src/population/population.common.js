@@ -21,28 +21,6 @@ module.exports = function() {
     }
   },
   {
-    count: 1,
-    name_prefix: 'sniper_alpha_',
-    body: [TOUGH, TOUGH, RANGED_ATTACK, RANGED_ATTACK,
-           RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK,
-           MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
-    memory: {
-      type: 'swarm',
-      role: 'sniper',
-      squad: 'war'
-    }
-  },
-  {
-    count: 20,
-    name_prefix: 'wn_',
-    body: [TOUGH, TOUGH, TOUGH, TOUGH, ATTACK, ATTACK, MOVE, MOVE, MOVE],
-    memory: {
-      type: 'swarm',
-      role: 'warrior',
-      squad: 'nuff'
-    }
-  },
-  {
     count: 5,
     name_prefix: 'upgrader_',
     body: [
