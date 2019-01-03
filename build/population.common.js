@@ -1,21 +1,21 @@
 var upgrader_body = [WORK, WORK, WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE];
 
-var upgrader_for = (from, to) => {
+var upgrader = (from, to) => {
   return {
     count: 1,
-    name_prefix: 'upgrader_from_' + from,
+    name_prefix: 'upgrader_from_' + from + '_',
     body: upgrader_body,
     memory: {
       role: upgrader_body,
       refill: true,
-      type: swarm,
+      type: 'swarm',
       energy_room: from,
       work_place: to
     }
   };
 };
 
-upgraders = [upgrader_for('W38S13', 'W38S11'), upgrader_for('W37S13', 'W37S11'), upgrader_for('W38S15', 'W39S13'), upgrader_for('W36S13', 'W34S12'), upgrader_for('W34S13', 'W34S12'), upgrader_for('W33S12', 'W34S12'), upgrader_for('W33S11', 'W34S12')];
+var upgraders = [upgrader('W38S13', 'W38S11'), upgrader('W37S13', 'W37S11'), upgrader('W38S15', 'W39S13'), upgrader('W36S13', 'W34S12'), upgrader('W34S13', 'W34S12'), upgrader('W33S12', 'W34S12'), upgrader('W33S11', 'W34S12')];
 
 module.exports = function () {
   return [{
