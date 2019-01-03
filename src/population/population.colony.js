@@ -11,7 +11,7 @@ const HAULERS_COUNT = {
 
 var warriors_count = (room_id) => {
   var room = Game.rooms[room_id]
-  if (!room) return 0
+  if (!room) return 1
   var enemies = room.find(FIND_HOSTILE_CREEPS)
   return enemies.length
 }

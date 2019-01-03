@@ -1,8 +1,12 @@
 var upgrader_body = [
   WORK, WORK, WORK, WORK, WORK, WORK,
+  WORK, WORK, WORK,
+  CARRY, CARRY, CARRY, CARRY, CARRY, CARRY,
   CARRY, CARRY, CARRY, CARRY, CARRY, CARRY,
   MOVE, MOVE, MOVE, MOVE, MOVE, MOVE,
-  MOVE, MOVE, MOVE, MOVE, MOVE, MOVE  
+  MOVE, MOVE, MOVE, MOVE, MOVE, MOVE,
+  MOVE, MOVE, MOVE, MOVE, MOVE, MOVE,
+  MOVE, MOVE, MOVE
 ]
 
 var upgrader = (from, to) => {
@@ -50,6 +54,21 @@ module.exports = function() {
       role: 'repairer',
       work_place: 'W39S14',
       target: 'W39S14'
+    }
+  },
+  {
+    count: 10,
+    name_prefix: 'rm_',
+    body: [
+      ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, 
+      ATTACK, ATTACK, ATTACK, ATTACK, ATTACK,
+      MOVE, MOVE, MOVE, MOVE, MOVE, 
+      MOVE, MOVE, MOVE, MOVE, MOVE
+    ],
+    memory: {
+      type: 'swarm',
+      role: 'warrior',
+      squad: 'rm'
     }
   }].concat(upgraders)
 }
