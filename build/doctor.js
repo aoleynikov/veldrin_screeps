@@ -1,4 +1,4 @@
-var NEARLY_DEAD = 350;
+var NEARLY_DEAD = 100;
 module.exports = {
   check: function () {
     for (var name in Game.creeps) {

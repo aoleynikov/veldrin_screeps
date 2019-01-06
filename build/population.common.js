@@ -1,4 +1,4 @@
-var upgrader_body = [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE];
+var upgrader_body = [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE];
 
 var upgrader = (from, to) => {
   return {
@@ -6,7 +6,7 @@ var upgrader = (from, to) => {
     name_prefix: 'upgrader_from_' + from + '_',
     body: upgrader_body,
     memory: {
-      role: upgrader_body,
+      role: 'upgrader',
       refill: true,
       type: 'swarm',
       energy_room: from,

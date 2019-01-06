@@ -10,7 +10,7 @@ module.exports = {
       }
     });
 
-    if (!target) {
+    if (!target || creep.room.controller.my) {
       creep.moveTo(flag);
       return;
     }
