@@ -50,7 +50,6 @@ var spawns = {
     colony('Callisto', 'W39S14', 'W39S13'),
     colony('Europa', 'W39S12', 'W39S13'),
     colony('Enceladus', 'W38S14', 'W39S13'),
-    colony('Sinope', 'W39S15', 'W39S13'),
     metropolia('Earth', 'W37S11'),
     metropolia('Mars', 'W38S11'),
     colony('Phoebe', 'W38S12', 'W38S11'),
