@@ -28,8 +28,7 @@ var upgraders = [
   upgrader('W38S15', 'W39S13'),
   upgrader('W36S13', 'W34S12'),
   upgrader('W34S13', 'W34S12'),
-  upgrader('W33S12', 'W34S12'),
-  upgrader('W33S11', 'W34S12'),
+  upgrader('W33S12', 'W34S12')
 ]
 
 module.exports = function() {
