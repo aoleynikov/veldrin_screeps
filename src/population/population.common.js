@@ -9,7 +9,7 @@ var upgrader_body = [
 
 var upgrader = (from, to) => {
   return {
-    count: 1,
+    count: 2,
     name_prefix: 'upgrader_from_' + from + '_',
     body: upgrader_body,
     memory: {
