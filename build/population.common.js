@@ -37,14 +37,5 @@ module.exports = function () {
       work_place: 'W39S14',
       target: 'W39S14'
     }
-  }, {
-    count: 1,
-    name_prefix: 'rm_',
-    body: [ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
-    memory: {
-      type: 'swarm',
-      role: 'warrior',
-      squad: 'rm'
-    }
   }].concat(upgraders);
 };
