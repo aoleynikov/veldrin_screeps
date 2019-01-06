@@ -2,7 +2,7 @@ var energy_behavior = require('behavior.get_resource');
 var room_travel = require('behavior.room_travel');
 
 var upgrade = (creep) => {
-    var controller = Game.rooms[creep.memory['work_place']].controller;
+    var controller = creep.room.controller;
     var work = creep.upgradeController(controller);
     if (work == ERR_NOT_IN_RANGE) {
         creep.moveTo(controller);
@@ -13,7 +13,8 @@ var upgrade = (creep) => {
 
 module.exports = {
     perform: (creep) => {
-        if (energy_behavior.perform(creep)) return;
+        if (energy_behavior.perform(creep)) return
+        if (room_travel.perform(creep)) return
         upgrade(creep);
     }
 }

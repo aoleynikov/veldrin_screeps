@@ -10,11 +10,11 @@ module.exports = {
                     filter: { structureType: STRUCTURE_SPAWN } 
                 })
 
-                if (spawn.memory['links_to'] !== undefined) {
-                    for(var link_id of spawn.memory['links_to']) {
-                        if (link_id == s.id) return false
-                    }
+                var links_to = spawn.memory ? spawn.memory['links_to'] : []
+                for(var link_id of links_to) {
+                    if (link_id == s.id) return false
                 }
+                
 
                 return (s.structureType == STRUCTURE_STORAGE && _.sum(s.store) < s.storeCapacity) ||
                     (creep.memory['resource'] == RESOURCE_ENERGY &&
