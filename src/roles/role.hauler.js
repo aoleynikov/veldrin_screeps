@@ -6,15 +6,15 @@ module.exports = {
 
         var storage = creep.pos.findClosestByRange(FIND_MY_STRUCTURES, {
             filter: s => {
-                var spawn = creep.room.find(FIND_MY_STRUCTURES, { 
+                var spawns = creep.room.find(FIND_MY_STRUCTURES, { 
                     filter: { structureType: STRUCTURE_SPAWN } 
                 })
 
-                var links_to = spawn.memory ? spawn.memory['links_to'] : []
-                for(var link_id of links_to) {
-                    if (link_id == s.id) return false
+                for (var spawn of spawns) {
+                    for(var link_id of spawn.memory['links_to']) {
+                        if (link_id == s.id) return false
+                    }
                 }
-                
 
                 return (s.structureType == STRUCTURE_STORAGE && _.sum(s.store) < s.storeCapacity) ||
                     (creep.memory['resource'] == RESOURCE_ENERGY &&
