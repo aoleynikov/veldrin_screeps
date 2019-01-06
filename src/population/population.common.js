@@ -53,5 +53,16 @@ module.exports = function() {
       work_place: 'W39S14',
       target: 'W39S14'
     }
+  },
+  {
+    count: 2,
+    name_prefix: 'upgrader_',
+    body: upgrader_body,
+    memory: {
+      type: 'swarm',
+      role: 'upgrader',
+      work_place: 'W37S11',
+      energy_room: 'W37S11'
+    }
   }].concat(upgraders)
 }
