@@ -55,7 +55,7 @@ module.exports = function() {
     }
   },
   {
-    count: 10,
+    count: 1,
     name_prefix: 'rm_',
     body: [
       ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, 

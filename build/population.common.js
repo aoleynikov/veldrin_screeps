@@ -38,7 +38,7 @@ module.exports = function () {
       target: 'W39S14'
     }
   }, {
-    count: 10,
+    count: 1,
     name_prefix: 'rm_',
     body: [ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
