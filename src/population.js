@@ -56,6 +56,9 @@ var spawns = {
     metropolia('Mars', 'W38S11'),
     colony('Phoebe', 'W38S12', 'W38S11'),
     common()
+  ]),
+  'Saturn': [].concat.apply([], [
+    
   ])
 }
 
