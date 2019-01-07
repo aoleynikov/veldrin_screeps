@@ -20,6 +20,7 @@ var spawns = {
     colony('Moon', 'W36S11', 'W37S11'),
     colony('Deimos', 'W35S11', 'W37S11'),
     metropolia('Mars', 'W38S11'),
+    metropolia('Saturn', 'W36S13'),
     metropolia('Venus', 'W34S12'),
     metropolia('Jupiter', 'W39S13'),
     common()
@@ -39,6 +40,7 @@ var spawns = {
     metropolia('Venus', 'W34S12'),
     colony('Titan', 'W35S12', 'W34S12'),
     colony('Oberon', 'W35S13', 'W34S12'),
+    metropolia('Saturn', 'W36S13'),
     metropolia('Earth', 'W37S11'),
     metropolia('Mars', 'W38S11'),
     colony('Moon', 'W36S11', 'W37S11'),
