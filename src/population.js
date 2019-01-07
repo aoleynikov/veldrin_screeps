@@ -67,7 +67,8 @@ module.exports = {
     'W37S11': 'Earth',
     'W38S11': 'Mars',
     'W34S12': 'Venus',
-    'W39S13': 'Jupiter'
+    'W39S13': 'Jupiter',
+    'W36S13': 'Saturn'
   },
   spawns: spawns
 }
