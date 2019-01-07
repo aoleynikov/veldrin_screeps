@@ -53,7 +53,10 @@ var upgraders_func = (room_name, room_id) => (count, size) => {
 }
 
 module.exports = function(room_name, room_id) {
-  var level = Game.rooms[room_id].controller.level
+  var level = 1
+  if (Game.rooms[room_id]) {
+    level = Game.rooms[room_id].controller.level
+  }
 
   nannies = nannies_func(room_name, room_id)
   upgraders = upgraders_func(room_name, room_id)
