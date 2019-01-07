@@ -60,7 +60,10 @@ var spawns = {
   'Saturn': [].concat.apply([], [
     metropolia('Saturn', 'W36S13'),
     colony('Titan', 'W35S12', 'W34S12'),
-    colony('Oberon', 'W35S13', 'W34S12')
+    colony('Oberon', 'W35S13', 'W34S12'),
+    metropolia('Venus', 'W34S12'),
+    colony('Deimos', 'W35S11', 'W37S11'),
+    common()
   ])
 }
 
