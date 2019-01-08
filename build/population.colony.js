@@ -40,6 +40,7 @@ var claimers_count = room_id => {
 };
 
 var haulers_count = (room_id, target_room_id) => {
+  if (room_id == 'W36S12') return 0;
   var room = Game.rooms[room_id];
   if (!room) return 0;
 

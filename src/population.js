@@ -20,9 +20,12 @@ var spawns = {
     colony('Moon', 'W36S11', 'W37S11'),
     colony('Deimos', 'W35S11', 'W37S11'),
     metropolia('Mars', 'W38S11'),
+    colony('Phobos', 'W39S11', 'W38S11'),
+    colony('Phoebe', 'W38S12', 'W38S11'),
     metropolia('Saturn', 'W36S13'),
     metropolia('Venus', 'W34S12'),
     metropolia('Jupiter', 'W39S13'),
+    colony('Europa', 'W39S12', 'W39S13'),
     common()
   ]),
   'Mars': [].concat.apply([], [
