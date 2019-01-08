@@ -53,14 +53,14 @@ module.exports = function() {
     }
   },
   {
-    count: 2,
+    count: 4,
     name_prefix: 'upgrader_',
     body: upgrader_body,
     memory: {
       type: 'swarm',
       role: 'upgrader',
-      work_place: 'W37S11',
-      energy_room: 'W37S11'
+      work_place: 'W36S13',
+      energy_room: 'W36S13'
     }
   }].concat(upgraders)
 }
