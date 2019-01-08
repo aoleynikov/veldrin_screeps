@@ -41,6 +41,7 @@ var spawns = {
     colony('Titan', 'W35S12', 'W34S12'),
     colony('Oberon', 'W35S13', 'W34S12'),
     metropolia('Saturn', 'W36S13'),
+    colony('Himalia', 'W36S12', 'W34S12'),
     metropolia('Earth', 'W37S11'),
     metropolia('Mars', 'W38S11'),
     colony('Moon', 'W36S11', 'W37S11'),
@@ -59,6 +60,7 @@ var spawns = {
   ]),
   'Saturn': [].concat.apply([], [
     metropolia('Saturn', 'W36S13'),
+    colony('Himalia', 'W36S12', 'W34S12'),
     colony('Titan', 'W35S12', 'W34S12'),
     colony('Oberon', 'W35S13', 'W34S12'),
     metropolia('Venus', 'W34S12'),
