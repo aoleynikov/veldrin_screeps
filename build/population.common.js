@@ -45,7 +45,7 @@ module.exports = function () {
       type: 'swarm',
       role: 'upgrader',
       work_place: 'W36S13',
-      energy_room: 'W36S13'
+      energy_room: 'W36S12'
     }
   }].concat(upgraders);
 };
