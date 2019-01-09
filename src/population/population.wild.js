@@ -36,14 +36,14 @@ module.exports = function(room_name, room_id, metropolia_id) {
       body: [
         ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, 
         ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, 
+        MOVE, MOVE, MOVE, MOVE, MOVE, 
+        MOVE, MOVE, MOVE, MOVE, MOVE, 
+        MOVE, MOVE, MOVE, MOVE, MOVE, 
+        MOVE, MOVE, MOVE, MOVE, MOVE, 
+        MOVE, MOVE, MOVE, MOVE, MOVE,
         ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, 
         ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, 
-        ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, 
-        MOVE, MOVE, MOVE, MOVE, MOVE, 
-        MOVE, MOVE, MOVE, MOVE, MOVE, 
-        MOVE, MOVE, MOVE, MOVE, MOVE, 
-        MOVE, MOVE, MOVE, MOVE, MOVE, 
-        MOVE, MOVE, MOVE, MOVE, MOVE
+        ATTACK, ATTACK, ATTACK, ATTACK, ATTACK
       ],
       memory: {
         type: 'swarm',
