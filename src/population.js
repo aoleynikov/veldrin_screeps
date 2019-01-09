@@ -45,6 +45,7 @@ var spawns = {
     colony('Titan', 'W35S12', 'W34S12'),
     colony('Oberon', 'W35S13', 'W34S12'),
     metropolia('Saturn', 'W36S13'),
+    wild('Vodka', 'W36S14', 'W36S13'),
     colony('Himalia', 'W36S12', 'W36S13'),
     metropolia('Earth', 'W37S11'),
     metropolia('Mars', 'W38S11'),
