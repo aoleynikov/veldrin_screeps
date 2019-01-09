@@ -64,6 +64,7 @@ module.exports = function (room_name, room_id) {
   nannies = nannies_func(room_name, room_id);
   upgraders = upgraders_func(room_name, room_id);
   var creeps = {
+    0: [],
     1: [nannies(1, 'small_', 1), upgraders(3, 1)],
     2: [nannies(1, 'small_', 1), nannies(2, '', 3), upgraders(6, 1)],
     3: [nannies(1, 'small_', 1), nannies(2, '', 3), upgraders(3, 3)],
