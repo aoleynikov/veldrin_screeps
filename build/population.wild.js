@@ -14,11 +14,6 @@ const HAULERS_COUNT = {
 var haulers_count = (room_id, target_room_id) => {
   var room = Game.rooms[room_id];
   if (!room) return 0;
-
-  if (room.controller.my) {
-    return 0;
-  }
-
   var distance = Game.map.findRoute(room_id, target_room_id).length;
   var sources_count = room.find(FIND_SOURCES_ACTIVE).length;
   return HAULERS_COUNT[sources_count * distance] || 1;
