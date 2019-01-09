@@ -11,6 +11,7 @@ module.exports = {
                 })
 
                 for (var spawn of spawns) {
+                    if(spawn.memory['links_to'] === undefined) continue
                     for(var link_id of spawn.memory['links_to']) {
                         if (link_id == s.id) return false
                     }
