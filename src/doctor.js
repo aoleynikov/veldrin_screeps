@@ -1,4 +1,4 @@
-var NEARLY_DEAD = 100;
+var NEARLY_DEAD = 300;
 
 module.exports = {
     check: function () {
