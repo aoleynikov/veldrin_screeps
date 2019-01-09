@@ -13,7 +13,7 @@ var metropolia = require('population.metropolia')
 var common = require('population.common')
 var wild = require('population.wild')
 
-var Earth = metropolia('Earth', 'W37S13')
+var Earth = metropolia('Earth', 'W37S11')
 var ISS = colony('ISS', 'W37S12', 'W37S11')
 var Moon = colony('Moon', 'W36S11', 'W37S11')
 var Deimos = colony('Deimos', 'W35S11', 'W37S11')
