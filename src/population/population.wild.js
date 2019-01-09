@@ -34,13 +34,16 @@ module.exports = function(room_name, room_id, metropolia_id) {
       count: 3,
       name_prefix: 'warrior' + room_postfix,
       body: [
-        TOUGH, TOUGH, TOUGH, TOUGH, ATTACK, ATTACK, ATTACK, ATTACK,
-        ATTACK, ATTACK, 
-        ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK,
-        ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK,
-        ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK,
-        MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, 
-        MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE
+        ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, 
+        ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, 
+        ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, 
+        ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, 
+        ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, 
+        MOVE, MOVE, MOVE, MOVE, MOVE, 
+        MOVE, MOVE, MOVE, MOVE, MOVE, 
+        MOVE, MOVE, MOVE, MOVE, MOVE, 
+        MOVE, MOVE, MOVE, MOVE, MOVE, 
+        MOVE, MOVE, MOVE, MOVE, MOVE
       ],
       memory: {
         type: 'swarm',
@@ -52,8 +55,8 @@ module.exports = function(room_name, room_id, metropolia_id) {
       count: 1,
       name_prefix: 'healer' + room_postfix,
       body: [
-        HEAL, HEAL, HEAL, HEAL, HEAL, 
-        MOVE, MOVE, MOVE, MOVE, MOVE
+        HEAL, HEAL, HEAL, HEAL, HEAL, HEAL, HEAL,
+        MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE
       ],
       memory: {
         type: 'swarm',
