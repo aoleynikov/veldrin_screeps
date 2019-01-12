@@ -19,13 +19,7 @@ var build = function (creep) {
 
   if (build_result == ERR_NOT_IN_RANGE) {
     creep.moveTo(site, {
-      visualizePathStyle: {
-        fill: 'transparent',
-        stroke: '#0f0',
-        lineStyle: 'dashed',
-        strokeWidth: .15,
-        opacity: .1
-      }
+      reusePath: 50
     });
   } else if (build_result == ERR_NOT_ENOUGH_ENERGY) {
     energy_behavior.refill(creep);

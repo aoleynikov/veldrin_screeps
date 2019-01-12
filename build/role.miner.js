@@ -19,7 +19,9 @@ module.exports = {
     if (!container) return;
 
     if (creep.pos.x != container.pos.x || creep.pos.y != container.pos.y) {
-      creep.moveTo(container);
+      creep.moveTo(container, {
+        reusePath: 50
+      });
       return;
     }
 

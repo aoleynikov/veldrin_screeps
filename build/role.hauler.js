@@ -26,13 +26,7 @@ module.exports = {
 
     if (result != 0) {
       creep.moveTo(storage, {
-        visualizePathStyle: {
-          fill: 'transparent',
-          stroke: '#fff',
-          lineStyle: 'solid',
-          strokeWidth: .15,
-          opacity: .1
-        }
+        reusePath: 50
       });
     }
 

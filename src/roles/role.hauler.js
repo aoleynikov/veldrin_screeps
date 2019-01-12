@@ -24,13 +24,7 @@ module.exports = {
         });
         var result = creep.transfer(storage, creep.memory['resource'])
         if (result != 0) {
-            creep.moveTo(storage, { visualizePathStyle: {
-                fill: 'transparent',
-                stroke: '#fff',
-                lineStyle: 'solid',
-                strokeWidth: .15,
-                opacity: .1
-            }});
+            creep.moveTo(storage, {reusePath: 50});
         }
         if (!creep.carry[creep.memory['resource']]) {
             energy_behavior.refill(creep);

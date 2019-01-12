@@ -9,7 +9,7 @@ module.exports = {
       spawn = spawn_in_room;
     }
     if (creep.transfer(spawn, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-      creep.moveTo(spawn);
+      creep.moveTo(spawn, {reusePath: 50});
     }
   }
 }

@@ -26,7 +26,7 @@ module.exports = {
         if(tower) {
             var result = creep.transfer(tower, RESOURCE_ENERGY)
             if (result == ERR_NOT_IN_RANGE) {
-                creep.moveTo(tower)
+                creep.moveTo(tower, {reusePath: 20})
             }
             else if (result == ERR_NOT_ENOUGH_ENERGY) {
                 energy_behavior.refill(creep)

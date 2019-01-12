@@ -85,7 +85,9 @@ module.exports = {
     }
 
     if (work_result == ERR_NOT_IN_RANGE) {
-      creep.moveTo(provider);
+      creep.moveTo(provider, {
+        reusePath: 20
+      });
     }
 
     return true;
