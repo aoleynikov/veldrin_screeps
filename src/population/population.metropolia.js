@@ -70,7 +70,7 @@ module.exports = function(room_name, room_id) {
     2: [
       nannies(1, 'small_', 1),
       nannies(2, '', 3),
-      upgraders(6, 1)
+      upgraders(3, 2)
     ],
     3: [
       nannies(1, 'small_', 1),
@@ -80,19 +80,19 @@ module.exports = function(room_name, room_id) {
     4: [
       nannies(1, 'small_', 1),
       nannies(2, '', 3),
-      upgraders(3, 3)
+      upgraders(2, 5)
     ],
     5: [
       nannies(1, 'small_', 1),
       nannies(2, '', 3),
       nannies(1, 'large_', 8),
-      upgraders(3, 3)
+      upgraders(1, 9)
     ],
     6: [
       nannies(1, 'small_', 1),
       nannies(2, '', 3),
       nannies(1, 'large_', 8),
-      upgraders(2, 5)
+      upgraders(1, 10)
     ],
     7: [
       nannies(1, 'small_', 1),
@@ -105,7 +105,7 @@ module.exports = function(room_name, room_id) {
       nannies(1, 'small_', 1),
       nannies(2, '', 3),
       nannies(1, 'large_', 8),
-      upgraders(2, 5)
+      upgraders(1, 8)
     ]
   }
 
