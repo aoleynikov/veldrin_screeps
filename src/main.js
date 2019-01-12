@@ -5,7 +5,10 @@ var population = require('population');
 
 module.exports.loop = function () {
   console.log('==========================================================')
-  Game.spawns['Main'].memory['population'] = population;
+
+  if(Game.time % 20 == 0) {
+    Game.spawns['Main'].memory['population'] = population;
+  }
   
   doctor.check();
 
