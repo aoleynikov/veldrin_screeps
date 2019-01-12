@@ -30,7 +30,7 @@ var claimers_count = room_id => {
     return 0;
   }
 
-  if (room.controller.reservation === undefined) return 1;
+  if (!room.controller.reservation) return 1;
 
   if (room.controller.reservation.username == 'Veldrin' && room.controller.reservation.ticksToEnd > 3000) {
     return 0;
@@ -105,7 +105,7 @@ module.exports = function (room_name, room_id, metropolia_id) {
   }, {
     count: claimers_count(room_id),
     name_prefix: 'claimer' + room_postfix,
-    body: [CLAIM, CLAIM, MOVE, MOVE],
+    body: [CLAIM, CLAIM, CLAIM, MOVE, MOVE, MOVE],
     memory: {
       target: room_id,
       role: 'claimer',
