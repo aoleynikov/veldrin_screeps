@@ -39,7 +39,7 @@ var spawns = {
   'Earth': [].concat.apply([], [
     Earth, ISS, Moon, Mars, Deimos, Io,
     Phobos, Phoebe, Titan, Europa, Oberon, 
-    Amalthea, Vodka, Venus, Jupiter, 
+    Amalthea, Venus, Jupiter, 
     Saturn,
     Common
   ]),
@@ -51,7 +51,7 @@ var spawns = {
   ]),
   'Venus': [].concat.apply([], [
     Venus, Titan, Oberon, Ganymede, 
-    Saturn, Vodka, Himalia, Deimos, Moon, 
+    Saturn, Himalia, Deimos, Moon, 
     Earth,
     Common
   ]),
@@ -64,7 +64,7 @@ var spawns = {
   'Saturn': [].concat.apply([], [
     Saturn, Himalia, Titan, Oberon,
     Venus, Deimos, Ganymede, Moon, 
-    Earth, Vodka,
+    Earth,
     Common
   ])
 }
