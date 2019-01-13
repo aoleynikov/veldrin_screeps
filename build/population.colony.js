@@ -105,7 +105,7 @@ module.exports = function (room_name, room_id, metropolia_id) {
   }, {
     count: claimers_count(room_id),
     name_prefix: 'claimer' + room_postfix,
-    body: [CLAIM, CLAIM, CLAIM, MOVE, MOVE, MOVE],
+    body: [CLAIM, CLAIM, MOVE, MOVE],
     memory: {
       target: room_id,
       role: 'claimer',
