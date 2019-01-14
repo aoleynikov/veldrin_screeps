@@ -15,7 +15,7 @@ var upgrader = (from, to) => {
   };
 };
 
-var upgraders = [upgrader('W38S13', 'W38S11'), upgrader('W37S13', 'W37S11'), upgrader('W38S15', 'W39S13'), upgrader('W34S13', 'W34S12'), upgrader('W33S12', 'W34S12')];
+var upgraders = [];
 
 module.exports = function () {
   return [{
