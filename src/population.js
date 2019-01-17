@@ -35,6 +35,7 @@ var Callisto = colony('Callisto', 'W39S14', 'W39S13')
 var Ganymede = colony('Ganymede', 'W34S13', 'W34S12')
 var Hyperion = colony('Hyperion', 'W33S13', 'W34S12')
 var Elara = colony('Elara', 'W37S14', 'W39S13')
+var Pasiphae = colony('Pasiphae', 'W33S12', 'W34S12')
 var Common = common()
 
 var spawns = {
@@ -54,7 +55,7 @@ var spawns = {
   'Venus': [].concat.apply([], [
     Venus, Titan, Oberon, Ganymede, 
     Saturn, Himalia, Deimos, Moon, 
-    Earth, Hyperion,
+    Earth, Hyperion, Pasiphae,
     Common
   ]),
   'Jupiter': [].concat.apply([], [
@@ -66,7 +67,7 @@ var spawns = {
   'Saturn': [].concat.apply([], [
     Saturn, Himalia, Titan, Oberon,
     Venus, Hyperion, Deimos, Ganymede, 
-    Moon, Earth,
+    Moon, Earth, Pasiphae,
     Common
   ])
 }

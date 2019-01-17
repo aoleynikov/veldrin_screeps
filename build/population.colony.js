@@ -66,7 +66,7 @@ var builders_count = () => {
     return 1;
   }
 
-  return 0;
+  return 1;
 };
 
 module.exports = function (room_name, room_id, metropolia_id) {
