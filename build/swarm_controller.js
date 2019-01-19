@@ -1,8 +1,27 @@
 // var population = require('population');
+var progress_bar = spawning => {
+  var bars = [];
+  var ratio = 1.0 * (spawning.needTime - spawinig.remainingTime) / spawning.needTime;
+  var width = 25;
+  var dark = 1.0 * width * ratio;
+  var light = width - dark;
+  var i = 0;
+
+  for (i = 0; i < dark; ++i) {
+    bars.append('X');
+  }
+
+  for (; i < width; ++i) {
+    bars.append(' ');
+  }
+
+  return ''.join(bars);
+};
+
 var controller = {
   spawnCreep: function (spawn, template) {
     if (spawn.spawning) {
-      spawn.memory['state'] = 'spawning ' + spawn.spawning.name + ' (' + spawn.spawning.remainingTime + ')';
+      spawn.memory['state'] = 'spawning ' + spawn.spawning.name + ' (' + progress_bar(spawn.spawning) + ')';
       return true;
     }
 
