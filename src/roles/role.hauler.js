@@ -17,7 +17,8 @@ module.exports = {
                     }
                 }
 
-                return (s.structureType == STRUCTURE_STORAGE && _.sum(s.store) < s.storeCapacity) ||
+                return (s.structureType == STRUCTURE_CONTAINER && s.pos.findInRange(FIND_SOURCES, 1).length == 0) ||
+                    (s.structureType == STRUCTURE_STORAGE && _.sum(s.store) < s.storeCapacity) ||
                     (creep.memory['resource'] == RESOURCE_ENERGY &&
                         s.structureType == STRUCTURE_LINK && s.energy < s.energyCapacity);
             }
