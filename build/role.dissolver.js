@@ -10,7 +10,7 @@ module.exports = {
       }
 
       if (room_travel.perform(creep)) return;
-      var building = creep.room.findClosestByRange(FIND_STRUCTURE, {
+      var building = creep.pos.findClosestByRange(FIND_STRUCTURES, {
         filter: s => {
           return s.structureType == STRUCTURE_WALL || s.owner.name != 'Veldrin';
         }

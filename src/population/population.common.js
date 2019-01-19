@@ -50,12 +50,15 @@ module.exports = function() {
     }
   },
   {
-    count: 1,
+    count: 3,
     name_prefix: 'dissolver_',
     body: [
-      WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK,
-      CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY,
-      MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE
+      WORK, WORK, WORK, WORK, WORK, WORK, 
+      WORK, WORK, WORK, WORK, WORK, WORK,
+      CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, 
+      CARRY, CARRY, CARRY, CARRY, CARRY, CARRY,
+      MOVE, MOVE, MOVE, MOVE, MOVE, MOVE,
+      MOVE, MOVE, MOVE, MOVE, MOVE, MOVE
     ],
     memory: {
       type: 'swarm',
