@@ -15,6 +15,9 @@ module.exports = {
       if (work == ERR_NOT_IN_RANGE) {
         creep.moveTo(building)
       }
+      if (creep.carry[RESOURCE_ENERGY] == creep.carryCapacity) {
+        creep.memory['refill'] = true
+      }
     }
     else {
       hauler.perform(creep)
