@@ -4,10 +4,12 @@ var room_travel = require('behavior.room_travel')
 module.exports = {
   perform: function(creep) {
     if (creep.memory['refill']) {
+      
       if (creep.room.name != creep.memory['resource_room']) {
         creep.memory['target'] = creep.memory['energy_room']
       }
       if (room_travel.perform(creep)) return
+
       var building = creep.room.findClosestByRange(FIND_STRUCTURE, { filter: (s) => {
         return s.structureType == STRUCTURE_WALL || s.owner.name != 'Veldrin'
       }})

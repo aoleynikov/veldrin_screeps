@@ -51,23 +51,17 @@ module.exports = function() {
   },
   {
     count: 1,
-    name_prefix: 'bulldozer_',
+    name_prefix: 'dissolver_',
     body: [
-      ATTACK, ATTACK, ATTACK, ATTACK, ATTACK,
-      ATTACK, ATTACK, ATTACK, ATTACK, ATTACK,
-      ATTACK, ATTACK, ATTACK, ATTACK, ATTACK,
-      ATTACK, ATTACK, ATTACK, ATTACK, ATTACK,
-      ATTACK, ATTACK, ATTACK, ATTACK, ATTACK,
-      ATTACK, ATTACK, ATTACK, ATTACK, ATTACK,
-      MOVE, MOVE, MOVE, MOVE, MOVE,
-      MOVE, MOVE, MOVE, MOVE, MOVE,
-      MOVE, MOVE, MOVE, MOVE, MOVE,
-      MOVE, MOVE, MOVE, MOVE, MOVE,
+      WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK,
+      CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY,
+      MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE
     ],
     memory: {
       type: 'swarm',
-      role: 'warrior',
-      squad: 'rm'
+      role: 'dissolver',
+      energy_room: 'W34S11',
+      work_place: 'W34S12'
     }
   },
   {
