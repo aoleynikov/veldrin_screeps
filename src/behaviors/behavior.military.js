@@ -24,8 +24,8 @@ module.exports = {
                 filter: target_filter
             })
             if (target) {
-                if (PathFinder.search(creep, target))
-                    return target
+                //if (PathFinder.search(creep, target))
+                return target
             }
         }
         return undefined
