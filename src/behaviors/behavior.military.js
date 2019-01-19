@@ -4,7 +4,9 @@ var target_filter = (t) => !t.owner || t.owner.name != 'Veldrin' &&
                            (t.structureType === undefined || 
                            t.structureType != STRUCTURE_CONTROLLER &&
                            t.structureType != STRUCTURE_KEEPER_LAIR &&
-                           t.structureType != STRUCTURE_WALL)
+                           t.structureType != STRUCTURE_WALL &&
+                           t.structureType != STRUCTURE_ROAD &&
+                           t.structureType != STRUCTURE_CONTAINER)
 
 module.exports = {
     on_guard: function (creep) {
@@ -21,7 +23,10 @@ module.exports = {
             var target = creep.pos.findClosestByRange(find, {
                 filter: target_filter
             })
-            if (target) return target
+            if (target) {
+                if (PathFinder.search(creep, target))
+                    return target
+            }
         }
         return undefined
     }
