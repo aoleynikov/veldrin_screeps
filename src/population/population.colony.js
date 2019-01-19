@@ -125,7 +125,8 @@ module.exports = function(room_name, room_id, metropolia_id) {
         role: 'builder',
         refill: true,
         type: 'swarm',
-        energy_room: room_id
+        energy_room: room_id,
+        sticky: true
       }
     },
     {
