@@ -38,6 +38,7 @@ module.exports = {
   claimers_count: room_id => {
     var room = Game.rooms[room_id];
     if (!room) return 1;
+    if (!room.controller) return 0;
 
     if (room.controller.my) {
       return 0;
