@@ -1,6 +1,6 @@
 var enemies_find = [FIND_HOSTILE_CREEPS, FIND_STRUCTURES, FIND_HOSTILE_SPAWNS, FIND_HOSTILE_CONSTRUCTION_SITES];
 
-var target_filter = t => !t.owner || t.owner.name != 'Veldrin' && (t.structureType != undefined || t.structureType != STRUCTURE_CONTROLLER && t.structureType != STRUCTURE_KEEPER_LAIR && t.structureType != STRUCTURE_WALL && t.structureType != STRUCTURE_ROAD && t.structureType != STRUCTURE_CONTAINER);
+var target_filter = t => !t.owner || t.owner.name != 'Veldrin' && t.structureType != undefined && t.structureType != STRUCTURE_CONTROLLER && t.structureType != STRUCTURE_KEEPER_LAIR && t.structureType != STRUCTURE_WALL && t.structureType != STRUCTURE_ROAD && t.structureType != STRUCTURE_CONTAINER;
 
 module.exports = {
   on_guard: function (creep) {
