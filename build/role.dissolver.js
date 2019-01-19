@@ -1,4 +1,4 @@
-var hauler = require('role.hauler');
+var upgrader = require('role.upgrader');
 
 var room_travel = require('behavior.room_travel');
 
@@ -22,10 +22,11 @@ module.exports = {
       }
 
       if (creep.carry[RESOURCE_ENERGY] == creep.carryCapacity) {
+        creep.memory['target'] = creep.memory['work_place'];
         creep.memory['refill'] = false;
       }
     } else {
-      hauler.perform(creep);
+      upgrader.perform(creep);
     }
   }
 };
