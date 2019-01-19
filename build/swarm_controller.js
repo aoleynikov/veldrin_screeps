@@ -1,5 +1,4 @@
-var population = require('population');
-
+// var population = require('population');
 var controller = {
   spawnCreep: function (spawn, template) {
     if (spawn.spawning) {
