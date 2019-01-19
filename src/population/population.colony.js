@@ -69,7 +69,7 @@ module.exports = function(room_name, room_id, metropolia_id) {
     {
       count: warriors_count(room_id),
       name_prefix: 'warrior' + room_postfix,
-      body: [TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, ATTACK, ATTACK,
+      body: [TOUGH, TOUGH, TOUGH, TOUGH, TOUGH, ATTACK, ATTACK, ATTACK, ATTACK,
              ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK,
              MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, 
              MOVE, MOVE, MOVE, MOVE, MOVE],
@@ -96,7 +96,7 @@ module.exports = function(room_name, room_id, metropolia_id) {
     {
       count: 1,
       name_prefix: 'repairer' + room_postfix,
-      body: [WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
+      body: [WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE],
       memory: {
         role: 'repairer',
         refill: true,
@@ -118,9 +118,9 @@ module.exports = function(room_name, room_id, metropolia_id) {
     {
       count: builders_count(),
       name_prefix: 'builder_from' + room_postfix,
-      body: [WORK, WORK, CARRY, CARRY, CARRY,
-             CARRY, CARRY, CARRY, CARRY, CARRY,
-             MOVE, MOVE, MOVE, MOVE, MOVE],
+      body: [WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY,
+             CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY,
+             MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
       memory: {
         role: 'builder',
         refill: true,
@@ -133,6 +133,7 @@ module.exports = function(room_name, room_id, metropolia_id) {
       name_prefix: 'hauler_from' + room_postfix,
       body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, 
              CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY,
+             CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE,
              MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
       memory: {
         role: 'hauler',

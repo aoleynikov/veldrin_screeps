@@ -3,7 +3,7 @@ var population = require('population');
 var controller = {
   spawnCreep: function (spawn, template) {
     if (spawn.spawning) {
-      spawn.memory['state'] = 'spawning';
+      spawn.memory['state'] = 'spawning (' + spawn.spawning.name + ')';
       return true;
     }
 
@@ -19,10 +19,10 @@ var controller = {
           return false;
         }
 
-        spawn.memory['state'] = 'charging';
+        spawn.memory['state'] = 'charging(' + name + ')';
         return true;
       } else if (spawnResult == 0) {
-        spawn.memory['state'] = 'spawning';
+        spawn.memory['state'] = 'spawning(' + name + ')';
         return true;
       }
     }

@@ -54,6 +54,16 @@ var upgraders_func = (room_name, room_id) => (count, size) => {
   };
 };
 
+var nannies = undefined;
+var upgraders = undefined;
+var final_upgrader = {
+  'W37S11': upgraders(1, 5),
+  'W38S11': upgraders(1, 1),
+  'W34S12': upgraders(4, 16),
+  'W39S13': upgraders(1, 16),
+  'W36S13': upgraders(2, 16)
+};
+
 module.exports = function (room_name, room_id) {
   var level = 1;
 
@@ -72,7 +82,7 @@ module.exports = function (room_name, room_id) {
     5: [nannies(1, 'small_', 1), nannies(2, '', 3), nannies(1, 'large_', 8), upgraders(1, 9)],
     6: [nannies(1, 'small_', 1), nannies(2, '', 3), nannies(1, 'large_', 8), upgraders(1, 10)],
     7: [nannies(1, 'small_', 1), nannies(2, '', 3), nannies(1, 'large_', 8), nannies(1, 'super_', 16), upgraders(1, 8)],
-    8: [nannies(1, 'small_', 1), nannies(2, '', 3), nannies(1, 'large_', 8), upgraders(1, 8)]
+    8: [nannies(1, 'small_', 1), nannies(2, '', 3), nannies(1, 'large_', 8), nannies(1, 'super_', 16), final_upgrader[room_id]]
   };
   return creeps[level].concat(colony(room_name, room_id));
 };
