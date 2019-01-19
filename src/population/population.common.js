@@ -50,6 +50,27 @@ module.exports = function() {
     }
   },
   {
+    count: 1,
+    name_prefix: 'bulldozer_',
+    body: [
+      ATTACK, ATTACK, ATTACK, ATTACK, ATTACK,
+      ATTACK, ATTACK, ATTACK, ATTACK, ATTACK,
+      ATTACK, ATTACK, ATTACK, ATTACK, ATTACK,
+      ATTACK, ATTACK, ATTACK, ATTACK, ATTACK,
+      ATTACK, ATTACK, ATTACK, ATTACK, ATTACK,
+      ATTACK, ATTACK, ATTACK, ATTACK, ATTACK,
+      MOVE, MOVE, MOVE, MOVE, MOVE,
+      MOVE, MOVE, MOVE, MOVE, MOVE,
+      MOVE, MOVE, MOVE, MOVE, MOVE,
+      MOVE, MOVE, MOVE, MOVE, MOVE,
+    ],
+    memory: {
+      type: 'swarm',
+      role: 'warrior',
+      squad: 'rm'
+    }
+  },
+  {
     count: 4,
     name_prefix: 'upgrader_',
     body: upgrader_body,
