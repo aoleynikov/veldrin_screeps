@@ -6,16 +6,8 @@ module.exports = {
   perform: function (creep) {
     var resource = creep.memory['resource'] || RESOURCE_ENERGY;
 
-    if (creep.carry[resource] == creep.carryCapacity) {
-      creep.memory["refill"] = false;
-    }
-
     if (creep.carry[resource] == 0) {
       creep.memory['refill'] = true;
-    }
-
-    if (!creep.memory["refill"]) {
-      return false;
     }
 
     tombstones = creep.room.lookForAtArea(LOOK_TOMBSTONES, creep.pos.y - 1, creep.pos.x - 1, creep.pos.y + 1, creep.pos.x + 1, true);
