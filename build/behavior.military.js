@@ -15,7 +15,7 @@ module.exports = {
     return false;
   },
   get_enemy: function (creep) {
-    var closest_from_category = enemies_find(f => {
+    var closest_from_category = enemies_find.map(f => {
       var target = creep.pos.findClosestByRange(find, {
         filter: target_filter
       });
