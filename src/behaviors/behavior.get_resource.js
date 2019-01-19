@@ -40,5 +40,8 @@ module.exports = {
 		if (room_travel.perform(creep)) return true;
 		return false;
 	},
-	refill: (creep) => creep.memory['refill'] = true
+	refill: (creep) => {
+		creep.memory['target'] = creep.memory['energy_room']
+		creep.memory['refill'] = true
+	}
 }

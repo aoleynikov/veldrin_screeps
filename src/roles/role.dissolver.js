@@ -18,7 +18,7 @@ module.exports = {
         creep.moveTo(building)
       }
       if (creep.carry[RESOURCE_ENERGY] == creep.carryCapacity) {
-        creep.memory['refill'] = true
+        creep.memory['refill'] = false
       }
     }
     else {

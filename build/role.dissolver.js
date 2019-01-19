@@ -22,7 +22,7 @@ module.exports = {
       }
 
       if (creep.carry[RESOURCE_ENERGY] == creep.carryCapacity) {
-        creep.memory['refill'] = true;
+        creep.memory['refill'] = false;
       }
     } else {
       hauler.perform(creep);
