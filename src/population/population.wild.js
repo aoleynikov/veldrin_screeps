@@ -1,7 +1,7 @@
 var rooms = require('population.room')
 
 module.exports = function(room_name, room_id, metropolia_name) {
-  var metropolia_id = rms.rooms[metropolia_name]
+  var metropolia_id = rooms.names[metropolia_name]
   var room_postfix = '_' + room_name + '_'
   return [
     {

@@ -58,6 +58,13 @@ module.exports = {
   },
   repairer_body: room_id => {
     var room = Game.rooms[room_id];
-    if (!room) return [];
+    var dflt = [WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE];
+    if (!room) return [WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE];
+    var towers = room.find(FIND_MY_STRUCTURES, {
+      filter: {
+        structureType: STRUCTURE_TOWER
+      }
+    });
+    if (towers.length == 0) return dflt;else return dflt;
   }
 };
