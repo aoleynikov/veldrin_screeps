@@ -15,17 +15,27 @@ module.exports = {
     return false;
   },
   get_enemy: function (creep) {
-    for (var find of enemies_find) {
+    var closest_from_category = enemies_find(f => {
       var target = creep.pos.findClosestByRange(find, {
         filter: target_filter
       });
+      return {
+        target: target,
+        range: creep.pos.getRangeTo(target.pos)
+      };
+    });
+    var min_dst = 100000;
+    var result = undefined;
 
-      if (target) {
-        //if (PathFinder.search(creep, target))
-        return target;
+    for (var enemy of closest_from_category) {
+      var range = creep.pos.getRangeTo(enemy.pos);
+
+      if (range < min_dst) {
+        min_dst = range;
+        result = enemy;
       }
     }
 
-    return undefined;
+    return result;
   }
 };
