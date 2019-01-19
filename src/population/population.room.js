@@ -26,7 +26,7 @@ module.exports = {
   haulers_count: (room_id, target_room_id) => {
     var room = Game.rooms[room_id]
     if (!room) return 0
-  
+    if (!room.controller) return 0
     if (room.controller.my) {
       return 0
     }
