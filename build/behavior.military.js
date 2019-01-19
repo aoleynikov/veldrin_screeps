@@ -19,6 +19,7 @@ module.exports = {
       var target = creep.pos.findClosestByRange(find, {
         filter: target_filter
       });
+      if (!target) return null;
       return {
         target: target,
         range: creep.pos.getRangeTo(target.pos)
@@ -28,6 +29,7 @@ module.exports = {
     var result = undefined;
 
     for (var enemy of closest_from_category) {
+      if (!enemy) continue;
       var range = creep.pos.getRangeTo(enemy.pos);
 
       if (range < min_dst) {
