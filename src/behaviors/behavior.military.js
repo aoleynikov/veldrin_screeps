@@ -15,18 +15,12 @@ module.exports = {
         return false;
     },
     get_enemy: function(creep) {
-        var target = undefined;
         for (var find of enemies_find) {
-            var enemies = creep.room.find(find, {
+            var target = creep.pos.findClosestByRange(find, {
                 filter: target_filter
-            });
-            if (enemies.length > 0) {
-                target = creep.pos.findClosestByRange(find, {
-                    filter: target_filter
-                });
-                break;
-            }
-        }   
-        return target
+            })
+            if (target) return target
+        }
+        return undefined
     }
-}
+}   
