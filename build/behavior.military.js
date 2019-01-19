@@ -30,11 +30,10 @@ module.exports = {
 
     for (var enemy of closest_from_category) {
       if (!enemy) continue;
-      var range = creep.pos.getRangeTo(enemy.pos);
 
-      if (range < min_dst) {
-        min_dst = range;
-        result = enemy;
+      if (enemy.range < min_dst) {
+        min_dst = enemy.range;
+        result = enemy.target;
       }
     }
 
