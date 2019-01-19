@@ -19,10 +19,10 @@ var controller = {
           return false;
         }
 
-        spawn.memory['state'] = 'charging(' + name + ')';
+        spawn.memory['state'] = 'charging (' + name + ')';
         return true;
       } else if (spawnResult == 0) {
-        spawn.memory['state'] = 'spawning(' + name + ')';
+        spawn.memory['state'] = 'spawning (' + name + ')';
         return true;
       }
     }

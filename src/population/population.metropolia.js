@@ -52,25 +52,22 @@ var upgraders_func = (room_name, room_id) => (count, size) => {
   }
 }
 
-var nannies = undefined
-var upgraders = undefined
-
-// var final_upgrader = {
-//   'W37S11': upgraders(1, 5),
-//   'W38S11': upgraders(1, 1),
-//   'W34S12': upgraders(4, 16),
-//   'W39S13': upgraders(1, 16),
-//   'W36S13': upgraders(2, 16)
-// }
-
 module.exports = function(room_name, room_id) {
   var level = 1
   if (Game.rooms[room_id]) {
     level = Game.rooms[room_id].controller.level
   }
 
-  nannies = nannies_func(room_name, room_id)
-  upgraders = upgraders_func(room_name, room_id)
+  var nannies = nannies_func(room_name, room_id)
+  var upgraders = upgraders_func(room_name, room_id)
+
+  var final_upgraders = {
+    'W37S11': upgraders(1, 5),
+    'W38S11': upgraders(1, 1),
+    'W34S12': upgraders(4, 16),
+    'W39S13': upgraders(1, 16),
+    'W36S13': upgraders(2, 16)
+  }
 
   var creeps = {
     0: [],
@@ -117,7 +114,7 @@ module.exports = function(room_name, room_id) {
       nannies(2, '', 3),
       nannies(1, 'large_', 8),
       nannies(1, 'super_', 16),
-      // final_upgrader[room_id]
+      final_upgraders[room_id]
     ]
   }
 
