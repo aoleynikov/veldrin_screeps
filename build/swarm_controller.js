@@ -1,21 +1,21 @@
 // var population = require('population');
 var progress_bar = spawning => {
   var bars = [];
-  var ratio = 1.0 * (spawning.needTime - spawinig.remainingTime) / spawning.needTime;
+  var ratio = 1.0 * (spawning.needTime - spawning.remainingTime) / spawning.needTime;
   var width = 25;
   var dark = 1.0 * width * ratio;
   var light = width - dark;
   var i = 0;
 
   for (i = 0; i < dark; ++i) {
-    bars.append('X');
+    bars.push('X');
   }
 
   for (; i < width; ++i) {
-    bars.append(' ');
+    bars.push(' ');
   }
 
-  return ''.join(bars);
+  return bars.join('');
 };
 
 var controller = {
