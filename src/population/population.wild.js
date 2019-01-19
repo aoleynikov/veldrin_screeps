@@ -1,33 +1,7 @@
-const HAULERS_COUNT = {
-  1: 1,
-  2: 3,
-  3: 3,
-  4: 5,
-  5: 5,
-  6: 7,
-  7: 7,
-  8: 7,
-  9: 10,
-  10: 10
-}
+var rooms = require('population.room')
 
-var haulers_count = (room_id, target_room_id) => {
-  var room = Game.rooms[room_id]
-  if (!room) return 0
-
-  var distance = Game.map.findRoute(room_id, target_room_id).length
-  var sources_count = room.find(FIND_SOURCES_ACTIVE).length
-  return HAULERS_COUNT[sources_count * distance] || 1
-}
-
-var builders_count = () => {
-  for (var id in Game.constructionSites) {
-    return 1
-  }
-  return 0
-}
-
-module.exports = function(room_name, room_id, metropolia_id) {
+module.exports = function(room_name, room_id, metropolia_name) {
+  var metropolia_id = rms.rooms[metropolia_name]
   var room_postfix = '_' + room_name + '_'
   return [
     {
@@ -52,7 +26,7 @@ module.exports = function(room_name, room_id, metropolia_id) {
       }
     },
     {
-      count: 2,
+      count: 3,
       name_prefix: 'healer' + room_postfix,
       body: [
         HEAL, HEAL, HEAL, HEAL, HEAL, HEAL, HEAL,
@@ -65,7 +39,7 @@ module.exports = function(room_name, room_id, metropolia_id) {
       }
     },
     {
-      count: 3,
+      count: rooms.miners_count(room_id),
       name_prefix: 'miner' + room_postfix,
       body: [WORK, WORK, WORK, WORK, WORK, WORK, WORK, 
              WORK, WORK, WORK, WORK, WORK, WORK, WORK,
@@ -95,7 +69,7 @@ module.exports = function(room_name, room_id, metropolia_id) {
       }
     },
     {
-      count: builders_count(),
+      count: rooms.builders_count(room_id),
       name_prefix: 'builder_from' + room_postfix,
       body: [WORK, WORK, WORK, CARRY, CARRY,
              CARRY, CARRY, CARRY, CARRY, CARRY,
@@ -110,7 +84,7 @@ module.exports = function(room_name, room_id, metropolia_id) {
       }
     },
     {
-      count: haulers_count(room_id, metropolia_id),
+      count: rooms.haulers_count(room_id, metropolia_id),
       name_prefix: 'hauler_from' + room_postfix,
       body: [
         CARRY, CARRY, CARRY, CARRY, CARRY, 
