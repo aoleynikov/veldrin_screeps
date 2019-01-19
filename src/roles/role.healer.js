@@ -1,4 +1,4 @@
-var military = 
+var military = require('behavior.military')
 
 module.exports = {
     perform: function (creep) {

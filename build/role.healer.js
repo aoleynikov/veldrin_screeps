@@ -1,4 +1,6 @@
-var military = module.exports = {
+var military = require('behavior.military');
+
+module.exports = {
   perform: function (creep) {
     if (military.on_guard(creep)) return;
     var patient = creep.pos.findClosestByRange(FIND_MY_CREEPS, {
