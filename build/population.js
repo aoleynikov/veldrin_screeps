@@ -40,11 +40,11 @@ var Elara = colony('Elara', 'W37S14', 'Jupiter');
 var Pasiphae = colony('Pasiphae', 'W33S12', 'Venus');
 var Common = common();
 var spawns = {
-  'W37S11': [].concat.apply([], [Earth, ISS, Moon, Mars, Deimos, Io, Phobos, Phoebe, Titan, Europa, Oberon, Amalthea, Venus, Jupiter, Hyperion, Saturn, Elara, Common]),
-  'W38S11': [].concat.apply([], [Mars, Phobos, Phoebe, Amalthea, Earth, Europa, Jupiter, Enceladus, Io, Callisto, Elara, Common]),
-  'W34S12': [].concat.apply([], [Venus, Titan, Oberon, Ganymede, Saturn, Himalia, Deimos, Moon, Earth, Hyperion, Pasiphae, Common]),
+  'W37S11': [].concat.apply([], [Earth, ISS, Moon, Mars, Deimos, Io, Vodka, Phobos, Phoebe, Titan, Europa, Oberon, Amalthea, Venus, Jupiter, Hyperion, Saturn, Elara, Common]),
+  'W38S11': [].concat.apply([], [Mars, Phobos, Phoebe, Amalthea, Earth, Vodka, Europa, Jupiter, Enceladus, Io, Callisto, Elara, Common]),
+  'W34S12': [].concat.apply([], [Venus, Titan, Oberon, Ganymede, Saturn, Himalia, Vodka, Deimos, Moon, Earth, Hyperion, Pasiphae, Common]),
   'W39S13': [].concat.apply([], [Jupiter, Callisto, Europa, Enceladus, Amalthea, Io, Phoebe, Mars, Earth, ISS, Elara, Common]),
-  'W36S13': [].concat.apply([], [Saturn, Himalia, Titan, Oberon, Venus, Hyperion, Deimos, Ganymede, Moon, Earth, Pasiphae, Common])
+  'W36S13': [].concat.apply([], [Saturn, Himalia, Titan, Vodka, Oberon, Venus, Hyperion, Deimos, Ganymede, Moon, Earth, Pasiphae, Common])
 };
 module.exports = {
   spawns: spawns

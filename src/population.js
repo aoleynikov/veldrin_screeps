@@ -40,7 +40,7 @@ var Common = common()
 
 var spawns = {
   'W37S11': [].concat.apply([], [
-    Earth, ISS, Moon, Mars, Deimos, Io,
+    Earth, ISS, Moon, Mars, Deimos, Io, Vodka,
     Phobos, Phoebe, Titan, Europa, Oberon, 
     Amalthea, Venus, Jupiter, Hyperion,
     Saturn, Elara,
@@ -48,13 +48,13 @@ var spawns = {
   ]),
   'W38S11': [].concat.apply([], [
     Mars, Phobos, Phoebe, Amalthea,
-    Earth, Europa, Jupiter, Enceladus, 
+    Earth, Vodka, Europa, Jupiter, Enceladus, 
     Io, Callisto, Elara,
     Common
   ]),
   'W34S12': [].concat.apply([], [
     Venus, Titan, Oberon, Ganymede, 
-    Saturn, Himalia, Deimos, Moon, 
+    Saturn, Himalia, Vodka, Deimos, Moon, 
     Earth, Hyperion, Pasiphae,
     Common
   ]),
@@ -65,7 +65,7 @@ var spawns = {
     Common
   ]),
   'W36S13': [].concat.apply([], [
-    Saturn, Himalia, Titan, Oberon,
+    Saturn, Himalia, Titan, Vodka, Oberon,
     Venus, Hyperion, Deimos, Ganymede, 
     Moon, Earth, Pasiphae,
     Common
