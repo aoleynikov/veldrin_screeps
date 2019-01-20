@@ -1,5 +1,16 @@
 var enemies_find = [FIND_HOSTILE_CREEPS]
 
+var target_filter = (t) => {
+    if (t.owner && t.owner.name == 'Veldrin') return false
+    if (t.structureType) {
+        return t.structureType != STRUCTURE_CONTROLLER &&
+            t.structureType != STRUCTURE_KEEPER_LAIR &&
+            t.structureType != STRUCTURE_WALL &&
+            t.structureType != STRUCTURE_ROAD &&
+            t.structureType != STRUCTURE_CONTAINER       
+    }
+}
+
 module.exports = {
     on_guard: function (creep) {
         var squad = creep.memory['squad'];
