@@ -70,9 +70,9 @@ module.exports = function (room_name, room_id, metropolia_name) {
   //   }
   // },
   {
-    count: 1,
+    count: 3,
     name_prefix: 'builder_from' + room_postfix,
-    body: [WORK, CARRY, MOVE],
+    body: [WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE],
     memory: {
       role: 'builder',
       refill: true,
