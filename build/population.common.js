@@ -38,7 +38,7 @@ module.exports = function () {
       target: 'W39S14'
     }
   }, {
-    count: 3,
+    count: 0,
     name_prefix: 'dissolver_',
     body: [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {

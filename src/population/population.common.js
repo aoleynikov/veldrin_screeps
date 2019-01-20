@@ -50,7 +50,7 @@ module.exports = function() {
     }
   },
   {
-    count: 3,
+    count: 0,
     name_prefix: 'dissolver_',
     body: [
       WORK, WORK, WORK, WORK, WORK, WORK, 
