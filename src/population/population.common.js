@@ -28,5 +28,16 @@ var upgraders = [
 ]
 
 module.exports = function() {
-  return [].concat(upgraders)
+  return [
+    {
+      count: 5,
+      name_prefix: 'sniper_',
+      body: [RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE],
+      memory: {
+        role: 'sniper',
+        type: 'swarm',
+        squad: 'FacelessVoid'
+      }
+    }
+  ].concat(upgraders)
 }

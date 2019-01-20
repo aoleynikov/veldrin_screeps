@@ -18,6 +18,7 @@ var Bristleback = colony('Bristleback', 'W55N2', 'Abaddon')
 var Clockwerk = colony('Clockwerk', 'W56N3', 'Abaddon')
 var DragonKnight = colony('DragonKnight', 'W57N3', 'Abaddon')
 var Enigma = colony('Enigma', 'W55N3', 'Abaddon')
+var FacelessVoid = colony('Faceless', 'W54N2', 'Abaddon')
 
 var Common = common()
 
@@ -28,6 +29,7 @@ var spawns = {
     Clockwerk, 
     DragonKnight, 
     Enigma,
+    FacelessVoid,
     Common
   ])
 }
