@@ -18,5 +18,16 @@ var upgrader = (from, to) => {
 var upgraders = [];
 
 module.exports = function () {
-  return [].concat(upgraders);
+  return [{
+    count: 9,
+    name_prefix: 'builder_',
+    body: [WORK, CARRY, MOVE, CARRY, MOVE],
+    memory: {
+      role: 'builder',
+      refill: true,
+      type: 'swarm',
+      energy_room: 'W55N2',
+      sticky: true
+    }
+  }].concat(upgraders);
 };
