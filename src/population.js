@@ -13,7 +13,7 @@ var metropolia = require('population.metropolia')
 var common = require('population.common')
 var wild = require('population.wild')
 
-var Earth = metropolia('Earth', 'W37S11')
+var Earth = metropolia('Earth', 'W58N8')
 var Common = common()
 
 var spawns = {
