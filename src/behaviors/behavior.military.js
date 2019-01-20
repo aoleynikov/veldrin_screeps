@@ -15,11 +15,7 @@ module.exports = {
     on_guard: function (creep) {
         var squad = creep.memory['squad'];
         var flag = Game.flags[squad] || Game.flags['Rax'];
-        if (!flag.room || flag.room.name != creep.room.name) {
-            creep.moveTo(flag);
-            return true;
-        }
-        return false;
+        creep.moveTo(flag);
     },
     get_enemy: function(creep) {
         var closest_from_category = enemies_find.map((f) => {
