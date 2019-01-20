@@ -30,7 +30,7 @@ var upgraders = [
 module.exports = function() {
   return [
     {
-      count: 9,
+      count: 5,
       name_prefix: 'builder_',
       body: [WORK, CARRY, MOVE, CARRY, MOVE],
       memory: {
@@ -38,6 +38,18 @@ module.exports = function() {
         refill: true,
         type: 'swarm',
         energy_room: 'W55N2',
+        sticky: true
+      }
+    },
+    {
+      count: 10,
+      name_prefix: 'builder_',
+      body: [WORK, CARRY, MOVE, CARRY, MOVE],
+      memory: {
+        role: 'builder',
+        refill: true,
+        type: 'swarm',
+        energy_room: 'W56N3',
         sticky: true
       }
     },
