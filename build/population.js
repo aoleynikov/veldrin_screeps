@@ -18,9 +18,10 @@ var wild = require('population.wild');
 var Abaddon = metropolia('Abaddon', 'W56N2');
 var Bristleback = metropolia('Bristleback', 'W55N2', 'Abaddon');
 var Clockwerk = metropolia('Clockwerk', 'W56N3', 'Abaddon');
+var DragonKnight = metropolia('DragonKnight', 'W57N3', 'Abaddon');
 var Common = common();
 var spawns = {
-  'W56N2': [].concat.apply([], [Abaddon, Bristleback, Clockwerk, Common])
+  'W56N2': [].concat.apply([], [Abaddon, Bristleback, Clockwerk, DragonKnight, Common])
 };
 module.exports = {
   spawns: spawns
