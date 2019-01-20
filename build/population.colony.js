@@ -70,7 +70,7 @@ module.exports = function (room_name, room_id, metropolia_name) {
   //   }
   // },
   {
-    count: rooms.builders_count(),
+    count: 1,
     name_prefix: 'builder_from' + room_postfix,
     body: [WORK, CARRY, MOVE],
     memory: {

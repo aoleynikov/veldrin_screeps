@@ -11,17 +11,7 @@ const HAULERS_COUNT = {
 
 module.exports = {
   names: {
-    'Earth': 'W37S11',
-    'Mars': 'W38S11',
-    'Venus': 'W34S12',
-    'Jupiter': 'W39S13',
-    'Saturn': 'W36S13'
-  },
-  builders_count: () => {
-    for (var id in Game.constructionSites) {
-      return 1
-    }
-    return 1
+    'Abaddon': 'W56N2'
   },
   haulers_count: (room_id, target_room_id) => {
     var room = Game.rooms[room_id]
