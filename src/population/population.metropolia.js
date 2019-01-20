@@ -2,6 +2,9 @@ var colony = require('population.colony')
 
 var nannies_func = (room_name, room_id) => (count, prefix, size) => {
   var body = [WORK, CARRY, MOVE]
+  if (count > 8) {
+    body = body.concat([WORK, MOVE])
+  }
   size--
 
   for(var i = 0; i < size; ++i) {
@@ -26,9 +29,6 @@ var nannies_func = (room_name, room_id) => (count, prefix, size) => {
 
 var upgraders_func = (room_name, room_id) => (count, size) => {
   var body = [WORK, CARRY, MOVE]
-  if (count > 8) {
-    body = body.concat([WORK, WORK])
-  }
   size--
 
   for(var i = 0; i < size; ++i) {
