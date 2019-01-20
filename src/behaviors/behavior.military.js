@@ -8,9 +8,7 @@ module.exports = {
     },
     get_enemy: function(creep) {
         var closest_from_category = enemies_find.map((f) => {
-            var target = creep.pos.findClosestByRange(f, {
-                filter: target_filter
-            })
+            var target = creep.pos.findClosestByRange(f)
             if (!target) return null
             return {
                 target: target,
