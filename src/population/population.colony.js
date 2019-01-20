@@ -40,7 +40,7 @@ module.exports = function(room_name, room_id, metropolia_name) {
       }
     },
     {
-      count: rooms.miners_count(room_id),
+      count: 0,//rooms.miners_count(room_id),
       name_prefix: 'miner' + room_postfix,
       body: [WORK, WORK, WORK, WORK, 
              WORK, MOVE],
