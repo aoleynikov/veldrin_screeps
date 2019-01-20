@@ -62,11 +62,7 @@ module.exports = function(room_name, room_id) {
   var upgraders = upgraders_func(room_name, room_id)
 
   var final_upgraders = {
-    'W37S11': upgraders(1, 5),
-    'W38S11': upgraders(1, 1),
-    'W34S12': upgraders(4, 16),
-    'W39S13': upgraders(1, 16),
-    'W36S13': upgraders(2, 16)
+    
   }
 
   var creeps = {
