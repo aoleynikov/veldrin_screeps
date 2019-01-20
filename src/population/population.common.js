@@ -38,6 +38,16 @@ module.exports = function() {
         type: 'swarm',
         squad: 'FacelessVoid'
       }
+    },
+    {
+      count: 5,
+      name_prefix: 'warrior_',
+      body: [RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE],
+      memory: {
+        role: 'sniper',
+        type: 'swarm',
+        squad: 'rm'
+      }
     }
   ].concat(upgraders)
 }
