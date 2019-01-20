@@ -1,15 +1,4 @@
-var enemies_find = [FIND_HOSTILE_CREEPS, FIND_STRUCTURES, FIND_HOSTILE_SPAWNS, FIND_HOSTILE_CONSTRUCTION_SITES]
-
-var target_filter = (t) => {
-    if (t.owner && t.owner.name == 'Veldrin') return false
-    if (t.structureType) {
-        return t.structureType != STRUCTURE_CONTROLLER &&
-            t.structureType != STRUCTURE_KEEPER_LAIR &&
-            t.structureType != STRUCTURE_WALL &&
-            t.structureType != STRUCTURE_ROAD &&
-            t.structureType != STRUCTURE_CONTAINER       
-    }
-}
+var enemies_find = [FIND_HOSTILE_CREEPS]
 
 module.exports = {
     on_guard: function (creep) {
