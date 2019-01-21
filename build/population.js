@@ -17,13 +17,15 @@ var wild = require('population.wild');
 
 var Abaddon = metropolia('Abaddon', 'W56N2');
 var Bristleback = colony('Bristleback', 'W55N2', 'Abaddon');
-var Clockwerk = colony('Clockwerk', 'W56N3', 'Abaddon');
-var DragonKnight = colony('DragonKnight', 'W57N3', 'Abaddon');
+var Clockwerk = colony('Clockwerk', 'W56N3', 'DragonKnight');
+var DragonKnight = metropolia('DragonKnight', 'W57N3');
 var Enigma = colony('Enigma', 'W55N3', 'Abaddon');
 var FacelessVoid = colony('FacelessVoid', 'W54N2', 'Abaddon');
+var Gyrocopter = colony('Gyrocopter', 'W57N2', 'DragonKnight');
 var Common = common();
 var spawns = {
-  'W56N2': [].concat.apply([], [Abaddon, Bristleback, Clockwerk, DragonKnight, Enigma, FacelessVoid, Common])
+  'W56N2': [].concat.apply([], [Abaddon, Bristleback, Clockwerk, DragonKnight, Enigma, FacelessVoid, Common]),
+  'W57N3': [].concat.apply([], [DragonKnight, Abaddon, Bristleback, Clockwerk, DragonKnight, Enigma, FacelessVoid, Common])
 };
 module.exports = {
   spawns: spawns
