@@ -30,7 +30,12 @@ var work = function (creep) {
   var busy = build(creep);
 
   if (!busy) {
-    creep.memory['target'] = Game.spawns['Main'].room.name;
+    if (creep.memory['fallback_room']) {
+      creep.memory['target'] = creep.memory['fallback_room'];
+    } else {
+      creep.memory['target'] = Game.spawns['Main'].room.name;
+    }
+
     upgrader_role.perform(creep);
   }
 };

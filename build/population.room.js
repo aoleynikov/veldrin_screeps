@@ -47,6 +47,11 @@ module.exports = {
     if (!room) return 1;
     return Game.rooms[room_id].find(FIND_SOURCES).length;
   },
+  builders_count: room_id => {
+    var room = Game.rooms[room_id];
+    if (room && room.controller && room.controller.my) return 0;
+    return 3;
+  },
   repairer_body: room_id => {
     var room = Game.rooms[room_id];
     var dflt = [WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE];

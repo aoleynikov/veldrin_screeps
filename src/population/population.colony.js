@@ -15,7 +15,18 @@ var healers_count = (room_id) => {
   return damaged.length == 0 ? 0 : 1
 }
 
+var ensure_containers_in_place = (room_id) => {
+  var room = Game.rooms[room_id]
+  if (!room) return
+
+  var sources = room.find(FIND_SOURCES)
+  sources.forEach(source => {
+    //var look = source.pos.findInRange
+  })
+}
+
 module.exports = function(room_name, room_id, metropolia_name) {
+  //ensure_containers_in_place(room_id)
   var metropolia_id = rooms.names[metropolia_name]
   var room_postfix = '_' + room_name + '_'
   return [
@@ -75,7 +86,7 @@ module.exports = function(room_name, room_id, metropolia_name) {
     //   }
     // },
     {
-      count: 3,
+      count: rooms.builders_count(room_id),
       name_prefix: 'builder_from' + room_postfix,
       body: [WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE],
       memory: {
@@ -83,7 +94,8 @@ module.exports = function(room_name, room_id, metropolia_name) {
         refill: true,
         type: 'swarm',
         energy_room: room_id,
-        sticky: true
+        sticky: true,
+        fallback_room: metropolia_id
       }
     },
     // {

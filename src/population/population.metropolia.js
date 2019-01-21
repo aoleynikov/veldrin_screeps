@@ -44,7 +44,7 @@ var upgraders_func = (room_name, room_id) => (count, size) => {
 
   return {
     count: count,
-    name_prefix: 'upgrader_' + room_name + '_',
+    name_prefix: 'relic_' + room_name + '_',
     body: body,
     memory: {
       role: 'upgrader',
@@ -72,48 +72,48 @@ module.exports = function(room_name, room_id) {
     0: [],
     1: [
       nannies(1, 'small_', 1),
-      upgraders(3, 1)
+      upgraders(1, 1)
     ],
     2: [
       nannies(1, 'small_', 1),
       nannies(3, '', 3),
-      upgraders(3, 1)
+      upgraders(1, 1)
     ],
     3: [
       nannies(1, 'small_', 1),
       nannies(2, '', 3),
-      upgraders(3, 3)
+      upgraders(1, 1)
     ],
     4: [
       nannies(1, 'small_', 1),
       nannies(2, '', 3),
-      upgraders(2, 5)
+      upgraders(1, 1)
     ],
     5: [
       nannies(1, 'small_', 1),
       nannies(2, '', 3),
       nannies(1, 'large_', 8),
-      upgraders(1, 9)
+      upgraders(1, 1)
     ],
     6: [
       nannies(1, 'small_', 1),
       nannies(2, '', 3),
       nannies(1, 'large_', 8),
-      upgraders(1, 10)
+      upgraders(1, 1)
     ],
     7: [
       nannies(1, 'small_', 1),
       nannies(2, '', 3),
       nannies(1, 'large_', 8),
       nannies(1, 'super_', 16),
-      upgraders(1, 8)
+      upgraders(1, 1)
     ],
     8: [
       nannies(1, 'small_', 1),
       nannies(2, '', 3),
       nannies(1, 'large_', 8),
       nannies(1, 'super_', 16),
-      final_upgraders[room_id]
+      upgraders(1, 1)
     ]
   }
 
