@@ -31,6 +31,7 @@ var spawns = {
     Abaddon, 
     Bristleback, 
     Clockwerk, 
+    Io,
     DragonKnight, 
     Enigma,
     FacelessVoid,
@@ -47,6 +48,7 @@ var spawns = {
     FacelessVoid,
     Gyrocopter,
     Juggernaut,
+    Io,
     Common
   ])
 }
