@@ -36,7 +36,6 @@ var spawns = {
     FacelessVoid,
     Gyrocopter,
     Juggernaut,
-    Io,
     Common
   ]),
   'W57N3': [].concat.apply([], [
@@ -48,7 +47,6 @@ var spawns = {
     FacelessVoid,
     Gyrocopter,
     Juggernaut,
-    Io,
     Common
   ])
 }
