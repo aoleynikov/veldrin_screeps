@@ -20,6 +20,7 @@ var DragonKnight = metropolia('DragonKnight', 'W57N3')
 var Enigma = colony('Enigma', 'W55N3', 'Abaddon')
 var FacelessVoid = colony('FacelessVoid', 'W54N2', 'Abaddon')
 var Gyrocopter = colony('Gyrocopter', 'W57N2', 'DragonKnight')
+var Juggernaut = colony('Juggernaut', 'W58N2', 'DragonKnight')
 
 var Common = common()
 
@@ -32,11 +33,13 @@ var spawns = {
     Enigma,
     FacelessVoid,
     Gyrocopter,
+    Juggernaut,
     Common
   ]),
   'W57N3': [].concat.apply([], [
     DragonKnight,
     Gyrocopter,
+    Juggernaut,
     Clockwerk,
     Abaddon, 
     Bristleback, 

@@ -80,5 +80,5 @@ module.exports = function (room_name, room_id) {
     7: [nannies(1, 'small_', 1), nannies(2, '', 3), nannies(1, 'large_', 8), nannies(1, 'super_', 16), upgraders(1, 1)],
     8: [nannies(1, 'small_', 1), nannies(2, '', 3), nannies(1, 'large_', 8), nannies(1, 'super_', 16), upgraders(1, 1)]
   };
-  return creeps[level].concat(colony(room_name, room_id));
+  return creeps[level].concat(colony(room_name, room_id, room_name));
 };

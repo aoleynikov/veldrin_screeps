@@ -22,10 +22,11 @@ var DragonKnight = metropolia('DragonKnight', 'W57N3');
 var Enigma = colony('Enigma', 'W55N3', 'Abaddon');
 var FacelessVoid = colony('FacelessVoid', 'W54N2', 'Abaddon');
 var Gyrocopter = colony('Gyrocopter', 'W57N2', 'DragonKnight');
+var Juggernaut = colony('Juggernaut', 'W58N2', 'DragonKnight');
 var Common = common();
 var spawns = {
-  'W56N2': [].concat.apply([], [Abaddon, Bristleback, Clockwerk, DragonKnight, Enigma, FacelessVoid, Gyrocopter, Common]),
-  'W57N3': [].concat.apply([], [DragonKnight, Gyrocopter, Clockwerk, Abaddon, Bristleback, DragonKnight, Enigma, FacelessVoid, Common])
+  'W56N2': [].concat.apply([], [Abaddon, Bristleback, Clockwerk, DragonKnight, Enigma, FacelessVoid, Gyrocopter, Juggernaut, Common]),
+  'W57N3': [].concat.apply([], [DragonKnight, Gyrocopter, Juggernaut, Clockwerk, Abaddon, Bristleback, DragonKnight, Enigma, FacelessVoid, Common])
 };
 module.exports = {
   spawns: spawns

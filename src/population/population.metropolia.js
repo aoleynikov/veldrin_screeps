@@ -117,5 +117,5 @@ module.exports = function(room_name, room_id) {
     ]
   }
 
-  return creeps[level].concat(colony(room_name, room_id));
+  return creeps[level].concat(colony(room_name, room_id, room_name));
 }
