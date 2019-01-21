@@ -45,7 +45,7 @@ module.exports = {
   },
   builders_count: (room_id) => {
     var room = Game.rooms[room_id]
-    if (room && room.controller && room.controller.my) return 0
+    if (room && room.controller && room.controller.my) return 1
     return 3
   },
   repairer_body: (room_id) => {
