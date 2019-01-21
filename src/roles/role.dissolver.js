@@ -5,7 +5,7 @@ module.exports = {
   perform: function(creep) {
     if (creep.memory['refill']) {
       if (creep.room.name != creep.memory['resource_room']) {
-        creep.memory['target'] = creep.memory['energy_room']
+        creep.memory['target'] = creep.memory['resource_room']
       }
       if (room_travel.perform(creep)) return
 

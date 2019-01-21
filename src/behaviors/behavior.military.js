@@ -1,4 +1,4 @@
-var enemies_find = [FIND_HOSTILE_CREEPS]
+var enemies_find = [FIND_HOSTILE_CREEPS, FIND_HOSTILE_STRUCTURES]
 
 var target_filter = (t) => {
     if (t.owner && t.owner.name == 'Veldrin') return false
