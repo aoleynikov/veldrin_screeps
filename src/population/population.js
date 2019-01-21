@@ -18,7 +18,7 @@ var Bristleback = colony('Bristleback', 'W55N2', 'Abaddon')
 var Clockwerk = colony('Clockwerk', 'W56N3', 'DragonKnight')
 var DragonKnight = metropolia('DragonKnight', 'W57N3')
 var Enigma = colony('Enigma', 'W55N3', 'Abaddon')
-var FacelessVoid = colony('FacelessVoid', 'W54N2', 'Abaddon')
+var FacelessVoid = metropolia('FacelessVoid', 'W54N2')
 var Gyrocopter = colony('Gyrocopter', 'W57N2', 'DragonKnight')
 var Io = metropolia('Io', 'W52N4')
 var Juggernaut = colony('Juggernaut', 'W58N2', 'DragonKnight')
@@ -39,6 +39,17 @@ var spawns = {
     Common
   ]),
   'W57N3': [].concat.apply([], [
+    Abaddon, 
+    Bristleback, 
+    Clockwerk, 
+    DragonKnight, 
+    Enigma,
+    FacelessVoid,
+    Gyrocopter,
+    Juggernaut,
+    Common
+  ]),
+  'W54N2': [].concat.apply([], [
     Abaddon, 
     Bristleback, 
     Clockwerk, 
