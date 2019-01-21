@@ -31,13 +31,15 @@ var spawns = {
     DragonKnight, 
     Enigma,
     FacelessVoid,
+    Gyrocopter,
     Common
   ]),
   'W57N3': [].concat.apply([], [
     DragonKnight,
+    Gyrocopter,
+    Clockwerk,
     Abaddon, 
     Bristleback, 
-    Clockwerk, 
     DragonKnight, 
     Enigma,
     FacelessVoid,
