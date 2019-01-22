@@ -39,23 +39,23 @@ var spawns = {
     Common
   ]),
   'W57N3': [].concat.apply([], [
-    Abaddon, 
-    Bristleback, 
-    Clockwerk, 
     DragonKnight, 
-    Enigma,
-    FacelessVoid,
+    Clockwerk,
     Gyrocopter,
     Juggernaut,
+    Abaddon, 
+    Bristleback, 
+    Enigma,
+    FacelessVoid,
     Common
   ]),
   'W54N2': [].concat.apply([], [
+    FacelessVoid,
+    Bristleback,
+    Enigma,
     Abaddon, 
-    Bristleback, 
     Clockwerk, 
     DragonKnight, 
-    Enigma,
-    FacelessVoid,
     Gyrocopter,
     Juggernaut,
     Common

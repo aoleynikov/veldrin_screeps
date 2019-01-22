@@ -27,8 +27,8 @@ var Juggernaut = colony('Juggernaut', 'W58N2', 'DragonKnight');
 var Common = common();
 var spawns = {
   'W56N2': [].concat.apply([], [Abaddon, Bristleback, Clockwerk, DragonKnight, Enigma, FacelessVoid, Gyrocopter, Juggernaut, Common]),
-  'W57N3': [].concat.apply([], [Abaddon, Bristleback, Clockwerk, DragonKnight, Enigma, FacelessVoid, Gyrocopter, Juggernaut, Common]),
-  'W54N2': [].concat.apply([], [Abaddon, Bristleback, Clockwerk, DragonKnight, Enigma, FacelessVoid, Gyrocopter, Juggernaut, Common])
+  'W57N3': [].concat.apply([], [DragonKnight, Clockwerk, Gyrocopter, Juggernaut, Abaddon, Bristleback, Enigma, FacelessVoid, Common]),
+  'W54N2': [].concat.apply([], [FacelessVoid, Bristleback, Enigma, Abaddon, Clockwerk, DragonKnight, Gyrocopter, Juggernaut, Common])
 };
 module.exports = {
   spawns: spawns
