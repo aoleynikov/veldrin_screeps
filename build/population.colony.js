@@ -46,18 +46,20 @@ module.exports = function (room_name, room_id, metropolia_name) {
       role: 'healer',
       squad: room_name
     }
-  }, {
-    count: rooms.miners_count(room_id),
-    name_prefix: 'miner' + room_postfix,
-    body: [WORK, WORK, WORK, WORK, WORK, MOVE],
-    memory: {
-      role: 'miner',
-      target: room_id,
-      type: 'swarm',
-      find: FIND_SOURCES,
-      resource: RESOURCE_ENERGY
-    }
-  }, {
+  }, // {
+  //   count: rooms.miners_count(room_id),
+  //   name_prefix: 'miner' + room_postfix,
+  //   body: [WORK, WORK, WORK, WORK, 
+  //          WORK, MOVE],
+  //   memory: {
+  //     role: 'miner',
+  //     target: room_id,
+  //     type: 'swarm',
+  //     find: FIND_SOURCES,
+  //     resource: RESOURCE_ENERGY
+  //   }
+  // },
+  {
     count: 1,
     name_prefix: 'repairer' + room_postfix,
     body: rooms.repairer_body(room_id),
@@ -68,19 +70,20 @@ module.exports = function (room_name, room_id, metropolia_name) {
       work_place: room_id,
       energy_room: room_id
     }
-  }, {
-    count: rooms.claimers_count(room_id),
-    name_prefix: 'claimer' + room_postfix,
-    body: [CLAIM, MOVE],
-    memory: {
-      target: room_id,
-      role: 'claimer',
-      type: 'swarm'
-    }
-  }, {
+  }, // {
+  //   count: rooms.claimers_count(room_id),
+  //   name_prefix: 'claimer' + room_postfix,
+  //   body: [CLAIM, MOVE],
+  //   memory: {
+  //     target: room_id,
+  //     role: 'claimer',
+  //     type: 'swarm'
+  //   }
+  // },
+  {
     count: rooms.builders_count(room_id),
     name_prefix: 'builder_from' + room_postfix,
-    body: [WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE],
+    body: [WORK, CARRY, CARRY, MOVE],
     memory: {
       role: 'builder',
       refill: true,
