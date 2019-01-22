@@ -21,11 +21,20 @@ module.exports = function () {
   return [{
     count: 5,
     name_prefix: 'warrior_',
-    body: [, MOVE, MOVE],
+    body: [TOUGH, TOUGH, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: 'warrior',
       type: 'swarm',
       squad: 'rm'
+    }
+  }, {
+    count: 5,
+    name_prefix: 'destr_',
+    body: [TOUGH, TOUGH, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: 'warrior',
+      type: 'swarm',
+      squad: 'walls_destruction'
     }
   }].concat(upgraders);
 };
