@@ -19,30 +19,11 @@ var upgraders = [];
 
 module.exports = function () {
   return [{
-    count: 3,
-    name_prefix: 'dissolver_',
-    body: [WORK, WORK, CARRY, CARRY, MOVE, MOVE],
-    memory: {
-      type: 'swarm',
-      role: 'dissolver',
-      resource_room: 'W52N4',
-      rowk_place: 'W56N2'
-    }
-  }, {
-    count: 5,
-    name_prefix: 'sniper_',
-    body: [RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE],
-    memory: {
-      role: 'sniper',
-      type: 'swarm',
-      squad: 'FacelessVoid'
-    }
-  }, {
     count: 5,
     name_prefix: 'warrior_',
-    body: [RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE],
+    body: [, MOVE, MOVE],
     memory: {
-      role: 'sniper',
+      role: 'warrior',
       type: 'swarm',
       squad: 'rm'
     }

@@ -9,6 +9,7 @@ var target_filter = (t) => {
             t.structureType != STRUCTURE_ROAD &&
             t.structureType != STRUCTURE_CONTAINER       
     }
+    return true
 }
 
 module.exports = {
@@ -19,7 +20,7 @@ module.exports = {
     },
     get_enemy: function(creep) {
         var closest_from_category = enemies_find.map((f) => {
-            var target = creep.pos.findClosestByRange(f)
+            var target = creep.pos.findClosestByRange(f, {filter: target_filter})
             if (!target) return null
             return {
                 target: target,
