@@ -15,20 +15,10 @@ var common = require('population.common');
 
 var wild = require('population.wild');
 
-var Abaddon = metropolia('Abaddon', 'W56N2');
-var Bristleback = colony('Bristleback', 'W55N2', 'FacelessVoid');
-var Clockwerk = colony('Clockwerk', 'W56N3', 'DragonKnight');
-var DragonKnight = metropolia('DragonKnight', 'W57N3');
-var Enigma = colony('Enigma', 'W55N3', 'Abaddon');
-var FacelessVoid = metropolia('FacelessVoid', 'W54N2');
-var Gyrocopter = colony('Gyrocopter', 'W57N2', 'DragonKnight');
-var Io = metropolia('Io', 'W52N4');
-var Juggernaut = colony('Juggernaut', 'W58N2', 'DragonKnight');
+var Abaddon = metropolia('Main', 'W18S56');
 var Common = common();
 var spawns = {
-  'W56N2': [].concat.apply([], [Abaddon, Bristleback, Clockwerk, DragonKnight, Enigma, FacelessVoid, Gyrocopter, Juggernaut, Common]),
-  'W57N3': [].concat.apply([], [DragonKnight, Clockwerk, Gyrocopter, Juggernaut, Abaddon, Bristleback, Enigma, FacelessVoid, Common]),
-  'W54N2': [].concat.apply([], [FacelessVoid, Bristleback, Enigma, Abaddon, Clockwerk, DragonKnight, Gyrocopter, Juggernaut, Common])
+  'W18S56': [].concat.apply([], [Abaddon, Common])
 };
 module.exports = {
   spawns: spawns
