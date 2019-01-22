@@ -3,6 +3,7 @@ var room_travel = require('behavior.room_travel');
 
 
 var repair = function (creep, struct) {
+    if (!struct) creep.memory['role'] = 'builder'
     var repair_result = creep.repair(struct);
     if (repair_result == ERR_NOT_ENOUGH_ENERGY) {
         energy_behavior.refill(creep);
