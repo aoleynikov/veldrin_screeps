@@ -20,7 +20,7 @@ var Abaddon = colony('Abaddon', 'W38S26', 'Main');
 var Bristleback = colony('Bristleback', 'W37S27', 'Main');
 var Common = common();
 var spawns = {
-  'W38S27': [].concat.apply([], [Abaddon, Common])
+  'W38S27': [].concat.apply([], [Main, Abaddon, Bristleback, Common])
 };
 module.exports = {
   spawns: spawns

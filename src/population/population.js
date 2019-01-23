@@ -20,7 +20,9 @@ var Common = common()
 
 var spawns = {
   'W38S27': [].concat.apply([], [
-    Abaddon, 
+    Main,
+    Abaddon,
+    Bristleback, 
     Common
   ])
 }
