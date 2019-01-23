@@ -75,16 +75,16 @@ module.exports = function(room_name, room_id, metropolia_name) {
         energy_room: room_id
       }
     },
-    {
-      count: rooms.claimers_count(room_id),
-      name_prefix: 'claimer' + room_postfix,
-      body: [CLAIM, MOVE],
-      memory: {
-        target: room_id,
-        role: 'claimer',
-        type: 'swarm'
-      }
-    },
+    // {
+    //   count: rooms.claimers_count(room_id),
+    //   name_prefix: 'claimer' + room_postfix,
+    //   body: [CLAIM, MOVE],
+    //   memory: {
+    //     target: room_id,
+    //     role: 'claimer',
+    //     type: 'swarm'
+    //   }
+    // },
     {
       count: rooms.builders_count(room_id),
       name_prefix: 'builder_from' + room_postfix,
