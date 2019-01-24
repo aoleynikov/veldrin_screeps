@@ -18,6 +18,10 @@ var Abaddon = colony('Abaddon', 'W38S26', 'Main')
 var Bristleback = colony('Bristleback', 'W37S27', 'Main')
 var Clockwerk = colony('Clockwerk', 'W36S27', 'Main')
 var DragonKnight = metropolia('DragonKnight', 'W39S28')
+var Enigma = colony('Enigma', 'W39S27', 'Main')
+var FacelessVoid = colony('FacelessVoid', 'W38S28', 'Main')
+var Gyrocopter = colony('Gyrocopter', 'W35S27', 'Main')
+
 var Common = common()
 
 var spawns = {
@@ -26,7 +30,9 @@ var spawns = {
     Abaddon,
     Bristleback, 
     Clockwerk,
-    DragonKnight,
+    DragonKnight,,
+    Enigma,
+    FacelessVoid,
     Common
   ])
 }
