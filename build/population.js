@@ -30,7 +30,7 @@ var Kunkka = colony('Kunkka', 'W39S26', 'Main');
 var Common = common();
 var spawns = {
   'W38S27': [].concat.apply([], [Main, Abaddon, Bristleback, Clockwerk, DragonKnight, Enigma, FacelessVoid, Gyrocopter, Kunkka, Huskar, Common]),
-  'W39S28': [].concat.apply([], [DragonKnight, Enigma, FacelessVoid, Common]),
+  'W39S28': [].concat.apply([], [DragonKnight, Enigma, FacelessVoid, Enigma, FacelessVoid, Gyrocopter, Kunkka, Huskar, Common]),
   'W33S27': [].concat.apply([], [Huskar, Common])
 };
 module.exports = {

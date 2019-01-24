@@ -26,6 +26,7 @@ var store = function (creep) {
 
   if (!any_storage) {
     creep.memory['role'] = 'builder';
+    creep.memory['type'] = 'swarm';
     return;
   }
 

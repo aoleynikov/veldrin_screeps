@@ -46,6 +46,11 @@ var spawns = {
     DragonKnight,
     Enigma,
     FacelessVoid,
+    Enigma,
+    FacelessVoid,
+    Gyrocopter,
+    Kunkka,
+    Huskar,
     Common
   ]),
   'W33S27': [].concat.apply([], [
