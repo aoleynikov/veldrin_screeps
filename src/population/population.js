@@ -34,12 +34,12 @@ var spawns = {
     Abaddon,
     Bristleback, 
     Clockwerk,
+    Huskar,
     DragonKnight,
     Enigma,
     FacelessVoid,
     Gyrocopter,
     Kunkka,
-    Huskar,
     Common
   ]),
   'W39S28': [].concat.apply([], [
@@ -48,9 +48,9 @@ var spawns = {
     FacelessVoid,
     Enigma,
     FacelessVoid,
+    Huskar,
     Gyrocopter,
     Kunkka,
-    Huskar,
     Common
   ]),
   'W33S27': [].concat.apply([], [
