@@ -5,7 +5,14 @@ module.exports = {
         if (border_run.perform(creep)) return true;
         if (creep.memory['target'] === undefined) return false;
         if (creep.room.name != creep.memory['target']) {
-            var route = Game.map.findRoute(creep.room.name, creep.memory['target']);
+            var route = Game.map.findRoute(creep.room.name, creep.memory['target'],  {
+                routeCallback(roomName, fromRoomName) {
+                    if(roomName == 'W35S28' || roomName == 'W36S29' ||
+                       roomName == 'W35S29' || roomName == 'W36S28') {    // avoid this room
+                        return Infinity;
+                    }
+                    return 1;
+            }});
             var exit = creep.pos.findClosestByRange(route[0].exit);
             if (creep.pos.getRangeTo(exit) != 0) {
                 creep.moveTo(exit, {reusePath: 50});
