@@ -10,7 +10,8 @@ const HAULERS_COUNT = {
 };
 module.exports = {
   names: {
-    'Main': 'W38S27'
+    'Main': 'W38S27',
+    'DragonKnight': 'W39S28'
   },
   haulers_count: (room_id, target_room_id) => {
     var room = Game.rooms[room_id];
