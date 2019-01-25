@@ -18,7 +18,7 @@ var wild = require('population.wild');
 var Main = metropolia('Main', 'W38S27');
 var Abaddon = colony('Abaddon', 'W38S26', 'Main');
 var Bristleback = colony('Bristleback', 'W37S27', 'Main');
-var Clockwerk = colony('Clockwerk', 'W36S27', 'Main');
+var Clockwerk = metropolia('Clockwerk', 'W36S27');
 var DragonKnight = metropolia('DragonKnight', 'W39S28');
 var Enigma = colony('Enigma', 'W39S27', 'DragonKnight');
 var FacelessVoid = colony('FacelessVoid', 'W38S28', 'DragonKnight');
@@ -29,7 +29,8 @@ var Kunkka = colony('Kunkka', 'W39S26', 'Main');
 var Common = common();
 var spawns = {
   'W38S27': [].concat.apply([], [Main, Abaddon, Bristleback, Clockwerk, DragonKnight, Enigma, FacelessVoid, Gyrocopter, Kunkka, Common]),
-  'W39S28': [].concat.apply([], [DragonKnight, Enigma, FacelessVoid, Enigma, FacelessVoid, Gyrocopter, Kunkka, Common])
+  'W39S28': [].concat.apply([], [DragonKnight, Enigma, FacelessVoid, Enigma, FacelessVoid, Gyrocopter, Kunkka, Common]),
+  'W36S27': [].concat.apply([], [DragonKnight, Enigma, FacelessVoid, Enigma, FacelessVoid, Gyrocopter, Kunkka, Common])
 };
 module.exports = {
   spawns: spawns
