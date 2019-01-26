@@ -17,12 +17,12 @@ var wild = require('population.wild');
 
 var Main = metropolia('Main', 'W38S27');
 var Abaddon = colony('Abaddon', 'W38S26', 'Main');
-var Bristleback = colony('Bristleback', 'W37S27', 'Main');
+var Bristleback = colony('Bristleback', 'W37S27', 'Clockwerk');
 var Clockwerk = metropolia('Clockwerk', 'W36S27');
 var DragonKnight = metropolia('DragonKnight', 'W39S28');
 var Enigma = colony('Enigma', 'W39S27', 'DragonKnight');
 var FacelessVoid = colony('FacelessVoid', 'W38S28', 'DragonKnight');
-var Gyrocopter = colony('Gyrocopter', 'W35S27', 'Main');
+var Gyrocopter = colony('Gyrocopter', 'W35S27', 'Clockwerk');
 var Io = metropolia('Io', 'W32S29');
 var Juggenaut = metropolia('Juggernaut', 'W32S24');
 var Kunkka = colony('Kunkka', 'W39S26', 'Main');
