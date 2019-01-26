@@ -2,7 +2,7 @@ var behavior = {
     is_fast_provider: function (provider, resource) {
         return (
             provider.structureType == STRUCTURE_CONTAINER ||
-            (provider.structureType == STRUCTURE_STORAGE && resource == RESOURCE_ENERGY) ||
+            provider.structureType == STRUCTURE_STORAGE ||
             (provider.structureType == STRUCTURE_LINK && resource == RESOURCE_ENERGY)
         )
     },
@@ -60,7 +60,7 @@ var behavior = {
         result = creep.pos.findClosestByRange(FIND_STRUCTURES, {
             filter: s =>
                 self.is_fast_provider(s, resource) &&
-                self.provider_resource(s, resource) >= creep.carryCapacity - (creep.carry[resource] || 0)
+                self.provider_resource(s, resource) >= (creep.carryCapacity - (creep.carry[resource] || 0)) / 2.0
         })
         if (result || resource != resource) return result
         return creep.pos.findClosestByRange(FIND_SOURCES_ACTIVE, {

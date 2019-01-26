@@ -34,7 +34,14 @@ module.exports = {
     var sources_count = room.find(FIND_SOURCES_ACTIVE).length;
     return HAULERS_COUNT[sources_count * distance] || 1;
   },
-  claimers_count: room_id => {
+  claimers_count: (room_id, target_room_id) => {
+    var target_room = Game.rooms[target_room_id];
+    if (!target_room) return 0;
+
+    if (target_room.controller && target_room.controller.level < 4) {
+      return 0;
+    }
+
     var room = Game.rooms[room_id];
     if (!room) return 1;
     if (!room.controller) return 0;
