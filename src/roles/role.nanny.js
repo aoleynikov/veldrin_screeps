@@ -1,5 +1,6 @@
 var energy_behavior = require('behavior.get_resource');
 var room_travel = require('behavior.room_travel');
+var upgrader = require('role.upgrader')
 
 var select_storage = function (creep) {
   var result = creep.pos.findClosestByRange(FIND_STRUCTURES, {
@@ -40,7 +41,7 @@ var store = function (creep) {
     if (creep.carry[RESOURCE_ENERGY] < creep.carryCapacity) {
       energy_behavior.refill(creep);
     } else {
-      creep.moveTo(creep.pos.findClosestByRange(FIND_MY_SPAWNS));
+      upgrader.perform(creep)
     }
   }
   var work = creep.transfer(storage, RESOURCE_ENERGY);
