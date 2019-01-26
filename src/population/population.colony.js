@@ -75,16 +75,16 @@ module.exports = function(room_name, room_id, metropolia_name) {
         energy_room: room_id
       }
     },
-    {
-      count: rooms.claimers_count(room_id),
-      name_prefix: 'claimer' + room_postfix,
-      body: [CLAIM, MOVE],
-      memory: {
-        target: room_id,
-        role: 'claimer',
-        type: 'swarm'
-      }
-    },
+    // {
+    //   count: rooms.claimers_count(room_id),
+    //   name_prefix: 'claimer' + room_postfix,
+    //   body: [CLAIM, MOVE],
+    //   memory: {
+    //     target: room_id,
+    //     role: 'claimer',
+    //     type: 'swarm'
+    //   }
+    // },
     {
       count: rooms.builders_count(room_id),
       name_prefix: 'builder_from' + room_postfix,
@@ -98,26 +98,21 @@ module.exports = function(room_name, room_id, metropolia_name) {
         fallback_room: metropolia_id
       }
     },
-    // {
-    //   count: rooms.haulers_count(room_id, metropolia_id),
-    //   name_prefix: 'hauler_from' + room_postfix,
-    //   body: [CARRY, CARRY, CARRY, CARRY, 
-    //          CARRY, CARRY, CARRY, CARRY, 
-    //          CARRY, CARRY, CARRY, CARRY, 
-    //          CARRY, CARRY, CARRY, CARRY,
-    //          CARRY, CARRY, CARRY, CARRY, 
-    //          CARRY, CARRY, CARRY, CARRY,
-    //          MOVE, MOVE, MOVE, MOVE, 
-    //          MOVE, MOVE, MOVE, MOVE, 
-    //          MOVE, MOVE, MOVE, MOVE],
-    //   memory: {
-    //     role: 'hauler',
-    //     refill: true,
-    //     type: 'swarm',
-    //     energy_room: room_id,
-    //     work_place: metropolia_id,
-    //     resource: RESOURCE_ENERGY
-    //   }
-    // }
+    {
+      count: rooms.haulers_count(room_id, metropolia_id),
+      name_prefix: 'hauler_from' + room_postfix,
+      body: [
+        CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, 
+        CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY,
+        MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
+      memory: {
+        role: 'hauler',
+        refill: true,
+        type: 'swarm',
+        energy_room: room_id,
+        work_place: metropolia_id,
+        resource: RESOURCE_ENERGY
+      }
+    }
   ]
 }

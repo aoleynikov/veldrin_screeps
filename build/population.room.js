@@ -15,6 +15,13 @@ module.exports = {
     'Clockwerk': 'W36S27'
   },
   haulers_count: (room_id, target_room_id) => {
+    var target_room = Game.rooms[target_room_id];
+    if (!target_room) return 0;
+
+    if (target_room.controller && target_room.controller.level < 4) {
+      return 0;
+    }
+
     var room = Game.rooms[room_id];
     if (!room) return 0;
     if (!room.controller) return 0;
