@@ -26,6 +26,7 @@ var Juggenaut = metropolia('Juggernaut', 'W32S24')
 var Kunkka = colony('Kunkka', 'W39S26', 'Main')
 var Leshrak = colony('Leshrak', 'W37S28', 'Clockwerk')
 var Mirana = colony('Mirana', 'W39S29', 'DragonKnight')
+var Necrophos = colony('Necrophos', 'W38S29', 'DragonKnight')
 
 var Common = common()
 
@@ -42,6 +43,7 @@ var spawns = {
     Kunkka,
     Leshrak,
     Mirana,
+    Necrophos,
     Common
   ]),
   'W39S28': [].concat.apply([], [
@@ -55,6 +57,7 @@ var spawns = {
     Kunkka,
     Leshrak,
     Mirana,
+    Necrophos,
     Common
   ]),
   'W36S27': [].concat.apply([], [
@@ -68,6 +71,7 @@ var spawns = {
     Gyrocopter,
     Kunkka,
     Leshrak,
+    Necrophos,
     Common
   ]),
 }
