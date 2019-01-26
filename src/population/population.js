@@ -24,6 +24,7 @@ var Gyrocopter = colony('Gyrocopter', 'W35S27', 'Clockwerk')
 var Io = metropolia('Io', 'W32S29')
 var Juggenaut = metropolia('Juggernaut', 'W32S24')
 var Kunkka = colony('Kunkka', 'W39S26', 'Main')
+var Leshrak = colony('Leshrak', 'W37S28', 'Clockwerk')
 
 var Common = common()
 
@@ -38,6 +39,7 @@ var spawns = {
     FacelessVoid,
     Gyrocopter,
     Kunkka,
+    Leshrak,
     Common
   ]),
   'W39S28': [].concat.apply([], [
@@ -50,6 +52,7 @@ var spawns = {
     FacelessVoid,
     Gyrocopter,
     Kunkka,
+    Leshrak,
     Common
   ]),
   'W36S27': [].concat.apply([], [
@@ -62,6 +65,7 @@ var spawns = {
     FacelessVoid,
     Gyrocopter,
     Kunkka,
+    Leshrak,
     Common
   ]),
 }
