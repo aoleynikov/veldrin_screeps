@@ -49,7 +49,7 @@ module.exports = function (room_name, room_id, metropolia_name) {
   }, {
     count: rooms.miners_count(room_id),
     name_prefix: 'miner' + room_postfix,
-    body: [WORK, WORK, WORK, WORK, WORK, MOVE],
+    body: [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, MOVE, MOVE, MOVE, MOVE],
     memory: {
       role: 'miner',
       target: room_id,
