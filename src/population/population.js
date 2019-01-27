@@ -15,7 +15,7 @@ var wild = require('population.wild')
 
 var Main = metropolia('Main', 'W38S27')
 var Abaddon = colony('Abaddon', 'W38S26', 'Main')
-var Bristleback = colony('Bristleback', 'W37S27', 'Main')
+var Bristleback = colony('Bristleback', 'W37S27', 'Clockwerk')
 var Clockwerk = metropolia('Clockwerk', 'W36S27')
 var DragonKnight = metropolia('DragonKnight', 'W39S28')
 var Enigma = colony('Enigma', 'W39S27', 'Main')
