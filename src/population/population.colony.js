@@ -83,7 +83,8 @@ module.exports = function(room_name, room_id, metropolia_name) {
       memory: {
         target: room_id,
         role: 'claimer',
-        type: 'swarm'
+        type: 'swarm',
+        claiming: room_id == metropolia_id
       }
     },
     {
