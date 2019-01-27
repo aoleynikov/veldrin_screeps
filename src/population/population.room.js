@@ -65,7 +65,7 @@ module.exports = {
   },
   repairer_body: (room_id) => {
     var room = Game.rooms[room_id]
-    var dflt = [WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE]
+    var dflt = [WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE]
     if (!room) return dflt
 
     var towers = room.find(FIND_MY_STRUCTURES, { filter: {structureType: STRUCTURE_TOWER } })
