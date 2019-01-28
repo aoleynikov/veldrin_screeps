@@ -36,6 +36,7 @@ var spawns = {
   'W38S27': [].concat.apply([], [
     Main,
     Abaddon,
+    Huskar,
     Kunkka,
     Bristleback, 
     Clockwerk,
@@ -52,6 +53,7 @@ var spawns = {
   'W39S28': [].concat.apply([], [
     DragonKnight,
     FacelessVoid,
+    Huskar,
     Enigma,
     Mirana,
     Necrophos,
@@ -67,6 +69,7 @@ var spawns = {
     Clockwerk,
     Gyrocopter,
     Oracle,
+    Huskar,
     Bristleback,
     Leshrak,
     Main,
