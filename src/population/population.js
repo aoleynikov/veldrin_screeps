@@ -79,6 +79,12 @@ var spawns = {
     FacelessVoid,
     Common
   ]),
+  'W33S27': [].concat.apply([], [
+    Huskar,
+    Oracle,
+    Gyrocopter,
+    Clockwerk
+  ])
 }
 
 module.exports = {

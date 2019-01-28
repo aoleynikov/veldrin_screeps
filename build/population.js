@@ -35,7 +35,8 @@ var Common = common();
 var spawns = {
   'W38S27': [].concat.apply([], [Main, Abaddon, Huskar, Kunkka, Bristleback, Clockwerk, DragonKnight, Enigma, FacelessVoid, Leshrak, Mirana, Necrophos, Gyrocopter, Oracle, Common]),
   'W39S28': [].concat.apply([], [DragonKnight, FacelessVoid, Huskar, Enigma, Mirana, Necrophos, Abaddon, Main, Bristleback, Clockwerk, Kunkka, Leshrak, Common]),
-  'W36S27': [].concat.apply([], [Clockwerk, Gyrocopter, Oracle, Huskar, Bristleback, Leshrak, Main, Abaddon, DragonKnight, Enigma, FacelessVoid, Common])
+  'W36S27': [].concat.apply([], [Clockwerk, Gyrocopter, Oracle, Huskar, Bristleback, Leshrak, Main, Abaddon, DragonKnight, Enigma, FacelessVoid, Common]),
+  'W33S27': [].concat.apply([], [Huskar, Oracle, Gyrocopter, Clockwerk])
 };
 module.exports = {
   spawns: spawns
