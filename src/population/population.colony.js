@@ -41,9 +41,19 @@ module.exports = function(room_name, room_id, metropolia_name) {
       }
     },
     {
+      count: warriors_count(room_id),
+      name_prefix: 'sniper' + room_postfix,
+      body: [RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE],
+      memory: {
+        type: 'swarm',
+        role: 'warrior',
+        squad: room_name
+      }
+    },
+    {
       count: healers_count(room_id),
       name_prefix: 'healer' + room_postfix,
-      body: [HEAL, MOVE],
+      body: [HEAL, HEAL, HEAL, MOVE, MOVE, MOVE],
       memory: {
         type: 'swarm',
         role: 'healer',
