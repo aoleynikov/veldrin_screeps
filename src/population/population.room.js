@@ -61,7 +61,7 @@ module.exports = {
     var room = Game.rooms[room_id]
     if (!room) return 2
     if (room && room.controller && room.controller.my) return 1
-    return room.find(FIND_SOURCES).length * 3
+    return room.find(FIND_SOURCES).length * 2
   },
   repairer_body: (room_id) => {
     var room = Game.rooms[room_id]
