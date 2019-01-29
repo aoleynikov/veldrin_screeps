@@ -8,7 +8,8 @@ module.exports = {
             var route = Game.map.findRoute(creep.room.name, creep.memory['target'],  {
                 routeCallback(roomName, fromRoomName) {
                     if(roomName == 'W35S28' || roomName == 'W36S29' ||
-                       roomName == 'W35S29' || roomName == 'W36S28') {    // avoid this room
+                       roomName == 'W35S29' || roomName == 'W36S28' ||
+                       roomName == 'W35S30' || roomName == 'W36S30') {    // avoid these rooms
                         return Infinity;
                     }
                     return 1;
