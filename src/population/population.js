@@ -20,15 +20,16 @@ var Clockwerk = metropolia('Clockwerk', 'W36S27')
 var DragonKnight = metropolia('DragonKnight', 'W39S28')
 var Enigma = colony('Enigma', 'W39S27', 'Main')
 var FacelessVoid = colony('FacelessVoid', 'W38S28', 'DragonKnight')
-var Gyrocopter = colony('Gyrocopter', 'W35S27', 'Clockwerk')
-var Huskar = metropolia('Huskar', 'W33S27')
+var Gyrocopter = colony('Gyrocopter', 'W35S27', 'Huskar')
+var Huskar = metropolia('Huskar', 'W33S28')
 var Io = metropolia('Io', 'W32S29')
 var Juggenaut = metropolia('Juggernaut', 'W32S24')
 var Kunkka = colony('Kunkka', 'W39S26', 'Main')
 var Leshrak = colony('Leshrak', 'W37S28', 'Main')
 var Mirana = colony('Mirana', 'W39S29', 'DragonKnight')
 var Necrophos = colony('Necrophos', 'W38S29', 'DragonKnight')
-var Oracle = colony('Oracle', 'W34S27', 'Clockwerk')
+var Oracle = colony('Oracle', 'W34S27', 'Huskar')
+var Puck = colony('Puck', 'W34S28', 'Huskar')
 
 var Common = common()
 
@@ -39,6 +40,7 @@ var spawns = {
     Huskar,
     Kunkka,
     Bristleback, 
+    Puck,
     Clockwerk,
     DragonKnight,
     Enigma,
@@ -70,6 +72,7 @@ var spawns = {
     Gyrocopter,
     Oracle,
     Huskar,
+    Puck,
     Bristleback,
     Leshrak,
     Main,
@@ -79,8 +82,9 @@ var spawns = {
     FacelessVoid,
     Common
   ]),
-  'W33S27': [].concat.apply([], [
+  'W33S28': [].concat.apply([], [
     Huskar,
+    Puck,
     Oracle,
     Gyrocopter,
     Clockwerk
