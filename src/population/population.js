@@ -17,6 +17,8 @@ var Main = metropolia('Main', 'E33S18')
 var Abaddon = colony('Abaddon', 'E33S19', 'Main')
 var Batrider = colony('Batrider', 'E32S19', 'Main')
 var CrystalMaiden = colony('CrystalMaiden', 'E32S18', 'Main')
+var Doom = metropolia('Doom', 'E32S17')
+var Enigma = colony('Enigma', 'E31S19', 'Main')
 
 var Common = common()
 
@@ -26,6 +28,7 @@ var spawns = {
     Abaddon,
     Batrider,
     CrystalMaiden,
+    Enigma,
     Common
   ])
 }
