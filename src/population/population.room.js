@@ -55,11 +55,11 @@ module.exports = {
     if (!room) return 1
     return Game.rooms[room_id].find(FIND_SOURCES).length;
   },
-  builders_count: (room_id) => {
+  builders_count: (room_id, metropolia_id) => {
     var room = Game.rooms[room_id]
     if (!room) return 2
     if (room && room.controller && room.controller.my) return 1
-    return room.find(FIND_SOURCES).length * 2
+    return room.find(FIND_SOURCES).length * 2 + Game.map.findRoute(room_id, metropolia_id).length
   },
   worker_body: (room_id) => {
     var room = Game.rooms[room_id]

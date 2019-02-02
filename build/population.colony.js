@@ -79,7 +79,7 @@ module.exports = function (room_name, room_id, metropolia_name) {
       claiming: room_id == metropolia_id
     }
   }, {
-    count: rooms.builders_count(room_id),
+    count: rooms.builders_count(room_id, metropolia_id),
     name_prefix: 'builder_from' + room_postfix,
     body: rooms.worker_body(room_id),
     memory: {
