@@ -33,7 +33,7 @@ module.exports = {
   claimers_count: (room_id, target_room_id) => {
     var target_room = Game.rooms[target_room_id]
     if (!target_room) return 0
-    if (target_room.controller && target_room.controller.level < 4) {
+    if (target_room.controller && target_room.controller.level < 3) {
       return 0
     }
 
@@ -63,7 +63,7 @@ module.exports = {
   },
   worker_body: (room_id) => {
     var room = Game.rooms[room_id]
-    var dflt = [WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE]
+    var dflt = [WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE]
     if (!room) return dflt
 
     var towers = room.find(FIND_MY_STRUCTURES, { filter: {structureType: STRUCTURE_TOWER } })

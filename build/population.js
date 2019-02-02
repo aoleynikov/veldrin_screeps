@@ -23,7 +23,7 @@ var Doom = metropolia('Doom', 'E32S17');
 var Enigma = colony('Enigma', 'E31S19', 'Main');
 var Common = common();
 var spawns = {
-  'E33S18': [].concat.apply([], [Main, Abaddon, Batrider, CrystalMaiden, Enigma, Common])
+  'E33S18': [].concat.apply([], [Main, Abaddon, Batrider, CrystalMaiden, Enigma, Doom, Common])
 };
 module.exports = {
   spawns: spawns

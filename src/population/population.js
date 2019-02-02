@@ -29,6 +29,7 @@ var spawns = {
     Batrider,
     CrystalMaiden,
     Enigma,
+    Doom,
     Common
   ])
 }

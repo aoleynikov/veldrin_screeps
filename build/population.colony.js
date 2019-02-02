@@ -31,7 +31,7 @@ module.exports = function (room_name, room_id, metropolia_name) {
   return [{
     count: warriors_count(room_id),
     name_prefix: 'warrior' + room_postfix,
-    body: [TOUGH, ATTACK, MOVE],
+    body: [ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
     memory: {
       type: 'swarm',
       role: 'warrior',
@@ -71,7 +71,7 @@ module.exports = function (room_name, room_id, metropolia_name) {
   }, {
     count: rooms.claimers_count(room_id, metropolia_id),
     name_prefix: 'claimer' + room_postfix,
-    body: [CLAIM, CLAIM, MOVE, MOVE],
+    body: [CLAIM, MOVE],
     memory: {
       target: room_id,
       role: 'claimer',
