@@ -5,25 +5,21 @@ income available to nannies, the swarm doesn't function as intended.
 If you have a storage, it provides an easy way to monitor the economy balance.
 For RCL <= 3, don't get greedy.
 */
+var templates = [];
 
-var templates = []
+var colony = require('population.colony');
 
-var colony = require('population.colony')
-var metropolia = require('population.metropolia')
-var common = require('population.common')
-var wild = require('population.wild')
+var metropolia = require('population.metropolia');
 
-var Main = metropolia('Main', 'W2S57')
+var common = require('population.common');
 
-var Common = common()
+var wild = require('population.wild');
 
+var Main = metropolia('Main', 'W2S57');
+var Common = common();
 var spawns = {
-  'W2S57': [].concat.apply([], [
-    Main,
-    Common
-  ])
-}
-
+  'W2S57': [].concat.apply([], [Main, Common])
+};
 module.exports = {
   spawns: spawns
-}
+};
