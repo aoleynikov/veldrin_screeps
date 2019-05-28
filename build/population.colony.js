@@ -31,7 +31,7 @@ module.exports = function (room_name, room_id, metropolia_name) {
   return [{
     count: warriors_count(room_id),
     name_prefix: 'warrior' + room_postfix,
-    body: [ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
+    body: [ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE],
     memory: {
       type: 'swarm',
       role: 'warrior',
@@ -89,6 +89,18 @@ module.exports = function (room_name, room_id, metropolia_name) {
       energy_room: room_id,
       sticky: true,
       fallback_room: metropolia_id
+    }
+  }, {
+    count: rooms.haulers_count(room_id, metropolia_id),
+    name_prefix: 'hauler_from' + room_postfix,
+    body: [CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE],
+    memory: {
+      role: 'hauler',
+      refill: true,
+      type: 'swarm',
+      energy_room: room_id,
+      work_place: metropolia_id,
+      resource: RESOURCE_ENERGY
     }
   }];
 };
