@@ -17,13 +17,14 @@ module.exports = {
         }
 
       });
+      if (!route[0]) return false;
       var exit = creep.pos.findClosestByRange(route[0].exit);
 
       if (creep.pos.getRangeTo(exit) != 0) {
         creep.moveTo(exit, {
           reusePath: 50
         });
-      } else if (route[0]) {
+      } else {
         creep.memory['run'] = route[0].exit;
         creep.memory['run_cd'] = 2;
       }

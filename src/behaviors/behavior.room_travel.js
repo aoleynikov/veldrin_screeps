@@ -5,7 +5,7 @@ module.exports = {
         if (border_run.perform(creep)) return true;
         if (creep.memory['target'] === undefined) return false;
         if (creep.room.name != creep.memory['target']) {
-            var route = Game.map.findRoute(creep.room.name, creep.memory['target'],  {
+            var route = Game.map.findRoute(creep.room.name, creep.memory['target'], {
                 routeCallback(roomName, fromRoomName) {
                     if(roomName == 'W35S28' || roomName == 'W36S29' ||
                        roomName == 'W35S29' || roomName == 'W36S28' ||
@@ -14,10 +14,11 @@ module.exports = {
                     }
                     return 1;
             }});
+            if (!route[0]) return false
             var exit = creep.pos.findClosestByRange(route[0].exit);
             if (creep.pos.getRangeTo(exit) != 0) {
                 creep.moveTo(exit, {reusePath: 50});
-            } else if(route[0]) {
+            } else {
                 creep.memory['run'] = route[0].exit;
                 creep.memory['run_cd'] = 2;
             }
