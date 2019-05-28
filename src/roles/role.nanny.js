@@ -38,7 +38,7 @@ var store = function (creep) {
 
   var storage = select_storage(creep);
   if (!storage) {
-    if (creep.carry[RESOURCE_ENERGY] < creep.carryCapacity) {
+    if (creep.carry[RESOURCE_ENERGY] == 0) {
       energy_behavior.refill(creep);
     } else {
       upgrader.perform(creep)
