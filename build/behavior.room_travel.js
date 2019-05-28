@@ -23,7 +23,7 @@ module.exports = {
         creep.moveTo(exit, {
           reusePath: 50
         });
-      } else {
+      } else if (route[0]) {
         creep.memory['run'] = route[0].exit;
         creep.memory['run_cd'] = 2;
       }

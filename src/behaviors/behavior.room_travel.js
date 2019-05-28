@@ -17,7 +17,7 @@ module.exports = {
             var exit = creep.pos.findClosestByRange(route[0].exit);
             if (creep.pos.getRangeTo(exit) != 0) {
                 creep.moveTo(exit, {reusePath: 50});
-            } else {
+            } else if(route[0]) {
                 creep.memory['run'] = route[0].exit;
                 creep.memory['run_cd'] = 2;
             }

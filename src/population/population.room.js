@@ -51,7 +51,6 @@ module.exports = {
     return 1
   },
   miners_count: (room_id) => {
-    return 0;
     var room = Game.rooms[room_id]
     if (!room) return 1
     return Game.rooms[room_id].find(FIND_SOURCES).length;
