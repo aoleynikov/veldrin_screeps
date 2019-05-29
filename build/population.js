@@ -19,7 +19,7 @@ var Main = metropolia('Main', 'W2S57');
 var Abaddon = colony('Abaddon', 'W3S57');
 var Common = common();
 var spawns = {
-  'W2S57': [].concat.apply([], [Main, Common])
+  'W2S57': [].concat.apply([], [Main, Abaddon, Common])
 };
 module.exports = {
   spawns: spawns
