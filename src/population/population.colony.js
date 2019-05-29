@@ -34,7 +34,9 @@ module.exports = function(room_name, room_id, metropolia_name) {
       count: warriors_count(room_id),
       name_prefix: 'warrior' + room_postfix,
       body: [
-        ATTACK, ATTACK, MOVE, MOVE, MOVE, MOVE
+        ATTACK, ATTACK, ATTACK, ATTACK,
+        MOVE, MOVE, MOVE, MOVE,
+        MOVE, MOVE, MOVE, MOVE
       ],
       memory: {
         type: 'swarm',
