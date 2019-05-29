@@ -34,8 +34,8 @@ module.exports = function(room_name, room_id, metropolia_name) {
       count: warriors_count(room_id),
       name_prefix: 'warrior' + room_postfix,
       body: [
-        ATTACK, ATTACK, ATTACK, ATTACK,
         MOVE, MOVE, MOVE, MOVE,
+        ATTACK, ATTACK, ATTACK, ATTACK,
         MOVE, MOVE, MOVE, MOVE
       ],
       memory: {
@@ -58,7 +58,7 @@ module.exports = function(room_name, room_id, metropolia_name) {
       count: rooms.miners_count(room_id),
       name_prefix: 'miner' + room_postfix,
       body: [WORK, WORK, WORK, WORK, 
-             WORK, MOVE],
+             WORK, MOVE, MOVE, MOVE],
       memory: {
         role: 'miner',
         target: room_id,
