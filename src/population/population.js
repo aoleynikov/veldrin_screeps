@@ -15,6 +15,7 @@ var wild = require('population.wild')
 
 var Main = metropolia('Main', 'W2S57')
 var Abaddon = colony('Abaddon', 'W3S57', 'Main')
+var Bristleback = colony('Bristleback', 'W1S57', 'Main')
 
 var Common = common()
 
@@ -22,6 +23,7 @@ var spawns = {
   'W2S57': [].concat.apply([], [
     Main,
     Abaddon,
+    Bristleback,
     Common
   ])
 }
