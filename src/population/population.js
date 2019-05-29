@@ -27,6 +27,13 @@ var spawns = {
     Bristleback,
     Clockwerk,
     Common
+  ]),
+  'W4S57':[].concat.apply([], [
+    Clockwerk,
+    Abaddon,
+    Main,
+    Bristleback,
+    Common
   ])
 }
 

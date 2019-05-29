@@ -21,7 +21,8 @@ var Bristleback = colony('Bristleback', 'W1S57', 'Main');
 var Clockwerk = metropolia('Clockwerk', 'W4S57');
 var Common = common();
 var spawns = {
-  'W2S57': [].concat.apply([], [Main, Abaddon, Bristleback, Clockwerk, Common])
+  'W2S57': [].concat.apply([], [Main, Abaddon, Bristleback, Clockwerk, Common]),
+  'W4S57': [].concat.apply([], [Clockwerk, Abaddon, Main, Bristleback, Common])
 };
 module.exports = {
   spawns: spawns
