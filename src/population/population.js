@@ -17,6 +17,7 @@ var Main = metropolia('Main', 'W2S57')
 var Abaddon = colony('Abaddon', 'W3S57', 'Clockwerk')
 var Bristleback = colony('Bristleback', 'W1S57', 'Main')
 var Clockwerk = metropolia('Clockwerk', 'W4S57')
+var Doom = colony('Doom', 'W3S58', 'Clockwerk')
 
 var Common = common()
 
@@ -26,11 +27,13 @@ var spawns = {
     Bristleback,
     Abaddon,
     Clockwerk,
+    Doom,
     Common
   ]),
   'W4S57':[].concat.apply([], [
     Clockwerk,
     Abaddon,
+    Doom,
     Main,
     Bristleback,
     Common
