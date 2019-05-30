@@ -16,8 +16,13 @@ module.exports = {
   haulers_count: (room_id, target_room_id) => {
     var target_room = Game.rooms[target_room_id];
     if (!target_room) return 0;
+    var storages = target_room.find(FIND_STRUCTURES, {
+      filter: {
+        structureType: STRUCTURE_STORAGE
+      }
+    });
 
-    if (target_room.controller && target_room.controller.level < 4) {
+    if (target_room.controller && storages.length > 0) {
       return 0;
     }
 
@@ -46,12 +51,6 @@ module.exports = {
     if (!room.controller) return 0;
 
     if (room.controller.my) {
-      return 0;
-    }
-
-    if (!room.controller.reservation) return 1;
-
-    if (room.controller.reservation.username == 'Veldrin' && room.controller.reservation.ticksToEnd > 3000) {
       return 0;
     }
 
