@@ -19,6 +19,7 @@ var Bristleback = colony('Bristleback', 'W1S57', 'Main')
 var Clockwerk = metropolia('Clockwerk', 'W4S57')
 var Doom = colony('Doom', 'W3S58', 'Clockwerk')
 var Enigma = colony('Enigma', 'W2S56', 'Main')
+var Furion = colony('Furion', 'W3S56', 'Clockwerk')
 
 var Common = common()
 
@@ -28,6 +29,7 @@ var spawns = {
     Bristleback,
     Enigma,
     Abaddon,
+    Furion,
     Clockwerk,
     Doom,
     Common
@@ -36,6 +38,7 @@ var spawns = {
     Clockwerk,
     Abaddon,
     Doom,
+    Furion,
     Enigma,
     Main,
     Bristleback,
