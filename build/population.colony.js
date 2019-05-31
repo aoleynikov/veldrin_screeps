@@ -69,7 +69,7 @@ module.exports = function (room_name, room_id, metropolia_name) {
       energy_room: room_id
     }
   }, {
-    count: rooms.claimers_count(room_id, metropolia_id),
+    count: rooms.claimers_count(room_id),
     name_prefix: 'claimer' + room_postfix,
     body: [CLAIM, CLAIM, MOVE, MOVE],
     memory: {
