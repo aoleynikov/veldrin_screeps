@@ -22,7 +22,7 @@ module.exports = {
       }
     });
 
-    if (target_room.controller && storages.length > 0) {
+    if (target_room.controller && storages.length == 0) {
       return 0;
     }
 
