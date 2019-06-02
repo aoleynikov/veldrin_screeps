@@ -20,6 +20,7 @@ var Clockwerk = metropolia('Clockwerk', 'W4S57')
 var Doom = colony('Doom', 'W3S58', 'Clockwerk')
 var Enigma = colony('Enigma', 'W2S56', 'Main')
 var Furion = colony('Furion', 'W3S56', 'Clockwerk')
+var Gyrocopter = colony('Gyrocopter', 'W1S58', 'Main')
 
 var Common = common()
 
@@ -27,6 +28,7 @@ var spawns = {
   'W2S57': [].concat.apply([], [
     Main,
     Bristleback,
+    Gyrocopter,
     Enigma,
     Abaddon,
     Furion,
@@ -42,6 +44,7 @@ var spawns = {
     Enigma,
     Main,
     Bristleback,
+    Gyrocopter,
     Common
   ])
 }
