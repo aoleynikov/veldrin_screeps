@@ -22,7 +22,7 @@ var Enigma = colony('Enigma', 'W2S56', 'Main')
 var Furion = colony('Furion', 'W3S56', 'Clockwerk')
 var Gyrocopter = colony('Gyrocopter', 'W1S58', 'Main')
 var Huskar = colony('Huskar', 'W4S58', 'Clockwerk')
-var Io = colony('Io', 'W2S58', 'Clockwerk')
+var Io = colony('Io', 'W2S58', 'Main')
 var Juggernaut = metropolia('Juggernaut', 'W5S59')
 
 var Common = common()
