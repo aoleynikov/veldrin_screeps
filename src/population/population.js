@@ -23,6 +23,7 @@ var Furion = colony('Furion', 'W3S56', 'Clockwerk')
 var Gyrocopter = colony('Gyrocopter', 'W1S58', 'Main')
 var Huskar = colony('Huskar', 'W4S58', 'Clockwerk')
 var Io = colony('Io', 'W2S58', 'Clockwerk')
+var Juggernaut = metropolia('Juggernaut', 'W5S59')
 
 var Common = common()
 
@@ -32,7 +33,9 @@ var spawns = {
     Bristleback,
     Enigma,
     Abaddon,
+    Io,
     Furion,
+    Juggernaut,
     Clockwerk,
     Doom,
     Huskar,
@@ -41,9 +44,11 @@ var spawns = {
   'W4S57':[].concat.apply([], [
     Clockwerk,
     Abaddon,
+    Io,
     Doom,
     Huskar,
     Furion,
+    Juggernaut,
     Enigma,
     Main,
     Bristleback,
