@@ -29,7 +29,6 @@ var spawns = {
   'W2S57': [].concat.apply([], [
     Main,
     Bristleback,
-    Gyrocopter,
     Enigma,
     Abaddon,
     Furion,
@@ -47,7 +46,6 @@ var spawns = {
     Enigma,
     Main,
     Bristleback,
-    Gyrocopter,
     Common
   ])
 }
