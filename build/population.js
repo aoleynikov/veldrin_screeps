@@ -24,6 +24,7 @@ var Enigma = colony('Enigma', 'W2S56', 'Main');
 var Furion = colony('Furion', 'W3S56', 'Clockwerk');
 var Gyrocopter = colony('Gyrocopter', 'W1S58', 'Main');
 var Huskar = colony('Huskar', 'W4S58', 'Clockwerk');
+var Io = colony('Io', 'W2S58', 'Clockwerk');
 var Common = common();
 var spawns = {
   'W2S57': [].concat.apply([], [Main, Bristleback, Enigma, Abaddon, Furion, Clockwerk, Doom, Huskar, Common]),

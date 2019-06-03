@@ -18,7 +18,8 @@ module.exports = {
     'Enigma': 'W2S56',
     'Furion': 'W3S56',
     'Gyrocopter': 'W1S58',
-    'Huskar': 'W4S58'
+    'Huskar': 'W4S58',
+    'Io': 'W2S58'
   },
   haulers_count: (room_id, target_room_id) => {
     var target_room = Game.rooms[target_room_id];
