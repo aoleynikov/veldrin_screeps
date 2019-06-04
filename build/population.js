@@ -28,8 +28,8 @@ var Io = colony('Io', 'W2S58', 'Main');
 var Juggernaut = metropolia('Juggernaut', 'W5S59');
 var Common = common();
 var spawns = {
-  'W2S57': [].concat.apply([], [Main, Bristleback, Enigma, Abaddon, Io, Furion, Juggernaut, Clockwerk, Doom, Huskar, Common]),
-  'W4S57': [].concat.apply([], [Clockwerk, Abaddon, Io, Doom, Huskar, Furion, Juggernaut, Enigma, Main, Bristleback, Common])
+  'W2S57': [].concat.apply([], [Main, Bristleback, Enigma, Abaddon, Io, Juggernaut, Clockwerk, Doom, Huskar, Common]),
+  'W4S57': [].concat.apply([], [Clockwerk, Abaddon, Io, Doom, Huskar, Juggernaut, Enigma, Main, Bristleback, Common])
 };
 module.exports = {
   spawns: spawns
