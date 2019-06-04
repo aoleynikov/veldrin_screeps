@@ -51,6 +51,11 @@ var spawns = {
     Main,
     Bristleback,
     Common
+  ]),
+  'W5S59':[].concat.apply([], [
+    Juggernaut,
+    Huskar,
+    Doom
   ])
 }
 
