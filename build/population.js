@@ -23,14 +23,15 @@ var Doom = colony('Doom', 'W3S58', 'Clockwerk');
 var Enigma = colony('Enigma', 'W2S56', 'Main');
 var Furion = colony('Furion', 'W3S56', 'Clockwerk');
 var Gyrocopter = colony('Gyrocopter', 'W1S58', 'Main');
-var Huskar = colony('Huskar', 'W4S58', 'Clockwerk');
+var Huskar = colony('Huskar', 'W4S58', 'Juggernaut');
 var Io = colony('Io', 'W2S58', 'Main');
 var Juggernaut = metropolia('Juggernaut', 'W5S59');
+var Kunkka = colony('Kunkka', 'W5S58', 'Juggernaut');
 var Common = common();
 var spawns = {
-  'W2S57': [].concat.apply([], [Main, Bristleback, Enigma, Abaddon, Io, Juggernaut, Clockwerk, Doom, Huskar, Common]),
-  'W4S57': [].concat.apply([], [Clockwerk, Abaddon, Io, Doom, Huskar, Juggernaut, Enigma, Main, Bristleback, Common]),
-  'W5S59': [].concat.apply([], [Juggernaut, Huskar, Doom])
+  'W2S57': [].concat.apply([], [Main, Bristleback, Enigma, Abaddon, Io, Juggernaut, Clockwerk, Doom, Huskar, Kunkka, Common]),
+  'W4S57': [].concat.apply([], [Clockwerk, Abaddon, Io, Doom, Huskar, Juggernaut, Enigma, Main, Bristleback, Kunkka, Common]),
+  'W5S59': [].concat.apply([], [Juggernaut, Kunkka, Huskar, Doom, Common])
 };
 module.exports = {
   spawns: spawns

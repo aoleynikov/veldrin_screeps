@@ -1,8 +1,8 @@
-var upgrader_body = [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE];
+var upgrader_body = [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE];
 
 var upgrader = (from, to) => {
   return {
-    count: 2,
+    count: 4,
     name_prefix: 'upgrader_from_' + from + '_',
     body: upgrader_body,
     memory: {
@@ -15,7 +15,7 @@ var upgrader = (from, to) => {
   };
 };
 
-var upgraders = [];
+var upgraders = [upgrader('W4S57', 'W4S57')];
 
 module.exports = function () {
   return [].concat(upgraders);

@@ -21,7 +21,8 @@ module.exports = {
     'Gyrocopter': 'W1S58',
     'Huskar': 'W4S58',
     'Io': 'W2S58',
-    'Juggernaut': 'W5S59'
+    'Juggernaut': 'W5S59',
+    'Kunkka': 'W5S58'
   },
   haulers_count: (room_id, target_room_id) => {
     var target_room = Game.rooms[target_room_id]
