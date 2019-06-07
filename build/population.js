@@ -27,11 +27,13 @@ var Huskar = colony('Huskar', 'W4S58', 'Juggernaut');
 var Io = colony('Io', 'W2S58', 'Main');
 var Juggernaut = metropolia('Juggernaut', 'W5S59');
 var Kunkka = colony('Kunkka', 'W5S58', 'Juggernaut');
+var Leshrak = metropolia('Leshrak', 'W7S59');
 var Common = common();
 var spawns = {
   'W2S57': [].concat.apply([], [Main, Bristleback, Enigma, Abaddon, Io, Juggernaut, Clockwerk, Doom, Huskar, Kunkka, Common]),
   'W4S57': [].concat.apply([], [Clockwerk, Abaddon, Io, Doom, Huskar, Juggernaut, Enigma, Main, Bristleback, Kunkka, Common]),
-  'W5S59': [].concat.apply([], [Juggernaut, Kunkka, Huskar, Doom, Common])
+  'W5S59': [].concat.apply([], [Juggernaut, Kunkka, Huskar, Leshrak, Doom, Common]),
+  'W7S59': [].concat.apply([], [Leshrak, Common])
 };
 module.exports = {
   spawns: spawns

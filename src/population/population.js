@@ -25,6 +25,7 @@ var Huskar = colony('Huskar', 'W4S58', 'Juggernaut')
 var Io = colony('Io', 'W2S58', 'Main')
 var Juggernaut = metropolia('Juggernaut', 'W5S59')
 var Kunkka = colony('Kunkka', 'W5S58', 'Juggernaut')
+var Leshrak = metropolia('Leshrak', 'W7S59')
 
 var Common = common()
 
@@ -59,7 +60,12 @@ var spawns = {
     Juggernaut,
     Kunkka,
     Huskar,
+    Leshrak,
     Doom,
+    Common
+  ]),
+  'W7S59':[].concat.apply([], [
+    Leshrak,
     Common
   ])
 }
