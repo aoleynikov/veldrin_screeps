@@ -1,8 +1,5 @@
 var upgrader_body = [
-  WORK, WORK, WORK, WORK, WORK,
-  WORK, WORK, WORK, WORK, WORK,
-  CARRY, CARRY, CARRY, CARRY,
-  MOVE, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE
+  WORK, CARRY, MOVE
 ]
 
 var upgrader = (from, to) => {
@@ -21,7 +18,7 @@ var upgrader = (from, to) => {
 }
 
 var upgraders = [
-  upgrader('W4S57', 'W4S57')
+  upgrader('W5S52', 'W5S53')
 ]
 
 module.exports = function() {
