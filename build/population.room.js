@@ -10,19 +10,8 @@ const HAULERS_COUNT = {
 };
 module.exports = {
   names: {
-    'Main': 'W2S57',
-    'Abaddon': 'W3S57',
-    'Bristleback': 'W1S57',
-    'Clockwerk': 'W4S57',
-    'Doom': 'W3S58',
-    'Enigma': 'W2S56',
-    'Furion': 'W3S56',
-    'Gyrocopter': 'W1S58',
-    'Huskar': 'W4S58',
-    'Io': 'W2S58',
-    'Juggernaut': 'W5S59',
-    'Kunkka': 'W5S58',
-    'Leshrak': 'W7S59'
+    'Main': 'W5S52',
+    'Abaddon': 'W5S53'
   },
   haulers_count: (room_id, target_room_id) => {
     var target_room = Game.rooms[target_room_id];
@@ -73,7 +62,7 @@ module.exports = {
   },
   worker_body: room_id => {
     var room = Game.rooms[room_id];
-    var dflt = [WORK, WORK, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE];
+    var dflt = [WORK, CARRY, MOVE];
     if (!room) return dflt;
     var towers = room.find(FIND_MY_STRUCTURES, {
       filter: {
