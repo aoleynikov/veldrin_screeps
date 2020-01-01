@@ -30,7 +30,7 @@ var Main = metropolia('Main', 'W2S57')
 var Common = common()
 
 var spawns = {
-  '5S52': [].concat.apply([], [
+  'W5S52': [].concat.apply([], [
     Main,
     Common
   ])
