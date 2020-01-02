@@ -66,8 +66,7 @@ module.exports = {
         }
 
         // Swarm + creeps renewal
-        swarm.respawn(spawn);
-        console.log(spawn.name, "-", spawn.memory['state'])
+        swarm.respawn(spawn)
 
         // Links
         operate_links(spawn);
