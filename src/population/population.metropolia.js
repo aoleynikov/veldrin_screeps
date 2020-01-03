@@ -81,7 +81,7 @@ module.exports = function(room_name, room_id) {
     ],
     3: [
       nannies(1, 'small_', 1),
-      nannies(5, '', 2),
+      nannies(5, '', 3),
       upgraders(1, 1)
     ],
     4: [
