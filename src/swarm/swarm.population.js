@@ -3,7 +3,9 @@ const NETWORK = {
 }
 
 const unit_types = ["nanny"]
-const unit_blueprints = unit_types.reduce((r, k) => r[k] = require('swarm.' + k), {})
+const unit_blueprints = Object.fromEntries(unit_types.map((k) => {
+  [k, require('swarm.' + k)]
+}))
 
 const room_creeps = (core, room) => {
   unit_types.map((type) => {
@@ -18,11 +20,14 @@ const room_creeps = (core, room) => {
 }
 
 const creeps = () => {
-  Object.entries(NETWORK).reduce((result, rooms) => {
-    result[rooms[0]] = [rooms[0]].concat(rooms[1]).map((room) => {
-      return room_creeps(rooms[0], room)
-    })
-  }, {})
+  Object.fromEntries(Object.entries(NETWORK).map((rooms) => {
+    [ 
+      rooms[0], 
+      [rooms[0]].concat(rooms[1]).map((room) => {
+        return room_creeps(rooms[0], room)
+      })
+    ]
+  }))
 }
 
 module.exports = {
