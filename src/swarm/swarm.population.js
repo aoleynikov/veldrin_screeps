@@ -18,7 +18,6 @@ const room_creeps = (core, room) => {
 }
 
 const creeps = () => {
-  rooms = populated_rooms()
   Object.entries(NETWORK).reduce((result, rooms) => {
     result[rooms[0]] = [rooms[0]].concat(rooms[1]).map((room) => {
       return room_creeps(rooms[0], room)
