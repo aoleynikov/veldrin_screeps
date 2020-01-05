@@ -15,7 +15,7 @@ const unit_blueprints = () => {
 
 const room_creeps = (core, room) => {
   unit_types.map((type) => {
-    let blueprint = unit_blueprints[type]
+    let blueprint = unit_blueprints()[type]
     return {
       count: blueprint.count(core, room),
       name_prefix: blueprint.name_prefix(core, room),
