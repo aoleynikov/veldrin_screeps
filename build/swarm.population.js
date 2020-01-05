@@ -6,7 +6,7 @@ const unit_types = ["nanny"];
 const unit_blueprints = () => {
   let result = {};
   unit_types.map(k => {
-    [k, require('swarm.' + k)];
+    return [k, require('swarm.' + k)];
   }).forEach(el => {
     result[el[0]] = el[1];
   });
