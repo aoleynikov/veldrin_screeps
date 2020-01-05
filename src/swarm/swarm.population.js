@@ -3,7 +3,7 @@ const NETWORK = {
 }
 
 const unit_types = ["nanny"]
-const unit_blueprints = unit_types.reduce((r, k) => r[k] = require('swarm.blueprint.' + k), {})
+const unit_blueprints = unit_types.reduce((r, k) => r[k] = require('swarm.' + k), {})
 
 const room_creeps = (core, room) => {
   unit_types.map((type) => {

@@ -1,4 +1,4 @@
-let common = require('swarm.bluerint.common');
+let common = require('swarm.common');
 
 module.exports = {
   extension: [CARRY, MOVE],
@@ -13,7 +13,7 @@ module.exports = {
   count: (core, room) => {
     if (core != room) return 0;
     let core_room = Game.rooms[core];
-    return [1, 3, 3, 4, 4, 5, 1, 1, 1][core.controller.level];
+    return [1, 3, 3, 4, 4, 5, 1, 1, 1][core_room.controller.level];
   },
   memory: (core, room) => {
     return {
