@@ -3,7 +3,7 @@ let common = require('swarm.common')
 const size = (core) => {
   let core_room = Game.rooms[core]
   return [1, 2, 3, 3, 3][core_room.controller.level]
-},
+}
 
 const name_prefix = (core, room) => {
   return "nanny_" + room + "_" + size(core) + "_"
