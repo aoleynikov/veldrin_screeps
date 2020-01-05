@@ -1,5 +1,7 @@
 var upgrader_body = [
-  WORK, CARRY, MOVE
+  WORK, WORK, WORK, WORK, WORK, 
+  CARRY, CARRY, CARRY, CARRY, CARRY,
+  MOVE, MOVE, MOVE, MOVE, MOVE
 ]
 
 var upgrader = (from, to) => {

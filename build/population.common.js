@@ -1,4 +1,4 @@
-var upgrader_body = [WORK, CARRY, MOVE];
+var upgrader_body = [WORK, WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE];
 
 var upgrader = (from, to) => {
   return {
@@ -15,7 +15,7 @@ var upgrader = (from, to) => {
   };
 };
 
-var upgraders = [upgrader('W5S52', 'W5S53'), upgrader('W6S53', 'W5S25')];
+var upgraders = [upgrader('W5S52', 'W5S53'), upgrader('W6S53', 'W6S53')];
 
 module.exports = function () {
   return [].concat(upgraders);
