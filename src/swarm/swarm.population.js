@@ -26,14 +26,14 @@ const room_creeps = (core, room) => {
 }
 
 const creeps = () => {
-  new Map(Object.entries(NETWORK).map((rooms) => {
-    [ 
-      rooms[0], 
-      [rooms[0]].concat(rooms[1]).map((room) => {
-        return room_creeps(rooms[0], room)
-      })
-    ]
-  }))
+  let result = {}
+  Object.entries(NETWORK).forEach((core) => {
+    let covered_rooms = [core[0]].concat[core[1]]
+    let creeps_per_room = covered_rooms.map((room) => room_creeps(core[0], room))
+    let creeps = [].concat.apply([], creeps_per_room)
+    result[core[0]] = creeps
+  })
+  return result
 }
 
 module.exports = {
