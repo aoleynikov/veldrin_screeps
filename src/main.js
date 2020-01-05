@@ -2,6 +2,7 @@ var dispatcher = require('strategy_dispatcher');
 var buildings_manager = require('buildings_manager');
 var doctor = require('doctor');
 var population = require('population');
+var swarm = require('swarm.population')
 
 module.exports.loop = function () {
   console.log('==========================================================')
@@ -26,4 +27,7 @@ module.exports.loop = function () {
     var spawn = Game.spawns[spawn_name];
     buildings_manager.run(spawn);
   }
+
+  console.log(swarm.creeps())
+  Game.spawns['Main'].memory['swarm'] = swarm.creeps()
 }

@@ -37,8 +37,7 @@ var operate_tower = (tower) => {
 
     var repairable_defences = tower.room.find(FIND_STRUCTURES, {
         filter: s => s.hits < s.hitsMax && 
-                     (s.structureType == STRUCTURE_RAMPART || 
-                     s.structureType == STRUCTURE_WALL)
+                     (s.structureType == STRUCTURE_RAMPART)
     });
     if (repairable_defences.length == 0) return
 
