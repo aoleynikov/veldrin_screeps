@@ -2,9 +2,16 @@ const NETWORK = {
   'W5S52': ['W5S53']
 };
 const unit_types = ["nanny"];
-const unit_blueprints = new Map(unit_types.map(k => {
-  [k, require('swarm.' + k)];
-}));
+
+const unit_blueprints = () => {
+  let result = {};
+  unit_types.map(k => {
+    [k, require('swarm.' + k)];
+  }).forEach(el => {
+    result[el[0]] = el[1];
+  });
+  return result;
+};
 
 const room_creeps = (core, room) => {
   unit_types.map(type => {
