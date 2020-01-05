@@ -2,7 +2,7 @@ const NETWORK = {
   'W5S52': ['W5S53']
 };
 const unit_types = ["nanny"];
-const unit_blueprints = Object.fromEntries(unit_types.map(k => {
+const unit_blueprints = new Map(unit_types.map(k => {
   [k, require('swarm.' + k)];
 }));
 
@@ -19,7 +19,7 @@ const room_creeps = (core, room) => {
 };
 
 const creeps = () => {
-  Object.fromEntries(Object.entries(NETWORK).map(rooms => {
+  new Map(Object.entries(NETWORK).map(rooms => {
     [rooms[0], [rooms[0]].concat(rooms[1]).map(room => {
       return room_creeps(rooms[0], room);
     })];
