@@ -1,4 +1,4 @@
-let common = require('swarm.blueprint.common')
+let common = require('swarm.bluerint.common')
 
 module.exports = {
   extension: [CARRY, MOVE],
