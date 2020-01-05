@@ -1,5 +1,8 @@
 let common = require('swarm.common');
 
+const extension = [CARRY, MOVE];
+const base = [WORK];
+
 const size = core => {
   let core_room = Game.rooms[core];
   return [1, 2, 3, 3, 3][core_room.controller.level];
@@ -26,12 +29,12 @@ const memory = (core, room) => {
 
 const body = core => {
   let core_room = Game.rooms[core];
-  return common.build_body(unit_blueprints[type].base, unit_blueprints[type].extension, core_room.energyCapacityAvailable, size(core));
+  return common.build_body(base, extension, core_room.energyCapacityAvailable, size(core));
 };
 
 module.exports = {
-  extension: [CARRY, MOVE],
-  base: [WORK],
+  extension: extension,
+  base: base,
   name_prefix: name_prefix,
   size: size,
   count: count,
