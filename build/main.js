@@ -6,8 +6,6 @@ var doctor = require('doctor');
 
 var population = require('population');
 
-var swarm = require('swarm.population');
-
 module.exports.loop = function () {
   console.log('==========================================================');
 
@@ -32,6 +30,12 @@ module.exports.loop = function () {
     buildings_manager.run(spawn);
   }
 
-  console.log(swarm.creeps());
-  Game.spawns['Main'].memory['swarm'] = swarm.creeps();
+  try {
+    var swarm = require('swarm.population');
+
+    console.log(swarm.creeps());
+    Game.spawns['Main'].memory['swarm'] = swarm.creeps();
+  } catch (e) {
+    console.log(e);
+  }
 };
