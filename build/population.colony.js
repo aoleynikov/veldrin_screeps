@@ -68,18 +68,17 @@ module.exports = function (room_name, room_id, metropolia_name) {
       work_place: room_id,
       energy_room: room_id
     }
-  }, // {
-  //   count: rooms.claimers_count(room_id),
-  //   name_prefix: 'claimer' + room_postfix,
-  //   body: [CLAIM, CLAIM, MOVE, MOVE],
-  //   memory: {
-  //     target: room_id,
-  //     role: 'claimer',
-  //     type: 'swarm',
-  //     claiming: room_id == metropolia_id
-  //   }
-  // },
-  {
+  }, {
+    count: rooms.claimers_count(room_id),
+    name_prefix: 'claimer' + room_postfix,
+    body: [CLAIM, CLAIM, MOVE, MOVE],
+    memory: {
+      target: room_id,
+      role: 'claimer',
+      type: 'swarm',
+      claiming: room_id == metropolia_id
+    }
+  }, {
     count: rooms.builders_count(room_id, metropolia_id),
     name_prefix: 'builder_from' + room_postfix,
     body: rooms.worker_body(room_id),

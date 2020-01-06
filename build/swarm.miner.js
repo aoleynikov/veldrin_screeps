@@ -1,28 +1,41 @@
 let common = require('swarm.common');
 
-const extension = [WORK, MOVE];
-const base = [WORK, WORK];
+const has_adjacent_source = container => {
+  let pos = container.pos;
+  return pos.findInRange(FIND_ENERGY_SOURCE, 1).size >= 1;
+};
+
+const extension = [MOVE];
+const base = [WORK, WORK, WORK, WORK, WORK];
 
 const size = core => {
   let core_room = Game.rooms[core];
-  return [0, 1, 3, 4, 5][core_room.controller.level];
+  return Math.min(core_room.controller.level, 3);
 };
 
 const name_prefix = (core, room) => {
-  return "miner_" + room + "_" + size(core) + "_";
+  return 'miner_' + room + '_';
 };
 
 const count = (core, room) => {
-  let core_room = Game.rooms[core];
-  return [0, 1, 2, 1, 1, 1, 1, 1, 1][core_room.controller.level];
+  let target_room = Game.rooms[room];
+  if (!target_room) return 0;
+  let mining_containers = target_room.find(FIND_STRUCTURES, {
+    filter: c => {
+      return c.structureType == STRUCTURE_CONTAINER && has_adjacent_source(c);
+    }
+  });
+  return mining_containers.size;
 };
 
 const memory = (core, room) => {
   return {
-    swarm: false,
-    role: "miner",
-    energy_room: room,
-    workplace: core
+    role: 'miner',
+    target: room,
+    work_place: room,
+    type: 'swarm',
+    find: FIND_SOURCES,
+    resource: RESOURCE_ENERGY
   };
 };
 
@@ -32,10 +45,7 @@ const body = core => {
 };
 
 module.exports = {
-  extension: extension,
-  base: base,
   name_prefix: name_prefix,
-  size: size,
   count: count,
   memory: memory,
   body: body

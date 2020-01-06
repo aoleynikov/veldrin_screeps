@@ -8,7 +8,7 @@ module.exports = {
     var controller = creep.room.controller;
     var result = undefined;
 
-    if (creep.room.name == Game.spawns['Main'].memory['claiming'] || creep.memory['claiming']) {
+    if (creep.memory['claiming']) {
       result = creep.claimController(controller);
     } else {
       result = creep.reserveController(controller);

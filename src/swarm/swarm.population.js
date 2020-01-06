@@ -2,7 +2,7 @@ const NETWORK = {
   'W5S52': ['W5S53', 'W6S53']
 }
 
-const unit_types = ["nanny"]
+const unit_types = ["nanny", "miner", "repairer", "claimer", "hauler"]
 const unit_blueprints = () => {
   let result = {}
   unit_types.map((k) => {

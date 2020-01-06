@@ -1,7 +1,7 @@
 const NETWORK = {
   'W5S52': ['W5S53', 'W6S53']
 };
-const unit_types = ["nanny"];
+const unit_types = ["nanny", "miner", "repairer", "claimer", "hauler"];
 
 const unit_blueprints = () => {
   let result = {};
@@ -20,7 +20,7 @@ const room_creeps = (core, room) => {
       count: blueprint.count(core, room),
       name_prefix: blueprint.name_prefix(core, room),
       memory: blueprint.memory(core, room),
-      body: blueprint.body(core)
+      body: blueprint.body(core, room)
     };
   });
 };

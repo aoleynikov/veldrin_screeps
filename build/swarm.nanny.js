@@ -33,10 +33,7 @@ const body = core => {
 };
 
 module.exports = {
-  extension: extension,
-  base: base,
   name_prefix: name_prefix,
-  size: size,
   count: count,
   memory: memory,
   body: body

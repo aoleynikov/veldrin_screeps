@@ -1,5 +1,7 @@
 const body_price = body => {
-  body.map(piece => BODYPART_COST[piece]).reduce((s, e) => s + e, 0);
+  body.map(piece => BODYPART_COST[piece]).reduce((s, e) => {
+    return s + e;
+  }, 0);
 };
 
 const build_body = (base, extension, max_energy, design_level) => {

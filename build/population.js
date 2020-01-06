@@ -16,9 +16,11 @@ var common = require('population.common');
 var wild = require('population.wild');
 
 var Main = metropolia('Main', 'W5S52');
+var Abaddon = colony('Abaddon', 'W5S53', 'W5S52');
+var Bristleback = colony('Bristleback', 'W6S53');
 var Common = common();
 var spawns = {
-  'W5S52': [].concat.apply([], [Main, Common])
+  'W5S52': [].concat.apply([], [Main, Common, Abaddon, Bristleback])
 };
 module.exports = {
   spawns: spawns
