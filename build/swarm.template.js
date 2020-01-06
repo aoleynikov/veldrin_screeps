@@ -1,7 +1,7 @@
 let common = require('swarm.common');
 
-const extension = [CARRY, MOVE];
-const base = [WORK];
+const extension = [];
+const base = [];
 
 const size = core => {
   let core_room = Game.rooms[core];
@@ -9,19 +9,15 @@ const size = core => {
 };
 
 const name_prefix = (core, room) => {
-  return "nanny_" + room + "_" + size(core) + "_";
+  return "miner_" + room + "_" + size(core) + "_";
 };
 
-const count = (core, room) => {
-  if (core != room) return 0;
-  let core_room = Game.rooms[core];
-  return [0, 1, 2, 1, 1, 1, 1, 1, 1][core_room.controller.level];
-};
+const count = (core, room) => {};
 
 const memory = (core, room) => {
   return {
     swarm: false,
-    role: "nanny",
+    role: "miner",
     energy_room: room,
     workplace: core
   };

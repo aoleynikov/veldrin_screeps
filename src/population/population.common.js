@@ -20,8 +20,8 @@ var upgrader = (from, to) => {
 }
 
 var upgraders = [
-  upgrader('W5S52', 'W5S53'),
-  upgrader('W6S53', 'W6S53')
+  upgrader('W5S53', 'W5S52'),
+  upgrader('W6S53', 'W5S52')
 ]
 
 module.exports = function() {

@@ -5,7 +5,7 @@ const base = [WORK]
 
 const size = (core) => {
   let core_room = Game.rooms[core]
-  return [1, 2, 3, 3, 3][core_room.controller.level]
+  return [0, 1, 3, 4, 5][core_room.controller.level]
 }
 
 const name_prefix = (core, room) => {
@@ -16,7 +16,7 @@ const count = (core, room) =>
 {
   if (core != room) return 0
   let core_room = Game.rooms[core]
-  return [1, 3, 3, 4, 4, 5, 1, 1, 1][core_room.controller.level]
+  return [0, 1, 2, 1, 1, 1, 1, 1, 1][core_room.controller.level]
 }
 
 const memory = (core, room) => { 
@@ -39,10 +39,7 @@ const body = (core) => {
 }
 
 module.exports = {
-  extension: extension,
-  base: base,
   name_prefix: name_prefix,
-  size: size,
   count: count,
   memory: memory,
   body: body
