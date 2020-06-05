@@ -2,7 +2,7 @@ let common = require('swarm.common')
 
 const has_adjacent_source = (container) => {
   let pos = container.pos
-  return pos.findInRange(FIND_ENERGY_SOURCE, 1).size >= 1
+  return pos.findInRange(FIND_SOURCE, 1).size >= 1
 }
 
 const extension = [MOVE]
@@ -17,21 +17,19 @@ const name_prefix = (core, room) => {
   return 'miner_' + room + '_'
 }
 
-const count = (core, room) => 
-{
+const count = (core, room) => {
   let target_room = Game.rooms[room]
-  if(!target_room) return 0
-  let mining_containers = target_room.find(FIND_STRUCTURES, 
-    { 
-      filter: (c) => {
-      return c.structureType == STRUCTURE_CONTAINER && 
+  if (!target_room) return 0
+  let mining_containers = target_room.find(FIND_STRUCTURES, {
+    filter: (c) => {
+      return c.structureType == STRUCTURE_CONTAINER &&
         has_adjacent_source(c)
     }
   })
   return mining_containers.size
 }
 
-const memory = (core, room) => { 
+const memory = (core, room) => {
   return {
     role: 'miner',
     target: room,
@@ -45,9 +43,9 @@ const memory = (core, room) => {
 const body = (core) => {
   let core_room = Game.rooms[core]
   return common.build_body(
-    base, 
-    extension, 
-    core_room.energyCapacityAvailable, 
+    base,
+    extension,
+    core_room.energyCapacityAvailable,
     size(core)
   )
 }
