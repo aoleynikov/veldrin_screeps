@@ -33,9 +33,9 @@ const memory = (core, room) => {
 
 const body = (core, room) => {
   if (has_tower(room)) {
-    return basic_repairer
-  } else {
     return tower_operator
+  } else {
+    return basic_repairer
   }
 }
 
