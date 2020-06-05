@@ -26,6 +26,9 @@ const count = (core, room) => {
         has_adjacent_source(c)
     }
   })
+  if (mining_containers.size === undefined) {
+    return 0
+  }
   return mining_containers.size
 }
 

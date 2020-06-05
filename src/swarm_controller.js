@@ -58,7 +58,6 @@ module.exports = {
     } else {
       var population = Game.spawns['Main'].memory['population'][spawn.room.name]
       for (var template of population) {
-
         if (controller.spawnCreep(spawn, template)) break;
         spawn.memory['state'] = 'idle'
       }

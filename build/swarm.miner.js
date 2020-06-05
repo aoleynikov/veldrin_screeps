@@ -25,6 +25,11 @@ const count = (core, room) => {
       return c.structureType == STRUCTURE_CONTAINER && has_adjacent_source(c);
     }
   });
+
+  if (mining_containers.size === undefined) {
+    return 0;
+  }
+
   return mining_containers.size;
 };
 
