@@ -5,7 +5,11 @@ const tower_operator = [CARRY, CARRY, CARRY, MOVE, MOVE, MOVE]
 
 const has_tower = (room_id) => {
   let room = Game.rooms[room_id]
-  let towers = room.find(FIND_MY_STRUCTURE, { filter: { structureType: STRUCTURE_TOWER } })
+  let towers = room.find(FIND_MY_STRUCTURES, {
+    filter: {
+      structureType: STRUCTURE_TOWER
+    }
+  })
   return towers.size > 0
 }
 
@@ -17,7 +21,7 @@ const count = (core, room) => {
   return 1
 }
 
-const memory = (core, room) => { 
+const memory = (core, room) => {
   return {
     role: 'repairer',
     refill: true,
@@ -28,10 +32,9 @@ const memory = (core, room) => {
 }
 
 const body = (core, room) => {
-  if(has_tower(room)) {
+  if (has_tower(room)) {
     return basic_repairer
-  }
-  else {
+  } else {
     return tower_operator
   }
 }
