@@ -1,6 +1,3 @@
-const NETWORK = {
-  'W5S52': ['W5S53', 'W6S53']
-};
 const unit_types = ["nanny", "miner", "repairer", "claimer", "hauler"];
 
 const unit_blueprints = () => {
@@ -25,9 +22,9 @@ const room_creeps = (core, room) => {
   });
 };
 
-const creeps = () => {
+const creeps = network => {
   let result = {};
-  Object.entries(NETWORK).forEach(core => {
+  Object.entries(network).forEach(core => {
     let covered_rooms = [core[0]].concat(core[1]);
     let creeps_per_room = covered_rooms.map(room => room_creeps(core[0], room));
     let creeps = [].concat.apply([], creeps_per_room);

@@ -31,7 +31,6 @@ const body = (core, room) => {
 
 module.exports = {
   name_prefix: name_prefix,
-  size: size,
   count: count,
   memory: memory,
   body: body

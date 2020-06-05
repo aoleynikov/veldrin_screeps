@@ -12,6 +12,8 @@ const build_body = (base, extension, max_energy, design_level) => {
   return [].concat.apply(base, Array(bodyparts_count).fill(extension));
 };
 
+const place_flag = room => {};
+
 module.exports = {
   body_price: body_price,
   build_body: build_body

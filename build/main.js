@@ -4,15 +4,30 @@ var buildings_manager = require('buildings_manager');
 
 var doctor = require('doctor');
 
-var population = require('population');
+var swarm = require('swarm.population');
+
+const setup = () => {
+  let mainRoom = Game.spawns['Main'].room.name;
+  let empire = Game.spawns['Main'].memory['empire'];
+
+  if (empire === undefined || !(mainRoom in empire)) {
+    empire = {};
+    empire[mainRoom] = [];
+    Game.spawns['Main'].memory['empire'] = empire;
+  }
+
+  try {
+    if (Game.time % 20 == 0) {
+      Game.spawns['Main'].memory['population'] = swarm.creeps();
+    }
+  } catch (e) {
+    console.log(e);
+  }
+};
 
 module.exports.loop = function () {
   console.log('==========================================================');
-
-  if (Game.time % 20 == 0) {
-    Game.spawns['Main'].memory['population'] = population;
-  }
-
+  setup();
   doctor.check();
 
   for (var name in Game.creeps) {
