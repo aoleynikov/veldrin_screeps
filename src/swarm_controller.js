@@ -10,7 +10,7 @@ var progress_bar = (spawning) => {
   for (i = 0; i < dark; ++i) {
     bars.push('X')
   }
-  for (;i < width; ++i) {
+  for (; i < width; ++i) {
     bars.push(' ')
   }
   return bars.join('')
@@ -50,14 +50,14 @@ var controller = {
 module.exports = {
   respawn: function (spawn) {
     var maintenance_creeps = spawn.pos.findInRange(FIND_MY_CREEPS, 1, {
-        filter: (c) => c.memory['role'] == 'maintenance'
+      filter: (c) => c.memory['role'] == 'maintenance'
     });
     if (maintenance_creeps.length > 0) {
       spawn.renewCreep(maintenance_creeps[0])
       spawn.memory['state'] = 'renewing'
     } else {
       var population = Game.spawns['Main'].memory['population']
-      for (var template of population['spawns'][spawn.room.name]) {
+      for (var template of population) {
         if (controller.spawnCreep(spawn, template)) break;
         spawn.memory['state'] = 'idle'
       }

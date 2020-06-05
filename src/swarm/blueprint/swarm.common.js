@@ -14,6 +14,10 @@ const build_body = (base, extension, max_energy, design_level) => {
   }
   let bodyparts_count = Math.min(max_count, design_count)
 
+  if (bodyparts_count < 0) {
+    return []
+  }
+
   return [].concat.apply(base, Array(bodyparts_count).fill(extension))
 }
 

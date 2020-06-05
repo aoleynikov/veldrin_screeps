@@ -43,12 +43,4 @@ module.exports.loop = function () {
     var spawn = Game.spawns[spawn_name];
     buildings_manager.run(spawn);
   }
-
-  try {
-    var swarm = require('swarm.population')
-    console.log(swarm.creeps())
-    Game.spawns['Main'].memory['swarm'] = swarm.creeps()
-  } catch (e) {
-    console.log(e)
-  }
 }
