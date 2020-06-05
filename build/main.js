@@ -17,9 +17,8 @@ const setup = () => {
   }
 
   try {
-    if (Game.time % 20 == 0) {
-      Game.spawns['Main'].memory['population'] = swarm.creeps(empire);
-    }
+    //if (Game.time % 20 == 0) {
+    Game.spawns['Main'].memory['population'] = swarm.creeps(empire); //}
   } catch (e) {
     console.log(e);
   }

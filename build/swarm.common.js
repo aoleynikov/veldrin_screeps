@@ -6,7 +6,7 @@ const body_price = body => {
 
 const build_body = (base, extension, max_energy, design_level) => {
   const level_price = body_price(extension);
-  let max_count = Math.round((max_energy - body_price(base)) / level_price);
+  let max_count = Math.floor((max_energy - body_price(base)) / level_price);
   let design_count = design_level;
 
   if (!design_count) {

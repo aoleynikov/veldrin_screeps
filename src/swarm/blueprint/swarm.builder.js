@@ -18,7 +18,7 @@ const name_prefix = (core, room) => {
 }
 
 const count = (core, room) => {
-    return construction_sites(room).size
+    return construction_sites(room).length
 }
 
 const memory = (core, room) => {
