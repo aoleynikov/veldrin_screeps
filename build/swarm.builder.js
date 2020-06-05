@@ -18,7 +18,12 @@ const name_prefix = (core, room) => {
 };
 
 const count = (core, room) => {
-  return construction_sites(room).length;
+  let remaining = construction_sites(room).map(site => {
+    return site.progressTotal - site.progress;
+  }).reduce((s, e) => {
+    return s + e;
+  }, 0);
+  return Math.ceil(remaining / 3000);
 };
 
 const memory = (core, room) => {
