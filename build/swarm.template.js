@@ -1,7 +1,7 @@
 let common = require('swarm.common');
 
-const extension = [MOVE];
-const base = [WORK, WORK, WORK, WORK, WORK];
+const extension = [];
+const base = [];
 
 const size = (core, room) => {};
 

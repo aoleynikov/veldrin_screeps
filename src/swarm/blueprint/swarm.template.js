@@ -1,10 +1,10 @@
 let common = require('swarm.common')
 
-const extension = [MOVE]
-const base = [WORK, WORK, WORK, WORK, WORK]
+const extension = []
+const base = []
 
 const size = (core, room) => {
-  
+
 }
 
 const name_prefix = (core, room) => {
@@ -15,12 +15,12 @@ const count = (core, room) => {
 
 }
 
-const memory = (core, room) => { 
-  
+const memory = (core, room) => {
+
 }
 
 const body = (core, room) => {
-  
+
 }
 
 module.exports = {

@@ -1,4 +1,4 @@
-const unit_types = ["nanny", "miner", "repairer", "claimer", "hauler"]
+const unit_types = ["nanny", "miner", "builder", "repairer", "claimer", "hauler"]
 const unit_blueprints = () => {
   let result = {}
   unit_types.map((k) => {
