@@ -10,7 +10,7 @@ const construction_sites = room => {
 };
 
 const size = (core, room) => {
-  return undefined;
+  return 20;
 };
 
 const name_prefix = (core, room) => {
