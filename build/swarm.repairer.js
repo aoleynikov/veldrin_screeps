@@ -5,6 +5,7 @@ const tower_operator = [CARRY, CARRY, CARRY, MOVE, MOVE, MOVE];
 
 const has_tower = room_id => {
   let room = Game.rooms[room_id];
+  if (!room) return false;
   let towers = room.find(FIND_MY_STRUCTURES, {
     filter: {
       structureType: STRUCTURE_TOWER
