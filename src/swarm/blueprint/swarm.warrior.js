@@ -4,10 +4,10 @@ const extension = [TOUGH, ATTACK, MOVE]
 const base = []
 
 const hostile_entities = (room) => {
-  [].concat.apply([], 
+  [].concat.apply([],
     [
-      FIND_HOSTILE_CREEPS, 
-      FIND_HOSTILE_STRUCTURES, 
+      FIND_HOSTILE_CREEPS,
+      FIND_HOSTILE_STRUCTURES,
       FIND_HOSTILE_SPAWNS,
       FIND_HOSTILE_CONSTRUCTION_SITES,
       FIND_HOSTILE_POWER_CREEPS
@@ -28,11 +28,10 @@ const name_prefix = (core, room) => {
 const count = (core, room_ic) => {
   let room = Game.rooms[room]
   if (!room) return 0
-  if ()
-  return hostile_entities(room).size
+  return hostile_entities(room).length
 }
 
-const memory = (core, room) => { 
+const memory = (core, room) => {
   return {
     type: 'swarm',
     role: 'warrior',
@@ -43,9 +42,9 @@ const memory = (core, room) => {
 const body = (core, room) => {
   let core_room = Game.rooms[core]
   return build_body(
-    base, 
-    extension, 
-    core_room.energyCapacityAvailable, 
+    base,
+    extension,
+    core_room.energyCapacityAvailable,
     size(core)
   )
 }

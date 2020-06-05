@@ -32,10 +32,10 @@ const count = (core, room) => {
           return c.structureType == STRUCTURE_CONTAINER && has_adjacent_source(c);
         }
       });
-      energy_adjust = mining_containers.size;
+      energy_adjust = mining_containers.length;
     }
 
-    return energy_adjust * Game.map.findRoute(core, room).size;
+    return energy_adjust * Game.map.findRoute(core, room).length;
   }
 };
 

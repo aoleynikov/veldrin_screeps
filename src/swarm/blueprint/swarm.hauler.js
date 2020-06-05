@@ -17,29 +17,27 @@ const count = (core, room) => {
   let target_room = Game.rooms[room]
   let storages = core_room.find(FIND_STRUCTURES, {
     filter: {
-        structureType: STRUCTURE_STORAGE
+      structureType: STRUCTURE_STORAGE
     }
   })
   if (storages.length == 0) {
     return 0
-  }
-  else {
+  } else {
     let energy_adjust = 1
     if (target_room) {
-      let mining_containers = target_room.find(FIND_STRUCTURES, 
-        { 
-          filter: (c) => {
-          return c.structureType == STRUCTURE_CONTAINER && 
+      let mining_containers = target_room.find(FIND_STRUCTURES, {
+        filter: (c) => {
+          return c.structureType == STRUCTURE_CONTAINER &&
             has_adjacent_source(c)
         }
       })
-      energy_adjust = mining_containers.size
+      energy_adjust = mining_containers.length
     }
-    return energy_adjust * Game.map.findRoute(core, room).size
+    return energy_adjust * Game.map.findRoute(core, room).length
   }
 }
 
-const memory = (core, room) => { 
+const memory = (core, room) => {
   return {
     role: 'hauler',
     refill: true,
@@ -53,9 +51,9 @@ const memory = (core, room) => {
 const body = (core, room) => {
   let core_room = Game.rooms[core]
   return common.build_body(
-    base, 
-    extension, 
-    core_room.energyCapacityAvailable, 
+    base,
+    extension,
+    core_room.energyCapacityAvailable,
     size(core)
   )
 }

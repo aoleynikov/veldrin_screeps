@@ -2,7 +2,7 @@ let common = require('swarm.common');
 
 const has_adjacent_source = container => {
   let pos = container.pos;
-  return pos.findInRange(FIND_SOURCE, 1).size >= 1;
+  return pos.findInRange(FIND_SOURCE, 1).length >= 1;
 };
 
 const extension = [MOVE];
@@ -26,11 +26,11 @@ const count = (core, room) => {
     }
   });
 
-  if (mining_containers.size === undefined) {
+  if (mining_containers.length === undefined) {
     return 0;
   }
 
-  return mining_containers.size;
+  return mining_containers.length;
 };
 
 const memory = (core, room) => {

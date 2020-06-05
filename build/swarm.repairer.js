@@ -10,7 +10,7 @@ const has_tower = room_id => {
       structureType: STRUCTURE_TOWER
     }
   });
-  return towers.size > 0;
+  return towers.length > 0;
 };
 
 const name_prefix = (core, room) => {
