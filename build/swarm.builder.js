@@ -3,27 +3,17 @@ let common = require('swarm.common');
 const extension = [WORK, MOVE, CARRY];
 const base = [WORK, MOVE, CARRY];
 
-const construction_sites = room => {
-  let target_room = Game.rooms[room];
-  if (!target_room) return [];
-  return target_room.find(FIND_CONSTRUCTION_SITES);
-};
-
 const size = (core, room) => {
-  return 20;
+  return 16;
 };
 
 const name_prefix = (core, room) => {
-  return "builder_" + room + "_" + size(core) + "_";
+  return "builder_" + room + "_";
 };
 
 const count = (core, room) => {
-  let remaining = construction_sites(room).map(site => {
-    return site.progressTotal - site.progress;
-  }).reduce((s, e) => {
-    return s + e;
-  }, 0);
-  return Math.ceil(remaining / 3000);
+  let core_room = Game.rooms[core];
+  return [0, 6, 6, 6, 6, 6, 6, 6, 6][core_room.controller.level];
 };
 
 const memory = (core, room) => {
