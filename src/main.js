@@ -6,6 +6,7 @@ var swarm = require('swarm.population')
 const setup = () => {
   let mainRoom = Game.spawns['Main'].room.name
   let empire = Game.spawns['Main'].memory['empire']
+
   if (empire === undefined || !(mainRoom in empire)) {
     empire = {}
     empire[mainRoom] = []
@@ -14,7 +15,7 @@ const setup = () => {
 
   try {
     if (Game.time % 20 == 0) {
-      Game.spawns['Main'].memory['population'] = swarm.creeps();
+      Game.spawns['Main'].memory['population'] = swarm.creeps(empire);
     }
   } catch (e) {
     console.log(e)
