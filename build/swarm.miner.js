@@ -2,7 +2,7 @@ let common = require('swarm.common');
 
 const has_adjacent_source = container => {
   let pos = container.pos;
-  return pos.findInRange(FIND_SOURCE, 1).length >= 1;
+  return pos.findInRange(FIND_SOURCES, 1).length >= 1;
 };
 
 const extension = [MOVE];
