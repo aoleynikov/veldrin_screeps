@@ -14,6 +14,10 @@ var build = function (creep) {
 
     if (site === undefined) return false;
 
+    if (site.room.name == creep.room.name) {
+        creep.memory['target'] = creep.room.name
+    }
+
     var build_result = creep.build(site);
     if (build_result == ERR_NOT_IN_RANGE) {
         creep.moveTo(site, {
@@ -39,6 +43,7 @@ var work = function (creep) {
 
 module.exports = {
     perform: (creep) => {
+        if (room_travel.perform(creep)) return;
         if (energy_behavior.perform(creep)) return;
         work(creep);
     }
