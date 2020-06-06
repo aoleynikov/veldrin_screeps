@@ -16,7 +16,7 @@ var build = function (creep) {
 
     var build_result = creep.build(site);
     if (build_result == ERR_NOT_IN_RANGE) {
-        creep.moveTo(site.pos.x, site.pos.y, {
+        creep.moveTo(site, {
             reusePath: 50
         });
     } else if (build_result == ERR_NOT_ENOUGH_ENERGY) {
