@@ -1,5 +1,6 @@
 var upgrader_role = require('role.upgrader');
 var energy_behavior = require('behavior.get_resource');
+var room_travel = require('behavior.room_travel');
 
 var build = function (creep) {
     var sites = Game.constructionSites;
