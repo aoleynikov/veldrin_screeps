@@ -16,7 +16,9 @@ var build = function (creep) {
 
     var build_result = creep.build(site);
     if (build_result == ERR_NOT_IN_RANGE) {
-        creep.moveTo(site, {reusePath: 50});
+        creep.moveTo(site.pos.x, site.pos.y, {
+            reusePath: 50
+        });
     } else if (build_result == ERR_NOT_ENOUGH_ENERGY) {
         energy_behavior.refill(creep);
     }
@@ -28,8 +30,7 @@ var work = function (creep) {
     if (!busy) {
         if (creep.memory['fallback_room']) {
             creep.memory['target'] = creep.memory['fallback_room']
-        }
-        else {
+        } else {
             creep.memory['target'] = Game.spawns['Main'].room.name
         }
         upgrader_role.perform(creep);

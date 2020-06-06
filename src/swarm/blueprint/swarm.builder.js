@@ -22,7 +22,8 @@ const memory = (core, room) => {
         refill: true,
         type: 'swarm',
         work_place: room,
-        energy_room: room
+        energy_room: room,
+        fallback_room: core
     }
 }
 
