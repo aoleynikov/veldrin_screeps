@@ -14,6 +14,7 @@ const get_site = () => {
 };
 
 const build = function (creep, site) {
+  creep.memory['work_place'] = site.room.name;
   let result = creep.build(site);
 
   if (result == ERR_NOT_ENOUGH_ENERGY) {
