@@ -16,8 +16,9 @@ var build = function (creep) {
 
   if (site === undefined) return false;
 
-  if (site.room.name == creep.room.name) {
+  if (site.room.name != creep.room.name) {
     creep.memory['target'] = creep.room.name;
+    return;
   }
 
   var build_result = creep.build(site);
