@@ -4,23 +4,16 @@ var energy_behavior = require('behavior.get_resource');
 
 var room_travel = require('behavior.room_travel');
 
-var build = function (creep) {
+const get_site = () => {
   var sites = Game.constructionSites;
-  if (sites.length == 0) return false;
-  var site = undefined;
+  if (sites.length == 0) return undefined;
 
   for (var key in sites) {
-    site = Game.getObjectById(key);
-    break;
+    return Game.getObjectById(key);
   }
+};
 
-  if (site === undefined) return false;
-
-  if (site.room.name != creep.room.name) {
-    creep.memory['target'] = creep.room.name;
-    return;
-  }
-
+const build = function (creep) {
   var build_result = creep.build(site);
 
   if (build_result == ERR_NOT_IN_RANGE) {
@@ -34,7 +27,13 @@ var build = function (creep) {
   return true;
 };
 
-var work = function (creep) {
+const work = function (creep) {
+  let site = get_site();
+
+  if (site.room.name != creep.room.name) {
+    creep.memory['target'] = site.room.name;
+  }
+
   var busy = build(creep);
 
   if (!busy) {
@@ -52,6 +51,6 @@ module.exports = {
   perform: creep => {
     if (room_travel.perform(creep)) return;
     if (energy_behavior.perform(creep)) return;
-    work(creep);
+    work(creep, site);
   }
 };
