@@ -13,31 +13,20 @@ const get_site = () => {
   }
 };
 
-const build = function (creep) {
-  var build_result = creep.build(site);
+const build = function (creep, site) {
+  let result = creep.build(site);
 
-  if (build_result == ERR_NOT_IN_RANGE) {
-    creep.moveTo(site, {
-      reusePath: 50
-    });
-  } else if (build_result == ERR_NOT_ENOUGH_ENERGY) {
+  if (repair_result == ERR_NOT_ENOUGH_ENERGY) {
     energy_behavior.refill(creep);
+  } else if (repair_result == ERR_NOT_IN_RANGE) {
+    creep.moveTo(site);
   }
-
-  return true;
 };
 
 const work = function (creep) {
   let site = get_site();
 
-  if (site.room.name != creep.room.name) {
-    creep.memory['target'] = site.room.name;
-    return;
-  }
-
-  var busy = build(creep);
-
-  if (!busy) {
+  if (!site) {
     if (creep.memory['fallback_room']) {
       creep.memory['target'] = creep.memory['fallback_room'];
     } else {
@@ -45,7 +34,10 @@ const work = function (creep) {
     }
 
     upgrader_role.perform(creep);
+    return;
   }
+
+  build(creep, site);
 };
 
 module.exports = {
