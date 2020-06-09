@@ -16,9 +16,9 @@ const get_site = () => {
 const build = function (creep, site) {
   let result = creep.build(site);
 
-  if (repair_result == ERR_NOT_ENOUGH_ENERGY) {
+  if (result == ERR_NOT_ENOUGH_ENERGY) {
     energy_behavior.refill(creep);
-  } else if (repair_result == ERR_NOT_IN_RANGE) {
+  } else if (result == ERR_NOT_IN_RANGE) {
     creep.moveTo(site);
   }
 };
