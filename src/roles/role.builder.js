@@ -44,6 +44,6 @@ module.exports = {
     perform: (creep) => {
         if (room_travel.perform(creep)) return;
         if (energy_behavior.perform(creep)) return;
-        work(creep, site);
+        work(creep);
     }
 }

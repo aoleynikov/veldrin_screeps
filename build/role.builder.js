@@ -32,6 +32,7 @@ const work = function (creep) {
 
   if (site.room.name != creep.room.name) {
     creep.memory['target'] = site.room.name;
+    return;
   }
 
   var busy = build(creep);
@@ -51,6 +52,6 @@ module.exports = {
   perform: creep => {
     if (room_travel.perform(creep)) return;
     if (energy_behavior.perform(creep)) return;
-    work(creep, site);
+    work(creep);
   }
 };
