@@ -6,7 +6,7 @@ var select_storage = function (creep) {
   var result = creep.pos.findClosestByRange(FIND_STRUCTURES, {
     filter: function (s) {
       return s.energy < s.energyCapacity &&
-          (s.structureType == STRUCTURE_SPAWN ||
+        (s.structureType == STRUCTURE_SPAWN ||
           s.structureType == STRUCTURE_EXTENSION);
     }
   });
@@ -26,8 +26,8 @@ var store = function (creep) {
   var any_storage = creep.pos.findClosestByRange(FIND_STRUCTURES, {
     filter: function (s) {
       return (s.structureType == STRUCTURE_SPAWN ||
-          s.structureType == STRUCTURE_EXTENSION ||
-          s.structureType == STRUCTURE_TOWER);
+        s.structureType == STRUCTURE_EXTENSION ||
+        s.structureType == STRUCTURE_TOWER);
     }
   });
   if (!any_storage) {
@@ -46,13 +46,15 @@ var store = function (creep) {
   }
   var work = creep.transfer(storage, RESOURCE_ENERGY);
   if (work == ERR_NOT_IN_RANGE) {
-    creep.moveTo(storage, { visualizePathStyle: {
-      fill: 'transparent',
-      stroke: '#ff0',
-      lineStyle: 'dashed',
-      strokeWidth: .15,
-      opacity: .1
-  }});
+    creep.moveTo(storage, {
+      visualizePathStyle: {
+        fill: 'transparent',
+        stroke: '#ff0',
+        lineStyle: 'dashed',
+        strokeWidth: .15,
+        opacity: .1
+      }
+    });
   } else if (work == ERR_NOT_ENOUGH_ENERGY) {
     energy_behavior.refill(creep);
   }
@@ -63,5 +65,8 @@ module.exports = {
     if (room_travel.perform(creep)) return;
     if (energy_behavior.perform(creep)) return;
     store(creep);
+    if (creep.ticksToLive == 500 && Math.random() > 0.95) {
+      creep.suicide()
+    }
   }
 }

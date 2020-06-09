@@ -64,5 +64,9 @@ module.exports = {
     if (room_travel.perform(creep)) return;
     if (energy_behavior.perform(creep)) return;
     store(creep);
+
+    if (creep.ticksToLive == 500 && Math.random() > 0.95) {
+      creep.suicide();
+    }
   }
 };
