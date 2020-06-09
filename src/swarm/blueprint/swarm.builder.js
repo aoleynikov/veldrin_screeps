@@ -21,6 +21,7 @@ const memory = (core, room) => {
         role: 'builder',
         refill: true,
         type: 'swarm',
+        sticky: true,
         work_place: room,
         energy_room: room,
         fallback_room: core
