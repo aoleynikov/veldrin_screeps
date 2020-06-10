@@ -12,14 +12,13 @@ const name_prefix = (core, room) => {
   return "nanny_" + room + "_" + size(core) + "_"
 }
 
-const count = (core, room) => 
-{
+const count = (core, room) => {
   if (core != room) return 0
   let core_room = Game.rooms[core]
-  return [0, 1, 2, 1, 1, 1, 1, 1, 1][core_room.controller.level]
+  return [0, 1, 2, 2, 2, 1, 1, 1, 1][core_room.controller.level]
 }
 
-const memory = (core, room) => { 
+const memory = (core, room) => {
   return {
     swarm: false,
     role: "nanny",
@@ -31,9 +30,9 @@ const memory = (core, room) => {
 const body = (core) => {
   let core_room = Game.rooms[core]
   return common.build_body(
-    base, 
-    extension, 
-    core_room.energyCapacityAvailable, 
+    base,
+    extension,
+    core_room.energyCapacityAvailable,
     size(core)
   )
 }
