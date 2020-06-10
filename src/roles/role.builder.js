@@ -20,22 +20,25 @@ const build = function (creep, site) {
     }
 };
 
+const work = function (creep) {
+    let site = get_site()
+    if (!site) {
+        if (creep.memory['fallback_room']) {
+            creep.memory['target'] = creep.memory['fallback_room']
+        } else {
+            creep.memory['target'] = Game.spawns['Main'].room.name
+        }
+        upgrader_role.perform(creep);
+        return
+    }
+
+    build(creep, site)
+};
+
 module.exports = {
     perform: (creep) => {
         if (room_travel.perform(creep)) return;
         if (energy_behavior.perform(creep)) return;
-        let site = get_site()
-        if (site) {
-            creep.memory['work_place'] = site.room.name
-        } else {
-            if (creep.memory['fallback_room']) {
-                creep.memory['target'] = creep.memory['fallback_room']
-            } else {
-                creep.memory['target'] = Game.spawns['Main'].room.name
-            }
-            upgrader_role.perform(creep);
-            return
-        }
-        build(creep, site);
+        work(creep);
     }
 }
