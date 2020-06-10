@@ -22,6 +22,8 @@ const build = function (creep, site) {
 
 module.exports = {
     perform: (creep) => {
+        if (room_travel.perform(creep)) return;
+        if (energy_behavior.perform(creep)) return;
         let site = get_site()
         if (site) {
             creep.memory['work_place'] = site.room.name
@@ -34,8 +36,6 @@ module.exports = {
             upgrader_role.perform(creep);
             return
         }
-        if (room_travel.perform(creep)) return;
-        if (energy_behavior.perform(creep)) return;
         build(creep, site);
     }
 }

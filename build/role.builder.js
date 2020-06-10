@@ -26,6 +26,8 @@ const build = function (creep, site) {
 
 module.exports = {
   perform: creep => {
+    if (room_travel.perform(creep)) return;
+    if (energy_behavior.perform(creep)) return;
     let site = get_site();
 
     if (site) {
@@ -41,8 +43,6 @@ module.exports = {
       return;
     }
 
-    if (room_travel.perform(creep)) return;
-    if (energy_behavior.perform(creep)) return;
     build(creep, site);
   }
 };
