@@ -17,6 +17,10 @@ const count = (core, room_id) => {
   if (!room.controller) return 0;
   if (!room.controller.reservation) return 1;
   if (room.controller.reservation.ticksToEnd < 3000) return 1;
+  if (!room) return 0;
+  if (!room.controller) return 0;
+  if (!room.controller.owner) return 0;
+  return room.controller.owner.username == 'Veldrin' ? 0 : 1;
 };
 
 const memory = (core, room) => {
