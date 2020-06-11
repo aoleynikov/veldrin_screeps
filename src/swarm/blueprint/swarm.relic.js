@@ -10,7 +10,7 @@ const name_prefix = (core, room) => {
 
 const count = (core, room) => {
     let target_room = Game.rooms[room]
-    return coreRoom.controller.owner.username == 'Veldrin' ? 1 : 0
+    return target_room.controller.owner.username == 'Veldrin' ? 1 : 0
 }
 
 const memory = (core, room) => {
