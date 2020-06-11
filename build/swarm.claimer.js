@@ -28,6 +28,12 @@ const memory = (core, room) => {
 };
 
 const body = (core, room) => {
+  let coreRoom = Game.rooms[core];
+
+  if (coreRoom.energyCapacityAvailable < 1300 && coreRoom.energyCapacityAvailable >= 650) {
+    return [CLAIM, MOVE];
+  }
+
   return [CLAIM, CLAIM, MOVE, MOVE];
 };
 

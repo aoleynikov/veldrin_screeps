@@ -16,7 +16,7 @@ const count = (core, room_id) => {
   if (room.controller.reservation.ticksToEnd < 3000) return 1
 }
 
-const memory = (core, room) => { 
+const memory = (core, room) => {
   return {
     target: room,
     role: 'claimer',
@@ -26,6 +26,10 @@ const memory = (core, room) => {
 }
 
 const body = (core, room) => {
+  let coreRoom = Game.rooms[core]
+  if (coreRoom.energyCapacityAvailable < 1300 && coreRoom.energyCapacityAvailable >= 650) {
+    return [CLAIM, MOVE]
+  }
   return [CLAIM, CLAIM, MOVE, MOVE]
 }
 
