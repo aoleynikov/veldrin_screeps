@@ -9,7 +9,7 @@ const name_prefix = (core, room) => {
 };
 
 const count = (core, room) => {
-  let coreRoom = Game.rooms[core];
+  let target_room = Game.rooms[room];
   return coreRoom.controller.owner.username == 'Veldrin' ? 1 : 0;
 };
 
