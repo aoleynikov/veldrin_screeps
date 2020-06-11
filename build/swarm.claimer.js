@@ -5,6 +5,7 @@ const name_prefix = (core, room) => {
 };
 
 const count = (core, room_id) => {
+  if (core == room_id) return 0;
   let core_room = Game.rooms[core];
 
   if (core_room.controller.level <= 3) {
