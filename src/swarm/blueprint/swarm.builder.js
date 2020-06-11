@@ -13,6 +13,7 @@ const name_prefix = (core, room) => {
 
 const count = (core, room) => {
     let core_room = Game.rooms[core]
+    if (core == room) return 1
     return [0, 6, 6, 3, 2, 2, 2, 2, 2][core_room.controller.level];
 }
 
