@@ -11,6 +11,8 @@ const name_prefix = (core, room) => {
 const count = (core, room) => {
   let target_room = Game.rooms[room];
   if (!target_room) return 0;
+  if (!target_room.controller) return 0;
+  if (!target_room.controller.owner) return 0;
   return target_room.controller.owner.username == 'Veldrin' ? 1 : 0;
 };
 
