@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "sourceMap": true,
+    "outDir": "C:/Users/User/AppData/Local/Screeps/scripts/screeps.com/default"
+  }
+}
+// tsc -p . --watch
