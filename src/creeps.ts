@@ -192,6 +192,10 @@ class Supply extends Behavior {
         super();
     }
 
+    is_complete(creep: any): boolean {
+        return creep.room.energyAvailable == creep.room.energyCapacityAvailable;
+    }
+
     fulfill(creep: any) {
         let spawns = creep.room.find(FIND_MY_SPAWNS);
         let exts = creep.room.find(FIND_MY_STRUCTURES, {
@@ -240,12 +244,7 @@ class Build extends Behavior {
 
     is_complete(creep: any): boolean {
         const sites = creep.room.find(FIND_MY_CONSTRUCTION_SITES);
-        const result = sites.length == 0;
-        if (result && creep.memory.rooms) {
-            creep.memory.rooms.work = creep.memory.rooms?.fallback;
-            creep.memory.role = "upgrade"
-        }
-        return result;
+        return sites.length == 0;
     }
 
     fulfill(creep: any) {
@@ -522,10 +521,10 @@ class BehaviorDispatcher {
 
     constructor() {
         this.roles = {
-            supply: [new Loot(), new GetEnergy(), new Supply()],
+            supply: [new Loot(), new GetEnergy(), new Supply(), new Build(), new Upgrade()],
             mine: [new MoveToRoom("work"), new SitOnContainer(), new Mine()],
             repair: [
-                new Loot(), new GetEnergy(), new MoveToRoom("work"), new Repair()],
+                new Loot(), new GetEnergy(), new MoveToRoom("work"), new Repair(), new Build, new Upgrade()],
             build: [
                 new Loot(), new GetEnergy(), new MoveToRoom("work"), new Build(), new Upgrade()
             ],
@@ -539,13 +538,16 @@ class BehaviorDispatcher {
     dispatch(creep: any): void {
         const role = creep.memory.role;
         const behaviors = this.roles[role] || [];
+        let level = 0;
         for (const behavior of behaviors) {
+            level++;
             if (behavior.is_complete(creep)) {
                 continue;
             }
             behavior.fulfill(creep);
             break
         }
+        creep.memory.operating_level = level;
     }
 }
 

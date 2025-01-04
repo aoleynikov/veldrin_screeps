@@ -116,7 +116,6 @@ abstract class SpawnTemplate {
                 }
             );
             if (result == OK || result == ERR_NOT_ENOUGH_ENERGY) {
-                console.log(spawn.room.name + " - " + spawn.name + " - " + this.name_prefix + i)
                 return true;
             }
         }
@@ -265,7 +264,7 @@ class BuildSpawnTemplate extends SpawnTemplate {
     get_amount(): number {
         const room = Game.rooms[this.room_names["work"]]
         if (!room) {
-            return 0;
+            return 1;
         } else {
             return room.find(FIND_MY_CONSTRUCTION_SITES).length > 0 ? 1 : 0;
         }
@@ -290,7 +289,7 @@ class UpgradeSpawnTemplate extends SpawnTemplate {
                 { filter: { structureType: STRUCTURE_STORAGE } }
             );
             if (spawn_room_storage) {
-                return 0;
+                return 3;
             } else {
                 return 3;
             }
@@ -309,7 +308,7 @@ class ExtraUpgradeSpawnTemplate extends SpawnTemplate {
     }
 
     get_amount(): number {
-        return 3;
+        return 1;
     }
 }
 

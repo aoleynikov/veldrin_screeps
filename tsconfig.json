@@ -3,7 +3,7 @@
     "target": "es5",
     "module": "commonjs",
     "sourceMap": true,
-    "outDir": "C:/Users/User/AppData/Local/Screeps/scripts/screeps.com/default"
+    "outDir": "/Users/veldrin/Library/Application Support/Screeps/scripts/screeps.com/default"
   }
 }
 // tsc -p . --watch
